@@ -1,0 +1,40 @@
+.sidebar h2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .nav-category {
+  display: block;
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 1rem 0 0.5rem;
+}
+
+.sidebar a {
+  color: #888;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.sidebar a.active {
+  color: #fff;
+  background-color: #444;
+}

@@ -1,0 +1,31 @@
+.documentation-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 2rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.component-demo {
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.demo-container {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--sidebar-bg);
+  border-radius: 4px;
+}
