@@ -1,33 +1,16 @@
 const navBar = `
-  <header class="bg-teal-400">
-    <nav class="flex justify-between w-full bg-purple-500 text-white p-4">
-      <a href="#"
-        ><span class="font-semibold text-xl tracking-tight">Title</span></a
-      >
-      <div class="md:items-center md:w-auto flex">
-        <div class="md:flex hidden">
-          <a class="block md:text-white mr-4" href="#">Link 1</a>
-          <a class="block md:text-white mr-4" href="#">Link 2</a>
-          <a class="block md:text-white mr-4" href="#">Link 3</a>
-          <a class="block md:text-white mr-4" href="#">Link 4</a>
-        </div>
-        <div class="flex text-sm" v-else>
-          <a
-            class="p-2 ml-2 bg-white text-teal-500 font-semibold leading-none border border-gray-100 rounded hover:border-transparent hover:bg-gray-100"
-            href="#"
-            >Login</a
-          >
-          <a
-            class="p-2 ml-2 bg-teal-500 text-gray-100 font-semibold leading-none border border-teal-600 rounded hover:border-transparent hover:bg-teal-600"
-            href="#"
-            >Sign up</a
-          >
-        </div>
+  <div class="flex items-center justify-between bg-gray-300 px-5 py-3">
+      <div class="text-3xl font-bold">LOGO</div>
+
+      <div class="flex items-center gap-15 px-5">
+        <a href="#" class="text-xl font-medium text-gray-800">Home</a>
+        <a href="#" class="text-xl font-medium text-gray-800">Doc</a>
+        <a href="#" class="text-xl font-medium text-gray-800">Componenets</a>
+        <a href="#" class="text-xl font-medium text-gray-800">Github</a>
+        <a href="#" class="text-xl font-medium text-gray-800">Disocrd</a>
       </div>
-    </nav>
-  </header>
+    </div>
   
 `;
-
 
 export { navBar };
