@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Developer/SwingUI-1/dist"
+		},
+		{
+			"path": "../../Developer/SwingUI-1/js"
+		},
+		{
+			"path": "../../Developer/SwingUI-1/node_modules"
+		},
+		{
+			"path": "../../Developer/SwingUI-1/public"
+		},
+		{
+			"path": "../../Developer/SwingUI-1/src"
+		},
+		{
+			"path": "../../Developer/SwingUI-1/styles"
+		}
+	],
+	"settings": {}
+}

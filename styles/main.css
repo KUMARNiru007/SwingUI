@@ -1,0 +1,50 @@
+/* SwingUI Main Styles */
+@import "tailwindcss";
+@import './theme.css';
+
+
+/* Reset and Base Styles */
+:root {
+  --sui-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sui-border-radius: 4px;
+  --sui-transition: all 0.2s ease-in-out;
+}
+
+/* Base Button Styles */
+.sui-button {
+  font-family: var(--sui-font-family);
+  padding: 0.5rem 1rem;
+  border-radius: var(--sui-border-radius);
+  border: 1px solid var(--sui-border-color);
+  background: var(--sui-button-bg);
+  color: var(--sui-button-text);
+  cursor: pointer;
+  transition: var(--sui-transition);
+}
+
+.sui-button:hover {
+  background: var(--sui-button-hover-bg);
+  border-color: var(--sui-button-hover-border);
+}
+
+.sui-button--primary {
+  background: var(--sui-primary);
+  color: white;
+  border-color: var(--sui-primary);
+}
+
+.sui-button--primary:hover {
+  background: var(--sui-primary-dark);
+  border-color: var(--sui-primary-dark);
+}
+
+.sui-button--secondary {
+  background: var(--sui-secondary);
+  color: white;
+  border-color: var(--sui-secondary);
+}
+
+.sui-button--secondary:hover {
+  background: var(--sui-secondary-dark);
+  border-color: var(--sui-secondary-dark);
+}
