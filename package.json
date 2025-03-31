@@ -1,14 +1,26 @@
 {
-  "name": "ui-component-library",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "swingui",
+  "version": "1.0.0",
+  "description": "A modern UI component library",
+  "main": "index.js",
+"type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "keywords": [
+    "ui",
+    "components",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "vite": "^5.4.2"
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.17",
+    "tailwindcss": "^4.0.17"
   }
 }
