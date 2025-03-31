@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>button</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../style.css" />
   </head>
   <body>
-    <button class="icon-btn p-10 border-solid">Getting Started</button>
+    <div class="w-[800px] mx-auto mt-[30px]">
+      <h2 class="text-xl font-semibold">Button</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid totam
+        consequuntur minima perferendis dolorum ratione consequatur quo
+        accusantium ex, labore vitae culpa natus blanditiis vel dicta?
+        Cupiditate architecto optio illum.
+      </p>
+      <section class="p-6 w-full overflow-y-auto">
+        <div class="max-w-2xl mx-auto p-4">
+          <div class="flex justify-end items-center mb-4">
+            <div class="space-x-2">
+              <button
+                id="previewBtn"
+                class="px-3 py-1 text-sm border rounded bg-gray-200"
+              >
+                Preview
+              </button>
+              <button
+                id="codeBtn"
+                class="px-3 py-1 text-sm border rounded bg-gray-200"
+              >
+                Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Preview Section -->
+          <div
+            id="previewSection"
+            class="flex justify-center items-center h-32 bg-gray-200 rounded"
+          >
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+            >
+              MyBtn
+            </button>
+          </div>
+
+          <!-- Code Section -->
+          <div id="codeSection" class="hidden relative">
+            <pre
+              class="bg-gray-800 text-yellow-300 p-4 rounded-lg overflow-x-auto"
+            >
+  &lt;button class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"&gt;
+      MyBtn
+  &lt;/button&gt;
+              </pre
+            >
+            <!-- Copy Button -->
+            <button
+              id="copyBtn"
+              class="absolute top-2 right-2 bg-gray-700 p-2 rounded hover:bg-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 text-white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-3m-5-8h5a2 2 0 012 2v5a2 2 0 01-2 2h-5a2 2 0 01-2-2V9a2 2 0 012-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>
