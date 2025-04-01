@@ -81,6 +81,30 @@
         font-weight: 500;
       }
 
+      .countdown-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        min-width: 80px;
+        text-align: center;
+      }
+
+      .countdown-label {
+        font-size: 0.9rem;
+        font-weight: 400;
+        display: block;
+        margin-top: 5px;
+      }
+
       @keyframes fadeIn {
         0% {
           opacity: 0;
@@ -110,7 +134,44 @@
   <body>
     <div class="container">
       <img class="logo" src="assets/image/logo.png" alt="Logo" />
-      <div class="coming-soon">Coming Soon</div>
+      <div class="launching-soon">Launching on April 20, 2025</div>
+      <div class="countdown-container" id="countdown">
+        <div class="countdown-box">
+          <span id="days">00</span><span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-box">
+          <span id="hours">00</span><span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-box">
+          <span id="minutes">00</span><span class="countdown-label">Min</span>
+        </div>
+        <div class="countdown-box">
+          <span id="seconds">00</span><span class="countdown-label">Sec</span>
+        </div>
+      </div>
     </div>
+
+    <script>
+      function updateCountdown() {
+        const launchDate = new Date("April 20, 2025 20:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = launchDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
   </body>
 </html>
