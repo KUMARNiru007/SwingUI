@@ -7,7 +7,7 @@ const navBar = `
         <a href="#" class="text-xl font-medium text-gray-800">Doc</a>
         <a href="#" class="text-xl font-medium text-gray-800">Componenets</a>
         <a href="#" class="text-xl font-medium text-gray-800">Github</a>
-        <a href="#" class="text-xl font-medium text-gray-800">Disocrd</a>
+        <a href="#" class="text-xl font-medium text-gray-800">Discord</a>
       </div>
     </div>
   
