@@ -3,17 +3,21 @@ import { Link } from "react-router";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white p-6">
-      <h1 className="text-5xl font-bold mb-4">Welcome to Swing UI</h1>
-      <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-        A simple and powerful UI Library built with tailwindcss.
-      </p>
-      <Link
-        to="/docs"
-        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-      >
-        Get Started
-      </Link>
+    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-white px-6">
+      <div className="w-full max-w-7xl text-center p-10">
+        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
+          Swing UI
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          A powerful, easy-to-use UI Library built with TailwindCSS for modern web applications.
+        </p>
+        <Link
+          to="/docs"
+          className="px-8 py-4 text-lg font-semibold bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white rounded-full shadow-lg hover:scale-105"
+        >
+          Get Started 🚀
+        </Link>
+      </div>
     </div>
   );
 };

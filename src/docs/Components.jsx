@@ -1,10 +1,21 @@
-import React from "react";
+import React from 'react';
+import { Routes, Route } from 'react-router';
+import Sidebar from '../components/Sidebar';
+import Button from './components/Button/Button';
 
 const Components = () => {
   return (
-    <div>
-      <h2 className="text-2xl font-bold">Components</h2>
-      <p>Here are some common Tailwind UI components.</p>
+    <div className='flex'>
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Right Content Area */}
+      <div className='flex-1 p-6'>
+        <Routes>
+          {/* <Route path='/' element={<h1>All Swing UI Components</h1>} /> */}
+          <Route path='button' element={<Button />} />
+        </Routes>
+      </div>
     </div>
   );
 };
