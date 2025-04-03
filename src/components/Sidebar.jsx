@@ -19,6 +19,10 @@ const Sidebar = () => {
           <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300">🛠 Components</h3>
           <div className="mt-2 space-y-2">
             <NavItem to="/components/button" label="Button" />
+            <NavItem to="/components/header" label="Header" />
+            <NavItem to="/components/footer" label="Footer" />
+            <NavItem to="/components/hero" label="Hero Section" />
+            <NavItem to="/components/navbar" label="Navbar" />
           </div>
         </div>
       </nav>

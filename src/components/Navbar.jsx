@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
 
+// import "../docs/components/Button/Button.css";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white/30 dark:bg-gray-900/40 backdrop-blur-lg shadow-md fixed top-0 left-0 right-0 z-50 border-b border-gray-200 dark:border-gray-700">
+    <nav className="w-full swing-ocean-gradient-animate  bg-white/30 dark:bg-gray-900/40 backdrop-blur-lg shadow-md fixed top-0 left-0 right-0 z-50 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
         <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
           🚀 Swing UI

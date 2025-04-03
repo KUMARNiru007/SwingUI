@@ -5,7 +5,8 @@ const Button = () => {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const codeSnippet = `<button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-md hover:scale-105 transition-all duration-300">
+  const codeSnippet = 
+`<button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-md hover:scale-105 transition-all duration-300">
   MyBtn
 </button>`;
 
@@ -58,7 +59,7 @@ const Button = () => {
       )}
 
       {showCode && (
-        <div className="relative bg-gray-900 text-green-400 p-6 rounded-lg shadow-lg overflow-x-auto">
+        <div className="relative bg-gray-900 text-green-400 p-6 rounded-lg shadow-lg overflow-x-scroll w-full">
           <pre className="whitespace-pre-wrap text-sm font-mono leading-relaxed">
             <code className="text-green-400">{codeSnippet}</code>
           </pre>
