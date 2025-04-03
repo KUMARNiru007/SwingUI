@@ -1,29 +1,29 @@
 import React from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router"; 
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
 import Installation from "./Installation";
-import CDN from "./CDN";
 import Components from "./Components";
+import CDN from "./CDN";
 import Utilities from "./Utilities";
-import ButtonDocs from "./Button";
+
 
 const Docs = () => {
   return (
-    <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex min-h-screen w-full bg-gray-100 dark:bg-gray-900">
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <div className="p-6 overflow-auto">
+      <div className="w-64 flex-shrink-0 bg-white dark:bg-gray-800 shadow-lg">
+<Sidebar/>
+      </div>
+
+
+      <div className="flex-1 flex flex-col px-6">
+        <div className="flex-1 p-6 overflow-auto bg-white dark:bg-gray-900 shadow-md rounded-lg">
           <Routes>
-            <Route path="/" element={<Installation />} />
-            <Route path="/cdn" element={<CDN />} />
-            <Route path="/components" element={<Components />} />
-            <Route path="/utilities" element={<Utilities />} />
-            <Route path="/button" element={<ButtonDocs />} />
+            <Route index element={<Installation />} /> 
+            <Route path="cdn" element={<CDN />} />
+            <Route path="installation" element={<Installation />} />
+            <Route path="components" element={<Components />} />
+            <Route path="utilities" element={<Utilities />} />
           </Routes>
         </div>
       </div>
