@@ -16,7 +16,7 @@ const App = () => {
           <Route 
             path="/docs/*" 
             element={
-              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="w-full max-w-xxl mx-auto px-4 sm:px-6 lg:px-8">
                 <Docs />
               </div>
             } 
