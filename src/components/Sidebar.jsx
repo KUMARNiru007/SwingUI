@@ -6,6 +6,7 @@ const sections = [
     title: '📘 Getting Started',
     items: [
       { to: '/docs/quick-start', label: 'Quick Start' },
+      { to: '/docs/cdn', label: 'CDN' },
     ],
   },
   {
