@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
 import Sidebar from '../components/Sidebar';
-import Button from './components/Button/Button';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Navbar from './components/Navbar/Navbar';
+import Button from './internal-components/Button/Button';
+import Footer from './internal-components/Footer/Footer';
+import Header from './internal-components/Header/Header';
+import Hero from './internal-components/Hero/Hero';
+import Navbar from './internal-components/Navbar/Navbar';
 
 const Components = () => {
   return (
