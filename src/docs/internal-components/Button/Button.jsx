@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Clipboard, ClipboardCheck } from "lucide-react";
+import PreviewCodeBtn from "../../../components/previewcodebtn";
 
 const Button = () => {
   const [showCode, setShowCode] = useState(false);
@@ -27,28 +28,7 @@ const Button = () => {
         This button comes with a gradient, smooth hover effect, and a responsive design.
       </p>
 
-      <div className="flex justify-center gap-3 mb-6">
-        <button
-          onClick={() => setShowCode(false)}
-          className={`px-5 py-2 text-sm font-medium rounded-full shadow-md transition-all duration-300 ${
-            !showCode
-              ? "bg-blue-500 text-white shadow-lg"
-              : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
-          }`}
-        >
-          Preview
-        </button>
-        <button
-          onClick={() => setShowCode(true)}
-          className={`px-5 py-2 text-sm font-medium rounded-full shadow-md transition-all duration-300 ${
-            showCode
-              ? "bg-blue-500 text-white shadow-lg"
-              : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
-          }`}
-        >
-          Code
-        </button>
-      </div>
+      < PreviewCodeBtn showCode={showCode} setShowCode={setShowCode}/>
 
       {!showCode && (
         <div className="flex justify-center items-center h-40 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md">
