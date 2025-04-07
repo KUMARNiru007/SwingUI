@@ -239,8 +239,8 @@ function Navbar() {
 
       {mobileMenuOpen && (
         <div
-          className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
-            mobileMenuOpen ? 'opacity-100' : 'opacity-0'
+          className={`fixed custom-mobile inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
+            mobileMenuOpen ? 'opacity-50' : 'opacity-0'
           }`}
           onClick={toggleMobileMenu}
         />
