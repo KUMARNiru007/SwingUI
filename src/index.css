@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --font-body: "Poppins", sans-serif;
+
   /* Base colors */
   --color-primary: #1c79af;
   --color-primary-hover: #135e89;
+
   --color-text: #333333;
   --color-text-dark: #fdfdfd;
 
@@ -27,9 +30,4 @@
 
   /* Shadow */
   --shadow-default: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  transition: background-color 0.3s, color 0.3s;
 }
