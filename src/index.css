@@ -1,7 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@media (max-width: 856px) {
+  .custom-mobile {
+    display: flex !important;
+  }
+
+  .custom-desktop {
+    display: none !important;
+  }
+}
 
 @theme {
-  --font-body: "Poppins", sans-serif;
+  --font-body: 'Poppins', sans-serif;
 
   /* Base colors */
   --color-primary: #1c79af;
