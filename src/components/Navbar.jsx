@@ -14,8 +14,8 @@ function Navbar() {
     <nav
       className={`navbar sticky z-50 w-full px-6 py-4 flex items-center justify-between shadow-[var(--shadow-default)] ${
         darkMode
-          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
-          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
+          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)] transition-colors duration-300'
+          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
       }`}
     >
       <Link to='/'>
