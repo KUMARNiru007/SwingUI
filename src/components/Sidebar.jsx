@@ -1,24 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
+import { useTheme } from '../context/ThemeContext';
 
 const sections = [
   {
-    title: '📘 Getting Started',
+    title: 'Getting Started',
     items: [
       { to: '/docs/quick-start', label: 'Quick Start' },
       { to: '/docs/cdn', label: 'CDN' },
     ],
   },
   {
-    title: '🎨 SwingKit',
+    title: 'SwingKit',
     items: [
-      { to: '/docs/swingkit/gradients', label: 'Gradients' },
-      { to: '/docs/swingkit/animated-gradients', label: 'Animated Gradients' },
-      { to: '/docs/swingkit/transitions', label: 'Transitions' },
+      { to: '/swingkit/gradients', label: 'Gradients' },
+      { to: '/swingkit/animated-gradients', label: 'Animated Gradients' },
+      { to: '/swingkit/transitions', label: 'Transitions' },
     ],
   },
   {
-    title: '🛠 Components',
+    title: 'Components',
     items: [
       { to: '/components/accordion', label: 'Accordions' },
       { to: '/components/button', label: 'Buttons' },
@@ -36,40 +37,67 @@ const sections = [
     ],
   },
   {
-    title: '📋 Forms',
+    title: 'Forms',
     items: [
-      { to: '/docs/forms/login', label: 'Login' },
-      { to: '/docs/forms/register', label: 'Register' },
-      { to: '/docs/forms/newsletter', label: 'Newsletter' },
-      { to: '/docs//forms/contact', label: 'Contact Us' },
+      { to: '/forms/login', label: 'Login' },
+      { to: '/forms/register', label: 'Register' },
+      { to: '/forms/newsletter', label: 'Newsletter' },
+      { to: '/forms/contact', label: 'Contact Us' },
     ],
   },
 ];
 
 const Sidebar = () => {
+  const { darkMode } = useTheme();
+
   return (
-    <div className='w-64 h-screen overflow-y-auto bg-white/40 backdrop-blur-lg border-r p-6 shadow-lg'>
-      <nav className='space-y-4'>
+    <aside
+      className={`fixed top-0 left-0 h-screen w-[250px] overflow-y-auto px-4 py-6 border-r shadow-md 
+        ${darkMode
+          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)]'
+          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
+        }`}
+    >
+      <nav>
         {sections.map((section, index) => (
           <div key={index}>
-            <h3 className='text-lg font-semibold'>{section.title}</h3>
-            <div className='mt-2 space-y-2'>
+            <div
+              className={`text-sm font-semibold px-2 pt-4 pb-2 tracking-wide opacity-70
+                ${darkMode
+                  ? 'text-[var(--dark-nav-default)]'
+                  : 'text-[var(--light-nav-default)]'
+                }`}
+            >
+              {section.title}
+            </div>
+            <div className="flex flex-col gap-1">
               {section.items.map((item, id) => (
-                <NavItem key={id} to={item.to} label={item.label} />
+                <NavItem key={id} to={item.to} label={item.label} darkMode={darkMode} />
               ))}
             </div>
           </div>
         ))}
       </nav>
-    </div>
+    </aside>
   );
 };
 
-const NavItem = ({ to, label }) => {
+const NavItem = ({ to, label, darkMode }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+
   return (
     <Link
       to={to}
-      className='block px-4 py-2 rounded-lg transition-all duration-300 hover:underline'
+      className={`
+        block px-6 py-2 text-sm no-underline transition-colors duration-300
+        ${isActive
+          ? 'text-[var(--color-primary)] font-semibold'
+          : darkMode
+            ? 'text-[var(--dark-nav-default)] hover:text-[var(--dark-nav-hover)]'
+            : 'text-[var(--color-text)] hover:text-[var(--light-nav-hover)]'
+        }
+      `}
     >
       {label}
     </Link>
