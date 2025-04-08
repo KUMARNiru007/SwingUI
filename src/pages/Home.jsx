@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-white px-6">
-      <div className="w-full max-w-7xl text-center p-10">
+      <div className="w-full text-center p-10">
         <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
           Swing UI
         </h1>
