@@ -52,7 +52,7 @@ function DataComponent() {
 }`;
 
   return (
-    <div className={` px-6 py-6 w-full ${darkMode ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] transition-colors duration-300' : 'bg-[var(--light-bg)] text-[var(--color-text)] transition-colors duration-300'}`}>
+    <div className={`  w-full  transition-colors duration-300 ${darkMode ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] ' : 'bg-[var(--light-bg)] text-[var(--color-text)] '}`}>
       <h1 className="text-3xl font-bold mb-4">Introduction</h1>
       <p className="mb-4">
         Welcome to our framework documentation. This guide will help you understand the core concepts
