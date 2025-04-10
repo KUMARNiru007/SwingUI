@@ -52,19 +52,17 @@ const Sidebar = () => {
 
   return (
     <aside
-    className={`fixed left-0 top-[64px] h-[calc(100vh-64px)] w-[250px] 
-      transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
-      ${darkMode
-        ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)]'
-        : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
-      }`}
-  >
-  
-      <nav>
+      className={`fixed top-[64px] left-0 h-[calc(100dvh_-_64px)] w-[250px]  transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
+        ${darkMode
+          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
+          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
+        }`}
+    >
+      <nav className='py-6'>
         {sections.map((section, index) => (
           <div key={index}>
             <div
-              className={`text-sm font-semibold px-2 pt-4 pb-2 tracking-wide opacity-70
+              className={`text-sm font-semibold px-2 py-4 tracking-wide opacity-70
                 ${darkMode
                   ? 'text-[var(--dark-nav-default)]'
                   : 'text-[var(--light-nav-default)]'
