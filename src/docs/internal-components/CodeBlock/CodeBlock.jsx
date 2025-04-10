@@ -1,21 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import 'prismjs';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-jsx'; // Ensure the components are imported
 import 'prismjs/components/prism-bash';
 import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/themes/prism-tomorrow.css'; // Prism theme
+import 'remixicon/fonts/remixicon.css'; // Remix Icon CDN
 
-const CodeBlock = ({ language, code }) => {
+const CodeBlock = ({ code }) => {
   const [copied, setCopied] = useState(false);
   const codeRef = useRef(null);
 
   useEffect(() => {
     if (codeRef.current) {
-      Prism.highlightElement(codeRef.current);
+      Prism.highlightElement(codeRef.current); // Highlight the code after it renders
     }
-  }, [code, language]);
+  }, [code]);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
@@ -26,15 +26,13 @@ const CodeBlock = ({ language, code }) => {
   return (
     <div className="relative group rounded-lg overflow-hidden text-white">
       <pre className="overflow-auto p-4 bg-[#161618]">
-        <code ref={codeRef} className={`language-${language}`}>{code}</code>
+        <code ref={codeRef} className="language-jsx">{code}</code>
       </pre>
-      <div className="absolute top-3 right-3 transition-opacity">
 
-
-
+      <div className="absolute top-6 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
         <button
           onClick={handleCopy}
-          className="bg-[#161618] hover:bg-[#161618] text-white px-3 py-1 rounded flex items-center gap-2 text-sm group"
+          className="bg-[#1d1d1d] text-white px-4 py-3 rounded-md flex items-center gap-2 text-lg border border-gray-500 shadow-md hover:shadow-lg group"
         >
           <AnimatePresence mode="wait">
             {copied ? (
@@ -47,42 +45,16 @@ const CodeBlock = ({ language, code }) => {
                 className="flex items-center gap-2"
               >
                 Copied
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M6 4V8H18V4H20.0066C20.5552 4 21 4.44495 21 4.9934V21.0066C21 21.5552 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5551 3 21.0066V4.9934C3 4.44476 3.44495 4 3.9934 4H6ZM8 2H16V6H8V2Z" />
-                </svg>
+                <i className="ri-file-copy-2-line text-xl"></i>
               </motion.span>
             ) : (
-              <>
-                <motion.span
-                  key="lang"
-                  className="group-hover:hidden text-xs text-gray-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  {language}
-                </motion.span>
-
-                <motion.svg
-                  key="clipboard"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 hidden group-hover:block"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M6 4V8H18V4H20.0066C20.5552 4 21 4.44495 21 4.9934V21.0066C21 21.5552 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5551 3 21.0066V4.9934C3 4.44476 3.44495 4 3.9934 4H6ZM8 2H16V6H8V2Z" />
-                </motion.svg>
-              </>
+              <motion.i
+                key="clipboard"
+                className="ri-file-copy-line text-xl"
+              />
             )}
           </AnimatePresence>
         </button>
-
-
       </div>
     </div>
   );
