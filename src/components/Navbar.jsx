@@ -11,9 +11,7 @@ function Navbar() {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
 
-  // Optional: A helper function to close mobile menu when a mobile link is clicked.
   const handleMobileLinkClick = () => {
-    // You might also want to close any open dropdowns if needed:
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
   };
@@ -106,6 +104,8 @@ function Navbar() {
           </Link>
         </div>
       </div>
+
+{/* Mobile NavBar */}
 
       <div className='flex custom-mobile items-center space-x-4 md:hidden'>
         <button
