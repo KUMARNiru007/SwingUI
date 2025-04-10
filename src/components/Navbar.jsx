@@ -298,7 +298,7 @@ function Navbar() {
             : 'bg-[var(--light-bg)] text-[var(--color-text)]'
         } ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        <div className='flex flex-col w-full h-full relative'>
+        <div className='flex flex-col w-full h-svh relative'>
           <div className='flex justify-end mb-4'>
             <button className='focus:outline-none' onClick={toggleMobileMenu}>
               <i className='ri-close-line text-2xl'></i>
