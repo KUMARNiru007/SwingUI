@@ -3,7 +3,7 @@ import { useTheme } from '../context/ThemeContext';
 import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
 
-function Navbar() {
+function Navbar1() {
   const { darkMode, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSwingKitOpen, setmobileSwingKitOpen] = useState(false);
@@ -59,7 +59,7 @@ function Navbar() {
               </svg>
             </span>
             <div
-              className={`absolute left-0 py-2 w-50 rounded-md hidden group-hover:!block z-50 shadow-md ${
+              className={`absolute left-0 py-2 w-40 rounded-md hidden group-hover:!block z-50 shadow-md ${
                 darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
               }`}
             >
@@ -462,6 +462,16 @@ function Navbar() {
               </div>
             </div>
           </div>
+
+          <div className='absolute bottom-4 left-0 w-full px-6'>
+            <Link
+              to='/docs'
+              onClick={handleMobileLinkClick}
+              className='block swing-ocean-gradient hover:swing-ocean-gradient text-white px-6 py-2 rounded-md text-center mt-auto transition'
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -479,4 +489,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar1;
