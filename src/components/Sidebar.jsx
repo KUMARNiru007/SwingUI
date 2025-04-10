@@ -52,12 +52,14 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`fixed left-0 h-[calc(100vh_-_136px)] w-[250px]  transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
-        ${darkMode
-          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
-          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
-        }`}
-    >
+    className={`fixed left-0 top-[64px] h-[calc(100vh-64px)] w-[250px] 
+      transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
+      ${darkMode
+        ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)]'
+        : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
+      }`}
+  >
+  
       <nav>
         {sections.map((section, index) => (
           <div key={index}>

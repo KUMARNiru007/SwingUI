@@ -82,6 +82,7 @@ const Layout = () => {
         <div className="flex-1 transition-all duration-300">
           <Routes>
             <Route path="/" element={<Home />} />
+            
             <Route path="/docs/*" element={<Docs />} />
             <Route path="/components/*" element={<Components />} />
             <Route path="/swingkit/*" element={<SwingKit />} />
