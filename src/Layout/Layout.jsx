@@ -30,7 +30,7 @@ const Layout = () => {
 
   return (
     <div
-      className={`w-full  pt-16 overflow-x-hidden transition-all duration-300 ease-in-out ${
+      className={`w-full  pt-16 overflow-x-hidden transition-colors duration-300 ease-in-out ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -82,7 +82,7 @@ const Layout = () => {
         <div className="flex-1 transition-all duration-300">
           <Routes>
             <Route path="/" element={<Home />} />
-            
+
             <Route path="/docs/*" element={<Docs />} />
             <Route path="/components/*" element={<Components />} />
             <Route path="/swingkit/*" element={<SwingKit />} />
