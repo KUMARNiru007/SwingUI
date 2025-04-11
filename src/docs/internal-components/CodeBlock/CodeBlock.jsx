@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import 'prismjs';
-import 'prismjs/components/prism-jsx'; // Ensure the components are imported
-import 'prismjs/components/prism-bash';
+import "../../../../src/index.css";
 import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css'; // Prism theme
-import 'remixicon/fonts/remixicon.css'; // Remix Icon CDN
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-bash';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'remixicon/fonts/remixicon.css';
 
 const CodeBlock = ({ code }) => {
   const [copied, setCopied] = useState(false);
@@ -13,7 +13,7 @@ const CodeBlock = ({ code }) => {
 
   useEffect(() => {
     if (codeRef.current) {
-      Prism.highlightElement(codeRef.current); // Highlight the code after it renders
+      Prism.highlightElement(codeRef.current);
     }
   }, [code]);
 
@@ -24,15 +24,17 @@ const CodeBlock = ({ code }) => {
   };
 
   return (
-    <div className="relative group rounded-lg overflow-hidden text-white">
-      <pre className="overflow-auto p-4 bg-[#161618]">
+    <div className="relative rounded-lg text-white">
+      {/* Code Area */}
+      <pre className="p-4 pr-16 text-sm overflow-x-auto whitespace-pre-wrap break-words">
         <code ref={codeRef} className="language-jsx">{code}</code>
       </pre>
 
-      <div className="absolute top-6 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+      {/* Copy Button */}
+      <div className="absolute top-4 right-4">
         <button
           onClick={handleCopy}
-          className="bg-[#1d1d1d] text-white px-4 py-3 rounded-md flex items-center gap-2 text-lg border border-gray-500 shadow-md hover:shadow-lg group"
+          className="bg-[#1d1d1d] text-white px-3 py-2 rounded-md flex items-center gap-2 text-sm border border-gray-500 shadow-md hover:shadow-lg"
         >
           <AnimatePresence mode="wait">
             {copied ? (
@@ -45,12 +47,12 @@ const CodeBlock = ({ code }) => {
                 className="flex items-center gap-2"
               >
                 Copied
-                <i className="ri-file-copy-2-line text-xl"></i>
+                <i className="ri-file-copy-2-line text-base"></i>
               </motion.span>
             ) : (
               <motion.i
                 key="clipboard"
-                className="ri-file-copy-line text-xl"
+                className="ri-file-copy-line text-base"
               />
             )}
           </AnimatePresence>
