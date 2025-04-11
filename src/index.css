@@ -40,3 +40,12 @@
 .scrollbar-hidden::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+/* Ensure Prism code blocks wrap lines */
+pre[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
+code[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
