@@ -12,7 +12,7 @@ const Docs = () => {
 
   return (
     <div
-      className={`flex min-h-screen w-full transition-colors duration-300${
+      className={`flex min-h-screen w-full transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -20,7 +20,7 @@ const Docs = () => {
     >
       <div className='flex-1 flex flex-col'>
         <div
-          className={`flex-1 p-4 overflow-auto shadow-md rounded-lg transition-colors duration-300${
+          className={`flex-1 p-4 overflow-auto shadow-md rounded-lg transition-colors duration-300 whitespace-normal break-words ${
             darkMode ? 'bg-[var(--dark-bg)]' : 'bg-[var(--light-bg)]'
           }`}
         >
