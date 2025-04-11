@@ -1,56 +1,95 @@
-import React, { useState } from "react";
-import { Clipboard, ClipboardCheck } from "lucide-react";
-import PreviewCodeBtn from "../../../components/previewcodebtn";
-import { useTheme } from "../../../context/ThemeContext.jsx";
-import CodeBlock from "../CodeBlock/CodeBlock.jsx";
+import React, { useState } from 'react';
+import { Clipboard, ClipboardCheck } from 'lucide-react';
+import PreviewCodeBtn from '../../../components/previewcodebtn';
+import { useTheme } from '../../../context/ThemeContext.jsx';
+import CodeBlock from '../CodeBlock/CodeBlock.jsx';
+import buttonData from './buttonData.js';
+import '../../SwingKit/AnimatedGradients/style.css';
+import '../../SwingKit/Gradients/style.css';
 
 const Button = () => {
-  const [showCode, setShowCode] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const { darkMode } = useTheme(); 
+  const { darkMode } = useTheme();
 
-  const codeSnippet = 
-`<button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-md hover:scale-105 transition-all duration-300">
-  MyBtn
-</button>`;
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(codeSnippet.trim());
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
+  const groupedButtons = buttonData.reduce((acc, button) => {
+    if (!acc[button.section]) {
+      acc[button.section] = [];
     }
+    acc[button.section].push(button);
+    return acc;
+  }, {});
+
+  const ButtonDemo = ({ button }) => {
+    const [showCode, setShowCode] = useState(false);
+    const [copied, setCopied] = useState(false);
+
+    const copyToClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(button.code.trim());
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    };
+
+    return (
+      <div className='mb-8'>
+        <h2 className='text-3xl font-bold mb-2'>{button.label}</h2>
+        <p className='mb-6'>{button.description}</p>
+
+        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+
+        {!showCode && (
+          <div className='flex justify-center items-center h-40 bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
+            <div
+              className='w-full flex justify-center'
+              dangerouslySetInnerHTML={{ __html: button.code }}
+            />
+          </div>
+        )}
+
+        {showCode && (
+          <div className='w-full overflow-x-auto my-4 rounded-xl relative'>
+            <button
+              onClick={copyToClipboard}
+              className='absolute top-2 right-2 p-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors'
+              title='Copy to clipboard'
+            >
+              {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
+            </button>
+            <CodeBlock language='html' code={button.code} />
+          </div>
+        )}
+      </div>
+    );
   };
 
   return (
-    <div className={`  w-full  transition-colors duration-300 ${darkMode ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] ' : 'bg-[var(--light-bg)] text-[var(--color-text)] '}`}>
-      <h2 className="text-3xl font-bold  mb-2">Beautiful Button</h2>
-      <p className="mb-6">
-      Welcome to our framework documentation. This guide will help you understand the core concepts and get started with building applications quickly and efficiently.
-
-At the very basic level, our framework provides a simple, intuitive API while offering powerful features that support complex application development. Our focus is on developer experience without sacrificing performance.
+    <div
+      className={`w-full transition-colors duration-300 ${
+        darkMode
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+      } p-4`}
+    >
+      <h2 className='text-3xl font-bold mb-2'>Button Demos</h2>
+      <p className='mb-6'>
+        Below are button examples showcasing different styles and hover effects.
       </p>
 
-      < PreviewCodeBtn showCode={showCode} setShowCode={setShowCode}/>
+      {/* Render sections */}
+      {Object.entries(groupedButtons).map(([sectionName, buttons]) => (
+        <div key={sectionName} className='mb-8'>
+          <h3 className='text-2xl font-semibold mb-4'>{sectionName}</h3>
 
-      {!showCode && (
-        <div className="flex justify-center  items-center h-40 bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md">
-          <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
-            Click Me
-          </button>
+          {/* Render individual buttons in this section */}
+          <div className='space-y-12'>
+            {buttons.map((button) => (
+              <ButtonDemo key={button.id} button={button} />
+            ))}
+          </div>
         </div>
-      )}
-
-      {showCode && (
-        
-        <div className="w-full overflow-x-auto my-4 rounded-xl">
-        <CodeBlock language="js" code={codeSnippet} />
-      </div>
-     
-      
-      )}
+      ))}
     </div>
   );
 };
