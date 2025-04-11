@@ -88,12 +88,8 @@ const Layout = () => {
           </>
         )}
 
-        <div
-          className={`flex-1 transition-all duration-300 overflow-x-hidden ${
-            isHome ? '' : 'px-4 sm:px-6 md:px-8 lg:px-12 max-w-full md:max-w-[calc(100%-280px)] md:ml-auto'
-          } whitespace-normal break-words`}
-        >
-          <div className={`${isHome ? '' : 'w-full max-w-7xl mx-auto'}`}>
+        <div className="flex-1 transition-all duration-300 overflow-x-hidden px-4 sm:px-6 md:px-8 lg:px-12 max-w-full md:max-w-[calc(100%-280px)] md:ml-auto whitespace-normal break-words">
+          <div className="w-full max-w-7xl mx-auto">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/docs/*" element={<Docs />} />
