@@ -19,6 +19,9 @@
   --light-nav-hover: #1c79af;
   --light-toggle-hover: #09151c;
 
+  --light-navbar-bg: rgba(255, 255, 255, 0.7); /* make it semi-transparent */
+
+
   /* Dark theme */
   --dark-bg: #09151c;
   --dark-navbar-bg: #02111a;
@@ -27,6 +30,8 @@
   --dark-nav-default: #d5d5d5;
   --dark-nav-hover: #1c79af;
   --dark-toggle-hover: #ffffff;
+
+  --dark-navbar-bg: rgba(2, 17, 26, 0.7); /* semi-transparent dark */
 
   /* Shadow */
   --shadow-default: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;

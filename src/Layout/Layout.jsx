@@ -76,11 +76,11 @@ const Layout = () => {
               <Sidebar />
             </div>
 
-            {/* Backdrop Overlay */}
+            {/* Backdrop Overlay - Updated with blur effect */}
             <div
-              className={`fixed inset-0 z-40 transition-opacity duration-300 bg-opacity-50 ${
-                sidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-              } ${darkMode ? 'bg-[var(--dark-navbar-bg)]' : 'bg-[var(--light-navbar-bg)]'}`}
+              className={`fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-all duration-300 ${
+                sidebarOpen ? 'opacity-70 pointer-events-auto' : 'opacity-0 pointer-events-none'
+              }`}
               onClick={toggleSidebar}
               aria-hidden="true"
             />
