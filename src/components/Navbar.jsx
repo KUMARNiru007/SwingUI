@@ -266,7 +266,7 @@ function Navbar() {
             <i className={`ri-${darkMode ? 'sun' : 'moon'}-fill`}></i>
           </button>
           <Link
-            to='/get-started'
+            to='/docs'
             className='swing-ocean-gradient hover:swing-ocean-gradient text-white px-6 py-2 rounded-md'
           >
             Get Started

@@ -49,13 +49,13 @@ const Layout = () => {
         {!isHome && (
           <>
             {/* Desktop  */}
-            <div className="hidden md:block w-64 py-3 transition-all duration-300">
+            <div className="hidden md:block w-[280px] py-3 transition-all duration-300">
               <Sidebar />
             </div>
 
             {/* Mobile -slide-in */}
             <div
-              className={`md:hidden fixed top-18 left-0  w-64 z-50 transition-all duration-300 transform shadow-md ${
+              className={`md:hidden fixed top-18 left-0  w-[280px] z-50 transition-all duration-300 transform shadow-md ${
                 darkMode
                   ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
                   : 'bg-[var(--light-navbar-bg)] text-black'

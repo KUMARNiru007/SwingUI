@@ -52,7 +52,7 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`fixed top-[64px] left-0 h-[calc(100dvh_-_64px)] w-[250px]  transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
+      className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px]  transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md  
         ${darkMode
           ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
           : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
