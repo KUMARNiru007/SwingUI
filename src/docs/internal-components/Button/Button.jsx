@@ -22,39 +22,37 @@ const Button = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-6 sm:mt-12 p-4 sm:p-6 md:p-8 bg-white/30 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-300 dark:border-gray-700">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">Beautiful Button</h2>
-      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
+    <div className="w-full max-w-2xl mx-auto mt-12 p-8 bg-white/30 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-300 dark:border-gray-700">
+      <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Beautiful Button</h2>
+      <p className="text-gray-600 dark:text-gray-300 mb-6">
         This button comes with a gradient, smooth hover effect, and a responsive design.
       </p>
 
-      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode}/>
+      < PreviewCodeBtn showCode={showCode} setShowCode={setShowCode}/>
 
       {!showCode && (
-        <div className="flex justify-center items-center h-32 sm:h-40 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md">
-          <button className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
+        <div className="flex justify-center items-center h-40 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md">
+          <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
             Click Me
           </button>
         </div>
       )}
 
       {showCode && (
-        <div className="relative bg-gray-900 text-green-400 p-3 sm:p-6 rounded-lg shadow-lg w-full overflow-hidden">
-          <div className="overflow-x-auto scrollbar-hidden w-full">
-            <pre className="whitespace-pre-wrap text-xs sm:text-sm font-mono leading-relaxed pb-2 break-words">
-              <code className="text-green-400 break-all">{codeSnippet}</code>
-            </pre>
-          </div>
+        <div className="relative bg-gray-900 text-green-400 p-6 rounded-lg shadow-lg overflow-x-scroll w-full">
+          <pre className="whitespace-pre-wrap text-sm font-mono leading-relaxed">
+            <code className="text-green-400">{codeSnippet}</code>
+          </pre>
 
           <button
             onClick={copyToClipboard}
-            className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-gray-800 text-white p-1.5 sm:p-2 rounded-full shadow-md hover:bg-gray-700 transition-all duration-300 flex items-center"
+            className="absolute top-3 right-3 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 transition-all duration-300 flex items-center"
           >
-            {copied ? <ClipboardCheck size={16} /> : <Clipboard size={16} />}
+            {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
           </button>
 
           {copied && (
-            <span className="absolute top-8 sm:top-10 right-2 text-xs bg-black text-white px-2 py-1 rounded-md shadow-md transition-all duration-300">
+            <span className="absolute top-10 right-2 text-xs bg-black text-white px-2 py-1 rounded-md shadow-md transition-all duration-300">
               Copied!
             </span>
           )}
