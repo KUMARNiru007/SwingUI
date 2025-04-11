@@ -467,11 +467,7 @@ function Navbar() {
 
       {mobileMenuOpen && (
         <div
-          className={`fixed custom-mobile inset-0 ${
-            darkMode
-              ? 'bg-[var(--dark-navbar-bg)]'
-              : 'bg-[var(--light-navbar-bg)]'
-          } bg-opacity-50 z-40 md:hidden transition-opacity duration-300`}
+           className="fixed inset-0 bg-black/100 backdrop-overlay z-40 md:hidden transition-all duration-300 opacity-70"
           onClick={toggleMobileMenu}
         />
       )}

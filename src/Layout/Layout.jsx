@@ -58,11 +58,14 @@ const Layout = () => {
 
             {/* Mobile Sidebar */}
             <div
+            
               className={`md:hidden fixed top-18 left-0 w-[280px] h-[calc(100vh-64px)] z-50 transition-all duration-300 transform shadow-md overflow-y-auto ${
                 darkMode
                   ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
-                  : 'bg-[var(--light-navbar-bg)] text-black'
+                  : 'bg-white text-black' // Change bg-[var(--light-navbar-bg)] to bg-white
               } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+
+
             >
               <div className="flex justify-end items-center p-4">
                 <button
@@ -76,11 +79,12 @@ const Layout = () => {
               <Sidebar />
             </div>
 
-            {/* Backdrop Overlay */}
+            {/* Backdrop Overlay - Updated with blur effect */}
             <div
-              className={`fixed inset-0 z-40 transition-opacity duration-300 bg-opacity-50 ${
-                sidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-              } ${darkMode ? 'bg-[var(--dark-navbar-bg)]' : 'bg-[var(--light-navbar-bg)]'}`}
+              
+             className={`fixed inset-0 z-40 bg-black transition-all duration-300 ${
+             sidebarOpen ? 'opacity-70 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
               onClick={toggleSidebar}
               aria-hidden="true"
             />
