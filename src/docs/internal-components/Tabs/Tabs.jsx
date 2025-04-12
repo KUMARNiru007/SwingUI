@@ -13,43 +13,59 @@ const Tabs = () => {
 
   useEffect(() => {
     if (!showCode) {
-      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabs = [
+        {
+          id: 'Issues',
+          title: '# Issues',
+        },
+        {
+          id: 'Kanban',
+          title: '# Kanban',
+        },
+        {
+          id: 'Gantt',
+          title: '# Gantt',
+        },
+        {
+          id: 'Documentation',
+          title: '# Documentation',
+        },
+      ];
 
-      tabButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          // Remove active styles from all buttons
-          tabButtons.forEach((b) => {
-            b.classList.remove(
-              'text-blue-600',
-              'border-blue-600',
-              'border-b-[6px]',
-            );
-            b.classList.add(
-              'text-black',
-              'border-black',
-              'hover:bg-gray-100',
-              'hover:-rotate-3',
-              'hover:-translate-y-1',
-              'hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]',
-            );
+      let activeTab = 'Issues';
+
+      const tabContainer = document.getElementById('tabContainer');
+      const tabTitle = document.getElementById('tab-title');
+      const tabbox = document.getElementById('tab-box');
+
+      function renderTabs() {
+        tabContainer.innerHTML = '';
+        tabs.forEach((tab) => {
+          const btn = document.createElement('button');
+          btn.innerHTML = `
+                <span class="sm:inline">${tab.id}</span>
+                `;
+          btn.className = `tab-button flex-1 w-full sm:w-auto md:w-40 text-xs sm:text-sm font-semibold py-2 sm:py-3 px-3 sm:px-6 border-2 rounded-lg bg-white transition-all duration-300 ${
+            activeTab === tab.id
+              ? 'text-[var(--light-nav-hover)] border-[var(--light-nav-hover)] border-b-[6px]'
+              : 'text-black border-black hover:bg-gray-100 hover:-rotate-3 hover:-translate-y-1 hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]'
+          }`;
+          btn.addEventListener('click', () => {
+            activeTab = tab.id;
+            renderTabs();
+            renderContent();
           });
-
-          // Add active styles to the clicked one
-          btn.classList.remove(
-            'text-black',
-            'border-black',
-            'hover:bg-gray-100',
-            'hover:-rotate-3',
-            'hover:-translate-y-1',
-            'hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]',
-          );
-          btn.classList.add(
-            'text-blue-600',
-            'border-blue-600',
-            'border-b-[6px]',
-          );
+          tabContainer.appendChild(btn);
         });
-      });
+      }
+
+      function renderContent() {
+        const currentTab = tabs.find((t) => t.id === activeTab);
+        tabTitle.textContent = currentTab.title;
+      }
+
+      renderTabs();
+      renderContent();
     }
   });
 
@@ -76,28 +92,32 @@ const Tabs = () => {
 
     return (
       <div className='mb-8'>
-        <h2 className='text-3xl font-bold mb-2'>{tab.label}</h2>
-        <p className='mb-6'>{tab.description}</p>
+        <h2 className='text-2xl sm:text-3xl font-bold mb-2'>{tab.label}</h2>
+        <p className='mb-4 sm:mb-6 text-sm sm:text-base'>{tab.description}</p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode && (
           <div className='flex justify-center min-h-40 items-center bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
             <div
-              className='w-full flex justify-center'
+              className='w-full flex justify-center p-2 sm:p-4'
               dangerouslySetInnerHTML={{ __html: tab.code }}
             />
           </div>
         )}
 
         {showCode && (
-          <div className='w-full overflow-x-auto my-4 rounded-xl relative'>
+          <div className='w-full overflow-x-auto my-2 sm:my-4 rounded-xl relative'>
             <button
               onClick={copyToClipboard}
-              className='absolute top-2 right-2 p-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors'
+              className='absolute top-2 right-2 p-1 sm:p-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors'
               title='Copy to clipboard'
             >
-              {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
+              {copied ? (
+                <ClipboardCheck size={16} className='sm:w-5 sm:h-5' />
+              ) : (
+                <Clipboard size={16} className='sm:w-5 sm:h-5' />
+              )}
             </button>
             <CodeBlock language='html' code={tab.code} />
           </div>
@@ -108,21 +128,20 @@ const Tabs = () => {
 
   return (
     <div
-      className={`w-full transition-colors duration-300 ${
+      className={`w-full max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } p-4`}
+      } py-4 sm:py-6`}
     >
-      <h2 className='text-3xl font-bold mb-2'>Tab Demos</h2>
-      <p className='mb-6'>
+      <h2 className='text-2xl sm:text-3xl font-bold mb-2'>Tab Demos</h2>
+      <p className='mb-4 sm:mb-6 text-sm sm:text-base'>
         Below are Tab examples showcasing different styles and hover effects.
       </p>
 
       {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
-        <div key={sectionName} className='mb-8'>
-          {/* Render individual buttons in this section */}
-          <div className='space-y-12'>
+        <div key={sectionName} className='mb-6 sm:mb-8'>
+          <div className='space-y-8 sm:space-y-12'>
             {Tabs.map((tab) => (
               <TabDemo key={tab.id} tab={tab} />
             ))}

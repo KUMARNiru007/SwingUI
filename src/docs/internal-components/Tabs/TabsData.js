@@ -4,35 +4,21 @@ const TabsData = [
     section: 'Shift Highlight Tabs',
     label: 'Hover',
     description: 'A swing Tabs with a vibrant gradient background.',
-    code: `<div 
-    class="flex flex-col gap-4 md:gap-10 items-center justify-center md:flex-row bg-gray-100 max-w-6xl px-10 py-6 rounded-lg"
-      id="tabContainer"
-    >
-      <button
-        data-tab="Issues"
-        class="tab-button flex-1 w-full md:w-40 text-blue-600 border-blue-600 border-b-[6px] text-sm font-semibold py-3 px-6 border-2 rounded-lg bg-white transition-all duration-300"
+    code: `<div
+        class="flex flex-col items-center bg-gray-100 max-w-6xl w-full rounded-lg p-4 md:p-6"
       >
-        Issues
-      </button>
-      <button
-        data-tab="Kandban"
-        class="tab-button flex-1 w-full md:w-40 text-black border-black text-sm font-semibold py-3 px-6 border-2 rounded-lg bg-white transition-all duration-300 hover:bg-gray-100 hover:-rotate-3 hover:-translate-y-1 hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]"
-      >
-        Kandban
-      </button>
-      <button
-        data-tab="Gantt"
-        class="tab-button flex-1 w-full md:w-40 text-black border-black text-sm font-semibold py-3 px-6 border-2 rounded-lg bg-white transition-all duration-300 hover:bg-gray-100 hover:-rotate-3 hover:-translate-y-1 hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]"
-      >
-        Gantt
-      </button>
-      <button
-        data-tab="Documentation"
-        class="tab-button flex-1 w-full md:w-40 text-black border-black text-sm font-semibold py-3 px-6 border-2 rounded-lg bg-white transition-all duration-300 hover:bg-gray-100 hover:-rotate-3 hover:-translate-y-1 hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]"
-      >
-        Documentation
-      </button>
-    </div>`,
+        <div
+          class="flex flex-col flex-wrap gap-4 md:gap-10 items-center justify-center md:flex-row bg-gray-100 max-w-6xl px-10 py-6 rounded-lg w-full"
+          id="tabContainer"
+        ></div>
+  
+        <div
+          id="tab-box"
+          class="w-full max-w-[1050px] flex flex-col justify-center items-center bg-white rounded-lg p-6 shadow-md mt-4 h-64 text-gray-500"
+        >
+          <h2 class="font-semibold mb-4 md:mb-6" id="tab-title"></h2>
+        </div>
+      </div>`,
   },
 ];
 
