@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-
 @theme {
   --font-poppins: 'Poppins', sans-serif;
 
@@ -31,4 +30,22 @@
 
   /* Shadow */
   --shadow-default: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+/* Ensure Prism code blocks wrap lines */
+pre[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
+code[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-break: break-word;
 }

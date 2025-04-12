@@ -16,6 +16,7 @@ import PantoGrid from '../docs/internal-components/PantoGrid/PantoGrid';
 import PopUps from '../docs/internal-components/PopUps/PopUps';
 import Tabs from '../docs/internal-components/Tabs/Tabs';
 import Testimonials from '../docs/internal-components/Testimonials/Testimonials';
+import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -49,6 +50,7 @@ const Components = () => {
             <Route path='popups' element={<PopUps />} />
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
+            <Route path='pricing' element={<Pricing />}/>
           </Routes>
         </div>
       </div>
