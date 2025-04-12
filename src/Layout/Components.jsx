@@ -7,6 +7,7 @@ import Button from '../docs/internal-components/Button/Button';
 import CallToAction from '../docs/internal-components/CallToAction/CallToAction';
 import Card from '../docs/internal-components/Cards/Cards';
 import Carousel from '../docs/internal-components/Carousel/Carousel';
+import Feature from '../docs/internal-components/Feature/Feature';
 import Footer from '../docs/internal-components/Footer/Footer';
 import Header from '../docs/internal-components/Header/Header';
 import Hero from '../docs/internal-components/Hero/Hero';
@@ -42,6 +43,7 @@ const Components = () => {
             <Route path='card' element={<Card />} />
             <Route path='carousel' element={<Carousel />} />
             <Route path='footer' element={<Footer />} />
+            <Route path='feature' element={<Feature />} />
             <Route path='header' element={<Header />} />
             <Route path='hero' element={<Hero />} />
             <Route path='image-gallery' element={<ImageGallery />} />

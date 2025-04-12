@@ -27,6 +27,7 @@ const sections = [
       { to: '/components/carousel', label: 'Carousel' },
       { to: '/components/call-to-action', label: 'CTA (Call to Action)' },
       { to: '/components/footer', label: 'Footer' },
+      { to: '/components/feature', label: 'Feature' },
       { to: '/components/hero', label: 'Hero section' },
       { to: '/components/image-gallery', label: 'Image Gallery' },
       { to: '/components/navbar', label: 'Navbar' },

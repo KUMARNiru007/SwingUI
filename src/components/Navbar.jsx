@@ -179,6 +179,16 @@ function Navbar() {
                 Footer
               </Link>
               <Link
+                to='/components/feature'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Feature
+              </Link>
+              <Link
                 to='/components/hero'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -420,6 +430,13 @@ function Navbar() {
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Footer
+                </Link>
+                <Link
+                  to='/components/feature'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Feature
                 </Link>
                 <Link
                   to='/components/hero'
