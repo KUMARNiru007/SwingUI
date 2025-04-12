@@ -5,7 +5,6 @@ import 'prismjs/components/prism-bash';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'remixicon/fonts/remixicon.css';
 
-
 const CodeBlock = ({ code }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -24,7 +23,21 @@ const CodeBlock = ({ code }) => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(code);
+      } else {
+
+        const textArea = document.createElement('textarea');
+        textArea.value = code;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -35,7 +48,7 @@ const CodeBlock = ({ code }) => {
   return (
     <div className="relative rounded-lg bg-[#2d2d2d] text-white font-mono text-sm overflow-hidden">
       {/* Code Block */}
-      <pre className="p-4 pt-12 overflow-x-auto overflow-y-auto max-h-80 whitespace-pre-wrap break-words custom-scrollbar">
+      <pre className="p-4 pt-12 overflow-x-auto overflow-y-auto max-h-80 whitespace-pre-wrap break-words custom-scrollbar rounded-lg">
         <code ref={codeRef} className="language-jsx">
           {visibleCode}
         </code>
@@ -92,4 +105,4 @@ const CodeBlock = ({ code }) => {
   );
 };
 
-export default CodeBlock
+export default CodeBlock;
