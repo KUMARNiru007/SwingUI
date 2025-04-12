@@ -443,7 +443,7 @@ function Testimonial() {
 
   return (
     <div
-      className={`w-full transition-colors duration-300 ${
+      className={`w-full md:w-2/3 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
