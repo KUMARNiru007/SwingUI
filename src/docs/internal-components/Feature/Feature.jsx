@@ -1,139 +1,226 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState , useEffect ,useRef} from 'react';
 import PreviewCodeBtn from "../../../components/previewcodebtn";
 import { useTheme } from "../../../context/ThemeContext.jsx";
-import CodeBlock from "../CodeBlock/CodeBlock.jsx";
+import CodeBlock from "../../components/CodeBlock/CodeBlock.jsx";
+import img1 from "../../../assets/Images-For-Gallery/img1.webp"
+import img2 from "../../../assets/Images-For-Gallery/img2.webp"
+import img3 from "../../../assets/Images-For-Gallery/img3.webp"
+import img4 from "../../../assets/Images-For-Gallery/img4.webp"
 
 function Feature() {
     const [showCode, setShowCode] = useState(false);
+    const previewRef = useRef(null);
      
     const { darkMode } = useTheme(); 
 
-    const htmlCssCode=`<div class="w-full max-w-7xl mx-auto text-center px-4 sm:px-6 mb-8 md:mb-12 lg:mb-16">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Feature plans</h1>
-    <p class="text-center text-gray-600 max-w-lg mx-auto text-sm sm:text-base mb-6 sm:mb-8">
-      Lorem ipsum dolor sit amet consectetur. Pulvinar eu rhoncus tincidunt eget mattis netus ridiculus.
-    </p>
+    const htmlCssCode=`
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div id="mainContainer" class="relative flex flex-col w-full max-w-7xl mx-auto border border-gray-300 rounded-lg overflow-hidden bg-white">
 
-    <div class="flex flex-col items-center lg:flex-row justify-center mt-6 sm:mt-8 space-y-4 lg:space-y-0 lg:space-x-4 relative">
-      <div class="relative w-64 h-12 bg-gray-100 rounded-md flex items-center overflow-hidden">
-        <div id="toggleSlider" class="absolute top-1 left-1 w-[calc(50%-0.5rem)] h-10 bg-black rounded-md transition-all duration-300 ease-in-out z-0"></div>
-        <button id="monthlyBtn" class="w-1/2 z-10 text-center text-sm font-medium text-gray-700 relative">
-          Monthly
-        </button>
-        <button id="annualBtn" class="w-1/2 z-10 text-center text-sm font-medium text-gray-700 relative">
-          Annual
-        </button>
+      <!-- Gradient Overlays using Tailwind -->
+      <div class="fade-top absolute top-0 left-0 right-0 w-full h-24 z-10 pointer-events-none 
+        bg-gradient-to-b from-white/90 to-transparent"></div>
+      <div class="fade-bottom absolute bottom-0 left-0 right-0 w-full h-24 z-10 pointer-events-none 
+        bg-gradient-to-t from-white/90 to-transparent"></div>
+
+      <div class="flex flex-col lg:flex-row w-full py-10 px-6 md:px-10 lg:px-20">
+        
+        <div class="flex flex-col justify-center p-4 md:p-8 lg:w-1/2 order-2 lg:order-1">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Random Heading</h1>
+            <p class="text-sm md:text-base lg:text-lg text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, consectetur dolores fugiat magnam voluptates qui debitis saepe quas exercitationem dicta! Nihil, commodi culpa temporibus quibusdam vitae tenetur quae reprehenderit ducimus!
+            </p>
+          </div>
+        
+        <!-- Slider Section -->
+        <div class="lg:w-1/2 order-1 lg:order-2">
+          <div id="scrollContainer" class="relative w-full h-[350px] md:h-[400px] lg:h-[550px] overflow-y-auto overscroll-hidden">
+            <div id="sliderContainer" class="absolute w-full transition-transform duration-300 ease-out">
+                <div class="slider-item w-full h-[380px] mb-10 mt-10">
+                    <div class="rounded-lg overflow-hidden shadow-lg h-full">
+                      <img 
+                        src= ${img1}
+                        alt="1" 
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                  </div>
+                  <div class="slider-item w-full h-[380px] mb-10">
+                    <div class="rounded-lg overflow-hidden shadow-lg h-full">
+                      <img 
+                        src= ${img2}
+                        alt="1" 
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                  </div>
+                  <div class="slider-item w-full h-[380px] mb-10">
+                    <div class="rounded-lg overflow-hidden shadow-lg h-full">
+                      <img 
+                        src= ${img3}
+                        alt="1" 
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                  </div>
+                  <div class="slider-item w-full h-[380px] mb-10">
+                    <div class="rounded-lg overflow-hidden shadow-lg h-full">
+                      <img 
+                        src= ${img4}
+                        alt="1" 
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                  </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Feature Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
-
-    <div class="border border-gray-200 rounded-lg p-6 sm:p-8 flex flex-col">
-      <h2 class="text-xl sm:text-2xl font-bold mb-1">Free</h2>
-      <p class="text-gray-600 mb-4 sm:mb-6">Everything to start</p>
-      <div class="flex items-end mb-4 sm:mb-6">
-        <span class="text-4xl sm:text-5xl md:text-6xl font-bold price-animation" id="free-price">$0</span>
-        <span class="text-gray-600 mb-1 ml-1">/month</span>
-      </div>
-      <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-sm sm:text-base">
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> 10,000 requests/month</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Basic in-app support</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> 2 users on your account</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> 1 workspace</li>
-      </ul>
-      <button class="w-full bg-black text-white py-3 sm:py-4 font-medium rounded-md uppercase text-sm button-pop">Sign up free</button>
-    </div>
-
-    
-    <div class="border border-gray-200 rounded-lg p-6 sm:p-8 flex flex-col">
-      <h2 class="text-xl sm:text-2xl font-bold mb-1">Pro</h2>
-      <p class="text-gray-600 mb-4 sm:mb-6">For growing teams</p>
-      <div class="flex items-end mb-4 sm:mb-6">
-        <span class="text-4xl sm:text-5xl md:text-6xl font-bold price-animation" style="color: #1c79b0" id="pro-price">$39</span>
-        <span class="text-gray-600 mb-1 ml-1" style="color: #1c79b0">/month</span>
-      </div>
-      <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-sm sm:text-base">
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> 100,000 requests/month</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Priority support</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Unlimited users</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> 5 workspaces</li>
-      </ul>
-      <button class="w-full text-white py-3 sm:py-4 font-medium rounded-md uppercase text-sm button-pop" style="background-color: #1c79b0">Start trial</button>
-    </div>
-
-    
-    <div class="border border-gray-200 rounded-lg p-6 sm:p-8 flex flex-col">
-      <h2 class="text-xl sm:text-2xl font-bold mb-1">Enterprise</h2>
-      <p class="text-gray-600 mb-4 sm:mb-6">For large-scale needs</p>
-      <div class="flex items-end mb-4 sm:mb-6">
-        <span class="text-4xl sm:text-5xl md:text-6xl font-bold price-animation" id="enterprise-price">$79</span>
-        <span class="text-gray-600 mb-1 ml-1">/month</span>
-      </div>
-      <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-sm sm:text-base">
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Custom requests</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Dedicated manager</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Custom integrations</li>
-        <li class="flex items-start"><i class="ri-check-line mr-2"></i> Unlimited workspaces</li>
-      </ul>
-      <button class="w-full bg-black text-white py-3 sm:py-4 font-medium rounded-md uppercase text-sm button-pop">Contact sales</button>
-    </div>
-  </div>
 `;
-useEffect(() => {
-    if (!showCode) {
-      const timeoutId = setTimeout(() => {
-        const monthlyBtn = document.getElementById("monthlyBtn");
-        const annualBtn = document.getElementById("annualBtn");
-        const slider = document.getElementById("toggleSlider");
-  
-        const proPrice = document.getElementById("pro-price");
-        const enterprisePrice = document.getElementById("enterprise-price");
-  
-        if (!monthlyBtn || !annualBtn || !slider || !proPrice || !enterprisePrice) return;
-  
-        monthlyBtn.classList.replace("text-gray-700", "text-white");
-  
-        const animatePriceChange = (element, newValue) => {
-          element.classList.add("price-hidden");
-          setTimeout(() => {
-            element.textContent = newValue;
-            element.classList.remove("price-hidden");
-          }, 300);
-        };
-  
-        const handleMonthlyClick = () => {
-          slider.style.left = "0.25rem";
-          animatePriceChange(proPrice, "$39");
-          animatePriceChange(enterprisePrice, "$79");
-          monthlyBtn.classList.replace("text-gray-700", "text-white");
-          annualBtn.classList.replace("text-white", "text-gray-700");
-        };
-  
-        const handleAnnualClick = () => {
-          slider.style.left = "calc(50% + 0.25rem)";
-          animatePriceChange(proPrice, "$390");
-          animatePriceChange(enterprisePrice, "$790");
-          annualBtn.classList.replace("text-gray-700", "text-white");
-          monthlyBtn.classList.replace("text-white", "text-gray-700");
-        };
-  
-        monthlyBtn.addEventListener("click", handleMonthlyClick);
-        annualBtn.addEventListener("click", handleAnnualClick);
-  
-        // Cleanup
-        return () => {
-          monthlyBtn.removeEventListener("click", handleMonthlyClick);
-          annualBtn.removeEventListener("click", handleAnnualClick);
-        };
-      }, 100); // Delay to allow DOM + Tailwind to finish rendering
-  
-      return () => clearTimeout(timeoutId);
-    }
-  }, [showCode, darkMode]);
-  
 
+    useEffect(() => {
+      if (showCode) return;
+  
+      
+      const getDomElements = () => ({
+        mainContainer: previewRef.current?.querySelector('#mainContainer'),
+        sliderContainer: previewRef.current?.querySelector('#sliderContainer'),
+        scrollContainer: previewRef.current?.querySelector('#scrollContainer'),
+        sliderItems: previewRef.current?.querySelectorAll('.slider-item')
+      });
+  
+      const dom = getDomElements();
+      if (!dom.mainContainer || !dom.sliderContainer || !dom.scrollContainer) return;
+  
+      let state = {
+        currentScrollY: 0,
+        targetScrollY: 0,
+        isAnimating: false,
+        maxScroll: 0,
+        itemHeight: 0,
+        rafId: null,
+      };
+  
+      const SCROLL_STEP = 100;
+      const MOBILE_BREAKPOINT = 640;
+      const EASING = 0.1;
+      let touchStartY = 0;
+  
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const item = entry.target;
+            const isPartial = entry.intersectionRatio < 1 && entry.intersectionRatio > 0;
+  
+            item.classList.toggle("active", entry.isIntersecting);
+            item.classList.toggle("fade-out", !entry.isIntersecting && !isPartial);
+          });
+        },
+        {
+          root: dom.scrollContainer,
+          threshold: [0, 0.5, 1],
+        }
+      );
+  
+      dom.sliderItems.forEach((item) => observer.observe(item));
+  
+      function calculateDimensions() {
+        state.itemHeight = dom.sliderItems[0].offsetHeight;
+        state.maxScroll = -(dom.sliderContainer.scrollHeight - dom.scrollContainer.clientHeight);
+      }
+  
+      function setInitialPosition() {
+        if (window.innerWidth >= MOBILE_BREAKPOINT) {
+          const visiblePortion = state.itemHeight / 9;
+          state.currentScrollY = Math.max(
+            state.maxScroll,
+            -(state.itemHeight - dom.scrollContainer.clientHeight + visiblePortion)
+          );
+          state.targetScrollY = state.currentScrollY;
+          updateSliderPosition();
+        }
+      }
+  
+      function updateSliderPosition() {
+        dom.sliderContainer.style.transform = `translateY(${state.currentScrollY}px)`;
+      }
+  
+      function animate() {
+        const diff = state.targetScrollY - state.currentScrollY;
+        state.currentScrollY += diff * EASING;
+  
+        if (Math.abs(diff) < 0.5) {
+          state.currentScrollY = state.targetScrollY;
+          state.isAnimating = false;
+        } else {
+          state.rafId = requestAnimationFrame(animate);
+        }
+  
+        updateSliderPosition();
+      }
+  
+      function startAnimation() {
+        if (!state.isAnimating) {
+          state.isAnimating = true;
+          state.rafId = requestAnimationFrame(animate);
+        }
+      }
+  
+      function handleWheel(e) {
+        e.preventDefault();
+        state.targetScrollY = Math.max(state.maxScroll, Math.min(0, state.targetScrollY - e.deltaY));
+        startAnimation();
+      }
+  
+      function handleTouch(e) {
+        e.preventDefault();
+        const touchDelta = e.touches[0].clientY - touchStartY;
+        state.targetScrollY = Math.max(state.maxScroll, Math.min(0, state.currentScrollY - touchDelta));
+        state.currentScrollY = state.targetScrollY;
+        updateSliderPosition();
+      }
+  
+      function handleResize() {
+        cancelAnimationFrame(state.rafId);
+        state.isAnimating = false;
+        calculateDimensions();
+        setInitialPosition();
+      }
+  
+      function debounce(func, wait) {
+        let timeout;
+        return (...args) => {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+      }
+  
+      const debouncedResize = debounce(handleResize, 100);
+  
+      dom.mainContainer.addEventListener("wheel", handleWheel, { passive: false });
+      window.addEventListener("resize", debouncedResize);
+      dom.scrollContainer.addEventListener("touchstart", (e) => (touchStartY = e.touches[0].clientY));
+      dom.scrollContainer.addEventListener("touchmove", handleTouch, { passive: false });
+  
+      // Initialize
+      calculateDimensions();
+      setInitialPosition();
+  
+      // Cleanup
+      return () => {
+        dom.mainContainer?.removeEventListener("wheel", handleWheel);
+        window.removeEventListener("resize", debouncedResize);
+        dom.scrollContainer.removeEventListener("touchstart", (e) => (touchStartY = e.touches[0].clientY));
+        dom.scrollContainer.removeEventListener("touchmove", handleTouch);
+        dom.sliderItems.forEach((item) => observer.unobserve(item));
+        cancelAnimationFrame(state.rafId);
+      };
+    }, [showCode, darkMode]);
     
   return (
     <div
@@ -151,18 +238,21 @@ useEffect(() => {
     <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
     {!showCode && (
-      <div  key={`${darkMode}-${showCode}`} className={`flex justify-center items-center pt-[5vh] ${
-        darkMode
-          ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
-          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}>
+      <div 
+      ref={previewRef} 
+      key={`${darkMode}-${showCode}`} 
+      className={`flex justify-center items-center pt-[5vh] ${
+        darkMode ? 'bg-[var(--light-bg)]' : 'bg-[var(--light-bg)]'
+      } rounded-lg shadow-md`}
+    >
         {/* Render live preview */}
-        <div
-          
-          className='w-full'
-          dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-        />
-      </div>
+        <div 
+            className='w-full'
+            dangerouslySetInnerHTML={{ 
+              __html: htmlCssCode.replace('mainConatainer', 'mainContainer') // Fix typo
+            }}
+          />
+        </div>
     )}
 
     {showCode && (
@@ -173,7 +263,7 @@ useEffect(() => {
 
    
   </div>
-  )
+  );
 }
 
 export default Feature
