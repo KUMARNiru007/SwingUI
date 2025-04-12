@@ -32,8 +32,10 @@ const sections = [
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/panto-grid', label: 'Panto-grid' },
       { to: '/components/popups', label: 'Pop Ups' },
+      { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
+     
     ],
   },
   {
