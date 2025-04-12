@@ -229,6 +229,17 @@ function Navbar() {
                 Pop Ups
               </Link>
               <Link
+                to='/components/pricing'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Pricing
+              </Link>
+              
+              <Link
                 to='/components/tabs'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -445,6 +456,14 @@ function Navbar() {
                 >
                   Pop ups
                 </Link>
+                <Link
+                  to='/components/pricing'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Pricing
+                </Link>
+
                 <Link
                   to='/components/tabs'
                   onClick={handleMobileLinkClick}
