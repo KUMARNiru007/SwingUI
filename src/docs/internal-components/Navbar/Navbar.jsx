@@ -118,7 +118,7 @@ const Navbar = () => {
         Contact
       </a>
 
-      <!-- Social Icons (Mobile) -->
+      
       <div class="flex space-x-4 px-3 py-2">
         <a href="#" class="text-gray-500 hover:text-gray-900">
           <i class="ri-facebook-fill text-xl"></i>
@@ -134,24 +134,6 @@ const Navbar = () => {
   </div>
 </nav>
 `;
-
-  // JavaScript
-  //   const jsCode = `
-  // const mobileMenuButton = document.getElementById("swing-mobile-menu-button");
-  // const mobileMenu = document.getElementById("swing-mobile-menu");
-
-  // mobileMenuButton.addEventListener("click", () => {
-  //   mobileMenu.classList.toggle("hidden");
-  // });
-
-  // // Services dropdown toggle on mobile
-  // const servicesDropdownButton = document.getElementById("services-dropdown-button");
-  // const servicesDropdown = document.getElementById("swing-services-dropdown");
-
-  // servicesDropdownButton.addEventListener("click", () => {
-  //   servicesDropdown.classList.toggle("hidden");
-  // });
-  // `;
 
   useEffect(() => {
     if (!showCode) {

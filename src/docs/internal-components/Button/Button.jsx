@@ -18,45 +18,37 @@ const Button = () => {
     return acc;
   }, {});
 
-  const ButtonDemo = ({ button }) => {
-    const [showCode, setShowCode] = useState(false);
-    const [copied, setCopied] = useState(false);
+  const [codeViews, setCodeViews] = useState({});
 
-    const copyToClipboard = async () => {
-      try {
-        await navigator.clipboard.writeText(button.code.trim());
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      } catch (err) {
-        console.error('Failed to copy:', err);
-      }
-    };
+  const toggleCodeView = (id) => {
+    setCodeViews((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const ButtonDemo = ({ button }) => {
+    const showCode = codeViews[button.id] || false;
 
     return (
       <div className='mb-8'>
         <h2 className='text-3xl font-bold mb-2'>{button.label}</h2>
         <p className='mb-6'>{button.description}</p>
-
-        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn
+          showCode={showCode}
+          setShowCode={() => toggleCodeView(button.id)}
+        />
 
         {!showCode && (
-          <div className='flex justify-center items-center h-40 bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
+          <div className='flex justify-center items-center h-40 bg-gray-200 rounded-lg shadow-md'>
             <div
               className='w-full flex justify-center'
               dangerouslySetInnerHTML={{ __html: button.code }}
             />
           </div>
         )}
-
         {showCode && (
           <div className='w-full overflow-x-auto my-4 rounded-xl relative'>
-            <button
-              onClick={copyToClipboard}
-              className='absolute top-2 right-2 p-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors'
-              title='Copy to clipboard'
-            >
-              {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
-            </button>
             <CodeBlock language='html' code={button.code} />
           </div>
         )}
@@ -77,7 +69,6 @@ const Button = () => {
         Below are button examples showcasing different styles and hover effects.
       </p>
 
-      {/* Render sections */}
       {Object.entries(groupedButtons).map(([sectionName, buttons]) => (
         <div key={sectionName} className='mb-8'>
           <h3 className='text-2xl font-semibold mb-4'>{sectionName}</h3>

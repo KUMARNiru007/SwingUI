@@ -1,9 +1,132 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PreviewCodeBtn from '../../../components/previewcodebtn';
+import { useTheme } from '../../../context/ThemeContext.jsx';
+import CodeBlock from '../CodeBlock/CodeBlock.jsx';
+import '../../SwingKit/Gradients/style.css';
 
-const Cards = () => {
+const CardsDemo = () => {
+  const [showCode, setShowCode] = useState(false);
+  const { darkMode } = useTheme();
+
+  const htmlCssCode = `
+<div class="w-full flex justify-center ">
+ 
+  <div class="flex flex-wrap justify-center gap-6 w-full max-w-7xl bg-gray-100 rounded-lg p-6 mx-auto">
+    
+  
+    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+      <!-- Background Layers -->
+      <div class="absolute top-1 left-1 h-full w-full swing-ocean-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
+      <div class="absolute top-2 left-2 h-full w-full swing-ocean-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
+
+ 
+      <div class="relative flex flex-col justify-between h-full w-full p-6 swing-ocean-gradient border-2 border-black">
+        <div class="flex flex-col justify-between h-full">
+          <h1 class="font-semibold text-2xl">DYNAMIC</h1>
+          <p class="text-[18px]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
+          </p>
+        </div>
+        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+          LET'S GO
+        </a>
+      </div>
+    </div>
+
+
+    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+      <!-- Background Layers -->
+      <div class="absolute top-1 left-1 h-full w-full swing-peach-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
+      <div class="absolute top-2 left-2 h-full w-full swing-peach-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
+
+   
+      <div class="relative flex flex-col justify-between h-full w-full p-6 swing-peach-gradient border-2 border-black">
+        <div class="flex flex-col justify-between h-full">
+          <h1 class="font-semibold text-2xl">DATA DRIVEN</h1>
+          <p class="text-[18px]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
+          </p>
+        </div>
+        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+          LET'S GO
+        </a>
+      </div>
+    </div>
+
+    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+      <!-- Background Layers -->
+      <div class="absolute top-1 left-1 h-full w-full swing-fire-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
+      <div class="absolute top-2 left-2 h-full w-full swing-fire-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
+
+    
+      <div class="relative flex flex-col justify-between h-full w-full p-6 swing-fire-gradient border-2 border-black">
+        <div class="flex flex-col justify-between h-full">
+          <h1 class="font-semibold text-2xl">DUTIFUL</h1>
+          <p class="text-[18px]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
+          </p>
+        </div>
+        <a href="#" class=" hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+          LET'S GO
+        </a>
+      </div>
+    </div>
+
+    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+      <!-- Background Layers -->
+      <div class="absolute top-1 left-1 h-full w-full swing-love-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
+      <div class="absolute top-2 left-2 h-full w-full swing-love-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
+
+      <div class="relative flex flex-col justify-between h-full w-full p-6 swing-love-gradient border-2 border-black">
+        <div class="flex flex-col justify-between h-full">
+          <h1 class="font-semibold text-2xl">DEMURE</h1>
+          <p class="text-[18px]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
+          </p>
+        </div>
+        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+          LET'S GO
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+`;
+
   return (
-    <div>Cards</div>
-  )
-}
+    <div
+      className={`w-full transition-colors duration-300 ${
+        darkMode
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+      } p-4`}
+    >
+      <h2 className='text-3xl font-bold mb-2'>Cards</h2>
+      <p className='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime optio
+        aliquam eaque inventore! Reprehenderit aut modi beatae impedit sapiente
+        culpa!
+      </p>
 
-export default Cards
+      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+
+      {!showCode && (
+        <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
+          <div
+            className='w-full'
+            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+          />
+        </div>
+      )}
+
+      {showCode && (
+        <div className='w-full overflow-x-auto my-4 rounded-xl'>
+          <CodeBlock language='html' code={htmlCssCode} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CardsDemo;
