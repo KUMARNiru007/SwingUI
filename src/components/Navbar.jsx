@@ -11,7 +11,9 @@ function Navbar() {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
 
+  // Optional: A helper function to close mobile menu when a mobile link is clicked.
   const handleMobileLinkClick = () => {
+    // You might also want to close any open dropdowns if needed:
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
   };
@@ -37,13 +39,12 @@ function Navbar() {
           <Link to='/' className='hover:text-[var(--dark-nav-hover)]'>
             Home
           </Link>
-          <Link to='/docs' className='hover:text-[var(--dark-nav-hover)]'>
-          Docs
+          <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
+            About
           </Link>
           <div className='group relative'>
             <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
-            SwingKit
-
+              Services
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-4 w-4 ml-1'
@@ -65,63 +66,25 @@ function Navbar() {
               }`}
             >
               <Link
-                to='/swingkit/gradients'
+                to='/services/1'
                 className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'
               >
-                Gradients
+                Service 1
               </Link>
               <Link
-                to='/swingkit/animated-gradients'
+                to='/services/2'
                 className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'
               >
-                Animated Gradients
+                Service 2
               </Link>
               <Link
-                to='/swingkit/transitions'
+                to='/services/3'
                 className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'
               >
-                Transitions
+                Service 3
               </Link>
             </div>
           </div>
-          <div className='group relative'>
-  <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
-    Components
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='h-4 w-4 ml-1'
-      fill='none'
-      viewBox='0 0 24 24'
-      stroke='currentColor'
-    >
-      <path
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        strokeWidth='2'
-        d='M19 9l-7 7-7-7'
-      />
-    </svg>
-  </span>
-  <div
-    className={`absolute left-0 py-2 w-56 rounded-md hidden group-hover:!block z-50 shadow-md ${
-      darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
-    }`}
-  >
-    <Link to='/components/accordion' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Accordions</Link>
-    <Link to='/components/button' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Buttons</Link>
-    <Link to='/components/card' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Cards</Link>
-    <Link to='/components/carousel' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Carousel</Link>
-    <Link to='/components/call-to-action' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>CTA (Call to Action)</Link>
-    <Link to='/components/footer' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Footer</Link>
-    <Link to='/components/hero' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Hero section</Link>
-    <Link to='/components/image-gallery' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Image Gallery</Link>
-    <Link to='/components/navbar' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Navbar</Link>
-    <Link to='/components/panto-grid' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Panto-grid</Link>
-    <Link to='/components/popups' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Pop Ups</Link>
-    <Link to='/components/tabs' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Tabs</Link>
-    <Link to='/components/testimonials' className='block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition'>Testimonials</Link>
-  </div>
-</div>
 
           <Link to='/contact' className='hover:text-[var(--dark-nav-hover)]'>
             Contact
@@ -143,8 +106,6 @@ function Navbar() {
           </Link>
         </div>
       </div>
-
-{/* Mobile NavBar */}
 
       <div className='flex custom-mobile items-center space-x-4 md:hidden'>
         <button
