@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Clipboard, ClipboardCheck } from 'lucide-react';
 import PreviewCodeBtn from '../../../components/previewcodebtn';
 import { useTheme } from '../../../context/ThemeContext.jsx';
-import CodeBlock from '../CodeBlock/CodeBlock.jsx';
+import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import TabsData from './TabsData.js';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
