@@ -1,4 +1,4 @@
-const gradients = [
+const Animatedgradients = [
   {
     id: 1,
     name: 'swing-ocean-gradient-animate',
@@ -31,4 +31,4 @@ const gradients = [
   },
 ];
 
-export default gradients;
+export default Animatedgradients;

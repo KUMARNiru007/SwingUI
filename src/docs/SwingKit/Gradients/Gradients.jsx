@@ -10,7 +10,7 @@ const GradientGrid = () => {
         Gradients
       </h1>
 
-      <p className='text-sm sm:text-base text-gray-300 max-w-3xl mb-6'>
+      <p className='text-sm sm:text-base text-gray-300  mb-6'>
         Explore a collection of CSS gradients below. Hover over a box to see the
         copy button and click to copy the gradient name.
       </p>
