@@ -54,7 +54,6 @@ const CardsDemo = () => {
     </div>
 
     <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
-      <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-fire-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-fire-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
@@ -73,7 +72,6 @@ const CardsDemo = () => {
     </div>
 
     <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
-      <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-love-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-love-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 

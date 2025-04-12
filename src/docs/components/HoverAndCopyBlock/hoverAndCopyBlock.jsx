@@ -11,10 +11,6 @@ const HoverAndCopyBlock = ({ gradient }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 
-        Ensure the gradient fills the container's height 
-        so each card is consistently sized.
-      */}
       <div
         className={`
           ${gradient.class} 
@@ -24,13 +20,11 @@ const HoverAndCopyBlock = ({ gradient }) => {
           rounded-md
         `}
       >
-        {/* Responsive text size for the gradient name */}
         <span className='text-sm sm:text-base md:text-lg font-semibold'>
           {gradient.name}
         </span>
       </div>
 
-      {/* Show the copy button when hovered (desktop). It will appear as normal on mobile if user taps. */}
       {isHovered && (
         <div className='absolute top-2 right-2 transition-opacity duration-200'>
           <CopyButton textToCopy={gradient.name} />

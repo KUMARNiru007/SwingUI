@@ -73,7 +73,6 @@ const Button = () => {
         <div key={sectionName} className='mb-8'>
           <h3 className='text-2xl font-semibold mb-4'>{sectionName}</h3>
 
-          {/* Render individual buttons in this section */}
           <div className='space-y-12'>
             {buttons.map((button) => (
               <ButtonDemo key={button.id} button={button} />
