@@ -42,8 +42,8 @@ const Components = () => {
             <Route path='call-to-action' element={<CallToAction />} />
             <Route path='card' element={<Card />} />
             <Route path='carousel' element={<Carousel />} />
-            <Route path='footer' element={<Footer />} />
             <Route path='feature' element={<Feature />} />
+            <Route path='footer' element={<Footer />} />
             <Route path='header' element={<Header />} />
             <Route path='hero' element={<Hero />} />
             <Route path='image-gallery' element={<ImageGallery />} />

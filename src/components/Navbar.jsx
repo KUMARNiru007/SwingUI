@@ -169,16 +169,6 @@ function Navbar() {
                 CTA (Call to Action)
               </Link>
               <Link
-                to='/components/footer'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Footer
-              </Link>
-              <Link
                 to='/components/feature'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -187,6 +177,16 @@ function Navbar() {
                 }`}
               >
                 Feature
+              </Link>
+              <Link
+                to='/components/footer'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Footer
               </Link>
               <Link
                 to='/components/hero'
@@ -425,18 +425,18 @@ function Navbar() {
                   CTA (call to Action)
                 </Link>
                 <Link
-                  to='/components/footer'
-                  onClick={handleMobileLinkClick}
-                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
-                >
-                  Footer
-                </Link>
-                <Link
                   to='/components/feature'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Feature
+                </Link>
+                <Link
+                  to='/components/footer'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Footer
                 </Link>
                 <Link
                   to='/components/hero'
