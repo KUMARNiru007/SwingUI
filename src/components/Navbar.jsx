@@ -90,6 +90,7 @@ function Navbar() {
             </div>
           </div>
           <div className='group relative'>
+<<<<<<< HEAD
   <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
     Components
     <svg
@@ -131,6 +132,183 @@ function Navbar() {
           <Link to='/contact' className='hover:text-[var(--dark-nav-hover)]'>
             Contact
           </Link>
+=======
+            <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+              Components
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-4 w-4 ml-1'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M19 9l-7 7-7-7'
+                />
+              </svg>
+            </span>
+            <div
+              className={`absolute left-0 py-2 w-56 rounded-md hidden group-hover:!block z-50 shadow-md ${
+                darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
+              }`}
+            >
+              <Link
+                to='/components/accordion'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Accordions
+              </Link>
+              <Link
+                to='/components/button'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Buttons
+              </Link>
+              <Link
+                to='/components/card'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Cards
+              </Link>
+              <Link
+                to='/components/carousel'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Carousel
+              </Link>
+              <Link
+                to='/components/call-to-action'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                CTA (Call to Action)
+              </Link>
+              <Link
+                to='/components/feature'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Feature
+              </Link>
+              <Link
+                to='/components/footer'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Footer
+              </Link>
+              <Link
+                to='/components/hero'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Hero section
+              </Link>
+              <Link
+                to='/components/image-gallery'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Image Gallery
+              </Link>
+              <Link
+                to='/components/navbar'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Navbar
+              </Link>
+              <Link
+                to='/components/panto-grid'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Panto-grid
+              </Link>
+              <Link
+                to='/components/popups'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Pop Ups
+              </Link>
+              <Link
+                to='/components/pricing'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Pricing
+              </Link>
+              
+              <Link
+                to='/components/tabs'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Tabs
+              </Link>
+              <Link
+                to='/components/testimonials'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Testimonials
+              </Link>
+            </div>
+          </div>
+>>>>>>> 92ca743d3bab8a4874eae67cb59c0fae0c303737
         </div>
 
         <div className='px-4 h-[20px] border-e-[1px] border-[var(--light-bg)] content-[""] opacity-10'></div>
@@ -283,6 +461,13 @@ function Navbar() {
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   CTA (call to Action)
+                </Link>
+                <Link
+                  to='/components/feature'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Feature
                 </Link>
                 <Link
                   to='/components/footer'
