@@ -1,15 +1,15 @@
-import React, { useState , useEffect } from 'react';
-import PreviewCodeBtn from "../../../components/previewcodebtn";
-import { useTheme } from "../../../context/ThemeContext.jsx";
-import CodeBlock from "../CodeBlock/CodeBlock.jsx";
-import "./Pricing.css"
+import React, { useState, useEffect } from 'react';
+import PreviewCodeBtn from '../../../components/previewcodebtn';
+import { useTheme } from '../../../context/ThemeContext.jsx';
+import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import './Pricing.css';
 
 function Pricing() {
-    const [showCode, setShowCode] = useState(false);
-     
-    const { darkMode } = useTheme(); 
+  const [showCode, setShowCode] = useState(false);
 
-    const htmlCssCode=`<div class="w-full max-w-7xl mx-auto text-center px-4 sm:px-6 mb-8 md:mb-12 lg:mb-16">
+  const { darkMode } = useTheme();
+
+  const htmlCssCode = `<div class="w-full max-w-7xl mx-auto text-center px-4 sm:px-6 mb-8 md:mb-12 lg:mb-16">
     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Pricing plans</h1>
     <p class="text-center text-gray-600 max-w-lg mx-auto text-sm sm:text-base mb-6 sm:mb-8">
       Lorem ipsum dolor sit amet consectetur. Pulvinar eu rhoncus tincidunt eget mattis netus ridiculus.
@@ -82,99 +82,107 @@ function Pricing() {
     </div>
   </div>
 `;
-useEffect(() => {
+  useEffect(() => {
     if (!showCode) {
       const timeoutId = setTimeout(() => {
-        const monthlyBtn = document.getElementById("monthlyBtn");
-        const annualBtn = document.getElementById("annualBtn");
-        const slider = document.getElementById("toggleSlider");
-  
-        const proPrice = document.getElementById("pro-price");
-        const enterprisePrice = document.getElementById("enterprise-price");
-  
-        if (!monthlyBtn || !annualBtn || !slider || !proPrice || !enterprisePrice) return;
-  
-        monthlyBtn.classList.replace("text-gray-700", "text-white");
-  
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const annualBtn = document.getElementById('annualBtn');
+        const slider = document.getElementById('toggleSlider');
+
+        const proPrice = document.getElementById('pro-price');
+        const enterprisePrice = document.getElementById('enterprise-price');
+
+        if (
+          !monthlyBtn ||
+          !annualBtn ||
+          !slider ||
+          !proPrice ||
+          !enterprisePrice
+        )
+          return;
+
+        monthlyBtn.classList.replace('text-gray-700', 'text-white');
+
         const animatePriceChange = (element, newValue) => {
-          element.classList.add("price-hidden");
+          element.classList.add('price-hidden');
           setTimeout(() => {
             element.textContent = newValue;
-            element.classList.remove("price-hidden");
+            element.classList.remove('price-hidden');
           }, 300);
         };
-  
+
         const handleMonthlyClick = () => {
-          slider.style.left = "0.25rem";
-          animatePriceChange(proPrice, "$39");
-          animatePriceChange(enterprisePrice, "$79");
-          monthlyBtn.classList.replace("text-gray-700", "text-white");
-          annualBtn.classList.replace("text-white", "text-gray-700");
+          slider.style.left = '0.25rem';
+          animatePriceChange(proPrice, '$39');
+          animatePriceChange(enterprisePrice, '$79');
+          monthlyBtn.classList.replace('text-gray-700', 'text-white');
+          annualBtn.classList.replace('text-white', 'text-gray-700');
         };
-  
+
         const handleAnnualClick = () => {
-          slider.style.left = "calc(50% + 0.25rem)";
-          animatePriceChange(proPrice, "$390");
-          animatePriceChange(enterprisePrice, "$790");
-          annualBtn.classList.replace("text-gray-700", "text-white");
-          monthlyBtn.classList.replace("text-white", "text-gray-700");
+          slider.style.left = 'calc(50% + 0.25rem)';
+          animatePriceChange(proPrice, '$390');
+          animatePriceChange(enterprisePrice, '$790');
+          annualBtn.classList.replace('text-gray-700', 'text-white');
+          monthlyBtn.classList.replace('text-white', 'text-gray-700');
         };
-  
-        monthlyBtn.addEventListener("click", handleMonthlyClick);
-        annualBtn.addEventListener("click", handleAnnualClick);
-  
+
+        monthlyBtn.addEventListener('click', handleMonthlyClick);
+        annualBtn.addEventListener('click', handleAnnualClick);
+
         // Cleanup
         return () => {
-          monthlyBtn.removeEventListener("click", handleMonthlyClick);
-          annualBtn.removeEventListener("click", handleAnnualClick);
+          monthlyBtn.removeEventListener('click', handleMonthlyClick);
+          annualBtn.removeEventListener('click', handleAnnualClick);
         };
       }, 100); // Delay to allow DOM + Tailwind to finish rendering
-  
+
       return () => clearTimeout(timeoutId);
     }
   }, [showCode, darkMode]);
-  
 
-    
   return (
     <div
-    className={`w-full transition-colors duration-300 ${
-      darkMode
-        ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-        : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-    } p-4`}
-  >
-    <h2 className='text-3xl font-bold mb-2'>Pricing Component</h2>
-    <p className='mb-6'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis voluptates atque voluptate ducimus provident, reprehenderit necessitatibus tempora quaerat, quisquam nostrum ad.
-    </p>
-
-    <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
-
-    {!showCode && (
-      <div  key={`${darkMode}-${showCode}`} className={`flex justify-center items-center pt-[5vh] ${
+      className={`w-full transition-colors duration-300 ${
         darkMode
-          ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}>
-        {/* Render live preview */}
+      } p-4`}
+    >
+      <h2 className='text-3xl font-bold mb-2'>Pricing Component</h2>
+      <p className='mb-6'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
+        necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis
+        voluptates atque voluptate ducimus provident, reprehenderit
+        necessitatibus tempora quaerat, quisquam nostrum ad.
+      </p>
+
+      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+
+      {!showCode && (
         <div
-          
-          className='w-full'
-          dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-        />
-      </div>
-    )}
+          key={`${darkMode}-${showCode}`}
+          className={`flex justify-center items-center pt-[5vh] ${
+            darkMode
+              ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
+              : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
+        >
+          {/* Render live preview */}
+          <div
+            className='w-full'
+            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+          />
+        </div>
+      )}
 
-    {showCode && (
-      <div className='w-full overflow-x-auto my-4 rounded-xl'>
-        <CodeBlock language='html' code={htmlCssCode} />
-      </div>
-    )}
-
-   
-  </div>
-  )
+      {showCode && (
+        <div className='w-full overflow-x-auto my-4 rounded-xl'>
+          <CodeBlock language='html' code={htmlCssCode} />
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default Pricing
+export default Pricing;

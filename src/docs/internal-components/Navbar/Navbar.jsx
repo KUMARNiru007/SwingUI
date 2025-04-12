@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/previewcodebtn';
 import { useTheme } from '../../../context/ThemeContext.jsx';
-import CodeBlock from '../CodeBlock/CodeBlock.jsx';
+import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 
 const Navbar = () => {
   const [showCode, setShowCode] = useState(false);
