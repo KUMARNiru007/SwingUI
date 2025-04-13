@@ -20,7 +20,7 @@ const Form = () => {
     >
       <div className='flex-1 flex flex-col'>
         <div
-          className={`flex-1 p-4 overflow-auto shadow-md rounded-lg transition-colors duration-300${
+          className={`flex-1 p-4 overflow-auto  rounded-lg transition-colors duration-300${
             darkMode ? 'bg-[var(--dark-bg)]' : 'bg-[var(--light-bg)]'
           }`}
         >
