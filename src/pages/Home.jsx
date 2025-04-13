@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { useTheme } from '../context/ThemeContext';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 import StickyMessageBox from '../components/message';
 
 const Home = () => {
@@ -15,8 +16,9 @@ const Home = () => {
           : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
       }`}
     >
-      <StickyMessageBox />
       <Hero />
+      <StickyMessageBox />
+      <Footer />
     </div>
   );
 };
