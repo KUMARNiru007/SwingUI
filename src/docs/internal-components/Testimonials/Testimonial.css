@@ -3,10 +3,9 @@
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    width: 100vw;
+    width: 60vw;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+
   }
 
   .swing-scrolling-image.showing {
@@ -31,7 +30,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100px;
+    /* width: 100px; */
     z-index: 2;
     pointer-events: none;
   }
@@ -50,24 +49,12 @@
     transform: translateZ(0);
     transition: transform 0.3s ease-in-out;
     flex-shrink: 0;
-    width: 400px;
+    width: 350px;
     height: 180px;
     margin: 0 2px;
+    object-fit: contain;
   }
 
-  @media (max-width: 768px) {
-    .swing-slider-item {
-      width: 300px;
-      height: 150px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .swing-slider-item {
-      width: 280px;
-      height: 140px;
-    }
-  }
 
   @keyframes sliding {
     0% { transform: translateX(0); }
