@@ -19,7 +19,7 @@ const SwingKit = () => {
     >
       <div className='flex-1 flex flex-col'>
         <div
-          className={`flex-1 p-4 overflow-auto  rounded-lg ${
+          className={` overflow-auto  rounded-lg ${
             darkMode ? 'bg-[var(--dark-bg)]' : 'bg-[var(--light-bg)]'
           }`}
         >
