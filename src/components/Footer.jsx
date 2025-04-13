@@ -43,11 +43,32 @@ export default function Footer() {
             © 2025 SwingUI. All Rights Reserved.
           </div>
 
-          <div className="flex space-x-6 font-medium">
-            <a href="#" className="transition-colors">Github</a>
-            <a href="https://discord.com/invite/gd9Vjb6VCm" target="_blank" rel="noopener noreferrer" className="transition-colors">Discord</a>
-            <a href="https://x.com/swing_ui" target="_blank" rel="noopener noreferrer" className="transition-colors pr-10">X (formerly Twitter)</a>
-          </div>
+          <div className="w-full md:w-auto flex justify-end">
+  <div className="flex flex-wrap justify-end gap-4 md:gap-6 font-normal">
+    <a href="#" className="hover:text-blue-500 transition-colors">
+      Github
+    </a>
+    <a
+      href="https://discord.com/invite/gd9Vjb6VCm"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-500 transition-colors"
+    >
+      Discord
+    </a>
+    <a
+      href="https://x.com/swing_ui"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-500 transition-colors"
+    >
+      X (formerly Twitter)
+    </a>
+  </div>
+</div>
+
+
+
         </div>
       </div>
     </footer>
