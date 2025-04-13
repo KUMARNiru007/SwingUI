@@ -10,7 +10,6 @@ import img4 from '../../../assets/Images-For-Gallery/img4.webp';
 
 function ImageGallery() {
   const [showCode, setShowCode] = useState(false);
-
   const { darkMode } = useTheme();
 
   const htmlCssCode = `
@@ -27,28 +26,28 @@ function ImageGallery() {
       <div class="slider-container w-full flex animate-scroll gap-4 px-4">
         <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
           <img
-            src=${img1}
+            src="${img1}"
             alt="Image 1"
             class="w-full h-full object-cover"
           />
         </div>
         <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
           <img
-            src=${img2}
+            src="${img2}"
             alt="Image 2"
             class="w-full h-full object-cover"
           />
         </div>
         <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
           <img
-            src=${img3}
+            src="${img3}"
             alt="Image 3"
             class="w-full h-full object-cover"
           />
         </div>
         <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
           <img
-            src=${img4}
+            src="${img4}"
             alt="Image 4"
             class="w-full h-full object-cover"
           />
@@ -141,13 +140,11 @@ function ImageGallery() {
 
         sliders.forEach((slider, index) => {
           const containers = slider.querySelectorAll('.slider-container');
-
           containers.forEach((container, j) => {
             if (sliderHtml[index] && sliderHtml[index][j]) {
               container.innerHTML = sliderHtml[index][j];
             }
           });
-
           setupInfiniteScroll(slider, index);
         });
       };
@@ -179,8 +176,8 @@ function ImageGallery() {
           key={`${darkMode}-${showCode}`}
           className={`flex justify-center items-center rounded-lg shadow-md overflow-hidden ${
             darkMode
-              ? ' bg-[var(--light-bg)] text-[var(--color-text)]'
-              : ' bg-[var(--light-bg)] text-[var(--color-text)]'
+              ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
+              : 'bg-[var(--light-bg)] text-[var(--color-text)]'
           }  bg-gray-200 dark:from-gray-800 dark:to-gray-700`}
         >
           <div
