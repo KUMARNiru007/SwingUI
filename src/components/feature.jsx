@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 import img1 from '../assets/features/link-cdn.webp';
 import img2 from '../assets/features/want-gradinent.webp';
@@ -17,6 +18,7 @@ export default function FeaturesSection() {
   const [touchStartY, setTouchStartY] = useState(0);
   const [currentScrollY, setCurrentScrollY] = useState(0);
   const [sliderItems, setSliderItems] = useState([]);
+  const { darkMode, toggleTheme } = useTheme();
 
   // New state/ref for user interaction control
   const [isUserInteracting, setIsUserInteracting] = useState(false);
@@ -179,11 +181,6 @@ export default function FeaturesSection() {
     const handleGlobalWheel = (e) => {
       if (!scrollContainerRef.current) return;
       const rect = scrollContainerRef.current.getBoundingClientRect();
-      const withinSlider =
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom &&
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right;
       const canScrollDown = currentScrollY > getMaxScroll();
       const canScrollUp = currentScrollY < 0;
       if (withinSlider && (canScrollUp || canScrollDown)) {
@@ -242,20 +239,20 @@ export default function FeaturesSection() {
     switch (iconName) {
       case 'link':
         return (
-          <div className='bg-blue-500 text-white p-3 rounded-full'>
-            <img src={linkIcon} alt='link' className='w-6 h-6' />
+          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
+            <img src={linkIcon} alt='link' className='w-12 h-6' />
           </div>
         );
       case 'gradient':
         return (
-          <div className='bg-blue-500 text-white p-3 rounded-full'>
-            <img src={blendToolIcon} alt='gradient' className='w-6 h-6' />
+          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
+            <img src={blendToolIcon} alt='gradient' className='w-12 h-6' />
           </div>
         );
       case 'animation':
         return (
-          <div className='bg-blue-500 text-white p-3 rounded-full'>
-            <img src={motionGraphicIcon} alt='animation' className='w-6 h-6' />
+          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
+            <img src={motionGraphicIcon} alt='animation' className='w-12 h-6' />
           </div>
         );
       default:
@@ -264,16 +261,22 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section className='bg-white w-full py-16 font-sans'>
+    <section
+      className={`w-full py-16 ${
+        darkMode
+          ? 'bg-[var(--dark-navbar-bg)] text-white'
+          : 'bg-white text-black'
+      }`}
+    >
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
-          <span className='bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded-full inline-block mb-4'>
+          <span className='swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
             EASY TO USE
           </span>
-          <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>
+          <h2 className='text-4xl md:text-5xl font-bold mb-4'>
             Built on Top of Tailwind CSS
           </h2>
-          <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
+          <p className='text-lg max-w-3xl mx-auto'>
             We provide our own pre-built component classes—just layer them on
             top of your Tailwind setup. Here's an example:
           </p>
@@ -285,58 +288,57 @@ export default function FeaturesSection() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 ${
-                  activeIndex === index ? 'scale-105 border-blue-200' : ''
+                className={`p-6 rounded-lg shadow-sm transition-all duration-300 ${
+                  activeIndex === index ? 'scale-105 border-2' : ''
                 }`}
               >
                 <div className='flex items-start gap-4'>
                   {renderIcon(feature.icon)}
                   <div>
-                    <h3 className='font-bold text-xl text-gray-900 mb-2'>
-                      {feature.title}
-                    </h3>
-                    <p className='text-gray-600'>{feature.description}</p>
+                    <h3 className='font-bold text-xl mb-2'>{feature.title}</h3>
+                    <p>{feature.description}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <div className='relative w-full lg:w-1/2'>
             <div
+              className='relative w-full h-96 md:h-[30rem] overflow-hidden rounded-3xl shadow-xl flex items-center justify-center swing-ocean-gradient'
               ref={scrollContainerRef}
-              className='relative w-full h-80 md:h-96 overflow-hidden rounded-xl shadow-lg swing-ocean-gradient'
-              onTouchStart={handleTouchStart}
+              // onTouchStart={handleTouchStart}
             >
               <div
                 ref={sliderContainerRef}
-                className='absolute w-full transition-transform duration-300 ease-out'
+                className='absolute inset-0 transition-transform duration-300 ease-out'
                 style={{ transform: `translateY(${currentScrollY}px)` }}
               >
-                <div className='slider-item w-full h-80 md:h-96 transition-all duration-500'>
+                {/* Slider Items */}
+                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
                   <div className='w-full h-full flex items-center justify-center'>
                     <img
                       src={img1}
-                      alt='Link the Essentials feature demonstration'
-                      className='w-full h-full object-cover'
+                      alt='Feature Demo'
+                      className='w-full h-full object-cover rounded-3xl'
                     />
                   </div>
                 </div>
-                <div className='slider-item w-full h-80 md:h-96 transition-all duration-500'>
+                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
                   <div className='w-full h-full flex items-center justify-center'>
                     <img
                       src={img2}
-                      alt='Gradient feature demonstration'
-                      className='w-full h-full object-cover'
+                      alt='Feature Demo'
+                      className='w-full h-full object-cover rounded-3xl'
                     />
                   </div>
                 </div>
-                <div className='slider-item w-full h-80 md:h-96 transition-all duration-500'>
+                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
                   <div className='w-full h-full flex items-center justify-center'>
                     <img
                       src={img3}
-                      alt='Animation feature demonstration'
-                      className='w-full h-full object-cover'
+                      alt='Feature Demo'
+                      className='w-full h-full object-cover rounded-3xl'
                     />
                   </div>
                 </div>
