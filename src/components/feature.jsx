@@ -230,7 +230,7 @@ export default function FeaturesSection() {
         updateItemsVisibility(targetScrollY);
         return nextIndex;
       });
-    }, 1200);
+    }, 3000);
     return () => clearInterval(interval);
   }, [sliderItems, isUserInteracting]);
 
