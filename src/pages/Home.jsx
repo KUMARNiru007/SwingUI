@@ -4,6 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import StickyMessageBox from '../components/message';
+import FeaturesSection from '../components/feature';
 
 const Home = () => {
   const { darkMode } = useTheme();
@@ -18,6 +19,7 @@ const Home = () => {
     >
       <Hero />
       <StickyMessageBox />
+      <FeaturesSection />
       <Footer />
     </div>
   );

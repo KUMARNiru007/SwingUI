@@ -32,7 +32,7 @@ const TransitionItem = ({ transition }) => {
   );
 };
 
-const TransitionGrid = () => {
+const TextGradient = () => {
   const { darkMode } = useTheme();
 
   return (
@@ -54,8 +54,8 @@ const TransitionGrid = () => {
           darkMode ? 'text-[var(--color-text-dark)]' : 'text-gray-700'
         }`}
       >
-        Explore a collection of CSS transitions below. Hover over a box to see
-        the copy button and click to copy the transition name.
+        Explore a collection of CSS text gradients below. Hover over a box to
+        see the copy button and click to copy the transition name.
       </p>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -67,4 +67,4 @@ const TransitionGrid = () => {
   );
 };
 
-export default TransitionGrid;
+export default TextGradient;
