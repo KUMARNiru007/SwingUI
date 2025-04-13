@@ -37,11 +37,14 @@ function Navbar() {
 
       <div className='hidden md:flex custom-desktop items-center'>
         <div className='flex space-x-8'>
-          <Link to='/docs' className='hover:text-[var(--dark-nav-hover)]'>
+          <Link
+            to='/docs'
+            className='font-semibold hover:text-[var(--dark-nav-hover)]'
+          >
             Docs
           </Link>
           <div className='group relative'>
-            <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span className='flex font-semibold items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
               SwingKit
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -96,7 +99,7 @@ function Navbar() {
             </div>
           </div>
           <div className='group relative'>
-            <span className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span className='flex font-semibold items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
               Components
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -248,7 +251,7 @@ function Navbar() {
               >
                 Pricing
               </Link>
-              
+
               <Link
                 to='/components/tabs'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -288,9 +291,9 @@ function Navbar() {
           </button>
           <Link
             to='/docs'
-            className='swing-ocean-gradient hover:swing-ocean-gradient text-white px-6 py-2 rounded-md'
+            className='swing-ocean-gradient hover:swing-ocean-gradient text-white px-6 py-2 rounded-4xl'
           >
-            Get Started
+            Get Started <i className='ri-arrow-right-s-line'></i>
           </Link>
         </div>
       </div>
@@ -503,7 +506,7 @@ function Navbar() {
 
       {mobileMenuOpen && (
         <div
-           className="fixed inset-0 bg-black/100 backdrop-overlay z-40 md:hidden transition-all duration-300 opacity-70"
+          className='fixed inset-0 bg-black/100 backdrop-overlay z-40 md:hidden transition-all duration-300 opacity-70'
           onClick={toggleMobileMenu}
         />
       )}
