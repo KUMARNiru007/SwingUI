@@ -96,7 +96,7 @@ const Layout = () => {
             className={`w-full ${
               isHome
                 ? '' // No padding on home
-                : 'px-[0.875rem] sm:px-6 md:px-8 lg:px-12 py-6' // Padding on other pages
+                : 'px-[0.875rem] ' // Padding on other pages
             }`}
           >
             <div
