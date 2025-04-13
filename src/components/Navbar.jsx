@@ -37,14 +37,11 @@ function Navbar() {
 
       <div className='hidden md:flex custom-desktop items-center'>
         <div className='flex space-x-8'>
-          <Link
-            to='/docs'
-            className='font-semibold hover:text-[var(--dark-nav-hover)]'
-          >
+          <Link to='/docs' className='hover:text-[var(--dark-nav-hover)]'>
             Docs
           </Link>
           <div className='group relative'>
-            <span className='flex font-semibold items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
               SwingKit
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -99,7 +96,7 @@ function Navbar() {
             </div>
           </div>
           <div className='group relative'>
-            <span className='flex font-semibold items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
               Components
               <svg
                 xmlns='http://www.w3.org/2000/svg'

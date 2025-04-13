@@ -32,6 +32,13 @@
   --shadow-default: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
+.swing-ocean-gradient-text {
+  background: linear-gradient(130deg, #3badb2 0%, #004aad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .scrollbar-hidden {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
@@ -41,11 +48,11 @@
   display: none; /* Chrome, Safari, Opera */
 }
 /* Ensure Prism code blocks wrap lines */
-pre[class*="language-"] {
+pre[class*='language-'] {
   white-space: pre-wrap !important;
   word-break: break-word;
 }
-code[class*="language-"] {
+code[class*='language-'] {
   white-space: pre-wrap !important;
   word-break: break-word;
 }
