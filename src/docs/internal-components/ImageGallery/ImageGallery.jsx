@@ -15,7 +15,7 @@ function ImageGallery() {
 
   const htmlCssCode = `
     <div
-      class="swing-scrolling-image"
+      class="swing-scrolling-image w-[60vw]"
       style="
         --direction: 1;
         --speed: 20;
@@ -24,30 +24,29 @@ function ImageGallery() {
         --pause-on-hover-mobile: false;
       "
     >
-      <div class="slider-container">
-        <!-- Slider items with fixed size and object-cover -->
-        <div class="slider-item flex-shrink-0 w-[300px] h-[200px] overflow-hidden">
+      <div class="slider-container w-[60vw] ">
+        <div class="slider-item flex-shrink-0 w-[25vw] h-[200px] overflow-hidden">
           <img
             src=${img1}
             alt="Image 1"
             class="w-full h-full object-cover"
           />
         </div>
-        <div class="slider-item flex-shrink-0 w-[300px] h-[200px] overflow-hidden">
+        <div class="slider-item flex-shrink-0 w-[25vw] h-[200px] overflow-hidden">
           <img
             src=${img2}
             alt="Image 2"
             class="w-full h-full object-cover"
           />
         </div>
-        <div class="slider-item flex-shrink-0 w-[300px] h-[200px] overflow-hidden">
+        <div class="slider-item flex-shrink-0 w-[25vw] h-[200px] overflow-hidden">
           <img
             src=${img3}
             alt="Image 3"
             class="w-full h-full object-cover"
           />
         </div>
-        <div class="slider-item flex-shrink-0 w-[300px] h-[200px] overflow-hidden">
+        <div class="slider-item flex-shrink-0 w-[25vw] h-[200px] overflow-hidden">
           <img
             src=${img4}
             alt="Image 4"
@@ -58,10 +57,112 @@ function ImageGallery() {
     </div>
 `;
 useEffect(() => {
-      if (showCode) return;
+    const timeoutId = setTimeout(() => {
+      let prevWidth = window.innerWidth;
+      const sliders = document.querySelectorAll('.swing-scrolling-image');
+      const sliderHtml = [];
 
-      // js code
-})
+      const setupInfiniteScroll = (slider, indexI) => {
+        const containers = slider.querySelectorAll('.slider-container');
+        
+        containers.forEach((container, indexJ) => {
+          
+          if (!sliderHtml[indexI]) sliderHtml[indexI] = [];
+          sliderHtml[indexI][indexJ] = container.innerHTML;
+          
+          const originalItems = Array.from(container.children);
+          const itemCount = originalItems.length;
+          
+          if (itemCount === 0) return;
+          
+          
+          let singleSetWidth = 0;
+          originalItems.forEach(item => {
+            const itemWidth = item.offsetWidth;
+            const computedStyle = window.getComputedStyle(item);
+            const marginRight = parseFloat(computedStyle.marginRight);
+            const marginLeft = parseFloat(computedStyle.marginLeft);
+            singleSetWidth += itemWidth + marginRight + marginLeft;
+          });
+          
+          
+          const containerGap = parseFloat(window.getComputedStyle(container).gap || 0);
+          singleSetWidth += containerGap * (itemCount - 1);
+          
+      
+          container.style.setProperty('--single-set-width', `${singleSetWidth}px`);
+          
+         
+          const speed = parseFloat(slider.style.getPropertyValue('--speed') || 20);
+          const duration = singleSetWidth / speed * 4; // Adjust this multiplier for speed
+          container.style.setProperty('--duration', `${duration}s`);
+          
+          
+          const allItems = container.innerHTML;
+          container.innerHTML = '';
+          
+      
+          const div1 = document.createElement('div');
+          div1.innerHTML = allItems;
+          container.append(...div1.children);
+          
+         
+          const div2 = document.createElement('div');
+          div2.innerHTML = allItems;
+          container.append(...div2.children);
+          
+         
+          const pauseOnHover = 
+            window.innerWidth > 767
+              ? slider.style.getPropertyValue('--pause-on-hover').trim() === 'true'
+              : slider.style.getPropertyValue('--pause-on-hover-mobile').trim() === 'true';
+              
+          container.addEventListener('mouseenter', () => {
+            if (pauseOnHover) container.style.animationPlayState = 'paused';
+          });
+          
+          container.addEventListener('mouseleave', () => {
+            container.style.animationPlayState = 'running';
+          });
+        });
+        
+    
+        slider.classList.add('showing');
+      };
+
+      sliders.forEach((slider, index) => {
+        setupInfiniteScroll(slider, index);
+      });
+
+      const handleResize = () => {
+        if (window.innerWidth === prevWidth) return;
+        prevWidth = window.innerWidth;
+
+        sliders.forEach((slider, index) => {
+          const containers = slider.querySelectorAll('.slider-container');
+          
+        
+          containers.forEach((container, j) => {
+            if (sliderHtml[index] && sliderHtml[index][j]) {
+              container.innerHTML = sliderHtml[index][j];
+            }
+          });
+          
+        
+          setupInfiniteScroll(slider, index);
+        });
+      };
+
+      window.addEventListener('resize', handleResize);
+
+    
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [showCode, darkMode]);
 
 
   return (
@@ -85,16 +186,17 @@ useEffect(() => {
       {!showCode && (
         <div
           key={`${darkMode}-${showCode}`}
-          className={`flex justify-center items-center pt-[5vh] ${
+          className={`flex justify-center items-center pt-[5vh] pb-[5vh] ${
             darkMode
               ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
               : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
+          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md overflow-hidden`}
         >
-          {/* Render live preview */}
-          <div
+           <div
             className='w-full'
-            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+            dangerouslySetInnerHTML={{
+              __html:htmlCssCode,
+            }}
           />
         </div>
       )}
