@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 
 import Gradients from '../docs/SwingKit/Gradients/Gradients';
 import AnimatedGradients from '../docs/SwingKit/AnimatedGradients/AnimatedGradients';
-import Transitions from '../docs/SwingKit/Transitions/Transitions';
+import TextGradient from '../docs/SwingKit/TextGradients/TextGradient';
 
 const SwingKit = () => {
   const { darkMode } = useTheme();
@@ -26,7 +26,7 @@ const SwingKit = () => {
           <Routes>
             <Route path='gradients' element={<Gradients />} />
             <Route path='animated-gradients' element={<AnimatedGradients />} />
-            <Route path='transitions' element={<Transitions />} />
+            <Route path='text-gradients' element={<TextGradient />} />
           </Routes>
         </div>
       </div>

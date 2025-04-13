@@ -84,14 +84,14 @@ function Navbar() {
                 Animated Gradients
               </Link>
               <Link
-                to='/swingkit/transitions'
+                to='/swingkit/text-gradients'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
                     : 'hover:bg-[var(--light-hover-bg)]'
                 }`}
               >
-                Transitions
+                Text Gradient
               </Link>
             </div>
           </div>
@@ -368,11 +368,11 @@ function Navbar() {
                   Animated Gradients
                 </Link>
                 <Link
-                  to='/swingkit/transitions'
+                  to='/swingkit/text-gradients'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
-                  Transitions
+                  Text Gradient
                 </Link>
               </div>
             </div>

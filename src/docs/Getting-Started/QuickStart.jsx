@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeBlock from '../components/CodeBlock/CodeBlock.jsx';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext.jsx';
 
 const QuickStart = () => {
   const { darkMode } = useTheme();

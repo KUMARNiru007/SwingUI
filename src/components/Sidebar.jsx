@@ -15,7 +15,7 @@ const sections = [
     items: [
       { to: '/swingkit/gradients', label: 'Gradients' },
       { to: '/swingkit/animated-gradients', label: 'Animated Gradients' },
-      { to: '/swingkit/transitions', label: 'Transitions' },
+      { to: '/swingkit/text-gradients', label: 'Text Gradients' },
     ],
   },
   {
@@ -36,7 +36,6 @@ const sections = [
       { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
-     
     ],
   },
   {
@@ -56,28 +55,33 @@ const Sidebar = () => {
   return (
     <aside
       className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px]  transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md
-        ${darkMode
-          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
-          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
+        ${
+          darkMode
+            ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
+            : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] transition-colors duration-300'
         }`}
     >
-
-
       <nav className='py-6'>
         {sections.map((section, index) => (
           <div key={index}>
             <div
               className={`text-sm font-semibold px-2 py-4 tracking-wide opacity-70
-                ${darkMode
-                  ? 'text-[var(--dark-nav-default)]'
-                  : 'text-[var(--light-nav-default)]'
+                ${
+                  darkMode
+                    ? 'text-[var(--dark-nav-default)]'
+                    : 'text-[var(--light-nav-default)]'
                 }`}
             >
               {section.title}
             </div>
-            <div className="flex flex-col gap-1">
+            <div className='flex flex-col gap-1'>
               {section.items.map((item, id) => (
-                <NavItem key={id} to={item.to} label={item.label} darkMode={darkMode} />
+                <NavItem
+                  key={id}
+                  to={item.to}
+                  label={item.label}
+                  darkMode={darkMode}
+                />
               ))}
             </div>
           </div>
@@ -96,9 +100,10 @@ const NavItem = ({ to, label, darkMode }) => {
       to={to}
       className={`
         block px-6 py-2 text-sm no-underline transition-colors duration-300
-        ${isActive
-          ? 'text-[var(--color-primary)] font-semibold'
-          : darkMode
+        ${
+          isActive
+            ? 'text-[var(--color-primary)] font-semibold'
+            : darkMode
             ? 'text-[var(--dark-nav-default)] hover:text-[var(--dark-nav-hover)]'
             : 'text-[var(--color-text)] hover:text-[var(--light-nav-hover)]'
         }
