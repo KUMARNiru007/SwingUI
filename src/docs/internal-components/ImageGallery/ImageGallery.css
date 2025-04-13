@@ -6,7 +6,9 @@
 .swing-scrolling-image.showing {
   position: relative; 
   height: 100%;
-  width: 70vw;
+  width: 68vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 .swing-scrolling-image .slider-container {
@@ -27,7 +29,7 @@
   transform: translateZ(0);
   transition: transform 0.3s ease-in-out;
   flex-shrink: 0;
-  width: 350px;
+  width: 25vw;
   height: 180px;
   object-fit: cover;
   display: inline-block; 
@@ -41,6 +43,8 @@
     transform: translateX(calc(-1 * var(--single-set-width, 100px)));
   }
 }
+
+
 
 
 .slider-item {
