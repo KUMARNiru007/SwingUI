@@ -1,0 +1,53 @@
+.swing-scrolling-image {
+  visibility: visible;
+  opacity: 1;
+}
+
+.swing-scrolling-image.showing {
+  position: relative; 
+  height: 100%;
+  width: 68vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.swing-scrolling-image .slider-container {
+  position: relative; 
+  display: flex; 
+  animation: infiniteScroll var(--duration, 20s) linear infinite;
+  width: max-content; 
+}
+
+.swing-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+  height: 100%; 
+}
+
+.swing-slider-item {
+  transform: translateZ(0);
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+  width: 25vw;
+  height: 180px;
+  object-fit: cover;
+  display: inline-block; 
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--single-set-width, 100px)));
+  }
+}
+
+
+
+
+.slider-item {
+  flex-shrink: 0;
+  position: relative;
+}
