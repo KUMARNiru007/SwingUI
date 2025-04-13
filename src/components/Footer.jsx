@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`flex flex-wrap justify-between items-center border-t border-gray-300 pt-6 pl-10 ${bgClass}`}>
+        <div className={`flex flex-wrap justify-between items-center border-t ${darkMode ? 'border-gray-700' : 'border-gray-300'} pt-3 pl-10 ${bgClass}`}>
 
             
           <div className="text-sm mb-4 md:mb-0">
