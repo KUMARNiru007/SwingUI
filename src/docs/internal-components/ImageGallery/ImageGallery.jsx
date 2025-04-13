@@ -153,7 +153,7 @@ function ImageGallery() {
   }, [showCode])
 
   return (
-    <div className="w-full bg-background text-foreground p-4">
+    <div className="w-full bg-background text-foreground">
       <h2 className="text-3xl font-bold mb-2">ImageGallery Component</h2>
       <p className="mb-6">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui necessitatibus libero ab officiis dolorum ipsum
