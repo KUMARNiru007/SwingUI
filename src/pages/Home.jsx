@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router"; 
 import { useTheme } from '../context/ThemeContext';
 import Hero from "../components/Hero";
+import Footer from "../components/Footer"
 
 const Home = () => {
   const { darkMode } = useTheme();
@@ -15,6 +16,7 @@ const Home = () => {
       }`}
     >
     < Hero />
+    <Footer />
       
     </div>
   );
