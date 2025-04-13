@@ -24,7 +24,7 @@
     overflow: hidden;
   }
 
-  /* .swing-slider-wrapper::before,
+  .swing-slider-wrapper::before,
   .swing-slider-wrapper::after {
     content: '';
     position: absolute;
@@ -33,7 +33,7 @@
     width: 100px;
     z-index: 2;
     pointer-events: none;
-  } */
+  }
 
   .swing-slider-wrapper::before {
     left: 0;
