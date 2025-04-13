@@ -116,14 +116,14 @@ const Showcase = () => {
 
   return (
     <div
-      className={`flex min-h-screen w-full transition-colors duration-300 ${
+      className={`flex p-20 w-full transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
       <section
-        className='py-12 sm:py-16 text-center w-full'
+        className='text-center w-full'
         style={{ fontFamily: 'var(--font-poppins)' }}
       >
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8'>
