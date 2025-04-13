@@ -183,7 +183,7 @@ function ImageGallery() {
 
 
       {showCode && (
-        <div className='w-full overflow-x-auto my-4 rounded-xl'>
+        <div className='w-full overflow-x-auto rounded-xl'>
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
