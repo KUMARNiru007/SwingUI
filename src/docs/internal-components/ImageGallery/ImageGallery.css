@@ -6,16 +6,14 @@
 .swing-scrolling-image.showing {
   position: relative; 
   height: 100%;
-  width: 68vw;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  width: 60vw;
 }
 
 .swing-scrolling-image .slider-container {
   position: relative; 
   display: flex; 
   animation: infiniteScroll var(--duration, 20s) linear infinite;
-  width: max-content; 
+  /* width: max-content;  */
 }
 
 .swing-slider-wrapper {
@@ -29,7 +27,7 @@
   transform: translateZ(0);
   transition: transform 0.3s ease-in-out;
   flex-shrink: 0;
-  width: 25vw;
+  width: 350px;
   height: 180px;
   object-fit: cover;
   display: inline-block; 

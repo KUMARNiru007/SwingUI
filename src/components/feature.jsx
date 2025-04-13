@@ -239,20 +239,28 @@ export default function FeaturesSection() {
     switch (iconName) {
       case 'link':
         return (
-          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={linkIcon} alt='link' className='w-12 h-6' />
+          <div className='w-14 h-14 rounded-full swing-ocean-gradient flex items-center justify-center shrink-0'>
+            <img src={linkIcon} alt='link' className='w-6 h-6 object-contain' />
           </div>
         );
       case 'gradient':
         return (
-          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={blendToolIcon} alt='gradient' className='w-12 h-6' />
+          <div className='w-14 h-14 rounded-full swing-ocean-gradient flex items-center justify-center shrink-0'>
+            <img
+              src={blendToolIcon}
+              alt='gradient'
+              className='w-6 h-6 object-contain'
+            />
           </div>
         );
       case 'animation':
         return (
-          <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={motionGraphicIcon} alt='animation' className='w-12 h-6' />
+          <div className='w-14 h-14 rounded-full swing-ocean-gradient flex items-center justify-center shrink-0'>
+            <img
+              src={motionGraphicIcon}
+              alt='animation'
+              className='w-6 h-6 object-contain'
+            />
           </div>
         );
       default:
@@ -282,7 +290,7 @@ export default function FeaturesSection() {
           </p>
         </div>
 
-        <div className='flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto'>
+        <div className='flex flex-col lg:flex-row items-center justify-center gap-y-8 lg:gap-x-12 max-w-6xl mx-auto px-4'>
           {/* Left Side: Feature Cards */}
           <div className='w-full lg:w-1/2 space-y-6'>
             {features.map((feature, index) => (
@@ -296,52 +304,40 @@ export default function FeaturesSection() {
                   {renderIcon(feature.icon)}
                   <div>
                     <h3 className='font-bold text-xl mb-2'>{feature.title}</h3>
-                    <p>{feature.description}</p>
+                    <p className='text-sm md:text-base'>
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Right Side: Image Slider */}
           <div className='relative w-full lg:w-1/2'>
             <div
-              className='relative w-full h-96 md:h-[30rem] overflow-hidden rounded-3xl shadow-xl flex items-center justify-center swing-ocean-gradient'
+              className='relative w-full h-80 md:h-[30rem] overflow-hidden rounded-3xl shadow-xl flex items-center justify-center swing-ocean-gradient'
               ref={scrollContainerRef}
-              // onTouchStart={handleTouchStart}
             >
               <div
                 ref={sliderContainerRef}
                 className='absolute inset-0 transition-transform duration-300 ease-out'
                 style={{ transform: `translateY(${currentScrollY}px)` }}
               >
-                {/* Slider Items */}
-                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
-                  <div className='w-full h-full flex items-center justify-center'>
-                    <img
-                      src={img1}
-                      alt='Feature Demo'
-                      className='w-full h-full object-cover rounded-3xl'
-                    />
+                {[img1, img2, img3].map((img, i) => (
+                  <div
+                    key={i}
+                    className='slider-item w-full h-80 md:h-[30rem] transition-all duration-500'
+                  >
+                    <div className='w-full h-full flex items-center justify-center'>
+                      <img
+                        src={img}
+                        alt={`Feature Demo ${i + 1}`}
+                        className='w-full h-full object-contain rounded-3xl'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
-                  <div className='w-full h-full flex items-center justify-center'>
-                    <img
-                      src={img2}
-                      alt='Feature Demo'
-                      className='w-full h-full object-cover rounded-3xl'
-                    />
-                  </div>
-                </div>
-                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
-                  <div className='w-full h-full flex items-center justify-center'>
-                    <img
-                      src={img3}
-                      alt='Feature Demo'
-                      className='w-full h-full object-cover rounded-3xl'
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
