@@ -20,7 +20,7 @@ const Home = () => {
     >
       <Hero />
       <StickyMessageBox />
-      {/* <Showcase /> */}
+      <Showcase />
       <FeaturesSection />
       <Footer />
     </div>

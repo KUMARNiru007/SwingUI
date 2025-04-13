@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import '../../src/index.css';
 
@@ -10,7 +10,7 @@ import blog5 from '../assets/images-for-Showcase/Gradinent_Text_Light.webp';
 import blog6 from '../assets/images-for-Showcase/NavBar_Light.webp';
 import blog7 from '../assets/images-for-Showcase/Tabs_Light.webp';
 
-const cardsData = [
+const allCardsData = [
   { id: 1, img: blog1, title: 'Animated Gradinent' },
   { id: 2, img: blog2, title: 'Buttons' },
   { id: 3, img: blog3, title: 'Cards' },
@@ -21,174 +21,210 @@ const cardsData = [
 ];
 
 const Showcase = () => {
-  const carouselRef = useRef(null);
   const { darkMode } = useTheme();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [containerOffset, setContainerOffset] = useState(0);
+  const carouselRef = useRef(null);
+  const cardContainerRef = useRef(null);
+  const touchStartX = useRef(0);
+  const intervalRef = useRef(null);
 
-  // Auto-scroll
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (carouselRef.current) {
-        const scrollAmount =
-          carouselRef.current.offsetWidth < 640
-            ? carouselRef.current.offsetWidth * 0.9
-            : carouselRef.current.offsetWidth < 1024
-            ? carouselRef.current.offsetWidth * 0.5
-            : carouselRef.current.offsetWidth / 3;
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width < 640) setVisibleCount(1);
+      else if (width < 1024) setVisibleCount(2);
+      else setVisibleCount(3);
+    };
 
-        carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-
-        if (
-          carouselRef.current.scrollLeft + carouselRef.current.offsetWidth >=
-          carouselRef.current.scrollWidth
-        ) {
-          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-      }
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Wheel scroll
-  useEffect(() => {
-    const handleWheel = (e) => {
-      if (carouselRef.current && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        carouselRef.current.scrollBy({ left: e.deltaY });
+    const updateContainerOffset = () => {
+      if (cardContainerRef.current) {
+        const rect = cardContainerRef.current.getBoundingClientRect();
+        const containerRect = carouselRef.current?.parentElement?.getBoundingClientRect();
+        const offset = rect.left - (containerRect?.left || 0);
+        setContainerOffset(Math.max(0, offset));
       }
     };
-    const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('wheel', handleWheel, { passive: false });
+
+    updateVisibleCount();
+    updateContainerOffset();
+
+    const resizeObserver = new ResizeObserver(updateContainerOffset);
+    if (cardContainerRef.current) {
+      resizeObserver.observe(cardContainerRef.current);
     }
+
+    window.addEventListener('resize', () => {
+      updateVisibleCount();
+      updateContainerOffset();
+    });
+
     return () => {
-      if (carousel) {
-        carousel.removeEventListener('wheel', handleWheel);
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', updateVisibleCount);
+    };
+  }, []);
+
+  useEffect(() => {
+    const startAutoPlay = () => {
+      if (isAutoPlaying) {
+        intervalRef.current = setInterval(() => {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % allCardsData.length);
+        }, 3000);
       }
     };
-  }, []);
 
-  // Mouse drag scroll
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    const handleMouseDown = (e) => {
-      isDown = true;
-      carousel.classList.add('cursor-grabbing');
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-    };
-
-    const handleMouseLeave = () => {
-      isDown = false;
-      carousel.classList.remove('cursor-grabbing');
-    };
-
-    const handleMouseUp = () => {
-      isDown = false;
-      carousel.classList.remove('cursor-grabbing');
-    };
-
-    const handleMouseMove = (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      carousel.scrollLeft = scrollLeft - walk;
-    };
-
-    carousel.addEventListener('mousedown', handleMouseDown);
-    carousel.addEventListener('mouseleave', handleMouseLeave);
-    carousel.addEventListener('mouseup', handleMouseUp);
-    carousel.addEventListener('mousemove', handleMouseMove);
-
+    startAutoPlay();
     return () => {
-      carousel.removeEventListener('mousedown', handleMouseDown);
-      carousel.removeEventListener('mouseleave', handleMouseLeave);
-      carousel.removeEventListener('mouseup', handleMouseUp);
-      carousel.removeEventListener('mousemove', handleMouseMove);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [isAutoPlaying]);
+
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    setIsAutoPlaying(false);
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    if (diff > 50) {
+      setCurrentIndex((prev) => (prev + 1) % allCardsData.length);
+    } else if (diff < -50) {
+      setCurrentIndex((prev) => (prev - 1 + allCardsData.length) % allCardsData.length);
+    }
+
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 3000);
+  };
+
+  const goToPrev = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev - 1 + allCardsData.length) % allCardsData.length);
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 3000);
+  };
+
+  const goToNext = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev + 1) % allCardsData.length);
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 3000);
+  };
+
+  const getVisibleCards = () => {
+    const result = [];
+    for (let i = 0; i < visibleCount; i++) {
+      const index = (currentIndex + i) % allCardsData.length;
+      result.push(allCardsData[index]);
+    }
+    return result;
+  };
+
+  const visibleCards = getVisibleCards();
 
   return (
-    <div
-      className={`flex p-20 w-full transition-colors duration-300 ${
-        darkMode
-          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
-    >
-      <section
-        className='text-center w-full'
+    <div className={`flex p-4 sm:p-10 lg:p-16 w-full transition-colors duration-300 ${
+      darkMode ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]' : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+    }`}>
+      <section 
+        className='text-center w-full relative'
         style={{ fontFamily: 'var(--font-poppins)' }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8'>
-          {/* Header */}
-          <div className='mb-10 sm:mb-12'>
-            <span className='inline-block px-4 py-2 swing-ocean-gradient-animate text-white text-xs sm:text-sm font-semibold rounded-full mb-4 bg-gradient-to-r from-[#3badb2] to-[#004aad]'>
+          <div className='mb-8 sm:mb-10'>
+            <span className='inline-block px-3 py-1.5 swing-ocean-gradient-animate text-white text-xs sm:text-sm font-semibold rounded-full mb-3 bg-gradient-to-r from-[#3badb2] to-[#004aad]'>
               OUR COMPONENTS
             </span>
-            <h2 className='text-xl sm:text-3xl lg:text-4xl font-extrabold mb-4'>
+            <h2 className='text-lg sm:text-2xl lg:text-3xl font-extrabold mb-3'>
               Ready–to–Use Components
             </h2>
-            <p className='text-sm sm:text-base max-w-2xl mx-auto'>
-              Skip the boilerplate. SwingUI offers pre-styled, customizable
-              Tailwind components built to save time and look great out of the
-              box.
+            <p className='text-xs sm:text-sm max-w-2xl mx-auto'>
+              Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
             </p>
           </div>
 
-          {/* Carousel */}
-          <div
-            ref={carouselRef}
-            className='flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 cursor-grab active:cursor-grabbing px-2 sm:px-0'
-            style={{ scrollSnapType: 'x mandatory' }}
-          >
-            {cardsData.map((card, index) => (
-              <div
-                key={`${card.id}-${index}`}
-                className={`flex-shrink-0 snap-start 
-                  w-[85vw] sm:w-[60vw] md:w-[33.33vw] lg:w-[25vw] max-w-[420px] 
-                  p-3 sm:p-4 md:p-5
-                  rounded-2xl text-left
-                  transition duration-300
-                  ${darkMode ? 'border border-[var(--dark-hover-bg)] shadow-md' : 'border border-[#e6e8f0] shadow-md'}
-                `}
-                style={{
-                  backgroundColor: darkMode
-                    ? 'var(--dark-navbar-bg)'
-                    : '#f9f7fa',
-                }}
-              >
+          <div className='relative' ref={carouselRef}>
+            <button 
+              onClick={goToPrev}
+              style={{ left: `${containerOffset - 20}px` }}
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center 
+                ${darkMode ? 'bg-[var(--dark-navbar-bg)] text-white' : 'bg-white text-gray-800'} shadow-md hover:scale-110 transition-transform`}
+              aria-label="Previous"
+            >
+              &lt;
+            </button>
+
+            <div 
+              ref={cardContainerRef}
+              className='flex justify-center gap-4 sm:gap-6 overflow-hidden touch-pan-x'
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {visibleCards.map((card, index) => (
                 <div
-                  className='rounded-xl w-full h-[180px] sm:h-[200px] md:h-[240px] mb-4 flex items-center justify-center overflow-hidden'
+                  key={`${card.id}-${index}`}
+                  className={`flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[400px]
+                    p-4 rounded-2xl transition duration-300
+                    ${darkMode ? 'border border-[var(--dark-hover-bg)] shadow-md' : 'border border-[#e6e8f0] shadow-md'}
+                  `}
                   style={{
-                    backgroundColor: darkMode ? 'var(--dark-bg)' : '#eef1f6',
+                    backgroundColor: darkMode
+                      ? 'var(--dark-navbar-bg)'
+                      : '#f9f7fa',
                   }}
                 >
-                  <img
-                    src={card.img}
-                    alt={card.title}
-                    className='object-cover w-full h-full rounded-xl'
-                  />
+                  <div 
+                    className='relative rounded-xl overflow-hidden mb-3'
+                    style={{
+                      padding: '10px',
+                      aspectRatio: '1080/720',
+                      backgroundColor: darkMode ? 'var(--dark-bg)' : '#eef1f6'
+                    }}
+                  >
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      className='object-cover w-full h-full rounded-lg'
+                    />
+                  </div>
+                  <h3 className={`text-base font-bold ${darkMode ? 'text-[var(--color-text-dark)]' : 'text-black'}`}>
+                    {card.title}
+                  </h3>
                 </div>
-                <h3
-                  className={`text-base sm:text-lg md:text-xl font-bold mb-2 transition-colors duration-200 ${
-                    darkMode ? 'text-[var(--color-text-dark)]' : 'text-black'
-                  } hover:text-[var(--color-primary)]`}
-                >
-                  {card.title}
-                </h3>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <button 
+              onClick={goToNext}
+              style={{ right: `${containerOffset - 20}px` }}
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center 
+                ${darkMode ? 'bg-[var(--dark-navbar-bg)] text-white' : 'bg-white text-gray-800'} shadow-md hover:scale-110 transition-transform`}
+              aria-label="Next"
+            >
+              &gt;
+            </button>
           </div>
 
-          {/* Button */}
-          <button className='mt-12 sm:mt-14 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm font-semibold transition duration-200 hover:swing-ocean-gradient swing-ocean-gradient hover:bg-[var(--color-primary-hover)] text-white'>
+          <button className='mt-8 sm:mt-10 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition duration-200 hover:swing-ocean-gradient swing-ocean-gradient hover:bg-[var(--color-primary-hover)] text-white'>
             Explore All Components
           </button>
         </div>

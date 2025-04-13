@@ -56,15 +56,3 @@ code[class*='language-'] {
   white-space: pre-wrap !important;
   word-break: break-word;
 }
-/* tailwind.config.js -> add plugin or use this manually */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-/* Optional if not using Tailwind for cursor styles */
-.cursor-grabbing {
-  cursor: grabbing !important;
-}
