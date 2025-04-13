@@ -240,19 +240,27 @@ export default function FeaturesSection() {
       case 'link':
         return (
           <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={linkIcon} alt='link' className='w-12 h-6' />
+            <img src={linkIcon} alt='link' className='w-18 md:w-12 h-6' />
           </div>
         );
       case 'gradient':
         return (
           <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={blendToolIcon} alt='gradient' className='w-12 h-6' />
+            <img
+              src={blendToolIcon}
+              alt='gradient'
+              className='w-18 md:w-12 h-6'
+            />
           </div>
         );
       case 'animation':
         return (
           <div className='swing-ocean-gradient text-white p-3 rounded-full'>
-            <img src={motionGraphicIcon} alt='animation' className='w-12 h-6' />
+            <img
+              src={motionGraphicIcon}
+              alt='animation'
+              className='w-18 md:w-12 h-6'
+            />
           </div>
         );
       default:
@@ -311,11 +319,11 @@ export default function FeaturesSection() {
             >
               <div
                 ref={sliderContainerRef}
-                className='absolute inset-0 transition-transform duration-300 ease-out'
+                className='absolute md:inset-0 h-8 transition-transform duration-300 ease-out'
                 style={{ transform: `translateY(${currentScrollY}px)` }}
               >
                 {/* Slider Items */}
-                <div className='slider-item w-full h-96 md:h-[30rem] transition-all duration-500'>
+                <div className='slider-item w-full h-32 md:h-[30rem] transition-all duration-500'>
                   <div className='w-full h-full flex items-center justify-center'>
                     <img
                       src={img1}
