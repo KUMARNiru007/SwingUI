@@ -1,6 +1,6 @@
 .swing-scrolling-image {
     visibility: hidden;
-    overflow: hidden;
+    /* overflow: hidden; */
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     width: 60vw;
@@ -30,7 +30,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    /* width: 100px; */
+    width: 100px;
     z-index: 2;
     pointer-events: none;
   }

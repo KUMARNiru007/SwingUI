@@ -169,8 +169,8 @@ function ImageGallery() {
         <div
           key={`${darkMode}-${showCode}`}
           className={`flex justify-center items-center rounded-lg shadow-md overflow-hidden ${
-            darkMode ? "bg-[var(--light-bg)] text-[var(--color-text)]" : "bg-[var(--light-bg)] text-[var(--color-text)]"
-          } bg-gray-200 dark:from-gray-800 dark:to-gray-700`}
+            darkMode ? " bg-[var(--light-bg)] text-[var(--color-text)]" :   " bg-[var(--light-bg)] text-[var(--color-text)]"
+          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700`}
         >
           <div
             className="w-full"

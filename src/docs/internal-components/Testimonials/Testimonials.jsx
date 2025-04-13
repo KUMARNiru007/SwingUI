@@ -371,13 +371,14 @@ function Testimonial() {
         container.style.setProperty('--est-speed', width / 100);
       };
 
-      const setDirection = (container, width) => {
-        if (
-          getComputedStyle(container).getPropertyValue('--direction') === '-1'
-        ) {
-          container.style.marginLeft = `-${width}px`;
-        }
-      };
+     const setDirection = (container, width) => {
+  if (
+    getComputedStyle(container).getPropertyValue('--direction') === '-1'
+  ) {
+    container.style.marginLeft = `-${width}px`;
+  }
+};
+
 
       const setPauseOnHover = (container) => {
         const pauseOnHover =
@@ -441,13 +442,13 @@ function Testimonial() {
     return () => clearTimeout(timeoutId);
   }, [showCode,darkMode]);
 
-  return (
+ return (
     <div
       className={`w-full transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } p-4`}
+      } p-4 `}
     >
       <h2 className='text-3xl font-bold mb-2'>Testimonial Component</h2>
       <p className='mb-6'>
@@ -462,22 +463,15 @@ function Testimonial() {
       {!showCode && (
         <div
           key={`${darkMode}-${showCode}`}
-          className={`flex justify-center items-center pt-[1vh] ${
-            darkMode
-              ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
-              : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
+          className={`flex justify-center items-center overflow-hidden bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
         >
           {/* Render live preview */}
-          <div
-            className='w-full'
-            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-          />
+          <div className='w-full' dangerouslySetInnerHTML={{ __html: htmlCssCode }} />
         </div>
       )}
 
       {showCode && (
-        <div className='w-full overflow-x-auto my-4 rounded-xl'>
+        <div className='w-full my-4 rounded-xl'>
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
