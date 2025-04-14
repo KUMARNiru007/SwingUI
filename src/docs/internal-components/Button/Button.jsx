@@ -34,9 +34,9 @@ const Button = () => {
     const showCode = codeViews[button.id] || false;
 
     return (
-      <div className='mb-8 px-4 py-6 '>
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>{button.label}</h2>
-        <p className='mb-6'>{button.description}</p>
+      <div>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>{button.label}</h2>
+        <p className='mb-4'>{button.description}</p>
         <PreviewCodeBtn
           showCode={showCode}
           setShowCode={() => toggleCodeView(button.id)}
@@ -144,7 +144,7 @@ const Button = () => {
                 }`}
               >
                 <thead>
-                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
                     <th className='py-3 px-4 text-left font-semibold'>
                       Class Name
                     </th>
