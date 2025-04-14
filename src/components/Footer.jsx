@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import logo from '../assets/logo.webp';
+import logo from '../../public/logo.webp';
 
 function Footer() {
   const { darkMode } = useTheme();

@@ -29,7 +29,7 @@ function Navbar() {
     >
       <Link to='/'>
         <img
-          src='../src/assets/logo.webp'
+          src='../../public/logo.webp'
           alt='Logo'
           className='w-[125px] h-auto'
         />
