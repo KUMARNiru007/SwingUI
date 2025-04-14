@@ -328,7 +328,7 @@ function Navbar() {
 
           <div className='overflow-y-auto scrollbar-hidden pb-24'>
             <Link
-              to='/docs'
+              to='/docs/quick-start'
               onClick={handleMobileLinkClick}
               className='block px-6 py-3 hover:text-[var(--dark-nav-hover)] transition'
             >
