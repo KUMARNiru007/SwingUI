@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import logo from '../assets/gradient-logo.png';
+import logo from '../assets/logo.webp';
 
 function Footer() {
   const { darkMode } = useTheme();

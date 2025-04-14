@@ -29,7 +29,7 @@ function Navbar() {
     >
       <Link to='/'>
         <img
-          src='../src/assets/gradient-logo.png'
+          src='../src/assets/logo.webp'
           alt='Logo'
           className='w-[125px] h-auto'
         />
