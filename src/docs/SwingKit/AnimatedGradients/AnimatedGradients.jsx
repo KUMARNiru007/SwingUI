@@ -1,5 +1,5 @@
 import React from 'react';
-import HoverAndCopyBlock from '../../components/HoverAndCopyBlock/hoverAndCopyBlock';
+import HoverAndCopyBlock from '../../components/HoverAndCopyBlock/hoverAndCopyBlock.jsx';
 import Animatedgradients from './AnimatedgradientData.js';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import './style.css';

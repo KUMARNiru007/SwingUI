@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PreviewCodeBtn from '../../../components/previewcodebtn';
+import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';

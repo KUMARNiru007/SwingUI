@@ -1,22 +1,22 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext.jsx';
 
-import Accordion from '../docs/internal-components/Accordions/Accordions';
-import Button from '../docs/internal-components/Button/Button';
-import CallToAction from '../docs/internal-components/CallToAction/CallToAction';
-import Card from '../docs/internal-components/Cards/Cards';
-import Carousel from '../docs/internal-components/Carousel/Carousel';
-import Feature from '../docs/internal-components/Feature/Feature';
-import Footer from '../docs/internal-components/Footer/Footer';
-import Header from '../docs/internal-components/Header/Header';
-import Hero from '../docs/internal-components/Hero/Hero';
-import ImageGallery from '../docs/internal-components/ImageGallery/ImageGallery';
-import Navbar from '../docs/internal-components/Navbar/Navbar';
-import PantoGrid from '../docs/internal-components/PantoGrid/PantoGrid';
-import PopUps from '../docs/internal-components/PopUps/PopUps';
-import Tabs from '../docs/internal-components/Tabs/Tabs';
-import Testimonials from '../docs/internal-components/Testimonials/Testimonials';
+import Accordion from '../docs/internal-components/Accordions/Accordions.jsx';
+import Button from '../docs/internal-components/Button/Button.jsx';
+import CallToAction from '../docs/internal-components/CallToAction/CallToAction.jsx';
+import Card from '../docs/internal-components/Cards/Cards.jsx';
+import Carousel from '../docs/internal-components/Carousel/Carousel.jsx';
+import Feature from '../docs/internal-components/Feature/Feature.jsx';
+import Footer from '../docs/internal-components/Footer/Footer.jsx';
+import Header from '../docs/internal-components/Header/Header.jsx';
+import Hero from '../docs/internal-components/Hero/Hero.jsx';
+import ImageGallery from '../docs/internal-components/ImageGallery/ImageGallery.jsx';
+import Navbar from '../docs/internal-components/Navbar/Navbar.jsx';
+import PantoGrid from '../docs/internal-components/PantoGrid/PantoGrid.jsx';
+import PopUps from '../docs/internal-components/PopUps/PopUps.jsx';
+import Tabs from '../docs/internal-components/Tabs/Tabs.jsx';
+import Testimonials from '../docs/internal-components/Testimonials/Testimonials.jsx';
 import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
 
 const Components = () => {
