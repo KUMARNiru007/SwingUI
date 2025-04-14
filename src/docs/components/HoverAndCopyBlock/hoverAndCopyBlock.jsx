@@ -7,7 +7,7 @@ const HoverAndCopyBlock = ({ gradient }) => {
   return (
     <div
       className='relative rounded-md overflow-hidden border border-gray-700 
-                 w-full h-48 sm:h-56 md:h-64 lg:h-72'
+                 w-full h-48 sm:h-40 md:h-48 lg:h-56'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

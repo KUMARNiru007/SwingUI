@@ -1,8 +1,8 @@
 import React from 'react';
 import CodeBlock from '../components/CodeBlock/CodeBlock.jsx';
 import { useTheme } from '../../context/ThemeContext';
-
 import '../SwingKit/TextGradients/style.css';
+import './style.css';
 
 const QuickStart = () => {
   const { darkMode } = useTheme();
@@ -14,6 +14,10 @@ const QuickStart = () => {
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
+      style={{
+        overflowWrap: 'break-word',
+        wordWrap: 'break-word',
+      }}
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
         <div className='flex flex-col items-start'>
@@ -22,9 +26,7 @@ const QuickStart = () => {
           </h1>
           <p className='mb-10 sm:mb-16'>
             Getting started with{' '}
-            <span className={'swing-ocean-gradient-text font-bold'}>
-              SwingUI
-            </span>
+            <span className='swing-ocean-gradient-text font-bold'>SwingUI</span>
           </p>
 
           <div className='w-full'>
@@ -39,18 +41,15 @@ const QuickStart = () => {
                 expected.
               </p>
 
-              {/* Corrected tag ordering to match comments */}
-              <div className='w-full mb-6'>
+              <div className='w-full codeblock-wrapper mb-6'>
                 <CodeBlock
-                  language='html'
                   code={`<!-- SwingUI CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css" />`}
                 />
               </div>
 
-              <div className='w-full mb-6'>
+              <div className='w-full codeblock-wrapper mb-6'>
                 <CodeBlock
-                  language='html'
                   code={`<!-- SwingUI JS -->
 <script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
                 />
@@ -73,20 +72,21 @@ const QuickStart = () => {
                 Now, drop in SwingUI's CSS and JS to unlock all the components
                 and styles.
               </p>
-              <CodeBlock
-                language='html'
-                code={`<!-- Paste this code in Header -->
+              <div className='w-full codeblock-wrapper mb-6'>
+                <CodeBlock
+                  code={`<!-- Paste this code in Header -->
 <link href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css" rel="stylesheet">`}
-              />
+                />
+              </div>
             </div>
-            <div className='w-full mb-8'>
+
+            <div className='w-full codeblock-wrapper mb-8'>
               <CodeBlock
-                language='html'
                 code={`<!-- Paste this code above Body tag end -->
 <script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
               />
             </div>
-            <p className='mb-6 text-base sm:text-lg'>
+            <p className='mb-6'>
               ⚡ That's it — no config, no setup. Just plug and play..
             </p>
 
@@ -114,7 +114,7 @@ const QuickStart = () => {
               🚀 Get Involved:
             </h3>
             <ul className='list-disc mb-8 space-y-2 pl-5'>
-              <li>🗣️ Ask questions & share ideas</li>
+              <li>🗣️ Ask questions &amp; share ideas</li>
               <li>🛠️ Contribute to components and improvements</li>
               <li>📢 Stay updated with new releases and tips</li>
             </ul>
@@ -124,8 +124,10 @@ const QuickStart = () => {
             </h3>
             <ul className='list-disc mb-8 space-y-2 pl-5'>
               <li>GitHub Repository – Star, fork, or raise issues</li>
-              <li>Discord Community – Chat with other devs & get support</li>
-              <li>Twitter / X – Follow us for updates & sneak peeks</li>
+              <li>
+                Discord Community – Chat with other devs &amp; get support
+              </li>
+              <li>Twitter / X – Follow us for updates &amp; sneak peeks</li>
             </ul>
 
             <p className='mb-8'>
