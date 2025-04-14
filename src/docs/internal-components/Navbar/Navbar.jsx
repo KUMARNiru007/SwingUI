@@ -7,6 +7,7 @@ const Navbar = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
 
+
   const htmlCssCode = `
 
 <nav class="bg-white shadow-sm m-4">
@@ -155,16 +156,17 @@ useEffect(() => {
 
   return (
     <div
-      className={`w-full px-4 py-6 transition-colors duration-300 ${
+      className={` max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <h2 className='text-3xl font-bold mb-2'>Responsive Navbar</h2>
-      <p className='mb-6'>
-        This Navbar component replicates the provided markup, with the LOGO now
-        visible in both light and dark modes.
+      <h2 className='text-3xl sm:text-4xl font-bold mb-2'> Navbar</h2>
+      <p className='mb-10 sm:mb-16'>
+      The Responsive Navbar component offers a dynamic, user-friendly navigation bar with
+light/dark mode support, mobile responsiveness, and interactive dropdowns,
+enhancing user experience across devices.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -189,6 +191,15 @@ useEffect(() => {
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
+          <hr
+              className={`my-10 border-t ${
+                darkMode
+                  ? 'border-gray-700 opacity-30'
+                  : 'border-gray-300 opacity-50'
+              }`}
+            />
+
+
     </div>
   );
 };
