@@ -9,12 +9,11 @@ const CardsDemo = () => {
   const { darkMode } = useTheme();
 
   const htmlCssCode = `
-<div class="w-full flex justify-center ">
- 
-  <div class="flex flex-wrap justify-center gap-6 w-full max-w-7xl bg-gray-100 rounded-lg p-6 mx-auto">
+<div class="w-full flex justify-center">
+  <div class="flex flex-wrap justify-center w-full max-w-4xl bg-gray-200 rounded-lg p-6 mx-auto">
     
-  
-    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+    <!-- Card 1 -->
+    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-ocean-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-ocean-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
@@ -22,8 +21,8 @@ const CardsDemo = () => {
  
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-ocean-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DYNAMIC</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DYNAMIC</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
@@ -33,8 +32,8 @@ const CardsDemo = () => {
       </div>
     </div>
 
-
-    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+    <!-- Card 2 -->
+    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-peach-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-peach-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
@@ -42,8 +41,8 @@ const CardsDemo = () => {
    
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-peach-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DATA DRIVEN</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DATA DRIVEN</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
@@ -53,32 +52,34 @@ const CardsDemo = () => {
       </div>
     </div>
 
-    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+    <!-- Card 3 -->
+    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <div class="absolute top-1 left-1 h-full w-full swing-fire-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-fire-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
     
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-fire-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DUTIFUL</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DUTIFUL</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
-        <a href="#" class=" hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
       </div>
     </div>
 
-    <div class="group relative h-72 w-full sm:w-96 transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2">
+    <!-- Card 4 -->
+    <div class="group relative h-72 w-full lg:w-[48%] lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <div class="absolute top-1 left-1 h-full w-full swing-love-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-love-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-love-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DEMURE</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DEMURE</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
