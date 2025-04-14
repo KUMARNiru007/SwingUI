@@ -11,7 +11,6 @@ import motionGraphicIcon from '../assets/icons/motion-graphic.webp';
 import '../docs/SwingKit/Gradients/style.css';
 
 export default function FeaturesSection() {
-  // Scroll state and refs
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
   const sliderContainerRef = useRef(null);
@@ -20,23 +19,20 @@ export default function FeaturesSection() {
   const [sliderItems, setSliderItems] = useState([]);
   const { darkMode, toggleTheme } = useTheme();
 
-  // New state/ref for user interaction control
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const interactionTimeoutRef = useRef(null);
 
-  // Helper to mark that the user has interacted
   const handleUserInteraction = () => {
     setIsUserInteracting(true);
     if (interactionTimeoutRef.current) {
       clearTimeout(interactionTimeoutRef.current);
     }
-    // Resume auto-scroll after 2 seconds of inactivity
+
     interactionTimeoutRef.current = setTimeout(() => {
       setIsUserInteracting(false);
     }, 2000);
   };
 
-  // Features data (for the left-hand feature cards)
   const features = [
     {
       icon: 'link',
@@ -58,7 +54,6 @@ export default function FeaturesSection() {
     },
   ];
 
-  // Initialize slider items and initial scroll position
   useEffect(() => {
     if (scrollContainerRef.current && sliderContainerRef.current) {
       const sliderElements =
@@ -66,15 +61,12 @@ export default function FeaturesSection() {
       const sliderArr = Array.from(sliderElements);
       setSliderItems(sliderArr);
 
-      // Set initial position
       setInitialPosition(sliderArr);
 
-      // Mark the first slider item as active
       if (sliderElements.length > 0) {
         sliderElements[0].classList.add('active');
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getMaxScroll = () => {
@@ -87,100 +79,135 @@ export default function FeaturesSection() {
 
   const setInitialPosition = (sliderArr) => {
     if (!sliderArr.length || !scrollContainerRef.current) return;
-    const itemHeight = sliderArr[0]?.offsetHeight || 0;
-    // visiblePortion is used to keep a slight preview of the next image (adjust as needed)
-    const visiblePortion = itemHeight / 9;
-    const initialOffset = -(
-      itemHeight -
-      scrollContainerRef.current.clientHeight +
-      visiblePortion
-    );
-    const newScrollY = Math.max(getMaxScroll(), Math.min(0, initialOffset));
+
+    const newScrollY = 0;
     setCurrentScrollY(newScrollY);
     if (sliderContainerRef.current) {
       sliderContainerRef.current.style.transform = `translateY(${newScrollY}px)`;
     }
-    updateItemsVisibility(newScrollY);
+
+    setActiveIndex(0);
+    updateItemVisibility(0);
   };
 
-  const updateItemsVisibility = (scrollY) => {
-    if (!scrollContainerRef.current || sliderItems.length === 0) return;
-    const containerHeight = scrollContainerRef.current.clientHeight;
-    const visibilityThreshold = containerHeight * 0.5;
-    let newActiveIndex = activeIndex;
+  const updateItemVisibility = (index) => {
+    if (!sliderItems.length) return;
 
-    sliderItems.forEach((item, index) => {
-      const itemTop = item.offsetTop + scrollY;
-      const itemBottom = itemTop + item.offsetHeight;
-
-      if (
-        itemTop >= -visibilityThreshold &&
-        itemBottom <= containerHeight + visibilityThreshold
-      ) {
+    sliderItems.forEach((item, i) => {
+      if (i === index) {
         item.classList.add('active');
         item.classList.remove('fade-out');
-        newActiveIndex = index;
-      } else if (
-        (itemTop < -visibilityThreshold && itemBottom > -visibilityThreshold) ||
-        (itemTop < containerHeight + visibilityThreshold &&
-          itemBottom > containerHeight + visibilityThreshold)
-      ) {
-        // Middle transition area
-        item.classList.remove('active', 'fade-out');
       } else {
         item.classList.remove('active');
-        item.classList.add('fade-out');
+
+        const distance = Math.abs(i - index);
+        if (distance > 1) {
+          item.classList.add('fade-out');
+        } else {
+          item.classList.remove('fade-out');
+        }
       }
     });
-    if (newActiveIndex !== activeIndex) {
-      setActiveIndex(newActiveIndex);
-    }
   };
 
-  // Manual wheel handler with interaction detection
+  const scrollToIndex = (index) => {
+    if (!sliderItems.length) return;
+
+    const itemHeight = sliderItems[0]?.offsetHeight || 0;
+    const targetScrollY = -(index * itemHeight);
+
+    const boundedScrollY = Math.max(getMaxScroll(), Math.min(0, targetScrollY));
+
+    setCurrentScrollY(boundedScrollY);
+    if (sliderContainerRef.current) {
+      sliderContainerRef.current.style.transform = `translateY(${boundedScrollY}px)`;
+    }
+
+    setActiveIndex(index);
+    updateItemVisibility(index);
+  };
+
+  const getIndexFromScrollPosition = (scrollY) => {
+    if (!sliderItems.length) return 0;
+
+    const itemHeight = sliderItems[0]?.offsetHeight || 0;
+    if (itemHeight === 0) return 0;
+
+    const rawIndex = Math.abs(scrollY) / itemHeight;
+
+    return Math.round(rawIndex);
+  };
+
   const handleWheel = useCallback(
     (e) => {
       e.preventDefault();
-      handleUserInteraction(); // Pause auto-scroll on interaction
-      const targetScrollY = Math.max(
+      handleUserInteraction();
+
+      const newScrollY = Math.max(
         getMaxScroll(),
         Math.min(0, currentScrollY - e.deltaY),
       );
-      setCurrentScrollY(targetScrollY);
+
+      setCurrentScrollY(newScrollY);
       if (sliderContainerRef.current) {
-        sliderContainerRef.current.style.transform = `translateY(${targetScrollY}px)`;
+        sliderContainerRef.current.style.transform = `translateY(${newScrollY}px)`;
       }
-      updateItemsVisibility(targetScrollY);
+
+      const newIndex = getIndexFromScrollPosition(newScrollY);
+      if (
+        newIndex !== activeIndex &&
+        newIndex >= 0 &&
+        newIndex < features.length
+      ) {
+        setActiveIndex(newIndex);
+        updateItemVisibility(newIndex);
+      }
     },
-    [currentScrollY],
+    [currentScrollY, activeIndex, features.length],
   );
 
-  // Manual touch handlers
   const handleTouchStart = (e) => {
     setTouchStartY(e.touches[0].clientY);
+    handleUserInteraction();
   };
 
   const handleTouchMove = (e) => {
     e.preventDefault();
-    handleUserInteraction(); // Pause auto-scroll on touch
+    handleUserInteraction();
+
     const touchDelta = touchStartY - e.touches[0].clientY;
     setTouchStartY(e.touches[0].clientY);
-    const targetScrollY = Math.max(
+
+    const newScrollY = Math.max(
       getMaxScroll(),
       Math.min(0, currentScrollY - touchDelta),
     );
-    setCurrentScrollY(targetScrollY);
+
+    setCurrentScrollY(newScrollY);
     if (sliderContainerRef.current) {
-      sliderContainerRef.current.style.transform = `translateY(${targetScrollY}px)`;
+      sliderContainerRef.current.style.transform = `translateY(${newScrollY}px)`;
     }
-    updateItemsVisibility(targetScrollY);
+
+    const newIndex = getIndexFromScrollPosition(newScrollY);
+    if (
+      newIndex !== activeIndex &&
+      newIndex >= 0 &&
+      newIndex < features.length
+    ) {
+      setActiveIndex(newIndex);
+      updateItemVisibility(newIndex);
+    }
   };
 
-  // Global event listeners for wheel/touch within the slider region
   useEffect(() => {
     const handleGlobalWheel = (e) => {
       if (!scrollContainerRef.current) return;
       const rect = scrollContainerRef.current.getBoundingClientRect();
+      const withinSlider =
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom &&
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right;
       const canScrollDown = currentScrollY > getMaxScroll();
       const canScrollUp = currentScrollY < 0;
       if (withinSlider && (canScrollUp || canScrollDown)) {
@@ -210,31 +237,42 @@ export default function FeaturesSection() {
     window.addEventListener('touchmove', handleGlobalTouchMove, {
       passive: false,
     });
+
+    const handleGlobalTouchStart = (e) => {
+      if (!scrollContainerRef.current) return;
+      const rect = scrollContainerRef.current.getBoundingClientRect();
+      const touch = e.touches[0];
+      if (!touch) return;
+      const withinSlider =
+        touch.clientY >= rect.top &&
+        touch.clientY <= rect.bottom &&
+        touch.clientX >= rect.left &&
+        touch.clientX <= rect.right;
+      if (withinSlider) {
+        handleTouchStart(e);
+      }
+    };
+
+    window.addEventListener('touchstart', handleGlobalTouchStart);
+
     return () => {
       window.removeEventListener('wheel', handleGlobalWheel);
       window.removeEventListener('touchmove', handleGlobalTouchMove);
+      window.removeEventListener('touchstart', handleGlobalTouchStart);
     };
   }, [handleWheel, currentScrollY]);
 
   useEffect(() => {
     if (sliderItems.length === 0 || isUserInteracting) return;
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % sliderItems.length;
-        const itemHeight = sliderItems[0].offsetHeight;
-        const targetScrollY = -nextIndex * itemHeight;
-        setCurrentScrollY(targetScrollY);
-        if (sliderContainerRef.current) {
-          sliderContainerRef.current.style.transform = `translateY(${targetScrollY}px)`;
-        }
-        updateItemsVisibility(targetScrollY);
-        return nextIndex;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [sliderItems, isUserInteracting]);
 
-  // Renders icon based on feature
+    const interval = setInterval(() => {
+      const nextIndex = (activeIndex + 1) % features.length;
+      scrollToIndex(nextIndex);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [sliderItems, isUserInteracting, activeIndex, features.length]);
+
   const renderIcon = (iconName) => {
     switch (iconName) {
       case 'link':
@@ -291,14 +329,18 @@ export default function FeaturesSection() {
         </div>
 
         <div className='flex flex-col lg:flex-row items-center justify-center gap-y-8 lg:gap-x-12 max-w-6xl mx-auto px-4'>
-          {/* Left Side: Feature Cards */}
           <div className='w-full lg:w-1/2 space-y-6'>
             {features.map((feature, index) => (
               <div
                 key={index}
                 className={`p-6 rounded-lg shadow-sm transition-all duration-300 ${
-                  activeIndex === index ? 'scale-105 border-2' : ''
+                  activeIndex === index
+                    ? darkMode
+                      ? 'scale-105 border-2 border-gray-100'
+                      : 'scale-105 border-2 border-gray-800'
+                    : ''
                 }`}
+                onClick={() => scrollToIndex(index)}
               >
                 <div className='flex items-start gap-4'>
                   {renderIcon(feature.icon)}
@@ -313,7 +355,6 @@ export default function FeaturesSection() {
             ))}
           </div>
 
-          {/* Right Side: Image Slider */}
           <div className='relative w-full lg:w-1/2'>
             <div
               className='relative w-full h-80 md:h-[30rem] overflow-hidden rounded-3xl shadow-xl flex items-center justify-center swing-ocean-gradient'
