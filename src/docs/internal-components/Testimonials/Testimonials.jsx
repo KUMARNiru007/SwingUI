@@ -22,7 +22,7 @@ function Testimonial() {
   const { darkMode } = useTheme();
 
   const htmlCssCode = `<div class=" bg-black text-white p-1 flex flex-col items-center justify-center">
-    <div class="space-y-8 w-full">
+    <div class="space-y-8 w-full pt-8 pb-8">
       <!-- First Slider -->
       <div class="swing-slider-wrapper">
         <div class="swing-scrolling-image"
