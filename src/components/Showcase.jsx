@@ -42,7 +42,8 @@ const Showcase = () => {
     const updateContainerOffset = () => {
       if (cardContainerRef.current) {
         const rect = cardContainerRef.current.getBoundingClientRect();
-        const containerRect = carouselRef.current?.parentElement?.getBoundingClientRect();
+        const containerRect =
+          carouselRef.current?.parentElement?.getBoundingClientRect();
         const offset = rect.left - (containerRect?.left || 0);
         setContainerOffset(Math.max(0, offset));
       }
@@ -104,7 +105,9 @@ const Showcase = () => {
     if (diff > 50) {
       setCurrentIndex((prev) => (prev + 1) % allCardsData.length);
     } else if (diff < -50) {
-      setCurrentIndex((prev) => (prev - 1 + allCardsData.length) % allCardsData.length);
+      setCurrentIndex(
+        (prev) => (prev - 1 + allCardsData.length) % allCardsData.length,
+      );
     }
 
     setTimeout(() => {
@@ -114,7 +117,9 @@ const Showcase = () => {
 
   const goToPrev = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prev) => (prev - 1 + allCardsData.length) % allCardsData.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + allCardsData.length) % allCardsData.length,
+    );
     setTimeout(() => {
       setIsAutoPlaying(true);
     }, 3000);
@@ -140,40 +145,50 @@ const Showcase = () => {
   const visibleCards = getVisibleCards();
 
   return (
-    <div className={`flex p-4 sm:p-10 lg:p-16 w-full transition-colors duration-300 ${
-      darkMode ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]' : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-    }`}>
-      <section 
+    <div
+      className={`flex p-4 sm:p-10 lg:p-16 w-full transition-colors duration-300 ${
+        darkMode
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+      }`}
+    >
+      <section
         className='text-center w-full relative'
         style={{ fontFamily: 'var(--font-poppins)' }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <span className='swing-ocean-gradient-animate hover:swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
-          OUR COMPONENTS
-          </span>
-          <h2 className='text-4xl md:text-5xl font-bold mb-4'>
-          Ready–to–Use Components
-          </h2>
-          <p className='text-lg max-w-3xl mx-auto'>
-          Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
-          </p>
-        </div>
+          <div className='text-center mb-12'>
+            <span className='swing-ocean-gradient-animate hover:swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
+              OUR COMPONENTS
+            </span>
+            <h2 className='text-4xl md:text-5xl font-bold mb-4'>
+              Ready–to–Use Components
+            </h2>
+            <p className='text-lg max-w-3xl mx-auto'>
+              Skip the boilerplate. SwingUI offers pre-styled, customizable
+              Tailwind components built to save time and look great out of the
+              box.
+            </p>
+          </div>
 
           <div className='relative' ref={carouselRef}>
-            <button 
+            <button
               onClick={goToPrev}
-              style={{ left: `${containerOffset - 20}px` }}
-              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center 
-                ${darkMode ? 'bg-[var(--dark-navbar-bg)] text-white' : 'bg-white text-gray-800'} shadow-md hover:scale-110 transition-transform`}
-              aria-label="Previous"
+              style={{ left: `${containerOffset - 40}px` }}
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl
+                ${
+                  darkMode
+                    ? 'bg-[var(--dark-navbar-bg)] text-white'
+                    : 'bg-white text-gray-800'
+                } shadow-md hover:scale-110 transition-transform`}
+              aria-label='Previous'
             >
               &lt;
             </button>
 
-            <div 
+            <div
               ref={cardContainerRef}
               className='flex justify-center gap-4 sm:gap-6 overflow-hidden touch-pan-x'
               onTouchStart={handleTouchStart}
@@ -182,9 +197,12 @@ const Showcase = () => {
               {visibleCards.map((card, index) => (
                 <div
                   key={`${card.id}-${index}`}
-                  className={`flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[400px]
-                    p-4 rounded-2xl transition duration-300
-                    ${darkMode ? 'border border-[var(--dark-hover-bg)] shadow-md' : 'border border-[#e6e8f0] shadow-md'}
+                  className={`flex-shrink-0 w-[330px] sm:w-[330px] lg:w-[400px] [@media(min-width:829px)]:w-[330px] [@media(min-width:954px)]:w-[370px] [@media(min-width:1024px)]:w-[330px] [@media(min-width:1337px)]:w-[370px] [@media(min-width:1504px)]:w-[380px] [@media(min-width:1542px)]:w-[400px] p-4 rounded-2xl transition duration-300
+                    ${
+                      darkMode
+                        ? 'border border-[var(--dark-hover-bg)] shadow-md'
+                        : 'border border-[#e6e8f0] shadow-md'
+                    }
                   `}
                   style={{
                     backgroundColor: darkMode
@@ -192,33 +210,41 @@ const Showcase = () => {
                       : '#f9f7fa',
                   }}
                 >
-                  <div 
+                  <div
                     className='relative rounded-xl overflow-hidden mb-3'
                     style={{
                       padding: '10px',
                       aspectRatio: '1080/720',
-                      backgroundColor: darkMode ? 'var(--dark-bg)' : '#eef1f6'
+                      backgroundColor: darkMode ? 'var(--dark-bg)' : '#eef1f6',
                     }}
                   >
                     <img
                       src={card.img}
                       alt={card.title}
-                      className='w-full h-full object-cover rounded-lg'
+                      className='w-full h-full object-fill rounded-lg'
                     />
                   </div>
-                  <h3 className={`text-base font-bold ${darkMode ? 'text-[var(--color-text-dark)]' : 'text-black'}`}>
+                  <h3
+                    className={`text-base font-bold ${
+                      darkMode ? 'text-[var(--color-text-dark)]' : 'text-black'
+                    }`}
+                  >
                     {card.title}
                   </h3>
                 </div>
               ))}
             </div>
 
-            <button 
+            <button
               onClick={goToNext}
-              style={{ right: `${containerOffset - 20}px` }}
-              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center 
-                ${darkMode ? 'bg-[var(--dark-navbar-bg)] text-white' : 'bg-white text-gray-800'} shadow-md hover:scale-110 transition-transform`}
-              aria-label="Next"
+              style={{ right: `${containerOffset - 40}px` }}
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl 
+                ${
+                  darkMode
+                    ? 'bg-[var(--dark-navbar-bg)] text-white'
+                    : 'bg-white text-gray-800'
+                } shadow-md hover:scale-110 transition-transform`}
+              aria-label='Next'
             >
               &gt;
             </button>
