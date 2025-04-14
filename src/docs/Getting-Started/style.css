@@ -1,6 +1,4 @@
-/* Global wrap overrides for very narrow screens */
 @media (max-width: 400px) {
-  /* Force pre and code to wrap content */
   pre,
   code {
     white-space: pre-wrap !important;
@@ -8,7 +6,6 @@
     overflow-wrap: break-word !important;
   }
 
-  /* If you have a container with a class for CodeBlock wrappers, force no horizontal scrolling */
   .codeblock-wrapper {
     overflow-x: hidden !important;
   }

@@ -61,23 +61,27 @@ const GradientGrid = () => {
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
         <div className='flex flex-col items-start'>
+          {/* Main Heading */}
           <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Gradients</h1>
-          <p className='mb-10 sm:mb-16 ml-1 '>
+          {/* Sub-paragraph */}
+          <p className='mb-10 sm:mb-16'>
             Explore a curated collection of vibrant Swing gradients—perfect for
             enhancing your UI with modern, visually appealing backgrounds.
           </p>
 
           <div className='w-full'>
             {/* Gradient Examples Grid */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10'>
               {gradients.map((gradient) => (
                 <HoverAndCopyBlock key={gradient.id} gradient={gradient} />
               ))}
             </div>
 
             {/* Properties Section */}
-            <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Properties</h2>
-            <div className='w-full mb-12 overflow-x-auto'>
+            <h2 className='text-xl sm:text-2xl font-semibold mb-4'>
+              Properties
+            </h2>
+            <div className='w-full mb-10 overflow-x-auto'>
               <table
                 className={`w-full border-collapse rounded-lg overflow-hidden ${
                   darkMode ? 'bg-gray-800' : 'bg-gray-50'
@@ -125,10 +129,11 @@ const GradientGrid = () => {
               }`}
             />
 
-            <h2 className='text-2xl sm:text-3xl font-bold mb-6'>
+            {/* Implementation Section */}
+            <h2 className='text-xl sm:text-2xl font-semibold mb-4'>
               Implementation
             </h2>
-            <div className='w-full mb-12 overflow-x-auto'>
+            <div className='w-full mb-10 overflow-x-auto'>
               <table
                 className={`w-full border-collapse rounded-lg overflow-hidden ${
                   darkMode ? 'bg-gray-800' : 'bg-gray-50'
