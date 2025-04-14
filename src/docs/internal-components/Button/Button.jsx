@@ -7,7 +7,6 @@ import buttonData from './buttonData.js';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
 import "../../SwingKit/TextGradients/style.css"
-import { section } from 'framer-motion/client';
 import { Link } from 'react-router';
 
 const Button = () => {
