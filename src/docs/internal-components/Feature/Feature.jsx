@@ -9,10 +9,70 @@ import img4 from '../../../assets/Images-For-Gallery/img4.webp';
 
 function Feature() {
   const [showCode, setShowCode] = useState(false);
-
   const previewRef = useRef(null);
-
   const { darkMode } = useTheme();
+
+  // Set up the scroll synchronization with more robust event handling
+  useEffect(() => {
+    // Function to initialize synchronization
+    function initScrollSync() {
+      if (!showCode && previewRef.current) {
+        // Small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+          const textArea = previewRef.current.querySelector('#textArea');
+          const scrollContainer =
+            previewRef.current.querySelector('#scrollContainer');
+
+          if (textArea && scrollContainer) {
+            // Remove any existing event listeners first to avoid duplicates
+            textArea.removeEventListener('wheel', handleWheel);
+
+            // Add fresh event listener
+            textArea.addEventListener('wheel', handleWheel, { passive: false });
+
+            // Function to handle wheel events
+            function handleWheel(e) {
+              scrollContainer.scrollTop += e.deltaY;
+              e.preventDefault();
+            }
+          }
+        }, 100);
+      }
+    }
+
+    // Initialize on mount and reinitialize on any relevant changes
+    initScrollSync();
+
+    // Setup event listeners for potential DOM changes
+    const observer = new MutationObserver(initScrollSync);
+
+    // Start observing if we have the preview ref
+    if (previewRef.current) {
+      observer.observe(previewRef.current, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
+    // Setup interval to periodically check and reinitialize (backup approach)
+    const intervalId = setInterval(initScrollSync, 2000);
+
+    // Clean up function
+    return () => {
+      observer.disconnect();
+      clearInterval(intervalId);
+
+      // Clean up event listeners if component unmounts
+      if (previewRef.current) {
+        const textArea = previewRef.current.querySelector('#textArea');
+        if (textArea) {
+          textArea.removeEventListener('wheel', handleWheel);
+        }
+      }
+
+      function handleWheel() {} // Empty placeholder to avoid reference errors
+    };
+  }, [showCode, darkMode]); // Re-run when showCode or darkMode changes
 
   const htmlCssCode = `
   <div class="flex items-center justify-center p-4">
@@ -25,7 +85,7 @@ function Feature() {
 
       <div class="flex flex-col lg:flex-row w-full p-4 md:p-8">
         
-        <div class="flex flex-col justify-center p-4 md:p-8 lg:w-1/2 order-2 lg:order-1">
+        <div id="textArea" class="flex flex-col justify-center p-4 md:p-8 lg:w-1/2 order-2 lg:order-1">
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Random Heading</h1>
             <p class="text-sm md:text-base lg:text-lg text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, consectetur dolores fugiat magnam voluptates qui debitis saepe quas exercitationem dicta! Nihil, commodi culpa temporibus quibusdam vitae tenetur quae reprehenderit ducimus!
@@ -98,14 +158,17 @@ function Feature() {
       .fade-out.active {
           opacity: 1;
       } */
+      
+      /* Make text area scrollable */
+      #textArea {
+        cursor: ns-resize; /* Change cursor to indicate scrolling capability */
+      }
     </style>
   `;
 
-  useEffect(() => {}, [showCode, darkMode]);
-
   return (
     <div
-      className={`w-full px-4 py-6  transition-colors duration-300 ${
+      className={`w-full px-4 py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -124,12 +187,11 @@ function Feature() {
       {!showCode && (
         <div
           ref={previewRef}
-          key={`${darkMode}-${showCode}`}
+          key={`preview-${darkMode}-${showCode}`}
           className={`flex justify-center items-center ${
             darkMode ? 'bg-[var(--light-bg)]' : 'bg-[var(--light-bg)]'
           } rounded-lg shadow-md w-full`}
         >
-          {/* Inject updated HTML + customCSS */}
           <div
             className='w-full'
             dangerouslySetInnerHTML={{
