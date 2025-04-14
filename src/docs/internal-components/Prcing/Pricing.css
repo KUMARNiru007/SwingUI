@@ -1,0 +1,89 @@
+@keyframes dashOffset {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -100; }
+  }
+
+  .price-animation {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .price-hidden {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  
+  .toggle-container {
+    position: relative;
+    display: inline-flex;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.25rem;
+    width: 226px; 
+  }
+
+  .toggle-slider {
+    position: absolute;
+    top: 0.25rem;
+    height: calc(100% - 0.5rem);
+    background-color: black;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    width: calc(50% - 0.25rem);
+  }
+
+  .toggle-btn {
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s ease;
+    width: 110px; 
+    text-align: center;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  
+  .button-pop {
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .button-pop:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .button-pop:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  
+  @media (min-width: 640px) {
+    .toggle-container {
+      width: 206px;
+    }
+    .toggle-btn {
+      width: 100px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .toggle-container {
+      width: 216px;
+    }
+    .toggle-btn {
+      width: 105px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .toggle-container {
+      width: 226px;
+    }
+    .toggle-btn {
+      width: 110px;
+    }
+  }

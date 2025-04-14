@@ -1,0 +1,12 @@
+@media (max-width: 400px) {
+  pre,
+  code {
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .codeblock-wrapper {
+    overflow-x: hidden !important;
+  }
+}

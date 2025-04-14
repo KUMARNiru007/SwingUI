@@ -1,0 +1,40 @@
+.swing-scrolling-image {
+  visibility: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  width: 60vw;
+  position: relative;
+
+}
+
+.swing-scrolling-image.showing {
+  visibility: visible;
+  opacity: 1;
+}
+
+.swing-scrolling-image .slider-container {
+  animation: sliding calc(var(--est-speed, 10) * 1s * 50 / var(--speed)) linear infinite;
+  display: flex;
+  gap: 0.5rem;
+}
+.swing-slider-item {
+  transform: translateZ(0);
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+  width: 350px;
+  height: 180px;
+  margin: 0 2px;
+  object-fit: contain;
+}
+
+
+@keyframes sliding {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--direction, 1) * 100% / var(--total, 2))); }
+}
+
+.line-clamp-3 {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}

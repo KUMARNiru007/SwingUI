@@ -1,0 +1,43 @@
+/* animated gradients bg */
+
+.swing-ocean-gradient-text {
+  background: linear-gradient(-45deg, #3badb2, #004aad, #3badb2, #004aad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.swing-fire-gradient-text {
+  background: linear-gradient(-45deg, #f5af19, #f12711, #f5af19, #f12711);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.swing-peach-gradient-text {
+  background: linear-gradient(-45deg, #ffc371, #ff5f6d, #ffc371, #ff5f6d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.swing-love-gradient-text {
+  background: linear-gradient(-45deg, #dd5950, #cb2d3e, #dd5950, #cb2d3e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.swing-deepsea-gradient-text {
+  background: linear-gradient(-45deg, #000428, #004e92, #000428, #004e92);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.swing-royal-gradient-text {
+  background: linear-gradient(-45deg, #734b6d, #42275a, #734b6d, #42275a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
