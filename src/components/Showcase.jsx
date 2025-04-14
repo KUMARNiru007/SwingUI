@@ -11,13 +11,28 @@ import blog6 from '../assets/images-for-Showcase/NavBar_Light.webp';
 import blog7 from '../assets/images-for-Showcase/Tabs_Light.webp';
 
 const allCardsData = [
-  { id: 1, img: blog1, title: 'Animated Gradinent' },
-  { id: 2, img: blog2, title: 'Buttons' },
-  { id: 3, img: blog3, title: 'Cards' },
-  { id: 4, img: blog4, title: 'Gradinent' },
-  { id: 5, img: blog5, title: 'Gradinent Text' },
-  { id: 6, img: blog6, title: 'NavBar' },
-  { id: 7, img: blog7, title: 'Tabs' },
+  {
+    id: 1,
+    img: blog1,
+    title: 'Animated Gradinent',
+    link: '/swingkit/animated-gradients',
+  },
+  { id: 2, img: blog2, title: 'Buttons', link: '/components/button' },
+  { id: 3, img: blog3, title: 'Cards', link: '/components/card' },
+  {
+    id: 4,
+    img: blog4,
+    title: 'Gradinent',
+    link: '/swingkit/gradients',
+  },
+  {
+    id: 5,
+    img: blog5,
+    title: 'Gradinent Text',
+    link: 'swingkit/text-gradients',
+  },
+  { id: 6, img: blog6, title: 'NavBar', link: '/components/navbar' },
+  { id: 7, img: blog7, title: 'Tabs', link: '/components/tabs' },
 ];
 
 const Showcase = () => {
@@ -177,7 +192,7 @@ const Showcase = () => {
             <button
               onClick={goToPrev}
               style={{ left: `${containerOffset - 40}px` }}
-              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl cursor-pointer
                 ${
                   darkMode
                     ? 'bg-[var(--dark-navbar-bg)] text-white'
@@ -190,14 +205,14 @@ const Showcase = () => {
 
             <div
               ref={cardContainerRef}
-              className='flex justify-center gap-4 sm:gap-6 overflow-hidden touch-pan-x'
+              className='flex justify-center gap-4 sm:gap-6 overflow-hidden touch-pan-x max-w-full'
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
               {visibleCards.map((card, index) => (
                 <div
                   key={`${card.id}-${index}`}
-                  className={`flex-shrink-0 w-[330px] sm:w-[330px] lg:w-[400px] [@media(min-width:829px)]:w-[330px] [@media(min-width:954px)]:w-[370px] [@media(min-width:1024px)]:w-[330px] [@media(min-width:1337px)]:w-[370px] [@media(min-width:1504px)]:w-[380px] [@media(min-width:1542px)]:w-[400px] p-4 rounded-2xl transition duration-300
+                  className={`flex-shrink-0 w-[270px] sm:w-[300px] md:w-[300px] lg:w-[370px] [@media(width:1024px)]:w-[260px] [@media(min-width:1337px)]:w-[380px] [@media(min-width:1542px)]:w-[400px] p-4 rounded-2xl transition duration-300
                     ${
                       darkMode
                         ? 'border border-[var(--dark-hover-bg)] shadow-md'
@@ -218,11 +233,13 @@ const Showcase = () => {
                       backgroundColor: darkMode ? 'var(--dark-bg)' : '#eef1f6',
                     }}
                   >
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      className='w-full h-full object-fill rounded-lg'
-                    />
+                    <Link to={card.link}>
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className='w-full h-full object-fill rounded-lg hover:scale-110 transition-transform duration-400 ease-in-out cursor-pointer'
+                      />
+                    </Link>
                   </div>
                   <h3
                     className={`text-base font-bold ${
@@ -238,7 +255,7 @@ const Showcase = () => {
             <button
               onClick={goToNext}
               style={{ right: `${containerOffset - 40}px` }}
-              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl 
+              className={`absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xl cursor-pointer
                 ${
                   darkMode
                     ? 'bg-[var(--dark-navbar-bg)] text-white'
