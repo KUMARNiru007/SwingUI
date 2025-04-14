@@ -22,8 +22,8 @@ const CardsDemo = () => {
  
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-ocean-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DYNAMIC</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DYNAMIC</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
@@ -42,8 +42,8 @@ const CardsDemo = () => {
    
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-peach-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DATA DRIVEN</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DATA DRIVEN</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
@@ -60,8 +60,8 @@ const CardsDemo = () => {
     
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-fire-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DUTIFUL</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DUTIFUL</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
@@ -77,8 +77,8 @@ const CardsDemo = () => {
 
       <div class="relative flex flex-col justify-between h-full w-full p-6 swing-love-gradient border-2 border-black">
         <div class="flex flex-col justify-between h-full">
-          <h1 class="font-semibold text-2xl">DEMURE</h1>
-          <p class="text-[18px]">
+          <h1 class="font-semibold text-2xl text-gray-900">DEMURE</h1>
+          <p class="text-[18px] text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
