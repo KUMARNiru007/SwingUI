@@ -278,7 +278,7 @@ export default function FeaturesSection() {
     >
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
-          <span className='swing-ocean-gradient hover:swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
+          <span className='swing-ocean-gradient-animate hover:swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
             EASY TO USE
           </span>
           <h2 className='text-4xl md:text-5xl font-bold mb-4'>

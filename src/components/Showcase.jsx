@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import '../../src/index.css';
-
+import { Link } from 'react-router-dom';
 import blog1 from '../assets/images-for-Showcase/Animated_Gradinent_Light.webp';
 import blog2 from '../assets/images-for-Showcase/Buttons_Light.webp';
 import blog3 from '../assets/images-for-Showcase/Cards_Light.webp';
@@ -150,16 +150,19 @@ const Showcase = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='mb-8 sm:mb-10'>
-            <span className='inline-block px-3 py-1.5 swing-ocean-gradient-animate text-white text-xs sm:text-sm font-semibold rounded-full mb-3 bg-gradient-to-r from-[#3badb2] to-[#004aad]'>
-              OUR COMPONENTS
-            </span>
-            <h2 className='text-lg sm:text-2xl lg:text-3xl font-extrabold mb-3'>
-              Ready–to–Use Components
-            </h2>
-            <p className='text-xs sm:text-sm max-w-2xl mx-auto'>
-              Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
-            </p>
+          <div className="p-[10px] sm:p-[20px] lg:p-[30px]">
+            <div className='mb-8 sm:mb-10'>
+              <span className='inline-block px-3 py-1.5 mb-8
+ swing-ocean-gradient-animate text-white text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-[#3badb2] to-[#004aad]'>
+                OUR COMPONENTS
+              </span>
+              <h2 className='text-lg sm:text-2xl lg:text-3xl font-extrabold mb-8'>
+                Ready–to–Use Components
+              </h2>
+              <p className='text-xs sm:text-sm max-w-2xl mx-auto'>
+                Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
+              </p>
+            </div>
           </div>
 
           <div className='relative' ref={carouselRef}>
@@ -223,10 +226,12 @@ const Showcase = () => {
               &gt;
             </button>
           </div>
-
-          <button className='mt-8 sm:mt-10 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition duration-200 hover:swing-ocean-gradient swing-ocean-gradient hover:bg-[var(--color-primary-hover)] text-white'>
+            <Link
+            to='/components/button'>
+          <button className='cursor-pointer px-6 py-3 mt-32 rounded-full w-[85%] sm:w-auto border border-gray-300 font-semibold hover:text-white hover:bg-gray-800 transition'>
             Explore All Components
           </button>
+          </Link>
         </div>
       </section>
     </div>
