@@ -33,28 +33,28 @@ const TransitionItem = ({ transition }) => {
 const TextGradient = () => {
   const { darkMode } = useTheme();
 
-  const propertiesData = [
-    {
-      className: 'swing-ocean-gradient',
-      section: 'Swing Text',
-      description: 'A swing button with a vibrant gradient background.',
-    },
-    {
-      className: 'swing-ocean-gradient hover:swing-ocean-gradient',
-      section: 'Swing Button',
-      description: 'A swing button that shows an alternate gradient on hover.',
-    },
-    {
-      className: 'swing-ocean-gradient-animate',
-      section: 'Animated Swing Button',
-      description: 'An animated swing button with continuous gradient motion.',
-    },
-    {
-      className: 'swing-ocean-gradient-animate hover:swing-ocean-gradient',
-      section: 'Animated Swing Button',
-      description: 'An animated button that changes its gradient on hover.',
-    },
-  ];
+  // const propertiesData = [
+  //   {
+  //     className: 'swing-ocean-gradient',
+  //     section: 'Swing Text',
+  //     description: 'A swing button with a vibrant gradient background.',
+  //   },
+  //   {
+  //     className: 'swing-ocean-gradient hover:swing-ocean-gradient',
+  //     section: 'Swing Button',
+  //     description: 'A swing button that shows an alternate gradient on hover.',
+  //   },
+  //   {
+  //     className: 'swing-ocean-gradient-animate',
+  //     section: 'Animated Swing Button',
+  //     description: 'An animated swing button with continuous gradient motion.',
+  //   },
+  //   {
+  //     className: 'swing-ocean-gradient-animate hover:swing-ocean-gradient',
+  //     section: 'Animated Swing Button',
+  //     description: 'An animated button that changes its gradient on hover.',
+  //   },
+  // ];
 
   return (
     <main
@@ -92,7 +92,7 @@ const TextGradient = () => {
               ))}
             </div>
 
-            <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Properties</h2>
+            {/* <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Properties</h2>
             <div className='w-full mb-16 overflow-x-auto'>
               <table
                 className={`w-full border-collapse rounded-lg overflow-hidden ${
@@ -152,7 +152,7 @@ const TextGradient = () => {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div> */}
 
             <hr
               className={`my-10 border-t ${
