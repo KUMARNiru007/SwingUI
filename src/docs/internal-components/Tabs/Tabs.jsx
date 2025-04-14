@@ -45,7 +45,7 @@ const Tabs = () => {
           btn.innerHTML = `
                 <span class="sm:inline">${tab.id}</span>
                 `;
-          btn.className = `tab-button flex-1 w-full sm:w-auto md:w-40 text-xs sm:text-sm font-semibold py-2 sm:py-3 px-3 sm:px-6 border-2 rounded-lg bg-white transition-all duration-300 ${
+          btn.className = `tab-button flex-1 w-full w-1 sm:w-40 md:w-64 text-xs sm:text-sm font-semibold py-2 sm:py-3 px-6 sm:px-2 border-2 rounded-lg bg-white transition-all duration-300 ${
             activeTab === tab.id
               ? 'text-[var(--light-nav-hover)] border-[var(--light-nav-hover)] border-b-[6px]'
               : 'text-black border-black hover:bg-gray-100 hover:-rotate-3 hover:-translate-y-1 hover:shadow-[4px_6px_0px_rgba(0,0,0,0.7)]'
@@ -91,16 +91,16 @@ const Tabs = () => {
     };
 
     return (
-      <div className='mb-8'>
+      <div className='mb-8 max-w-full'>
         <h2 className='text-2xl sm:text-3xl font-bold mb-2'>{tab.label}</h2>
         <p className='mb-4 sm:mb-6 text-sm sm:text-base'>{tab.description}</p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode && (
-          <div className='flex justify-center min-h-40 items-center bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
+          <div className='flex justify-center items-center w-full max-w-full bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
             <div
-              className='w-full flex justify-center p-2 sm:p-4'
+              className='w-full mx-w-full flex justify-center p-2 sm:p-4'
               dangerouslySetInnerHTML={{ __html: tab.code }}
             />
           </div>
@@ -135,28 +135,26 @@ const Tabs = () => {
       }`}
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-8 sm:pb-12'>
+        <div className='flex flex-col items-start'>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Tabs</h1>
+          <p className='mb-4 sm:mb-6 text-sm sm:text-base'>
+            This dynamic Tabs component provides seamless navigation between
+            categorized content blocks with responsive design, interactive hover
+            effects, and optional code previews — ideal for modern UI/UX needs.
+          </p>
 
-      <div className='flex flex-col items-start'>
-      <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Tabs</h1>
-      <p className='mb-4 sm:mb-6 text-sm sm:text-base'>
-      This dynamic Tabs component provides seamless navigation between categorized
-content blocks with responsive design, interactive hover effects, and optional code
-previews — ideal for modern UI/UX needs.
-      </p>
-
-      {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
-        <div key={sectionName} className='mb-6 sm:mb-8'>
-          <div className='space-y-8 sm:space-y-12'>
-            {Tabs.map((tab) => (
-              <TabDemo key={tab.id} tab={tab} />
-            ))}
-          </div>
+          {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
+            <div key={sectionName} className='mb-6 sm:mb-8'>
+              <div className='space-y-8 sm:space-y-12'>
+                {Tabs.map((tab) => (
+                  <TabDemo key={tab.id} tab={tab} />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-    </div>
-    </div>
-    
   );
 };
 
