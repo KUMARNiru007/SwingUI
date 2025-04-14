@@ -145,39 +145,40 @@ function Pricing() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } p-4`}
     >
-     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-     <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Pricing</h2>
-      <p className='mb-10 sm:mb-16'>
-      The Pricing component provides a visually appealing and responsive pricing section, 
-      with a dynamic layout that adjusts to both light and dark modes. It integrates a live 
-      preview feature and supports user interaction with the ability to toggle code display.
-      </p>
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6'>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Pricing</h2>
+        <p className='mb-10 sm:mb-16'>
+          The Pricing component provides a visually appealing and responsive
+          pricing section, with a dynamic layout that adjusts to both light and
+          dark modes. It integrates a live preview feature and supports user
+          interaction with the ability to toggle code display.
+        </p>
 
-      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
-      {!showCode && (
-        <div
-          key={`${darkMode}-${showCode}`}
-          className={`flex justify-center items-center pt-[5vh] ${
-            darkMode
-              ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
-              : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-          }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
-        >
-          {/* Render live preview */}
+        {!showCode && (
           <div
-            className='w-full'
-            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-          />
-        </div>
-      )}
+            key={`${darkMode}-${showCode}`}
+            className={`flex justify-center items-center ${
+              darkMode
+                ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
+                : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+            }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
+          >
+            {/* Render live preview */}
+            <div
+              className='w-full'
+              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+            />
+          </div>
+        )}
 
-      {showCode && (
-        <div className='w-full overflow-x-auto my-4 rounded-xl'>
-          <CodeBlock language='html' code={htmlCssCode} />
-        </div>
-      )}
-     </div>
+        {showCode && (
+          <div className='w-full overflow-x-auto my-4 rounded-xl'>
+            <CodeBlock language='html' code={htmlCssCode} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
