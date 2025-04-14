@@ -150,20 +150,17 @@ const Showcase = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className="p-[10px] sm:p-[20px] lg:p-[30px]">
-            <div className='mb-8 sm:mb-10'>
-              <span className='inline-block px-3 py-1.5 mb-8
- swing-ocean-gradient-animate text-white text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-[#3badb2] to-[#004aad]'>
-                OUR COMPONENTS
-              </span>
-              <h2 className='text-lg sm:text-2xl lg:text-3xl font-extrabold mb-8'>
-                Ready–to–Use Components
-              </h2>
-              <p className='text-xs sm:text-sm max-w-2xl mx-auto'>
-                Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
-              </p>
-            </div>
-          </div>
+        <div className='text-center mb-12'>
+          <span className='swing-ocean-gradient-animate hover:swing-ocean-gradient text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
+          OUR COMPONENTS
+          </span>
+          <h2 className='text-4xl md:text-5xl font-bold mb-4'>
+          Ready–to–Use Components
+          </h2>
+          <p className='text-lg max-w-3xl mx-auto'>
+          Skip the boilerplate. SwingUI offers pre-styled, customizable Tailwind components built to save time and look great out of the box.
+          </p>
+        </div>
 
           <div className='relative' ref={carouselRef}>
             <button 
@@ -226,11 +223,11 @@ const Showcase = () => {
               &gt;
             </button>
           </div>
-            <Link
-            to='/components/button'>
-          <button className='cursor-pointer px-6 py-3 mt-32 rounded-full w-[85%] sm:w-auto border border-gray-300 font-semibold hover:text-white hover:bg-gray-800 transition'>
-            Explore All Components
-          </button>
+
+          <Link to='/components/button'>
+            <button className='cursor-pointer px-6 py-3 mt-24 rounded-full w-[85%] sm:w-auto border border-gray-300 font-semibold hover:text-white hover:bg-gray-800 transition'>
+              Explore All Components
+            </button>
           </Link>
         </div>
       </section>

@@ -16,7 +16,7 @@ const CopyButton = ({ textToCopy, className = '' }) => {
   return (
     <button
       onClick={handleCopy}
-      className={`bg-[#2b2b2b] text-white px-3 py-1 rounded-md flex items-center gap-2 text-xs border border-gray-600 shadow hover:bg-[#3a3a3a] transition-all duration-200 ${className}`}
+      className={`cursor-pointer bg-[#2b2b2b] text-white px-3 py-1 rounded-md flex items-center gap-2 text-xs border border-gray-600 shadow hover:bg-[#3a3a3a] transition-all duration-200 ${className}`}
     >
       {copied ? (
         <>
