@@ -1,6 +1,6 @@
 import React from 'react';
 import HoverAndCopyBlock from '../../components/HoverAndCopyBlock/hoverAndCopyBlock';
-import gradients from './graidentsData';
+import gradients from './graidentsData.js';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import './style.css';
 import '../TextGradients/style.css';
