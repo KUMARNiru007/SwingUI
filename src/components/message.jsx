@@ -20,7 +20,7 @@ const StickyMessageBox = () => {
         onClick={() => setVisible(false)}
         aria-label='Close'
       >
-        <i className='ri-close-large-fill'></i>
+        <i className='ri-close-large-fill text-sm mt-[4px]'></i>
       </button>
       <p className='text-xs sm:text-xs'>
         We are Currently in{' '}
