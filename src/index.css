@@ -46,14 +46,14 @@
 }
 
 .scrollbar-hidden {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
-/* Ensure Prism code blocks wrap lines */
+
 pre[class*='language-'] {
   white-space: pre-wrap !important;
   word-break: break-word;

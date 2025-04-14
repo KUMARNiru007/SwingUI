@@ -62,7 +62,7 @@ const Layout = () => {
               className={`md:hidden fixed top-18 left-0 w-[280px] h-[calc(100vh-64px)] z-50 transition-all duration-300 transform shadow-md overflow-y-auto ${
                 darkMode
                   ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
-                  : 'bg-white text-black' // Change bg-[var(--light-navbar-bg)] to bg-white
+                  : 'bg-white text-black' 
               } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
 
 
@@ -79,7 +79,7 @@ const Layout = () => {
               <Sidebar />
             </div>
 
-            {/* Backdrop Overlay - Updated with blur effect */}
+      
             <div
               
              className={`fixed inset-0 z-40 bg-black transition-all duration-300 ${
@@ -95,15 +95,15 @@ const Layout = () => {
           <div
             className={`w-full ${
               isHome
-                ? '' // No padding on home
-                : 'px-[0.875rem] ' // Padding on other pages
+                ? '' 
+                : 'px-[0.875rem] ' 
             }`}
           >
             <div
               className={`${
                 isHome
-                  ? '' // No max width on home
-                  : 'max-w-screen-xl mx-auto w-full' // Add gap + wrap on others
+                  ? '' 
+                  : 'max-w-screen-xl mx-auto w-full' 
               }`}
             >
               <Routes>

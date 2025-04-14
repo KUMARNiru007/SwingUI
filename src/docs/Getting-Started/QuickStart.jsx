@@ -3,6 +3,8 @@ import CodeBlock from '../components/CodeBlock/CodeBlock.jsx';
 import { useTheme } from '../../context/ThemeContext';
 import '../SwingKit/TextGradients/style.css';
 import './style.css';
+import { Link } from 'react-router';
+
 
 const QuickStart = () => {
   const { darkMode } = useTheme();
@@ -123,11 +125,11 @@ const QuickStart = () => {
               📌 Connect With Us:
             </h3>
             <ul className='list-disc mb-8 space-y-2 pl-5'>
-              <li>GitHub Repository – Star, fork, or raise issues</li>
+              <li> <Link to="#"  className='swing-ocean-gradient-text'> GitHub Repository </Link> – Star, fork, or raise issues</li>
               <li>
-                Discord Community – Chat with other devs &amp; get support
+               <Link to="https://discord.com/invite/gd9Vjb6VCm" target='_blank' className='swing-ocean-gradient-text'> Discord Community</Link> – Chat with other devs &amp; get support
               </li>
-              <li>Twitter / X – Follow us for updates &amp; sneak peeks</li>
+              <li> <Link to="https://x.com/swing_ui" target='_blank' className='swing-ocean-gradient-text'>Twitter / X </Link> – Follow us for updates &amp; sneak peeks</li>
             </ul>
 
             <p className='mb-8'>
