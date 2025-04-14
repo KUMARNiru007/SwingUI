@@ -10,10 +10,6 @@ function Pricing() {
   const { darkMode } = useTheme();
 
   const htmlCssCode = `<div class="w-full max-w-7xl mx-auto text-center px-4 sm:px-6 mb-8 md:mb-12 lg:mb-16">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Pricing plans</h1>
-    <p class="text-center text-gray-600 max-w-lg mx-auto text-sm sm:text-base mb-6 sm:mb-8">
-      Lorem ipsum dolor sit amet consectetur. Pulvinar eu rhoncus tincidunt eget mattis netus ridiculus.
-    </p>
 
     <div class="flex flex-col items-center lg:flex-row justify-center mt-6 sm:mt-8 space-y-4 lg:space-y-0 lg:space-x-4 relative">
       <div class="relative w-64 h-12 bg-gray-100 rounded-md flex items-center overflow-hidden">
