@@ -27,7 +27,7 @@ const Docs = () => {
           <Routes>
             <Route index element={<QuickStart />} />
             <Route path='quick-start' element={<QuickStart />} />
-            <Route path='cdn' element={<CDN />} />
+            {/* <Route path='cdn' element={<CDN />} /> */}
             <Route path='installation' element={<Installation />} />
             <Route path='utilities' element={<Utilities />} />
           </Routes>
