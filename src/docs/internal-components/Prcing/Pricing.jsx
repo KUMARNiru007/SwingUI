@@ -145,12 +145,12 @@ function Pricing() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } p-4`}
     >
-      <h2 className='text-3xl font-bold mb-2'>Pricing Component</h2>
-      <p className='mb-6'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-        necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis
-        voluptates atque voluptate ducimus provident, reprehenderit
-        necessitatibus tempora quaerat, quisquam nostrum ad.
+     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+     <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Pricing</h2>
+      <p className='mb-10 sm:mb-16'>
+      The Pricing component provides a visually appealing and responsive pricing section, 
+      with a dynamic layout that adjusts to both light and dark modes. It integrates a live 
+      preview feature and supports user interaction with the ability to toggle code display.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -177,6 +177,7 @@ function Pricing() {
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
+     </div>
     </div>
   );
 }

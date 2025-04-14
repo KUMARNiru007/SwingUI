@@ -35,7 +35,7 @@ const Button = () => {
 
     return (
       <div className='mb-8 px-4 py-6 '>
-        <h2 className='text-3xl font-bold mb-2'>{button.label}</h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>{button.label}</h2>
         <p className='mb-6'>{button.description}</p>
         <PreviewCodeBtn
           showCode={showCode}
@@ -55,6 +55,14 @@ const Button = () => {
             <CodeBlock language='html' code={button.code} />
           </div>
         )}
+
+            <hr
+              className={`my-10 border-t ${
+                darkMode
+                  ? 'border-gray-700 opacity-30'
+                  : 'border-gray-300 opacity-50'
+              }`}
+            />
       </div>
     );
   };
@@ -89,8 +97,9 @@ const Button = () => {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } px-4 sm:px-6 lg:px-20 py-8 sm:py-12`}
+      } `}
     >
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
       <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Buttons</h2>
       <p className='mb-10 sm:mb-16'>
       The Button component offers a variety of dynamic, gradient-filled buttons with smooth 
@@ -109,23 +118,17 @@ const Button = () => {
             ))}
           
           </div>
-          <hr
-              className={`my-10 border-t ${
-                darkMode
-                  ? 'border-gray-700 opacity-30'
-                  : 'border-gray-300 opacity-50'
-              }`}
-            />
+          
         </div>
       ))}
-      <h3 className='text-3xl sm:text-4xl font-bold mb-2'>Gradient Color</h3>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Gradient Color</h3>
       <p className='mb-10 sm:mb-16'>
       Explore vibrant gradient backgrounds that can be applied to buttons and other UI 
       elements. These smooth, colorful gradients can enhance the visual appeal and 
       interactivity of your design. 
       If you want to explore more gradient styles, check out the <Link to="/swingkit/gradients" className='swing-ocean-gradient-text'> Gradient Collection</Link>.
       </p>
-      <h3 className='text-3xl sm:text-4xl font-bold mb-2'>Animated Gradient</h3>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Animated Gradient</h3>
       <p className='mb-10 sm:mb-16'>
       These animated gradients offer dynamic, moving color transitions, adding an interactive 
       and visually engaging effect to your design. 
@@ -133,7 +136,7 @@ const Button = () => {
         Gradient Collection. </Link>.
       </p>
 
-      <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Properties</h2>
+      <h2 className='text-xl sm:text-2xl font-semibold mb-4 '>Properties</h2>
             <div className='w-full mb-12 overflow-x-auto'>
               <table
                 className={`w-full border-collapse rounded-lg overflow-hidden ${
@@ -180,6 +183,7 @@ const Button = () => {
             </div>
 
 
+      </div>
     </div>
   );
 };

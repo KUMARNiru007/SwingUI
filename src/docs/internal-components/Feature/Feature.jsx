@@ -165,6 +165,55 @@ function Feature() {
       }
     </style>
   `;
+  const propertiesData=[ {
+        variable: 'State.currentScrollY',
+        type : 'number',
+        description: "Tracks the current vertical scroll position of the carousel",
+      },
+      {
+        variable: 'State.targetScrollY',
+        type : 'number',
+        description: "Target scroll position, adjusted based on user input",
+      },
+      {
+        variable: 'State.isAnimating',
+        type : 'boolean',
+        description:
+         "Indicates whether the scroll animation is in progress",
+      },
+      {
+        variable: 'State.maxScroll ',
+        type : 'number',
+        description: "The maximum scroll limit to prevent scrolling beyond the images",
+      },
+      {
+        variable: 'State.itemHeight ',
+        type : 'number',
+        description: "Height of the slider items, dynamically calculated",
+      },{
+        variable: 'State.rafId ',
+        type : 'number',
+        description: "Holds the requestAnimationFrame ID for cancelling the animation",
+      }
+    ]
+    const animationSettings = [
+      {
+        variable: 'SCROLL_STEP',
+        value: 100,
+        description: "Defines the scroll step increment for wheel movements",
+      },
+      {
+        variable: 'MOBILE_BREAKPOINT',
+        value: 640,
+        description: "Breakpoint width for detecting mobile devices",
+      },
+      {
+        variable: 'EASING',
+        value: 0.1,
+        description: "Defines the easing factor for smooth animations",
+      }
+    ];
+    
 
   return (
     <div
@@ -172,14 +221,15 @@ function Feature() {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } p-4`}
+      } px-4 sm:px-6 lg:px-20 py-8 sm:py-12`}
     >
-      <h2 className='text-3xl font-bold mb-2'>Feature Component</h2>
-      <p className='mb-6'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-        necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis
-        voluptates atque voluptate ducimus provident, reprehenderit
-        necessitatibus tempora quaerat, quisquam nostrum ad.
+     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+     <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Features</h2>
+      <p className='mb-10 sm:mb-16'>
+      The Feature component displays a dynamic image slider with smooth scroll 
+      functionality, using React hooks to handle state and animations. It also includes a 
+      toggle to preview the HTML/CSS code behind the feature, providing a seamless 
+      experience for both users and developers.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -206,6 +256,112 @@ function Feature() {
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
+
+      <h2 className='text-2xl sm:text-3xl font-bold  mb-10 sm:mb-16 mt-10 sm:mt-16'>State Management Variable</h2>
+                  <div className='w-full mb-12 overflow-x-auto'>
+                    <table
+                      className={`w-full border-collapse rounded-lg overflow-hidden ${
+                        darkMode ? 'bg-gray-800' : 'bg-gray-50'
+                      }`}
+                    >
+                      <thead>
+                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Variable
+                          </th>
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Type
+                          </th>
+      
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Description
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {propertiesData.map((item, index) => (
+                          <tr
+                            key={index}
+                            className={`border-t ${
+                              darkMode ? 'border-gray-700' : 'border-gray-200'
+                            }`}
+                          >
+                            <td className='py-3 px-4'>
+                              <code
+                                className={`px-2 py-1 rounded text-sm ${
+                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                                }`}
+                              >
+                                {item.variable}
+                              </code>
+                            </td>
+                            <td className='py-3 px-4'><code
+                                className={`px-2 py-1 rounded text-sm ${
+                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                                }`}
+                              >
+                                {item.type}
+                              </code></td>
+                            <td className='py-3 px-4'>{item.description}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Transition and Animation Settings</h2>
+                  <div className='w-full mb-12 overflow-x-auto'>
+                    <table
+                      className={`w-full border-collapse rounded-lg overflow-hidden ${
+                        darkMode ? 'bg-gray-800' : 'bg-gray-50'
+                      }`}
+                    >
+                      <thead>
+                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Property
+                          </th>
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Value
+                          </th>
+      
+                          <th className='py-3 px-4 text-left font-semibold'>
+                            Description
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {animationSettings.map((item, index) => (
+                          <tr
+                            key={index}
+                            className={`border-t ${
+                              darkMode ? 'border-gray-700' : 'border-gray-200'
+                            }`}
+                          >
+                            <td className='py-3 px-4'>
+                              <code
+                                className={`px-2 py-1 rounded text-sm ${
+                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                                }`}
+                              >
+                                {item.variable}
+                              </code>
+                            </td>
+                            <td className='py-3 px-4'><code
+                                className={`px-2 py-1 rounded text-sm ${
+                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                                }`}
+                              >
+                                {item.value}
+                              </code></td>
+                            <td className='py-3 px-4'>{item.description}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+      
+     </div>
     </div>
   );
 }
