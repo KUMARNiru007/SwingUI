@@ -2,8 +2,8 @@ const TabsData = [
   {
     id: 'tab1',
     section: 'Shift Highlight Tabs',
-    label: 'Hover',
-    description: 'A swing Tabs with a vibrant gradient background.',
+    label: '',
+    description: '',
     code: `<div
         class="flex flex-col items-center bg-gray-100 max-w-6xl w-full rounded-lg p-4 md:p-6"
       >
