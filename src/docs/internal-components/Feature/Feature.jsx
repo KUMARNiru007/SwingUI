@@ -223,7 +223,7 @@ function Feature() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4 sm:px-6 lg:px-20 py-8 sm:py-12`}
     >
-     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-1'>
      <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Features</h2>
       <p className='mb-10 sm:mb-16'>
       The Feature component displays a dynamic image slider with smooth scroll 
@@ -256,8 +256,14 @@ function Feature() {
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
-
-      <h2 className='text-2xl sm:text-3xl font-bold  mb-10 sm:mb-16 mt-10 sm:mt-16'>State Management Variable</h2>
+      <hr
+              className={`my-10 border-t ${
+                darkMode
+                  ? 'border-gray-700 opacity-30'
+                  : 'border-gray-300 opacity-50'
+              }`}
+            />
+      <h2 className='text-2xl sm:text-2xl font-bold  mb-10 sm:mb-10 mt-10 sm:mt-16'>State Management Variable</h2>
                   <div className='w-full mb-12 overflow-x-auto'>
                     <table
                       className={`w-full border-collapse rounded-lg overflow-hidden ${
@@ -265,7 +271,7 @@ function Feature() {
                       }`}
                     >
                       <thead>
-                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
                           <th className='py-3 px-4 text-left font-semibold'>
                             Variable
                           </th>
@@ -308,8 +314,16 @@ function Feature() {
                       </tbody>
                     </table>
                   </div>
+                  <hr
+              className={`my-10 border-t ${
+                darkMode
+                  ? 'border-gray-700 opacity-30'
+                  : 'border-gray-300 opacity-50'
+              }`}
+            />
 
-                  <h2 className='text-2xl sm:text-3xl font-bold mb-6'>Transition and Animation Settings</h2>
+                  <h2 className='text-2xl sm:text-2xl font-bold sm:mb-10 mt-10 sm:mt-16'>Transition and Animation Settings</h2>
+                  
                   <div className='w-full mb-12 overflow-x-auto'>
                     <table
                       className={`w-full border-collapse rounded-lg overflow-hidden ${
@@ -317,7 +331,7 @@ function Feature() {
                       }`}
                     >
                       <thead>
-                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
                           <th className='py-3 px-4 text-left font-semibold'>
                             Property
                           </th>
