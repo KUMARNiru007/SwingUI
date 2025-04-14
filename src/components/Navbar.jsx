@@ -118,7 +118,7 @@ function Navbar() {
                 darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
               }`}
             >
-              <Link
+              {/* <Link
                 to='/components/accordion'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -127,7 +127,7 @@ function Navbar() {
                 }`}
               >
                 Accordions
-              </Link>
+              </Link> */}
               <Link
                 to='/components/button'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -148,7 +148,7 @@ function Navbar() {
               >
                 Cards
               </Link>
-              <Link
+              {/* <Link
                 to='/components/carousel'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -157,8 +157,8 @@ function Navbar() {
                 }`}
               >
                 Carousel
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to='/components/call-to-action'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -167,7 +167,7 @@ function Navbar() {
                 }`}
               >
                 CTA (Call to Action)
-              </Link>
+              </Link> */}
               <Link
                 to='/components/feature'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -178,7 +178,7 @@ function Navbar() {
               >
                 Feature
               </Link>
-              <Link
+              {/* <Link
                 to='/components/footer'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -187,8 +187,8 @@ function Navbar() {
                 }`}
               >
                 Footer
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to='/components/hero'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -197,7 +197,7 @@ function Navbar() {
                 }`}
               >
                 Hero section
-              </Link>
+              </Link> */}
               <Link
                 to='/components/image-gallery'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -218,7 +218,7 @@ function Navbar() {
               >
                 Navbar
               </Link>
-              <Link
+              {/* <Link
                 to='/components/panto-grid'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -227,8 +227,8 @@ function Navbar() {
                 }`}
               >
                 Panto-grid
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to='/components/popups'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -237,7 +237,7 @@ function Navbar() {
                 }`}
               >
                 Pop Ups
-              </Link>
+              </Link> */}
               <Link
                 to='/components/pricing'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -396,13 +396,13 @@ function Navbar() {
                   mobileComponentsOpen ? 'max-h-full' : 'max-h-0'
                 }`}
               >
-                <Link
+                {/* <Link
                   to='/components/accordion'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Accordians
-                </Link>
+                </Link> */}
                 <Link
                   to='/components/button'
                   onClick={handleMobileLinkClick}
@@ -410,20 +410,20 @@ function Navbar() {
                 >
                   Buttons
                 </Link>
-                <Link
+                {/* <Link
                   to='/components/carousel'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   carousel
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   to='/components/call-to-action'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   CTA (call to Action)
-                </Link>
+                </Link> */}
                 <Link
                   to='/components/feature'
                   onClick={handleMobileLinkClick}
@@ -431,20 +431,20 @@ function Navbar() {
                 >
                   Feature
                 </Link>
-                <Link
+                {/* <Link
                   to='/components/footer'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Footer
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   to='/components/hero'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Hero Section
-                </Link>
+                </Link> */}
                 <Link
                   to='/components/image-gallery'
                   onClick={handleMobileLinkClick}
@@ -459,20 +459,20 @@ function Navbar() {
                 >
                   Navbar
                 </Link>
-                <Link
+                {/* <Link
                   to='/components/panto-grid'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Panto-grid
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   to='/components/popups'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Pop ups
-                </Link>
+                </Link> */}
                 <Link
                   to='/components/pricing'
                   onClick={handleMobileLinkClick}

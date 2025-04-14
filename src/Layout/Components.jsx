@@ -37,19 +37,19 @@ const Components = () => {
           }`}
         >
           <Routes>
-            <Route path='accordion' element={<Accordion />} />
+            {/* <Route path='accordion' element={<Accordion />} /> */}
             <Route path='button' element={<Button />} />
-            <Route path='call-to-action' element={<CallToAction />} />
+            {/* <Route path='call-to-action' element={<CallToAction />} /> */}
             <Route path='card' element={<Card />} />
-            <Route path='carousel' element={<Carousel />} />
+            {/* <Route path='carousel' element={<Carousel />} /> */}
             <Route path='feature' element={<Feature />} />
-            <Route path='footer' element={<Footer />} />
+            {/* <Route path='footer' element={<Footer />} /> */}
             <Route path='header' element={<Header />} />
-            <Route path='hero' element={<Hero />} />
+            {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
             <Route path='navbar' element={<Navbar />} />
-            <Route path='panto-grid' element={<PantoGrid />} />
-            <Route path='popups' element={<PopUps />} />
+            {/* <Route path='panto-grid' element={<PantoGrid />} /> */}
+            {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
             <Route path='pricing' element={<Pricing />}/>

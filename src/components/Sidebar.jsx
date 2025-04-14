@@ -7,7 +7,7 @@ const sections = [
     title: 'Getting Started',
     items: [
       { to: '/docs/quick-start', label: 'Quick Start' },
-      { to: '/docs/cdn', label: 'CDN' },
+      // { to: '/docs/cdn', label: 'CDN' },
     ],
   },
   {
@@ -21,32 +21,32 @@ const sections = [
   {
     title: 'Components',
     items: [
-      { to: '/components/accordion', label: 'Accordions' },
+      // { to: '/components/accordion', label: 'Accordions' },
       { to: '/components/button', label: 'Buttons' },
       { to: '/components/card', label: 'Cards' },
-      { to: '/components/carousel', label: 'Carousel' },
-      { to: '/components/call-to-action', label: 'CTA (Call to Action)' },
+      // { to: '/components/carousel', label: 'Carousel' },
+      // { to: '/components/call-to-action', label: 'CTA (Call to Action)' },
       { to: '/components/feature', label: 'Feature' },
-      { to: '/components/footer', label: 'Footer' },
-      { to: '/components/hero', label: 'Hero section' },
+      // { to: '/components/footer', label: 'Footer' },
+      // { to: '/components/hero', label: 'Hero section' },
       { to: '/components/image-gallery', label: 'Image Gallery' },
       { to: '/components/navbar', label: 'Navbar' },
-      { to: '/components/panto-grid', label: 'Panto-grid' },
-      { to: '/components/popups', label: 'Pop Ups' },
+      // { to: '/components/panto-grid', label: 'Panto-grid' },
+      // { to: '/components/popups', label: 'Pop Ups' },
       { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
     ],
   },
-  {
-    title: 'Forms',
-    items: [
-      { to: '/forms/login', label: 'Login' },
-      { to: '/forms/register', label: 'Register' },
-      { to: '/forms/newsletter', label: 'Newsletter' },
-      { to: '/forms/contact', label: 'Contact Us' },
-    ],
-  },
+  // {
+  //   title: 'Forms',
+  //   items: [
+  //     { to: '/forms/login', label: 'Login' },
+  //     { to: '/forms/register', label: 'Register' },
+  //     { to: '/forms/newsletter', label: 'Newsletter' },
+  //     { to: '/forms/contact', label: 'Contact Us' },
+  //   ],
+  // },
 ];
 
 const Sidebar = () => {
