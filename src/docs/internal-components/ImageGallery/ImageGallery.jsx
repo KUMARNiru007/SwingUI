@@ -7,161 +7,218 @@ import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
 import img3 from '../../../assets/Images-For-Gallery/img3.webp';
 import img4 from '../../../assets/Images-For-Gallery/img4.webp';
+import img5 from '../../../assets/Images-For-Gallery/img5.webp';
+import img6 from '../../../assets/Images-For-Gallery/img6.webp';
+import img7 from '../../../assets/Images-For-Gallery/img7.webp';
+import img8 from '../../../assets/Images-For-Gallery/img8.webp';
 
 function ImageGallery() {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
 
-  const htmlCssCode = `
-    <div
-      class="swing-scrolling-image w-full"
-      style="
-        --direction: 1;
-        --speed: 20;
-        --image-aspect-ratio: false;
-        --pause-on-hover: false;
-        --pause-on-hover-mobile: false;
-      "
-    >
-      <div class="slider-container w-full flex animate-scroll gap-4 px-4">
-        <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
+  const htmlCssCode = `<div class=" bg-black">
+      <div class="space-y-8 w-full pt-8 pb-8">
+        <!-- First Slider -->
+          <div class="swing-scrolling-image"
+            style="
+            --direction: 1;
+            --speed: 10; 
+            --pause-on-hover: false;">
+              <div class="slider-container w-full flex animate-scroll gap-4 px-4">
+         <div class="swing-slider-item">
           <img
             src="${img1}"
             alt="Image 1"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover rounded-sm"
           />
-        </div>
-        <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
+         </div>
+              <div class="swing-slider-item">
           <img
             src="${img2}"
             alt="Image 2"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover rounded-sm"
           />
-        </div>
-        <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
+         </div>
+
+              <div class="swing-slider-item">
           <img
             src="${img3}"
-            alt="Image 3"
-            class="w-full h-full object-cover"
+            alt="Image 2"
+            class="w-full h-full object-cover rounded-sm"
           />
-        </div>
-        <div class="slider-item flex-shrink-0 w-full sm:w-[45vw] md:w-[30vw] lg:w-[23vw] h-[200px] overflow-hidden rounded-lg">
+         </div>
+
+           <div class="swing-slider-item">
           <img
             src="${img4}"
-            alt="Image 4"
-            class="w-full h-full object-cover"
+            alt="Image 2"
+            class="w-full h-full object-cover rounded-sm"
           />
-        </div>
-      </div>
-    </div>
-  `;
+         </div>
 
-  useEffect(() => {
+            </div>
+          </div>
+  
+        <!-- Second Slider -->
+          <div class="swing-scrolling-image"
+            style="
+            --direction: -1; 
+            --speed: 10; 
+            --pause-on-hover: false;">
+              <div class="slider-container w-full flex animate-scroll gap-4 px-4">
+         <div class="swing-slider-item">
+          <img
+            src="${img5}"
+            alt="Image 1"
+            class="w-full h-full object-cover rounded-sm"
+          />
+         </div>
+              <div class="swing-slider-item">
+          <img
+            src="${img6}"
+            alt="Image 2"
+            class="w-full h-full object-cover rounded-sm"
+          />
+         </div>
+
+              <div class="swing-slider-item">
+          <img
+            src="${img7}"
+            alt="Image 2"
+            class="w-full h-full object-cover rounded-sm"
+          />
+         </div>
+
+           <div class="swing-slider-item">
+          <img
+            src="${img8}"
+            alt="Image 2"
+            class="w-full h-full object-cover rounded-sm"
+          />
+         </div>
+
+            </div>
+          </div>
+  
+       
+      </div>
+    </div> 
+  `;
+useEffect(() => {
     const timeoutId = setTimeout(() => {
       let prevWidth = window.innerWidth;
       const sliders = document.querySelectorAll('.swing-scrolling-image');
       const sliderHtml = [];
 
-      const setupInfiniteScroll = (slider, indexI) => {
+      const getInitialWidth = (container) => {
+        let width = 0;
+        const items = container.querySelectorAll('.swing-slider-item');
+        const gap = parseFloat(getComputedStyle(container).gap || 0);
+
+        items.forEach((item) => {
+          width += item.offsetWidth + gap;
+        });
+
+        return width;
+      };
+
+      const setValues = (container, width, indexI, indexJ) => {
+        const parentWidth = container.parentElement.offsetWidth;
+        const ratio = Math.ceil(parentWidth / width);
+        const total = ratio + 1;
+
+        while (
+          container.children.length >
+          sliderHtml[indexI][indexJ].split('swing-slider-item').length - 1
+        ) {
+          container.lastChild.remove();
+        }
+
+        for (let i = 0; i < ratio; i++) {
+          const div = document.createElement('div');
+          div.innerHTML = sliderHtml[indexI][indexJ];
+          container.append(...div.children);
+        }
+
+        container.style.width = `${width * total}px`;
+        container.style.setProperty('--total', total);
+        container.style.setProperty('--est-speed', width / 100);
+      };
+
+     const setDirection = (container, width) => {
+  if (
+    getComputedStyle(container).getPropertyValue('--direction') === '-1'
+  ) {
+    container.style.marginLeft = `-${width}px`;
+  }
+};
+
+
+      const setPauseOnHover = (container) => {
+        const pauseOnHover =
+          window.innerWidth > 767
+            ? '--pause-on-hover'
+            : '--pause-on-hover-mobile';
+
+        const shouldPause =
+          getComputedStyle(container).getPropertyValue(pauseOnHover).trim() ===
+          'true';
+
+        container.style.setProperty(
+          '--poh',
+          shouldPause ? 'paused' : 'running',
+        );
+      };
+
+      sliders.forEach((slider, indexI) => {
+        sliderHtml[indexI] = [];
         const containers = slider.querySelectorAll('.slider-container');
 
         containers.forEach((container, indexJ) => {
-          if (!sliderHtml[indexI]) sliderHtml[indexI] = [];
           sliderHtml[indexI][indexJ] = container.innerHTML;
-
-          const originalItems = Array.from(container.children);
-          const itemCount = originalItems.length;
-
-          if (itemCount === 0) return;
-
-          let singleSetWidth = 0;
-          originalItems.forEach((item) => {
-            const itemWidth = item.offsetWidth;
-            const computedStyle = window.getComputedStyle(item);
-            const marginRight = Number.parseFloat(computedStyle.marginRight);
-            const marginLeft = Number.parseFloat(computedStyle.marginLeft);
-            singleSetWidth += itemWidth + marginRight + marginLeft;
-          });
-
-          const containerGap = Number.parseFloat(
-            window.getComputedStyle(container).gap || 0,
-          );
-          singleSetWidth += containerGap * (itemCount - 1);
-
-          container.style.setProperty(
-            '--single-set-width',
-            `${singleSetWidth}px`,
-          );
-
-          const speed = Number.parseFloat(
-            slider.style.getPropertyValue('--speed') || 20,
-          );
-          const duration = (singleSetWidth / speed) * 4;
-          container.style.setProperty('--duration', `${duration}s`);
-
-          const allItems = container.innerHTML;
-          container.innerHTML = '';
-
-          const div1 = document.createElement('div');
-          div1.innerHTML = allItems;
-          container.append(...div1.children);
-
-          const div2 = document.createElement('div');
-          div2.innerHTML = allItems;
-          container.append(...div2.children);
-
-          const pauseOnHover =
-            window.innerWidth > 767
-              ? slider.style.getPropertyValue('--pause-on-hover').trim() ===
-                'true'
-              : slider.style
-                  .getPropertyValue('--pause-on-hover-mobile')
-                  .trim() === 'true';
-
-          container.addEventListener('mouseenter', () => {
-            if (pauseOnHover) container.style.animationPlayState = 'paused';
-          });
-
-          container.addEventListener('mouseleave', () => {
-            container.style.animationPlayState = 'running';
-          });
+          const width = getInitialWidth(container);
+          if (width) {
+            setValues(container, width, indexI, indexJ);
+            setDirection(container, width);
+          }
+          setPauseOnHover(container);
         });
 
         slider.classList.add('showing');
-      };
-
-      sliders.forEach((slider, index) => {
-        setupInfiniteScroll(slider, index);
       });
 
       const handleResize = () => {
         if (window.innerWidth === prevWidth) return;
         prevWidth = window.innerWidth;
 
-        sliders.forEach((slider, index) => {
+        sliders.forEach((slider, indexI) => {
           const containers = slider.querySelectorAll('.slider-container');
-          containers.forEach((container, j) => {
-            if (sliderHtml[index] && sliderHtml[index][j]) {
-              container.innerHTML = sliderHtml[index][j];
+          containers.forEach((container, indexJ) => {
+            container.innerHTML = sliderHtml[indexI][indexJ];
+            const width = getInitialWidth(container);
+            if (width) {
+              setValues(container, width, indexI, indexJ);
+              setDirection(container, width);
             }
+            setPauseOnHover(container);
           });
-          setupInfiniteScroll(slider, index);
         });
       };
 
       window.addEventListener('resize', handleResize);
 
+      // Cleanup
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [showCode, darkMode]);
+  }, [showCode,darkMode]);
 
   return (
-    <div className='`px-4 py-6  w-full bg-background text-foreground'>
-      <h2 className='text-3xl font-bold mb-2 sm:text-2xl md:text-3xl py-4 '>ImageGallery Component</h2>
+    <div className='w-full bg-background text-foreground'>
+      <h2 className='text-3xl font-bold mt-6 mb-2'>ImageGallery Component</h2>
       <p className='mb-6'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
         necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis
