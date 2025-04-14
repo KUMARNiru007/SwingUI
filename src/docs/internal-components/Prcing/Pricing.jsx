@@ -143,7 +143,7 @@ function Pricing() {
 
   return (
     <div
-      className={`w-full transition-colors duration-300 ${
+      className={`w-full px-4 py-6  transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'

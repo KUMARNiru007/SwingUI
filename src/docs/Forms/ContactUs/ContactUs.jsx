@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div>Contact-Us</div>
+    <div className='`px-4 py-6 '>Contact-Us</div>
   )
 }
 

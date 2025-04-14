@@ -160,8 +160,8 @@ function ImageGallery() {
   }, [showCode, darkMode]);
 
   return (
-    <div className='w-full bg-background text-foreground'>
-      <h2 className='text-3xl font-bold mb-2'>ImageGallery Component</h2>
+    <div className='`px-4 py-6  w-full bg-background text-foreground'>
+      <h2 className='text-3xl font-bold mb-2 sm:text-2xl md:text-3xl py-4 '>ImageGallery Component</h2>
       <p className='mb-6'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
         necessitatibus libero ab officiis dolorum ipsum voluptates rerum? Quis

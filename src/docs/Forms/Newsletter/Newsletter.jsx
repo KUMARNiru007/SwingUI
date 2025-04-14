@@ -2,7 +2,7 @@ import React from 'react'
 
 const Newsletter = () => {
   return (
-    <div>Newsletter</div>
+    <div className='`px-4 py-6 '>Newsletter</div>
   )
 }
 

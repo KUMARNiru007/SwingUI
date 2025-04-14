@@ -128,7 +128,7 @@ const Tabs = () => {
 
   return (
     <div
-      className={`w-full max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
+      className={`w-full py-6  max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'

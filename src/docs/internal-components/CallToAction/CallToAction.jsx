@@ -2,7 +2,7 @@ import React from 'react'
 
 const CallToAction = () => {
   return (
-    <div>CallToAction</div>
+    <div className='`px-4 py-6 '>CallToAction</div>
   )
 }
 
