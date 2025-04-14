@@ -31,7 +31,7 @@ const Button = () => {
     const showCode = codeViews[button.id] || false;
 
     return (
-      <div className='mb-8'>
+      <div className='mb-8 px-4 py-6 '>
         <h2 className='text-3xl font-bold mb-2'>{button.label}</h2>
         <p className='mb-6'>{button.description}</p>
         <PreviewCodeBtn

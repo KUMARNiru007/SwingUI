@@ -2,7 +2,7 @@ import React from 'react'
 
 const PantoGrid = () => {
   return (
-    <div>PantoGrid</div>
+    <div className='`px-4 py-6 '>PantoGrid</div>
   )
 }
 

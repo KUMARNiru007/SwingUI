@@ -2,7 +2,7 @@ import React from 'react'
 
 const Accordions = () => {
   return (
-    <div>Accordions</div>
+    <div className='`px-4 py-6 '>Accordions</div>
   )
 }
 

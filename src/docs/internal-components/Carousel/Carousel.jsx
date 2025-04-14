@@ -2,7 +2,7 @@ import React from 'react'
 
 const Carousel = () => {
   return (
-    <div>Carousel</div>
+    <div className='`px-4 py-6 '>Carousel</div>
   )
 }
 
