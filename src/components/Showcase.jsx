@@ -203,7 +203,7 @@ const Showcase = () => {
                     <img
                       src={card.img}
                       alt={card.title}
-                      className='object-cover w-full h-full rounded-lg'
+                      className='w-full h-full object-cover rounded-lg'
                     />
                   </div>
                   <h3 className={`text-base font-bold ${darkMode ? 'text-[var(--color-text-dark)]' : 'text-black'}`}>
