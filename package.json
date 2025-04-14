@@ -1,7 +1,7 @@
 {
-  "name": "swing ui",
+  "name": "swing-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.64.32",
   "type": "module",
   "scripts": {
     "dev": "vite",

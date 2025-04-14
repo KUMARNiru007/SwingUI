@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
+import logo from '../../public/logo.webp' 
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
@@ -29,7 +30,7 @@ function Navbar() {
     >
       <Link to='/'>
         <img
-          src='../../public/logo.webp'
+          src= {logo}
           alt='Logo'
           className='w-[125px] h-auto'
         />
