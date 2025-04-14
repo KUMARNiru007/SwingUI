@@ -1,126 +1,120 @@
 import React from 'react';
 import CodeBlock from '../components/CodeBlock/CodeBlock.jsx';
-import { useTheme } from '../../context/ThemeContext.jsx';
+import { useTheme } from '../../context/ThemeContext';
+
+import '../SwingKit/TextGradients/style.css';
 
 const QuickStart = () => {
   const { darkMode } = useTheme();
 
-  const codeExample1 = `
-import { Component } from 'framework';
-
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-  }
-
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  render() {
-    return (
-      <div>
-        <p>Current count: {this.state.count}</p>
-        <button onClick={this.increment}>Increment</button>
-      </div>
-    );
-  }
-}`;
-
-  const codeExample2 = `
-import { useState } from 'framework';
-import { fetchData } from './api';
-
-function DataComponent() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  async function loadData() {
-    setLoading(true);
-    const result = await fetchData();
-    setData(result);
-    setLoading(false);
-  }
-
-  return (
-    <div>
-      {loading ? <p>Loading...</p> : data && <p>{data.summary}</p>}
-      <button onClick={loadData}>Load Data</button>
-    </div>
-  );
-}`;
-
   return (
     <div
-      className={`px-4 py-6   w-full transition-colors duration-300 ${
+      className={`w-full max-w-5xl mx-auto px-8 transition-colors duration-300 ${
         darkMode
-          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] '
-          : 'bg-[var(--light-bg)] text-[var(--color-text)] '
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <h1 className='text-3xl font-bold mb-4  sm:text-2xl md:text-3xl py-4 '>Introduction</h1>
-      <p className='mb-4'>
-        Welcome to our framework documentation. This guide will help you
-        understand the core concepts and get started with building applications
-        quickly and efficiently.
-      </p>
-      <p className='mb-4'>
-        At the very basic level, our framework provides a simple, intuitive API
-        while offering powerful features that support complex application
-        development. Our focus is on developer experience without sacrificing
-        performance.
-      </p>
+      <div className='py-14'>
+        <h1 className='text-4xl font-bold mb-4'>
+          🚀 <strong>Quick Start</strong>
+        </h1>
+        <p className='mb-20'>
+          Getting started with{' '}
+          <span className={'swing-ocean-gradient-text font-bold'}>SwingUI</span>
+        </p>
 
-      <h2 className='text-2xl font-semibold mt-6 mb-2'>Core Features</h2>
-      <ul className='list-disc pl-5 mb-4'>
-        <li>
-          <strong>Component-Based Architecture</strong> that promotes
-          reusability and maintainability.
-        </li>
-        <li>
-          <strong>Virtual DOM</strong> implementation that optimizes rendering
-          performance.
-        </li>
-        <li>
-          <strong>State Management</strong> built-in with simple yet powerful
-          APIs.
-        </li>
-      </ul>
+        <h2 className='text-2xl font-semibold mt-3 mb-2'>
+          1. Install the Prerequisites
+        </h2>
 
-      <h2 className='text-2xl font-semibold mt-6 mb-2'>
-        Getting Started with Components
-      </h2>
-      <p className='mb-4'>
-        Components are the building blocks of our framework. A component defines
-        a piece of the UI and how it behaves. Here's a simple component example:
-      </p>
+        <div className='w-full overflow-x-auto my-4'>
+          <p className='mb-10'>
+            Include Tailwind CSS and Remix Icon in your <code>{`<head>`}</code>{' '}
+            to make sure everything works as expected.
+          </p>
+          <div className='w-full overflow-x-auto my-5'>
+            <CodeBlock
+              language='html'
+              code={`<!-- SwingUI CSS -->
+<script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
+            />
+          </div>
+          <div className='w-full overflow-x-auto my-5'>
+            <CodeBlock
+              language='js'
+              code={`<!-- SwingUI JS -->
+<link rel="stylesheet"  href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css"  />`}
+            />
+          </div>
+        </div>
 
-      <div className='w-full overflow-x-auto my-4 rounded-xl'>
-        <CodeBlock language='js' code={codeExample1} />
-      </div>
+        <hr
+          className={`my-12 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
 
-      <h2 className='text-2xl font-semibold mt-6 mb-2'>
-        Hot Module Replacement
-      </h2>
-      <p className='mb-4'>
-        Our framework provides Hot Module Replacement out of the box, allowing
-        you to see your changes instantly without losing component state. This
-        dramatically improves the development experience.
-      </p>
+        <h2 className='text-2xl font-semibold mb-2'>2. Add SwingUI CDN</h2>
+        <div className='w-full overflow-x-auto my-5 border-0'>
+          <p className='mb-10'>
+            Now, drop in SwingUI's CSS and JS to unlock all the components and
+            styles.
+          </p>
+          <CodeBlock
+            language='js'
+            code={`<!-- Paste this code in Header -->
+<link href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css" rel="stylesheet">`}
+          />
+        </div>
+        <div className='w-full overflow-x-auto my-4 mb-10 border-0'>
+          <CodeBlock
+            language='js'
+            code={`<!-- Paste this code in above Body tag end-->
+<script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
+          />
+        </div>
+        <p className='mb-2'>
+          ⚡ That's it — no config, no setup. Just plug and play..
+        </p>
 
-      <h2 className='text-2xl font-semibold mt-6 mb-2'>
-        Dependency Management
-      </h2>
-      <p className='mb-4'>
-        The framework includes a powerful dependency management system that
-        resolves and optimizes dependencies automatically. This ensures your
-        application only loads what it needs, improving performance and reducing
-        bundle size.
-      </p>
+        <hr
+          className={`my-12 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
 
-      <div className='w-full overflow-x-auto my-4 rounded-xl'>
-        <CodeBlock language='js' code={codeExample2} />
+        <h1 className='text-4xl font-bold mb-5'>Join the Community</h1>
+        <p className='mb-3'>
+          Swing UI is built with love for developers, and we'd love for you to
+          be part of the journey!
+        </p>
+        <p className='mb-10'>
+          Whether you're looking for help, want to give feedback, or contribute
+          to the library, you're welcome to join our community.
+        </p>
+
+        <h3 className='text-2xl font-medium mb-2'>🚀 Get Involved:</h3>
+        <ul className='list-disc list-inside mb-10 space-y-1 pl-4'>
+          <li>🗣️ Ask questions & share ideas</li>
+          <li>🛠️ Contribute to components and improvements</li>
+          <li>📢 Stay updated with new releases and tips</li>
+        </ul>
+
+        <h3 className='text-2xl font-medium mb-2'>📌 Connect With Us:</h3>
+        <ul className='list-disc list-inside mb-10 space-y-1 pl-4'>
+          <li>GitHub Repository – Star, fork, or raise issues</li>
+          <li>Discord Community – Chat with other devs & get support</li>
+          <li>Twitter / X – Follow us for updates & sneak peeks</li>
+        </ul>
+
+        <p className='mb-12'>
+          Together, we can make <strong>Swing UI</strong> better every day!
+        </p>
       </div>
     </div>
   );
