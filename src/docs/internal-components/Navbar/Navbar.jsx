@@ -20,7 +20,7 @@ const Navbar = () => {
 
       <div class="flex">
         <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center space-x-8 mx-8">
+        <div class="hidden xl:flex items-center space-x-8 mx-8">
           <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 font-medium">Home</a>
           <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 font-medium">About</a>
           <div class="relative">
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
         <!-- Social Icons (Desktop) -->
-        <div class="hidden lg:flex items-center space-x-4">
+        <div class="hidden xl:flex items-center space-x-4">
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <i class="ri-facebook-fill text-xl"></i>
           </a>
@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
       </div>
       
-      <div class="lg:hidden flex items-center">
+      <div class="xl:hidden flex items-center">
         <button
           id="swing-mobile-menu-button"
           class="p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
@@ -67,7 +67,7 @@ const Navbar = () => {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="swing-mobile-menu" class="hidden lg:hidden">
+  <div id="swing-mobile-menu" class="hidden xl:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
       <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
@@ -177,7 +177,7 @@ const Navbar = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <h2 className='text-3xl sm:text-4xl font-bold mb-2 mt-8'> Navbar</h2>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-6 mt-8'> Navbar</h2>
       <p className='mb-10 sm:mb-16'>
         The Responsive Navbar component offers a dynamic, user-friendly
         navigation bar with light/dark mode support, mobile responsiveness, and

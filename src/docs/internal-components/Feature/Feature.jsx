@@ -254,14 +254,14 @@ function Feature() {
 
   return (
     <div
-      className={`[@media(min-width:400px)]:w-[400px] [@media(min-width:500px)]:w-full [@media(width:820px)]:w-[500px] [@media(width:768px)]:w-[480px] transition-colors duration-300 ${
+      className={`[@media(min-width:400px)]:w-[410px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:820px)]:w-[500px] [@media(width:768px)]:w-[480px] transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } py-12`}
+      } px-4 py-12`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-4 md:px-6 lg:px-6 py-4 sm:py-6 md:py-8'>
-        <h2 className='text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4'>
+      <div className='max-w-5xl mx-auto sm:py-6 md:py-8'>
+        <h2 className='text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold pb-4'>
           Features
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>

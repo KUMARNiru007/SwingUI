@@ -23,7 +23,7 @@ const BentoGrid = () => {
       <h1 class="text-xl sm:text-2xl font-bold">About SwingUi</h1>
       <p class="text-white text-base sm:text-lg mt-1">SwingUi is a modern component library designed to build fast, beautiful UIs.</p>
     </div>
-    <a href="#" class="text-white font-medium mt-3 sm:mt-4 hover:underline">Explore Components →</a>
+    <a href="#!" class="text-white font-medium mt-3 sm:mt-4 hover:underline">Explore Components →</a>
   </div>
 
 
@@ -91,13 +91,13 @@ const BentoGrid = () => {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
+      } px-2 py-8`}
     >
       <div className='max-w-5xl mx-auto px-2 sm:px-4 lg:px-8 py-6 sm:py-12'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-2'>
+        <h2 className='text-3xl sm:text-3xl md:text-4xl font-bold pb-4'>
           Bento Grid
         </h2>
-        <p className='mb-6 sm:mb-10 lg:mb-16 text-sm sm:text-base'>
+        <p className='mb-6 sm:mb-10 lg:mb-16'>
           This Bento grid layout demo showcases SwingUI's flexible grid system
           with interactive elements. It features gradient backgrounds, tilt-zoom
           effects on social icons, and responsive design that adapts beautifully

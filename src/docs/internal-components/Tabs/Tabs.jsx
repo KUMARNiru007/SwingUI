@@ -100,7 +100,7 @@ const Tabs = () => {
         {!showCode && (
           <div className='flex justify-center items-center w-full max-w-full bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md'>
             <div
-              className='w-full mx-w-full flex justify-center p-2 sm:p-4'
+              className='w-full mx-w-full flex justify-center p-4 sm:p-4'
               dangerouslySetInnerHTML={{ __html: tab.code }}
             />
           </div>
@@ -132,11 +132,11 @@ const Tabs = () => {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } py-12`}
+      } px-6 py-12`}
     >
-      <div className='max-w-5xl mx-auto px-[15px] pt-4 sm:pt-6 pb-8 sm:pb-12'>
+      <div className='max-w-5xl mx-auto pt-4 sm:pt-6 pb-8 sm:pb-12'>
         <div className='flex flex-col items-start'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Tabs</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Tabs</h1>
           <p className='mb-4 sm:mb-6'>
             This dynamic Tabs component provides seamless navigation between
             categorized content blocks with responsive design, interactive hover
@@ -144,7 +144,7 @@ const Tabs = () => {
           </p>
 
           {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
-            <div key={sectionName} className='mb-6 sm:mb-8'>
+            <div key={sectionName} className='mb-6 sm:mb-8 w-full'>
               <div className='space-y-8 sm:space-y-12'>
                 {Tabs.map((tab) => (
                   <TabDemo key={tab.id} tab={tab} />

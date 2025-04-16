@@ -89,7 +89,7 @@ const Layout = () => {
         )}
 
         <div className='flex-1 min-h-screen'>
-          <div className={`w-full ${isHome ? '' : 'px-[0.875rem] '}`}>
+          <div className={`w-full ${isHome ? '' : ''}`}>
             <div
               className={`${isHome ? '' : 'max-w-screen-xl mx-auto w-full'}`}
             >
