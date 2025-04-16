@@ -36,42 +36,39 @@ const Layout = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      {!isHome && (
-        <div className="md:hidden flex items-center justify-between p-4 transition-all duration-300">
+      {/* {!isHome && (
+        <div className='md:hidden flex items-center justify-between p-4 transition-all duration-300'>
           <button
             onClick={toggleSidebar}
-            className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-            aria-label="Toggle sidebar"
+            className='p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors'
+            aria-label='Toggle sidebar'
           >
             {sidebarOpen ? <X size={28} /> : <Menu size={24} />}
           </button>
         </div>
-      )}
+      )} */}
 
-      <div className="flex w-full relative">
+      <div className='flex w-full relative'>
         {!isHome && (
           <>
             {/* Desktop Sidebar */}
-            <div className="hidden md:block w-[280px] py-3 transition-all duration-300 flex-shrink-0">
+            <div className='hidden md:block w-[280px] py-3 transition-all duration-300 flex-shrink-0'>
               <Sidebar />
             </div>
 
             {/* Mobile Sidebar */}
             <div
-            
               className={`md:hidden fixed top-18 left-0 w-[280px] h-[calc(100vh-64px)] z-50 transition-all duration-300 transform shadow-md overflow-y-auto ${
                 darkMode
                   ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
-                  : 'bg-white text-black' 
+                  : 'bg-white text-black'
               } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
-
-
             >
-              <div className="flex justify-end items-center p-4">
+              <div className='flex justify-end items-center p-4'>
                 <button
                   onClick={toggleSidebar}
-                  className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="Close sidebar"
+                  className='p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors'
+                  aria-label='Close sidebar'
                 >
                   <X size={24} />
                 </button>
@@ -79,39 +76,29 @@ const Layout = () => {
               <Sidebar />
             </div>
 
-      
             <div
-              
-             className={`fixed inset-0 z-40 bg-black transition-all duration-300 ${
-             sidebarOpen ? 'opacity-70 pointer-events-auto' : 'opacity-0 pointer-events-none'
-            }`}
+              className={`fixed inset-0 z-40 bg-black transition-all duration-300 ${
+                sidebarOpen
+                  ? 'opacity-70 pointer-events-auto'
+                  : 'opacity-0 pointer-events-none'
+              }`}
               onClick={toggleSidebar}
-              aria-hidden="true"
+              aria-hidden='true'
             />
           </>
         )}
 
-        <div className="flex-1 min-h-screen">
-          <div
-            className={`w-full ${
-              isHome
-                ? '' 
-                : 'px-[0.875rem] ' 
-            }`}
-          >
+        <div className='flex-1 min-h-screen'>
+          <div className={`w-full ${isHome ? '' : 'px-[0.875rem] '}`}>
             <div
-              className={`${
-                isHome
-                  ? '' 
-                  : 'max-w-screen-xl mx-auto w-full' 
-              }`}
+              className={`${isHome ? '' : 'max-w-screen-xl mx-auto w-full'}`}
             >
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/docs/*" element={<Docs />} />
-                <Route path="/components/*" element={<Components />} />
-                <Route path="/swingkit/*" element={<SwingKit />} />
-                <Route path="/forms/*" element={<Form />} />
+                <Route path='/' element={<Home />} />
+                <Route path='/docs/*' element={<Docs />} />
+                <Route path='/components/*' element={<Components />} />
+                <Route path='/swingkit/*' element={<SwingKit />} />
+                <Route path='/forms/*' element={<Form />} />
               </Routes>
             </div>
           </div>

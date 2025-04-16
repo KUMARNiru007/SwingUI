@@ -7,7 +7,6 @@ const Navbar = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
 
-
   const htmlCssCode = `
 
 <nav class="bg-white shadow-sm m-4">
@@ -101,58 +100,74 @@ const Navbar = () => {
   </div>
 </nav>
 `;
-useEffect(() => {
-  if (!showCode) {
-    const mobileMenuButton = document.getElementById('swing-mobile-menu-button');
-    const mobileMenu = document.getElementById('swing-mobile-menu');
-    const servicesDropdownButton = document.getElementById('services-dropdown-button');
-    const servicesDropdown = document.getElementById('swing-services-dropdown');
-    const desktopButton = document.getElementById('desktop-services-dropdown-button');
-    const desktopDropdown = document.getElementById('desktop-services-dropdown');
-    const previewContainer = document.querySelector('.preview-container');
+  useEffect(() => {
+    if (!showCode) {
+      const mobileMenuButton = document.getElementById(
+        'swing-mobile-menu-button',
+      );
+      const mobileMenu = document.getElementById('swing-mobile-menu');
+      const servicesDropdownButton = document.getElementById(
+        'services-dropdown-button',
+      );
+      const servicesDropdown = document.getElementById(
+        'swing-services-dropdown',
+      );
+      const desktopButton = document.getElementById(
+        'desktop-services-dropdown-button',
+      );
+      const desktopDropdown = document.getElementById(
+        'desktop-services-dropdown',
+      );
+      const previewContainer = document.querySelector('.preview-container');
 
-    const toggleMobileMenu = () => {
-      mobileMenu?.classList.toggle('hidden');
-    };
+      const toggleMobileMenu = () => {
+        mobileMenu?.classList.toggle('hidden');
+      };
 
-    const toggleMobileDropdown = (e) => {
-      e.stopPropagation();
-      servicesDropdown?.classList.toggle('hidden');
-    };
+      const toggleMobileDropdown = (e) => {
+        e.stopPropagation();
+        servicesDropdown?.classList.toggle('hidden');
+      };
 
-    const toggleDesktopDropdown = (e) => {
-      e.stopPropagation();
-      desktopDropdown?.classList.toggle('hidden');
-      if (desktopDropdown && !desktopDropdown.classList.contains('hidden')) {
-        previewContainer?.classList.add('pb-30', 'pt-4');
-      } else {
-        previewContainer?.classList.remove('pb-30', 'pt-4');
-      }
-    };
+      const toggleDesktopDropdown = (e) => {
+        e.stopPropagation();
+        desktopDropdown?.classList.toggle('hidden');
+        if (desktopDropdown && !desktopDropdown.classList.contains('hidden')) {
+          previewContainer?.classList.add('pb-30', 'pt-4');
+        } else {
+          previewContainer?.classList.remove('pb-30', 'pt-4');
+        }
+      };
 
-    const closeAllDropdowns = () => {
-      if (servicesDropdown && !servicesDropdown.classList.contains('hidden')) {
-        servicesDropdown.classList.add('hidden');
-      }
-      if (desktopDropdown && !desktopDropdown.classList.contains('hidden')) {
-        desktopDropdown.classList.add('hidden');
-        previewContainer?.classList.remove('pb-30', 'pt-2');
-      }
-    };
+      const closeAllDropdowns = () => {
+        if (
+          servicesDropdown &&
+          !servicesDropdown.classList.contains('hidden')
+        ) {
+          servicesDropdown.classList.add('hidden');
+        }
+        if (desktopDropdown && !desktopDropdown.classList.contains('hidden')) {
+          desktopDropdown.classList.add('hidden');
+          previewContainer?.classList.remove('pb-30', 'pt-2');
+        }
+      };
 
-    mobileMenuButton?.addEventListener('click', toggleMobileMenu);
-    servicesDropdownButton?.addEventListener('click', toggleMobileDropdown);
-    desktopButton?.addEventListener('click', toggleDesktopDropdown);
-    document.addEventListener('click', closeAllDropdowns);
+      mobileMenuButton?.addEventListener('click', toggleMobileMenu);
+      servicesDropdownButton?.addEventListener('click', toggleMobileDropdown);
+      desktopButton?.addEventListener('click', toggleDesktopDropdown);
+      document.addEventListener('click', closeAllDropdowns);
 
-    return () => {
-      mobileMenuButton?.removeEventListener('click', toggleMobileMenu);
-      servicesDropdownButton?.removeEventListener('click', toggleMobileDropdown);
-      desktopButton?.removeEventListener('click', toggleDesktopDropdown);
-      document.removeEventListener('click', closeAllDropdowns);
-    };
-  }
-}, [showCode]);
+      return () => {
+        mobileMenuButton?.removeEventListener('click', toggleMobileMenu);
+        servicesDropdownButton?.removeEventListener(
+          'click',
+          toggleMobileDropdown,
+        );
+        desktopButton?.removeEventListener('click', toggleDesktopDropdown);
+        document.removeEventListener('click', closeAllDropdowns);
+      };
+    }
+  }, [showCode]);
 
   return (
     <div
@@ -162,24 +177,22 @@ useEffect(() => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <h2 className='text-3xl sm:text-4xl font-bold mb-2'> Navbar</h2>
+      <h2 className='text-3xl sm:text-4xl font-bold mb-2 mt-8'> Navbar</h2>
       <p className='mb-10 sm:mb-16'>
-      The Responsive Navbar component offers a dynamic, user-friendly navigation bar with
-light/dark mode support, mobile responsiveness, and interactive dropdowns,
-enhancing user experience across devices.
+        The Responsive Navbar component offers a dynamic, user-friendly
+        navigation bar with light/dark mode support, mobile responsiveness, and
+        interactive dropdowns, enhancing user experience across devices.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
       {!showCode && (
-        <div 
-          className='flex justify-center items-center bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md w-full preview-container'
-        >
+        <div className='flex justify-center items-center bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md w-full preview-container'>
           <div
             className='w-full navbar-container'
-            style={{ 
+            style={{
               width: '100%',
-              maxWidth: '100%'
+              maxWidth: '100%',
             }}
             dangerouslySetInnerHTML={{ __html: htmlCssCode }}
           />
@@ -191,15 +204,11 @@ enhancing user experience across devices.
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
-          <hr
-              className={`my-10 border-t ${
-                darkMode
-                  ? 'border-gray-700 opacity-30'
-                  : 'border-gray-300 opacity-50'
-              }`}
-            />
-
-
+      <hr
+        className={`my-10 border-t ${
+          darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
+        }`}
+      />
     </div>
   );
 };
