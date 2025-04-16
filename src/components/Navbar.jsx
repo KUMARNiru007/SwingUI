@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
-import logo from '../../public/logo.webp' 
+import logo from '../../public/logo.webp';
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
@@ -29,11 +29,7 @@ function Navbar() {
       }`}
     >
       <Link to='/'>
-        <img
-          src= {logo}
-          alt='Logo'
-          className='w-[125px] h-auto'
-        />
+        <img src={logo} alt='Logo' className='w-[125px] h-auto' />
       </Link>
 
       <div className='hidden md:flex custom-desktop items-center'>
@@ -410,6 +406,13 @@ function Navbar() {
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Buttons
+                </Link>
+                <Link
+                  to='/components/card'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Cards
                 </Link>
                 {/* <Link
                   to='/components/carousel'
