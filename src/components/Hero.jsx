@@ -112,13 +112,13 @@ const Hero = () => {
           className='flex flex-col sm:flex-row justify-center items-center gap-4'
         >
           <Link
-            to='/guide/docs'
+            to='/docs'
             className='px-6 py-3 rounded-full w-[70%] sm:w-auto text-white swing-ocean-gradient font-semibold shadow hover:opacity-90 transition'
           >
             Get Started For Free
           </Link>
           <Link
-            to='/guide/components/button'
+            to='/components/button'
             className={`px-6 py-3  rounded-full w-[85%] sm:w-auto border border-gray-300 font-semibold hover:text-white hover:bg-gray-800 transition`}
           >
             Explore All Components

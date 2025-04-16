@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div
-      className={`pt-16 flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-br transition-colors duration-300 ${
+      className={`flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-br transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)]'
           : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
