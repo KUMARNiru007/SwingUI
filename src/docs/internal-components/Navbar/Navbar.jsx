@@ -14,7 +14,7 @@ const Navbar = () => {
     <div class="flex justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <a href="#" class="text-4xl font-bold text-gray-900">LOGO</a>
+          <a href="#" class=""><img class="h-10" src="../../../../public/logo.webp" alt="logo"/></a>
         </div>
       </div>
 
