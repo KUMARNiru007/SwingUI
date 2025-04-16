@@ -104,7 +104,7 @@ function ImageGallery() {
       </div>
     </div> 
   `;
-useEffect(() => {
+  useEffect(() => {
     const timeoutId = setTimeout(() => {
       let prevWidth = window.innerWidth;
       const sliders = document.querySelectorAll('.swing-scrolling-image');
@@ -145,14 +145,13 @@ useEffect(() => {
         container.style.setProperty('--est-speed', width / 100);
       };
 
-     const setDirection = (container, width) => {
-  if (
-    getComputedStyle(container).getPropertyValue('--direction') === '-1'
-  ) {
-    container.style.marginLeft = `-${width}px`;
-  }
-};
-
+      const setDirection = (container, width) => {
+        if (
+          getComputedStyle(container).getPropertyValue('--direction') === '-1'
+        ) {
+          container.style.marginLeft = `-${width}px`;
+        }
+      };
 
       const setPauseOnHover = (container) => {
         const pauseOnHover =
@@ -214,37 +213,39 @@ useEffect(() => {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [showCode,darkMode]);
+  }, [showCode, darkMode]);
   const propertiesData = [
     {
       property: '--direction',
-      description:'Controls the direction of the scrolling effect. A value of 1 moves the images to the right, while -1 moves them to the left.',
+      description:
+        'Controls the direction of the scrolling effect. A value of 1 moves the images to the right, while -1 moves them to the left.',
       defaultValue: '1',
       acceptedValues: '1 (right), -1 (left)',
     },
     {
       property: '--speed',
-      description:'Defines the speed of the scrolling animation. A higher value results in faster scrolling.',
+      description:
+        'Defines the speed of the scrolling animation. A higher value results in faster scrolling.',
       defaultValue: '20',
       acceptedValues: 'Number (higher values = faster)',
     },
     {
       property: '----image-aspect-ratio',
-      description:'If true, the aspect ratio of the images is fixed. If false, the images are stretched to fit their container.',
+      description:
+        'If true, the aspect ratio of the images is fixed. If false, the images are stretched to fit their container.',
       defaultValue: 'false',
       acceptedValues: 'true.false',
     },
-   
   ];
 
   return (
-
-    <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+    <div className='[@media(min-width:300px)]:w-[350px] [@media(min-width:400px)]:w-[385px] [@media(min-width:500px)]:w-full [@media(width:768px)]:w-[470px] [@media(width:820px)]:w-[500px] w-full max-w-5xl mx-auto py-8 px-4 sm:py-12'>
       <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Image Gallery </h2>
       <p className='mb-10 sm:mb-16'>
-      The ImageGallery component implements a responsive, infinite-scroll image gallery
-with smooth animations using the swing scrolling effect. It offers a dynamic image
-display with customizable speed and seamless scrolling.
+        The ImageGallery component implements a responsive, infinite-scroll
+        image gallery with smooth animations using the swing scrolling effect.
+        It offers a dynamic image display with customizable speed and seamless
+        scrolling.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -265,7 +266,6 @@ display with customizable speed and seamless scrolling.
             }}
           />
         </div>
-        
       )}
 
       {showCode && (
@@ -274,74 +274,68 @@ display with customizable speed and seamless scrolling.
         </div>
       )}
 
-<hr
-              className={`my-10 border-t ${
-                darkMode
-                  ? 'border-gray-700 opacity-30'
-                  : 'border-gray-300 opacity-50'
-              }`}
-            />
+      <hr
+        className={`my-10 border-t ${
+          darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
+        }`}
+      />
 
+      <h2 className='text-2xl sm:text-3xl font-bold mt-10 mb-6'>
+        Transition and Animation Settings
+      </h2>
+      <div className='w-full mb-12 overflow-x-auto'>
+        <table
+          className={`w-full border-collapse rounded-lg overflow-hidden ${
+            darkMode ? 'bg-gray-800' : 'bg-gray-50'
+          }`}
+        >
+          <thead>
+            <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+              <th className='py-3 px-4 text-left font-semibold'>Property</th>
+              <th className='py-3 px-4 text-left font-semibold'>Description</th>
 
-    <h2 className='text-2xl sm:text-3xl font-bold mt-10 mb-6'>Transition and Animation Settings</h2>
-    <div className='w-full mb-12 overflow-x-auto'>
-                    <table
-                      className={`w-full border-collapse rounded-lg overflow-hidden ${
-                        darkMode ? 'bg-gray-800' : 'bg-gray-50'
-                      }`}
-                    >
-                      <thead>
-                        <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
-                          <th className='py-3 px-4 text-left font-semibold'>
-                            Property
-                          </th>
-                          <th className='py-3 px-4 text-left font-semibold'>
-                            
-                            Description
-                          </th>
-      
-                          <th className='py-3 px-4 text-left font-semibold'>
-                            Default Value
-                          </th>
-                          <th className='py-3 px-4 text-left font-semibold'>
-                            Accepted Value
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {propertiesData.map((item, index) => (
-                          <tr
-                            key={index}
-                            className={`border-t ${
-                              darkMode ? 'border-gray-700' : 'border-gray-200'
-                            }`}
-                          >
-                            <td className='py-3 px-4'>
-                              <code
-                                className={`px-2 py-1 rounded text-sm ${
-                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                                }`}
-                              >
-                                {item.property}
-                              </code>
-                            </td>
-                            <td className='py-3 px-4'>{item.description}</td>
+              <th className='py-3 px-4 text-left font-semibold'>
+                Default Value
+              </th>
+              <th className='py-3 px-4 text-left font-semibold'>
+                Accepted Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {propertiesData.map((item, index) => (
+              <tr
+                key={index}
+                className={`border-t ${
+                  darkMode ? 'border-gray-700' : 'border-gray-200'
+                }`}
+              >
+                <td className='py-3 px-4'>
+                  <code
+                    className={`px-2 py-1 rounded text-sm ${
+                      darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                    }`}
+                  >
+                    {item.property}
+                  </code>
+                </td>
+                <td className='py-3 px-4'>{item.description}</td>
 
-                            <td className='py-3 px-4'><code
-                                className={`px-2 py-1 rounded text-sm ${
-                                  darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                                }`}
-                              >
-                                {item.defaultValue}
-                              </code>
-                              </td>
-                                <td className='py-3 px-4'>{item.acceptedValues}</td>
-                              
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                <td className='py-3 px-4'>
+                  <code
+                    className={`px-2 py-1 rounded text-sm ${
+                      darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                    }`}
+                  >
+                    {item.defaultValue}
+                  </code>
+                </td>
+                <td className='py-3 px-4'>{item.acceptedValues}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

@@ -13,7 +13,7 @@ const CardsDemo = () => {
   <div class="flex flex-wrap justify-center w-full max-w-4xl bg-gray-200 rounded-lg p-6 mx-auto">
     
     <!-- Card 1 -->
-    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-ocean-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-ocean-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
@@ -29,11 +29,14 @@ const CardsDemo = () => {
         <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
+        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+          LET'S GO
+        </a>
       </div>
     </div>
 
     <!-- Card 2 -->
-    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-peach-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-peach-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
@@ -49,11 +52,14 @@ const CardsDemo = () => {
         <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
+        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+          LET'S GO
+        </a>
       </div>
     </div>
 
     <!-- Card 3 -->
-    <div class="group relative h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <div class="absolute top-1 left-1 h-full w-full swing-fire-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-fire-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
@@ -68,11 +74,14 @@ const CardsDemo = () => {
         <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
+        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+          LET'S GO
+        </a>
       </div>
     </div>
 
     <!-- Card 4 -->
-    <div class="group relative h-72 w-full lg:w-[48%] lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
       <div class="absolute top-1 left-1 h-full w-full swing-love-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-love-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
@@ -84,6 +93,9 @@ const CardsDemo = () => {
           </p>
         </div>
         <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+          LET'S GO
+        </a>
+        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
           LET'S GO
         </a>
       </div>
@@ -102,30 +114,30 @@ const CardsDemo = () => {
       } `}
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Cards</h2>
-      <p className='mb-10 sm:mb-16'>
-      This card demo utilizes Swing-inspired gradients and smooth hover effects to create 
-      dynamic, interactive UI components. It showcases a visually engaging experience with 
-      seamless transitions and modern design aesthetics.
-      </p>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Cards</h2>
+        <p className='mb-10 sm:mb-16'>
+          This card demo utilizes Swing-inspired gradients and smooth hover
+          effects to create dynamic, interactive UI components. It showcases a
+          visually engaging experience with seamless transitions and modern
+          design aesthetics.
+        </p>
 
-      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
-      {!showCode && (
-        <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
-          <div
-            className='w-full'
-            dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-          />
-        </div>
-      )}
+        {!showCode && (
+          <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
+            <div
+              className='w-full'
+              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+            />
+          </div>
+        )}
 
-      {showCode && (
-        <div className='w-full overflow-x-auto my-4 rounded-xl'>
-          <CodeBlock language='html' code={htmlCssCode} />
-        </div>
-      )}
-      
+        {showCode && (
+          <div className='w-full overflow-x-auto my-4 rounded-xl'>
+            <CodeBlock language='html' code={htmlCssCode} />
+          </div>
+        )}
       </div>
     </div>
   );
