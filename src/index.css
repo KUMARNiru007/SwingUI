@@ -62,3 +62,46 @@ code[class*='language-'] {
   white-space: pre-wrap !important;
   word-break: break-word;
 }
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Light Mode Scrollbar */
+:root {
+  --scrollbar-thumb: #e5e7eb; /* gray-200 */
+  --scrollbar-thumb-hover: #d1d5db; /* gray-300 */
+}
+
+/* Dark Mode Scrollbar */
+.dark {
+  --scrollbar-thumb: #1f2937; /* gray-800 */
+  --scrollbar-thumb-hover: #374151; /* gray-700 */
+}
+
+/* Firefox Support */
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+    scrollbar-width: thin;
+  }
+}

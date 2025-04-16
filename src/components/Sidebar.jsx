@@ -50,6 +50,7 @@ const sections = [
   // },
 ];
 
+
 const Sidebar = () => {
   const { darkMode } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
@@ -76,13 +77,13 @@ const Sidebar = () => {
   }, [searchTerm]);
 
   return (
-    <aside
-      className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px] transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md ${
-        darkMode
-          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text)] border-gray-800'
-          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] border-gray-100'
-      }`}
-    >
+<aside
+  className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px] transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md scrollbar-custom ${
+    darkMode
+      ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)] border-gray-800'
+      : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] border-gray-100'
+  }`}
+>
       <div className="sticky top-0 pt-4 bg-inherit z-10">
         <div className="relative mb-4 group">
           <svg
