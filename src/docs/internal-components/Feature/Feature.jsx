@@ -254,7 +254,7 @@ function Feature() {
 
   return (
     <div
-      className={`[@media(min-width:400px)]:w-[410px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:820px)]:w-[500px] [@media(width:768px)]:w-[480px] transition-colors duration-300 ${
+      className={`[@media(min-width:300px)_and_(max-width:350px)]:w-[320px] [@media(min-width:400px)]:w-[410px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:820px)]:w-[500px] [@media(width:768px)]:w-[480px] transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'

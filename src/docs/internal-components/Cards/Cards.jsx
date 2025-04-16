@@ -277,7 +277,7 @@ const CardsDemo = () => {
 
   return (
     <div
-      className={`w-full py-6 transition-colors duration-300 ${
+      className={`[@media(min-width:300px)_and_(max-width:350px)]:w-[325px] w-full py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
