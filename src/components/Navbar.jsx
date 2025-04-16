@@ -216,14 +216,14 @@ function Navbar() {
                 Navbar
               </Link>
               <Link
-                to='/components/panto-grid'
+                to='/components/bento-grid'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
                     : 'hover:bg-[var(--light-hover-bg)]'
                 }`}
               >
-                Panto-grid
+                Bento-Grid
               </Link>
               {/* <Link
                 to='/components/popups'
@@ -464,11 +464,11 @@ function Navbar() {
                   Navbar
                 </Link>
                 <Link
-                  to='/components/panto-grid'
+                  to='/components/bento-grid'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
-                  Panto-grid
+                  Bento-Grid
                 </Link>
                 {/* <Link
                   to='/components/popups'

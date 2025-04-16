@@ -9,7 +9,7 @@ import img2 from '../../../assets/Images-For-Gallery/img2.webp';
 import img3 from '../../../assets/Images-For-Gallery/img3.webp';
 import img4 from '../../../assets/Images-For-Gallery/img4.webp';
 
-const GridDemo = () => {
+const BentoGrid = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
 
@@ -95,11 +95,11 @@ const GridDemo = () => {
     >
       <div className='max-w-5xl mx-auto px-2 sm:px-4 lg:px-8 py-6 sm:py-12'>
         <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-2'>
-          Grid Layout
+          Bento Grid
         </h2>
         <p className='mb-6 sm:mb-10 lg:mb-16 text-sm sm:text-base'>
-          This grid layout demo showcases SwingUI's flexible grid system with
-          interactive elements. It features gradient backgrounds, tilt-zoom
+          This Bento grid layout demo showcases SwingUI's flexible grid system
+          with interactive elements. It features gradient backgrounds, tilt-zoom
           effects on social icons, and responsive design that adapts beautifully
           across all device sizes.
         </p>
@@ -125,4 +125,4 @@ const GridDemo = () => {
   );
 };
 
-export default GridDemo;
+export default BentoGrid;

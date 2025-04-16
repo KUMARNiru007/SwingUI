@@ -13,7 +13,7 @@ import Header from '../docs/internal-components/Header/Header.jsx';
 import Hero from '../docs/internal-components/Hero/Hero.jsx';
 import ImageGallery from '../docs/internal-components/ImageGallery/ImageGallery.jsx';
 import Navbar from '../docs/internal-components/Navbar/Navbar.jsx';
-import PantoGrid from '../docs/internal-components/PantoGrid/PantoGrid.jsx';
+import BentoGrid from '../docs/internal-components/BentoGrid/BentoGrid.jsx';
 import PopUps from '../docs/internal-components/PopUps/PopUps.jsx';
 import Tabs from '../docs/internal-components/Tabs/Tabs.jsx';
 import Testimonials from '../docs/internal-components/Testimonials/Testimonials.jsx';
@@ -48,7 +48,7 @@ const Components = () => {
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
             <Route path='navbar' element={<Navbar />} />
-            <Route path='panto-grid' element={<PantoGrid />} />
+            <Route path='bento-grid' element={<BentoGrid />} />
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
