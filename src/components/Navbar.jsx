@@ -215,7 +215,7 @@ function Navbar() {
               >
                 Navbar
               </Link>
-              {/* <Link
+              <Link
                 to='/components/panto-grid'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
@@ -224,7 +224,7 @@ function Navbar() {
                 }`}
               >
                 Panto-grid
-              </Link> */}
+              </Link>
               {/* <Link
                 to='/components/popups'
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -463,13 +463,13 @@ function Navbar() {
                 >
                   Navbar
                 </Link>
-                {/* <Link
+                <Link
                   to='/components/panto-grid'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Panto-grid
-                </Link> */}
+                </Link>
                 {/* <Link
                   to='/components/popups'
                   onClick={handleMobileLinkClick}

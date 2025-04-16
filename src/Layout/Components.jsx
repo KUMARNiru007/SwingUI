@@ -48,11 +48,11 @@ const Components = () => {
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
             <Route path='navbar' element={<Navbar />} />
-            {/* <Route path='panto-grid' element={<PantoGrid />} /> */}
+            <Route path='panto-grid' element={<PantoGrid />} />
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
-            <Route path='pricing' element={<Pricing />}/>
+            <Route path='pricing' element={<Pricing />} />
           </Routes>
         </div>
       </div>
