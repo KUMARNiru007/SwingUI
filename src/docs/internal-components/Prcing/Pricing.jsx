@@ -139,14 +139,14 @@ function Pricing() {
 
   return (
     <div
-      className={`w-full py-6  transition-colors duration-300 ${
+      className={`w-full py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
+      } px-4`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Pricing</h2>
+      <div className='max-w-5xl mx-auto py-8 sm:py-6'>
+        <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Pricing</h2>
         <p className='mb-10 sm:mb-16'>
           The Pricing component provides a visually appealing and responsive
           pricing section, with a dynamic layout that adjusts to both light and

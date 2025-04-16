@@ -94,14 +94,14 @@ const Button = () => {
 
   return (
     <div
-      className={`w-full transition-colors duration-300 ${
+      className={`w-full transition-colors duration-300 [@media(width:344px)]:w-[340px] ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } py-6`}
+      } px-4 py-6`}
     >
-      <div className='max-w-5xl mx-auto px-2 py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Buttons</h2>
+      <div className='max-w-5xl mx-auto px-1 py-8 sm:py-12'>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>Buttons</h2>
         <p className='mb-10 sm:mb-16'>
           The Button component offers a variety of dynamic, gradient-filled
           buttons with smooth Swing animations for an engaging user experience.

@@ -239,8 +239,8 @@ function ImageGallery() {
   ];
 
   return (
-    <div className='[@media(min-width:300px)]:w-[350px] [@media(min-width:400px)]:w-[385px] [@media(min-width:500px)]:w-full [@media(width:768px)]:w-[470px] [@media(width:820px)]:w-[500px] w-full max-w-5xl mx-auto py-14 px-6 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Image Gallery </h2>
+    <div className='[@media(min-width:300px)]:w-[360px] [@media(min-width:370px)]:w-[375px] [@media(min-width:390px)]:w-[390px] [@media(min-width:400px)]:w-[415px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:768px)]:w-[490px] [@media(width:820px)]:w-[520px] w-full max-w-5xl py-14 px-4 sm:py-12'>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-6'>Image Gallery </h2>
       <p className='mb-10 sm:mb-16'>
         The ImageGallery component implements a responsive, infinite-scroll
         image gallery with smooth animations using the swing scrolling effect.

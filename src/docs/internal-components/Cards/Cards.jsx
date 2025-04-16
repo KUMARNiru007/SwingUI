@@ -3,12 +3,13 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import '../../SwingKit/Gradients/style.css';
-import './style.css'
+import './style.css';
+import { div } from 'framer-motion/client';
 
 const CardsDemo = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
-  const [showCard , setShowCard] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
   const htmlCssCode = `
 <div class="w-full flex justify-center">
@@ -28,10 +29,10 @@ const CardsDemo = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
-        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+        <a href="#!" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
-        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+        <a href="#!" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
           LET'S GO
         </a>
       </div>
@@ -51,10 +52,10 @@ const CardsDemo = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
-        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+        <a href="#!" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
-        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+        <a href="#!" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
           LET'S GO
         </a>
       </div>
@@ -73,10 +74,10 @@ const CardsDemo = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
-        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+        <a href="#!" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
-        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+        <a href="#!" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
           LET'S GO
         </a>
       </div>
@@ -94,10 +95,10 @@ const CardsDemo = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae molestias culpa nesciunt assumenda mollitia.
           </p>
         </div>
-        <a href="#" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
+        <a href="#!" class="hidden group-hover:flex justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold transition duration-300 text-gray-900">
           LET'S GO
         </a>
-        <a href="#" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
+        <a href="#!" class="flex xl:hidden justify-center w-full py-2 mt-4 bg-white border-2 border-black font-semibold text-gray-900">
           LET'S GO
         </a>
       </div>
@@ -107,13 +108,13 @@ const CardsDemo = () => {
 </div>
 `;
 
-const htmlCssCode2=`
+  const htmlCssCode2 = `
 <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap items-start py-12">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -140,7 +141,7 @@ const htmlCssCode2=`
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -152,7 +153,7 @@ const htmlCssCode2=`
                 UX/UI Web-Design&#160;+ Mobile Design
               </div>
               <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                Lorem ipsum dolor sit amet, consectetur elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </div>
               <div class="relative z-10">
@@ -167,7 +168,7 @@ const htmlCssCode2=`
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -194,7 +195,7 @@ const htmlCssCode2=`
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -221,7 +222,7 @@ const htmlCssCode2=`
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -248,7 +249,7 @@ const htmlCssCode2=`
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
-              href="#"
+              href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
@@ -271,24 +272,21 @@ const htmlCssCode2=`
             </a>
           </div>
         </div>
-
-        
-
-        
       </div>
     </div>`;
 
-
   return (
     <div
-      className={`w-full px-2 py-6  transition-colors duration-300 ${
+      className={`w-full py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } `}
+      } px-4`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Cards</h2>
+      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
+          Spring cards
+        </h2>
         <p className='mb-10 sm:mb-16'>
           This card demo utilizes Swing-inspired gradients and smooth hover
           effects to create dynamic, interactive UI components. It showcases a
@@ -313,8 +311,10 @@ const htmlCssCode2=`
           </div>
         )}
       </div>
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Cards</h2>
+      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
+          Hover Cards
+        </h2>
         <p className='mb-10 sm:mb-16'>
           This card demo utilizes Swing-inspired gradients and smooth hover
           effects to create dynamic, interactive UI components. It showcases a
@@ -326,9 +326,6 @@ const htmlCssCode2=`
 
         {!showCard && (
           <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
-            
-           
-           
             <div
               className='w-full'
               dangerouslySetInnerHTML={{ __html: htmlCssCode2 }}
