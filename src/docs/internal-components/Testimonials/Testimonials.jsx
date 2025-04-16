@@ -371,14 +371,13 @@ function Testimonial() {
         container.style.setProperty('--est-speed', width / 100);
       };
 
-     const setDirection = (container, width) => {
-  if (
-    getComputedStyle(container).getPropertyValue('--direction') === '-1'
-  ) {
-    container.style.marginLeft = `-${width}px`;
-  }
-};
-
+      const setDirection = (container, width) => {
+        if (
+          getComputedStyle(container).getPropertyValue('--direction') === '-1'
+        ) {
+          container.style.marginLeft = `-${width}px`;
+        }
+      };
 
       const setPauseOnHover = (container) => {
         const pauseOnHover =
@@ -440,42 +439,47 @@ function Testimonial() {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [showCode,darkMode]);
+  }, [showCode, darkMode]);
 
- return (
+  return (
     <div
-      className={`w-full max-w-screen-xl mx-auto px-4 py-0  transition-colors duration-300 ${
+      className={`w-full max-w-screen-xl mx-auto px-4 py-8  transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } overflow-x-hidden`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Testimonial Component</h1>
-      <p className='mb-15'>
-      This dynamic Tabs component provides seamless navigation between categorized
-content blocks with responsive design, interactive hover effects, and optional code
-previews — ideal for modern UI/UX needs.
-      </p>
+      <div className='max-w-5xl mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h1 className='text-3xl sm:text-4xl font-bold mb-2'>
+          Testimonial Component
+        </h1>
+        <p className='mb-15'>
+          This dynamic Tabs component provides seamless navigation between
+          categorized content blocks with responsive design, interactive hover
+          effects, and optional code previews — ideal for modern UI/UX needs.
+        </p>
 
-      <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
-      {!showCode && (
-        <div
-          key={`${darkMode}-${showCode}`}
-          className={`flex justify-center items-center overflow-hidden bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
-        >
-          {/* Render live preview */}
-          <div className='w-full' dangerouslySetInnerHTML={{ __html: htmlCssCode }} />
-        </div>
-      )}
+        {!showCode && (
+          <div
+            key={`${darkMode}-${showCode}`}
+            className={`flex justify-center items-center overflow-hidden bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
+          >
+            {/* Render live preview */}
+            <div
+              className='w-full'
+              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+            />
+          </div>
+        )}
 
-      {showCode && (
-        <div className='w-full my-4 rounded-xl'>
-          <CodeBlock language='html' code={htmlCssCode} />
-        </div>
-      )}
-    </div>
+        {showCode && (
+          <div className='w-full my-4 rounded-xl'>
+            <CodeBlock language='html' code={htmlCssCode} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

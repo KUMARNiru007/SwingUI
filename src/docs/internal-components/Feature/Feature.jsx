@@ -258,13 +258,13 @@ function Feature() {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } py-6`}
+      } py-12`}
     >
-      <div className='max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-6 py-4 sm:py-6 md:py-8'>
-        <h2 className='text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4'>
+      <div className='max-w-5xl mx-auto px-4 sm:px-4 md:px-6 lg:px-6 py-4 sm:py-6 md:py-8'>
+        <h2 className='text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4'>
           Features
         </h2>
-        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-sm sm:text-base md:text-base'>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           The Feature component displays a dynamic image slider with smooth
           scroll functionality, using React hooks to handle state and
           animations. It also includes a toggle to preview the HTML/CSS code

@@ -132,12 +132,12 @@ const Tabs = () => {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
+      } py-12`}
     >
       <div className='max-w-5xl mx-auto px-[15px] pt-4 sm:pt-6 pb-8 sm:pb-12'>
         <div className='flex flex-col items-start'>
           <h1 className='text-3xl sm:text-4xl font-bold mb-2'>Tabs</h1>
-          <p className='mb-4 sm:mb-6 text-sm sm:text-base'>
+          <p className='mb-4 sm:mb-6'>
             This dynamic Tabs component provides seamless navigation between
             categorized content blocks with responsive design, interactive hover
             effects, and optional code previews — ideal for modern UI/UX needs.
