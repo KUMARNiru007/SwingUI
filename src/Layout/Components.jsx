@@ -18,6 +18,7 @@ import PopUps from '../docs/internal-components/PopUps/PopUps.jsx';
 import Tabs from '../docs/internal-components/Tabs/Tabs.jsx';
 import Testimonials from '../docs/internal-components/Testimonials/Testimonials.jsx';
 import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
+import VerticalSlider from '../docs/internal-components/slider/slider.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -53,6 +54,7 @@ const Components = () => {
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
             <Route path='pricing' element={<Pricing />} />
+            <Route path='slider' element={<VerticalSlider />} />
           </Routes>
         </div>
       </div>
