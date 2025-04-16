@@ -443,13 +443,13 @@ function Testimonial() {
 
   return (
     <div
-      className={`w-full max-w-screen-xl mx-auto px-4 py-8  transition-colors duration-300 ${
+      className={`w-full max-w-screen-xl mx-auto px-4 py-8 [@media(width:768px)]:w-[470px] [@media(width:820px)]:w-[510px] transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } overflow-x-hidden`}
     >
-      <div className='max-w-5xl mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-12'>
+      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
         <h1 className='text-3xl sm:text-4xl font-bold mb-2'>
           Testimonial Component
         </h1>
