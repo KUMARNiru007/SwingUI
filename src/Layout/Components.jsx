@@ -17,7 +17,7 @@ import PantoGrid from '../docs/internal-components/PantoGrid/PantoGrid.jsx';
 import PopUps from '../docs/internal-components/PopUps/PopUps.jsx';
 import Tabs from '../docs/internal-components/Tabs/Tabs.jsx';
 import Testimonials from '../docs/internal-components/Testimonials/Testimonials.jsx';
-import Pricing from '../docs/internal-components/Pricing/Pricing.jsx';
+import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
