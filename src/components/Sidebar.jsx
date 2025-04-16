@@ -31,7 +31,7 @@ const sections = [
       // { to: '/components/hero', label: 'Hero section' },
       { to: '/components/image-gallery', label: 'Image Gallery' },
       { to: '/components/navbar', label: 'Navbar' },
-      { to: '/components/panto-grid', label: 'Panto-grid' },
+      { to: '/components/bento-grid', label: 'Bento-Grid' },
       // { to: '/components/popups', label: 'Pop Ups' },
       { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/tabs', label: 'Tabs' },
