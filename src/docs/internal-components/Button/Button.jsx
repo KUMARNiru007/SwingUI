@@ -94,7 +94,7 @@ const Button = () => {
 
   return (
     <div
-      className={`w-full transition-colors duration-300 [@media(width:344px)]:w-[340px] ${
+      className={`w-full transition-colors duration-300 [@media(min-width:300px)_and_(max-width:342px)]:w-[315px] [@media(width:344px)]:w-[340px] ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
