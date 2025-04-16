@@ -3,10 +3,12 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import '../../SwingKit/Gradients/style.css';
+import './style.css'
 
 const CardsDemo = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
+  const [showCard , setShowCard] = useState(false);
 
   const htmlCssCode = `
 <div class="w-full flex justify-center">
@@ -105,6 +107,178 @@ const CardsDemo = () => {
 </div>
 `;
 
+const htmlCssCode2=`
+<div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-start py-12">
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-yellow-500 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                UI/Web &amp; Graph design
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-yellow-500 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-green-500 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                UX/UI Web-Design&#160;+ Mobile Design
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-green-500 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-red-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                Annual package "Product+UX/UI"
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-red-600 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-purple-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                Graphic Design
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-purple-600 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-pink-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                Motion Design
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-pink-600 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div class="overflow-hidden rounded-3xl">
+            <a
+              href="#"
+              class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
+            >
+              <div
+                class="course-bg h-32 w-32 bg-indigo-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+              ></div>
+              <div
+                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+              >
+                Front-end development
+              </div>
+              <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="relative z-10">
+                <span class="know-more text-indigo-600 inline-block"
+                  >Know more</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+
+        
+
+        
+      </div>
+    </div>`;
+
+
   return (
     <div
       className={`w-full px-2 py-6  transition-colors duration-300 ${
@@ -136,6 +310,35 @@ const CardsDemo = () => {
         {showCode && (
           <div className='w-full overflow-x-auto my-4 rounded-xl'>
             <CodeBlock language='html' code={htmlCssCode} />
+          </div>
+        )}
+      </div>
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Cards</h2>
+        <p className='mb-10 sm:mb-16'>
+          This card demo utilizes Swing-inspired gradients and smooth hover
+          effects to create dynamic, interactive UI components. It showcases a
+          visually engaging experience with seamless transitions and modern
+          design aesthetics.
+        </p>
+
+        <PreviewCodeBtn showCode={showCard} setShowCode={setShowCard} />
+
+        {!showCard && (
+          <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
+            
+           
+           
+            <div
+              className='w-full'
+              dangerouslySetInnerHTML={{ __html: htmlCssCode2 }}
+            />
+          </div>
+        )}
+
+        {showCard && (
+          <div className='w-full overflow-x-auto my-4 rounded-xl'>
+            <CodeBlock language='html' code={htmlCssCode2} />
           </div>
         )}
       </div>
