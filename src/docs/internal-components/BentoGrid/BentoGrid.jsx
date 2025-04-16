@@ -18,7 +18,7 @@ const BentoGrid = () => {
 
   <!-- Intro Card -->
   <div class="bg-gradient-to-tr from-pink-500 via-purple-500 to-indigo-500 p-4 sm:p-6 rounded-xl col-span-1 sm:col-span-2 row-span-2 flex flex-col justify-between">
-    <img src="/api/placeholder/48/48" class="w-10 sm:w-12 h-10 sm:h-12 rounded-full" alt="SwingUI Logo" />
+    <img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=SwingUi" class="w-10 sm:w-12 h-10 sm:h-12 rounded-full" alt="SwingUI Logo" />
     <div class="mt-3 sm:mt-4">
       <h1 class="text-xl sm:text-2xl font-bold">About SwingUi</h1>
       <p class="text-white text-base sm:text-lg mt-1">SwingUi is a modern component library designed to build fast, beautiful UIs.</p>
