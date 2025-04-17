@@ -23,6 +23,7 @@ import SocialShare from '../docs/internal-components/Socialshare/SocialShare.jsx
 import Preloader from '../docs/internal-components/Preloader/Preloader.jsx';
 import SpotLightText from '../docs/internal-components/SpotLightText/SpotLightText.jsx';
 import Ratings from '../docs/internal-components/Ratings/Ratings.jsx';
+import Scaratchcard from '../docs/internal-components/Scratch Card/Scratchcard.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -64,6 +65,7 @@ const Components = () => {
 
             <Route path='spotlight-text' element={<SpotLightText />} />
             <Route path='ratings' element={<Ratings />} />
+            <Route path='ScratchCard' element={<Scaratchcard />} />
           </Routes>
         </div>
       </div>
