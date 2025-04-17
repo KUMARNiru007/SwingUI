@@ -600,7 +600,7 @@ function SocialShare() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4`}
     >
-      <div className='max-w-5xl mx-auto py-8 sm:py-6'>
+      <div className='max-w-[60rem] mx-auto py-8 sm:py-6'>
         <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Social Share</h2>
         <p className='mb-10 sm:mb-16'>
           This component displays a grid of six social media icons arranged in a
