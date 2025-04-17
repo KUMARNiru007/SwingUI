@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
@@ -35,6 +35,8 @@ const sections = [
       // { to: '/components/popups', label: 'Pop Ups' },
       { to: '/components/preloader', label: 'Preloader' },
       { to: '/components/pricing', label: 'Pricing' },
+      { to: '/components/ratings', label: 'Ratings' },
+      { to: '/components/spotlight-text', label: 'Spotlight-Text' },
       { to: './components/slider', label: 'Slider' },
       { to: '/components/social-share', label: 'Social Share' },
  
@@ -53,7 +55,6 @@ const sections = [
   // },
 ];
 
-
 const Sidebar = () => {
   const { darkMode } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
@@ -70,9 +71,9 @@ const Sidebar = () => {
     const newFilteredSections = sections
       .map((section) => ({
         ...section,
-        items: section.items.filter((item) => 
-          item.label.toLowerCase().includes(lowerCaseSearch)
-        )
+        items: section.items.filter((item) =>
+          item.label.toLowerCase().includes(lowerCaseSearch),
+        ),
       }))
       .filter((section) => section.items.length > 0);
 
@@ -80,37 +81,37 @@ const Sidebar = () => {
   }, [searchTerm]);
 
   return (
-<aside
-  className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px] transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md scrollbar-custom ${
-    darkMode
-      ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)] border-gray-800'
-      : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] border-gray-100'
-  }`}
->
-      <div className="sticky top-0 pt-4 bg-inherit z-10">
-        <div className="relative mb-4 group">
+    <aside
+      className={`fixed top-[74px] left-0 h-[calc(100dvh_-_74px)] w-[280px] transition-colors duration-300 overflow-y-auto px-4 border-r shadow-md scrollbar-custom ${
+        darkMode
+          ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)] border-gray-800'
+          : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)] border-gray-100'
+      }`}
+    >
+      <div className='sticky top-0 pt-4 bg-inherit z-10'>
+        <div className='relative mb-4 group'>
           <svg
             className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors ${
               darkMode
                 ? 'text-gray-400 group-focus-within:text-[var(--color-primary)]'
                 : 'text-gray-500 group-focus-within:text-[var(--color-primary)]'
             }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              strokeLinecap='round'
+              strokeLinejoin='round'
               strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
             />
           </svg>
 
           <input
             ref={searchInputRef}
-            type="text"
-            placeholder="Search components"
+            type='text'
+            placeholder='Search components'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className={`w-full pl-10 pr-8 py-2.5 rounded-lg text-sm border transition-all duration-300 ${
@@ -120,7 +121,7 @@ const Sidebar = () => {
             }`}
           />
 
-          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+          <div className='absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5'>
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
@@ -129,19 +130,19 @@ const Sidebar = () => {
                     ? 'text-gray-400 hover:text-white hover:bg-white/10'
                     : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                 }`}
-                aria-label="Clear search"
+                aria-label='Clear search'
               >
                 <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  className='w-4 h-4'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
+                    d='M6 18L18 6M6 6l12 12'
                   />
                 </svg>
               </button>
@@ -150,19 +151,17 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <nav className="py-2">
+      <nav className='py-2'>
         {filteredSections.map((section, index) => (
           <div key={index}>
             <div
               className={`text-sm font-semibold px-2 py-4 tracking-wide ${
-                darkMode
-                  ? 'text-gray-400'
-                  : 'text-gray-500'
+                darkMode ? 'text-gray-400' : 'text-gray-500'
               }`}
             >
               {section.title}
             </div>
-            <div className="flex flex-col gap-1">
+            <div className='flex flex-col gap-1'>
               {section.items.map((item, id) => (
                 <NavItem
                   key={id}
