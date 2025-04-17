@@ -446,7 +446,7 @@ function Testimonial() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } overflow-x-hidden px-4`}
     >
-      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
+      <div className='max-w-[60rem] mx-auto py-8 sm:py-12'>
         <h1 className='text-3xl sm:text-4xl font-bold pb-4'>
           Testimonial Component
         </h1>

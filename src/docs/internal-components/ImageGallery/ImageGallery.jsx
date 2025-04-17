@@ -233,7 +233,7 @@ function ImageGallery() {
   ];
 
   return (
-    <div className='responsive-width w-full max-w-5xl sm:mx-auto mt-8 py-14 px-6 sm:px-4 sm:py-12'>
+    <div className='responsive-width w-full max-w-[62rem] sm:mx-auto mt-8 py-14 px-6 sm:px-4 sm:py-12'>
       <h2 className='text-3xl sm:text-4xl font-bold pb-6'>Image Gallery </h2>
       <p className='mb-10 sm:mb-16'>
         The ImageGallery component implements a responsive, infinite-scroll

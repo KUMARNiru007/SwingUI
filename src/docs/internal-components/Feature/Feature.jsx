@@ -256,7 +256,7 @@ function Feature() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4 py-12`}
     >
-      <div className='max-w-5xl mx-auto sm:py-6 md:py-8'>
+      <div className='max-w-[60rem] mx-auto sm:py-6 md:py-8'>
         <h2 className='text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold pb-4'>
           Features
         </h2>

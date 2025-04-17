@@ -100,7 +100,7 @@ const Button = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4 py-6`}
     >
-      <div className='max-w-5xl mx-auto px-1 py-8 sm:py-12'>
+      <div className='max-w-[60rem] mx-auto px-1 py-8 sm:py-12'>
         <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>Buttons</h2>
         <p className='mb-10 sm:mb-16'>
           The Button component offers a variety of dynamic, gradient-filled
