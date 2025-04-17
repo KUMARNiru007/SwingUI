@@ -1,17 +1,15 @@
-import React , { useState, useEffect }  from 'react'
+import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
-import "./style.css"
-
-
+import './style.css';
 
 function SocialShare() {
   const [showCode, setShowCode] = useState(false);
-  
-    const { darkMode } = useTheme();
-  
-    const htmlCssCode = ` <div class="flex flex-col items-center">
+
+  const { darkMode } = useTheme();
+
+  const htmlCssCode = ` <div class="flex flex-col items-center">
     
     
     <!-- SVG Container with Tailwind classes -->
@@ -27,7 +25,7 @@ function SocialShare() {
         class="mx-auto"
       >
       <!-- Path 1 -->
-       <a href="#" target="_blank">
+       <a href="#!">
         <g clip-path="url(#clip0_67_353)">
           <g id="path-container-g-v3">
             <rect
@@ -83,7 +81,7 @@ function SocialShare() {
     </a>
     
 
-        <a href="#" target="_blank">
+        <a href="#!"">
         <g clip-path="url(#clip2_67_353)">
           <g id="path-container-g-v2">
             <rect
@@ -138,7 +136,7 @@ function SocialShare() {
         </g>
     </a>
 
-        <a href="#" target="_blank">
+        <a href="#!"">
         <g clip-path="url(#clip4_67_353)">
           <g id="path-container-g-v1">
             <rect
@@ -193,7 +191,7 @@ function SocialShare() {
         </g>
     </a>
 
-        <a href="#" target="_blank">
+        <a href="#!">
         <g clip-path="url(#clip6_67_353)">
           <g id="path-container-g-v6">
             <rect
@@ -248,7 +246,7 @@ function SocialShare() {
         </g>
     </a>
 
-        <a href="#" target="_blank">
+        <a href="#!">
         <g clip-path="url(#clip8_67_353)">
           <g id="path-container-g-v5">
             <rect
@@ -303,7 +301,7 @@ function SocialShare() {
         </g>
     </a>
 
-        <a href="#" target="_blank">
+        <a href="#!">
         <g clip-path="url(#clip10_67_353)">
           <g id="path-container-g-v4">
             <rect
@@ -561,96 +559,96 @@ function SocialShare() {
       bg: '#3F454E',
       stroke: '#3C4149',
       inner: '#414750',
-      line: '#6B727C'
+      line: '#6B727C',
     },
     instagram: {
       start: '#bc1888',
       mid: '#dc2743',
-      end: '#f09433'
+      end: '#f09433',
     },
     gitlab: {
       start: '#e24329',
       mid: '#fc6d26',
-      end: '#fca326'
+      end: '#fca326',
     },
     paypal: '#009cde',
     telegram: '#26a5e4',
     spotify: '#1db954',
-    discord: '#5865f2'
+    discord: '#5865f2',
   };
-  
+
   useEffect(() => {
     const root = document.documentElement;
-  
+
     if (!root) return;
-  
+
     // Set hexagon theme colors as CSS variables
     root.style.setProperty('--hex-bg', hexTheme.hexagon.bg);
     root.style.setProperty('--hex-stroke', hexTheme.hexagon.stroke);
     root.style.setProperty('--hex-inner', hexTheme.hexagon.inner);
     root.style.setProperty('--hex-line', hexTheme.hexagon.line);
-  
+
     // Set gradients as CSS variables
     root.style.setProperty('--insta-start', hexTheme.instagram.start);
     root.style.setProperty('--insta-mid', hexTheme.instagram.mid);
     root.style.setProperty('--insta-end', hexTheme.instagram.end);
-  
+
     root.style.setProperty('--gitlab-start', hexTheme.gitlab.start);
     root.style.setProperty('--gitlab-mid', hexTheme.gitlab.mid);
     root.style.setProperty('--gitlab-end', hexTheme.gitlab.end);
-  
+
     // Set solid brand colors
     root.style.setProperty('--paypal', hexTheme.paypal);
     root.style.setProperty('--telegram', hexTheme.telegram);
     root.style.setProperty('--spotify', hexTheme.spotify);
     root.style.setProperty('--discord', hexTheme.discord);
-  
-  }, [showCode,darkMode]);
+  }, [showCode, darkMode]);
 
-    return (
-      <div
-        className={`w-full py-6 transition-colors duration-300 ${
-          darkMode
-            ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-            : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-        } px-4`}
-      >
-        <div className='max-w-5xl mx-auto py-8 sm:py-6'>
-          <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Social Share</h2>
-          <p className='mb-10 sm:mb-16'>
-          This component displays a grid of six social media icons arranged in a 3D, isometric style. Each tile appears elevated and slightly tilted, creating a layered effect. On hover, the icons rise smoothly and change to their respective brand colors, adding a dynamic and interactive visual touch.
-            
-          </p>
-  
-          <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
-  
-          {!showCode && (
+  return (
+    <div
+      className={`w-full py-6 transition-colors duration-300 ${
+        darkMode
+          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+      } px-4`}
+    >
+      <div className='max-w-5xl mx-auto py-8 sm:py-6'>
+        <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Social Share</h2>
+        <p className='mb-10 sm:mb-16'>
+          This component displays a grid of six social media icons arranged in a
+          3D, isometric style. Each tile appears elevated and slightly tilted,
+          creating a layered effect. On hover, the icons rise smoothly and
+          change to their respective brand colors, adding a dynamic and
+          interactive visual touch.
+        </p>
+
+        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+
+        {!showCode && (
+          <div
+            key={`${darkMode}-${showCode}`}
+            className={`flex justify-center items-center ${
+              darkMode
+                ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
+                : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+            }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 py-30  px-10 sm:px-20 md:py-20 sm:py-30  rounded-lg shadow-md`}
+          >
+            {/* Render live preview */}
             <div
-              key={`${darkMode}-${showCode}`}
-              className={`flex justify-center items-center ${
-                darkMode
-                  ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
-                  : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-              }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 py-30  px-10 sm:px-20 md:py-20 sm:py-30  rounded-lg shadow-md`}
-            >
-              {/* Render live preview */}
-              <div
-                className='w-full'
-                dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-              />
-            </div>
-          )}
-  
-          {showCode && (
-            <div className='w-full overflow-x-auto my-4 rounded-xl'>
-              <CodeBlock language='html' code={htmlCssCode} />
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-  
+              className='w-full'
+              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+            />
+          </div>
+        )}
 
-export default SocialShare
- 
+        {showCode && (
+          <div className='w-full overflow-x-auto my-4 rounded-xl'>
+            <CodeBlock language='html' code={htmlCssCode} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default SocialShare;
