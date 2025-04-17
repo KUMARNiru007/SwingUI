@@ -10,7 +10,8 @@ function Scratchcard() {
   const htmlcssCode = `
      <div
       id="card"
-      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform"
+      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform
+      bg-gradient-"
     >
       <div
         class="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-orange-200"

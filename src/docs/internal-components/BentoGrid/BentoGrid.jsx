@@ -80,13 +80,13 @@ const BentoGrid = () => {
 
   return (
     <div
-      className={`w-full px-0 sm:px-2 py-6 transition-colors duration-300 ${
+      className={`w-full sm:px-2 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } px-2 py-8`}
+      }`}
     >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <h2 className='text-3xl sm:text-3xl md:text-4xl font-bold pb-4'>
           Bento Grid
         </h2>
