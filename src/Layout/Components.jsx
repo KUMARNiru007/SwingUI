@@ -21,6 +21,8 @@ import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
 import VerticalSlider from '../docs/internal-components/slider/slider.jsx';
 import SocialShare from '../docs/internal-components/Socialshare/SocialShare.jsx';
 import Preloader from '../docs/internal-components/Preloader/Preloader.jsx';
+import SpotLightText from '../docs/internal-components/SpotLightText/SpotLightText.jsx';
+import Ratings from '../docs/internal-components/Ratings/Ratings.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -59,7 +61,9 @@ const Components = () => {
             <Route path='slider' element={<VerticalSlider />} />
             <Route path='social-share' element={<SocialShare />} />
             <Route path='preloader' element={<Preloader />} />
- 
+
+            <Route path='spotlight-text' element={<SpotLightText />} />
+            <Route path='ratings' element={<Ratings />} />
           </Routes>
         </div>
       </div>

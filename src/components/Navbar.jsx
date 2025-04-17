@@ -296,16 +296,46 @@ function Navbar() {
               >
                 Pop Ups
               </Link> */}
-              <Link
-                to='/components/preloader'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Preloader
-              </Link>
+                <Link
+                  to='/components/preloader'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Preloader Pricing
+                </Link>
+                <Link
+                  to='/components/ratings'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Ratings
+                </Link>
+                <Link
+                  to='/components/spotlight-text'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Spotlight-Text
+                </Link>
+                <Link
+                  to='/components/slider'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Slider
+                </Link>
 
                 <Link
                   to='/components/pricing'
@@ -588,6 +618,26 @@ function Navbar() {
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Pricing
+                </Link>
+                <Link
+                  to='/components/ratings'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Ratings
+                </Link>
+                <Link
+                  to='/components/spotlight-text'
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Spotlight-Text
                 </Link>
                 <Link
                   to='/components/slider'
