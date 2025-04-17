@@ -15,7 +15,7 @@ function Feature() {
 
   // Set up the scroll synchronization with more robust event handling
   useEffect(() => {
-    // Function to initialize synchronization
+  
     function initScrollSync() {
       if (!showCode && previewRef.current) {
         // Small delay to ensure DOM is fully rendered
