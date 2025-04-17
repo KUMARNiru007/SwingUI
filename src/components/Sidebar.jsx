@@ -35,6 +35,8 @@ const sections = [
       // { to: '/components/popups', label: 'Pop Ups' },
       { to: '/components/pricing', label: 'Pricing' },
       { to: './components/slider', label: 'Slider' },
+      { to: '/components/social-share', label: 'Social Share' },
+ 
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
     ],

@@ -255,6 +255,16 @@ function Navbar() {
               >
                 Slider
               </Link>
+              <Link
+                to='/components/social-share'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+                >
+                Social Share
+                </Link>
 
               <Link
                 to='/components/tabs'
