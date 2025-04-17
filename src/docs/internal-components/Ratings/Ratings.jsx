@@ -84,13 +84,13 @@ const Rating = () => {
 
   return (
     <div
-      className={`w-full px-2 py-6 transition-colors duration-300 ${
+      className={`w-full  py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6'>
         <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Rating Component</h2>
         <p className='mb-10 sm:mb-16'>
           This interactive rating component features animated emoji faces that respond to user selection.
@@ -100,7 +100,7 @@ const Rating = () => {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode ? (
-          <div className='flex justify-center items-center h-[300px] bg-gray-200 rounded-lg shadow-md'>
+          <div className='flex justify-center items-center h-[200px] bg-gray-200 rounded-lg shadow-md'>
             <div className='p-8 bg-white rounded-xl shadow-lg'>
               <div dangerouslySetInnerHTML={{ __html: htmlCssCode }} />
             </div>
