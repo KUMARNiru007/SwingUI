@@ -135,7 +135,7 @@ function Pricing() {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [showCode, darkMode]);
+  });
 
   return (
     <div

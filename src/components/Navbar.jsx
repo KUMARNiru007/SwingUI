@@ -496,15 +496,11 @@ function Navbar() {
                 </Link>
                 <Link
                   to='/components/slider'
-                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                    darkMode
-                      ? 'hover:bg-[var(--dark-hover-bg)]'
-                      : 'hover:bg-[var(--light-hover-bg)]'
-                  }`}
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Slider
                 </Link>
-
                 <Link
                   to='/components/tabs'
                   onClick={handleMobileLinkClick}

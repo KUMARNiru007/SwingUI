@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import './responsive.css';
 
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
@@ -213,7 +214,7 @@ function ImageGallery() {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [showCode, darkMode]);
+  });
   const propertiesData = [
     {
       property: '--direction',
@@ -239,8 +240,8 @@ function ImageGallery() {
   ];
 
   return (
-    <div className='[@media(min-width:300px)]:w-[320px] [@media(width:344px)]:w-[350px] [@media(min-width:360px)]:w-[375px] [@media(width:360px)]:w-[360px] [@media(min-width:390px)]:w-[400px] [@media(min-width:400px)]:w-[415px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:768px)]:w-[470px] [@media(width:820px)]:w-[500px] w-full max-w-5xl sm:mx-auto py-14 px-6 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Image Gallery </h2>
+    <div className='responsive-width w-full max-w-5xl sm:mx-auto py-14 px-6 sm:py-12'>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-6'>Image Gallery </h2>
       <p className='mb-10 sm:mb-16'>
         The ImageGallery component implements a responsive, infinite-scroll
         image gallery with smooth animations using the swing scrolling effect.
