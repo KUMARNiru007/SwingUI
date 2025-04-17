@@ -8,16 +8,12 @@ function Scratchcard() {
   const { darkMode } = useTheme();
 
   const htmlcssCode = `
-     <div
-      id="card"
-      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform"
-    >
+     <div id="card"
+      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform ">
       <div
-        class="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-orange-200"
-      >
-        <div class="text-8xl animate-pop">😍</div>
+        class="absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient">
+        <div class="text-8xl animate-pop">🏆</div>
       </div>
-
       <canvas id="scratchCanvas" class="absolute inset-0 z-10"></canvas>
     </div>`;
 
@@ -47,7 +43,7 @@ function Scratchcard() {
         ctx.globalCompositeOperation = 'source-over';
 
         // Create a gray background
-        ctx.fillStyle = '#e2e8f0';
+        ctx.fillStyle = '#dadada';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Add "Scratch" text
@@ -197,10 +193,10 @@ function Scratchcard() {
     return (
       <div
         ref={cardRef}
-        className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform'
+        className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform swing-ocean-gradient'
       >
-        <div className='absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-orange-200'>
-          <div className='text-8xl'>😍</div>
+        <div className='absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient'>
+          <div className='text-8xl'>🏆</div>
         </div>
 
         <canvas
@@ -230,7 +226,7 @@ function Scratchcard() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Scratch Card </h2>
       <p className='mb-10 sm:mb-16'>
         The Scratch Card component simulates a real-world scratch-off card

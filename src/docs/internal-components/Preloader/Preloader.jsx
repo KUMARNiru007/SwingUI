@@ -26,7 +26,7 @@ function Preloader() {
             : 'bg-[var(--light-bg)] text-[var(--color-text)]'
         } px-4`}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6">
           <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Pre loader</h2>
           <p className='mb-10 sm:mb-16'>
           A pre-loader with animated concentric rings that pulse in sequence, offering a smooth and modern loading effect. Clean and lightweight, ideal for enhancing user experience during load times.
