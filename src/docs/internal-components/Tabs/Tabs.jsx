@@ -134,7 +134,7 @@ const Tabs = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-6 py-12`}
     >
-      <div className='max-w-[60rem] mx-auto pt-4 sm:pt-6 pb-8 sm:pb-12'>
+      <div className='max-w-5xl mx-auto pt-4 sm:pt-6 pb-8 sm:pb-12'>
         <div className='flex flex-col items-start'>
           <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Tabs</h1>
           <p className='mb-4 sm:mb-6'>
