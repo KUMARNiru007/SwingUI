@@ -579,6 +579,13 @@ function Navbar() {
                   Slider
                 </Link>
                 <Link
+                  to='/components/social-share'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Social Share
+                </Link>
+                <Link
                   to='/components/tabs'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
