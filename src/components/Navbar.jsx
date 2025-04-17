@@ -197,6 +197,17 @@ function Navbar() {
                 >
                   Cards
                 </Link>
+                <Link
+                  to='/components/ScratchCard'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Scratch Card
+                </Link>
                 {/* <Link
                 to='/components/carousel'
                 onClick={() => setIsComponentmenuOpen(false)}
@@ -542,6 +553,13 @@ function Navbar() {
                 >
                   Cards
                 </Link>
+                <Link
+                  to='/components/ScratchCard'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Scratch card
+                </Link>
                 {/* <Link
                   to='/components/carousel'
                   onClick={handleMobileLinkClick}
@@ -620,24 +638,18 @@ function Navbar() {
                   Pricing
                 </Link>
                 <Link
-                  to='/components/ratings'
-                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                    darkMode
-                      ? 'hover:bg-[var(--dark-hover-bg)]'
-                      : 'hover:bg-[var(--light-hover-bg)]'
-                  }`}
+                  to='/components/rating'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
-                  Ratings
+                  Rating
                 </Link>
                 <Link
                   to='/components/spotlight-text'
-                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                    darkMode
-                      ? 'hover:bg-[var(--dark-hover-bg)]'
-                      : 'hover:bg-[var(--light-hover-bg)]'
-                  }`}
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
-                  Spotlight-Text
+                  Spotlight-text
                 </Link>
                 <Link
                   to='/components/slider'

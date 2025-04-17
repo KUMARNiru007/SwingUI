@@ -24,6 +24,7 @@ const sections = [
       // { to: '/components/accordion', label: 'Accordions' },
       { to: '/components/button', label: 'Buttons' },
       { to: '/components/card', label: 'Cards' },
+      { to: '/components/ScratchCard', label: 'Scratch Card' },
       // { to: '/components/carousel', label: 'Carousel' },
       // { to: '/components/call-to-action', label: 'CTA (Call to Action)' },
       { to: '/components/feature', label: 'Feature' },
@@ -39,7 +40,7 @@ const sections = [
       { to: '/components/spotlight-text', label: 'Spotlight-Text' },
       { to: './components/slider', label: 'Slider' },
       { to: '/components/social-share', label: 'Social Share' },
- 
+
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
     ],
