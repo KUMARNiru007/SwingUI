@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import './responsive.css';
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
 import img3 from '../../../assets/Images-For-Gallery/img3.webp';
@@ -254,7 +255,7 @@ function Feature() {
 
   return (
     <div
-      className={`[@media(min-width:300px)_and_(max-width:350px)]:w-[320px] [@media(min-width:400px)]:w-[410px] [@media(min-width:430px)]:w-[430px] [@media(min-width:500px)]:w-full [@media(width:820px)]:w-[500px] [@media(width:768px)]:w-[480px] transition-colors duration-300 ${
+      className={`Feature-custom-width transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
