@@ -33,7 +33,7 @@ const sections = [
       { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/ratings', label: 'Ratings' },
       { to: '/components/ScratchCard', label: 'Scratch Card' },
-      { to: './components/slider', label: 'Slider' },
+      { to: '/components/slider', label: 'Slider' },
       { to: '/components/social-share', label: 'Social Share' },
       // { to: '/components/carousel', label: 'Carousel' },
       // { to: '/components/call-to-action', label: 'CTA (Call to Action)' },
