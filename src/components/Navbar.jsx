@@ -318,6 +318,17 @@ function Navbar() {
                 >
                   Slider
                 </Link>
+                <Link
+                  to='/components/social-share'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Social Share
+                </Link>
 
                 <Link
                   to='/components/tabs'
@@ -386,7 +397,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-svh w-64 z-50 px-2 py-4 pr-4 transform transition-all duration-300 ${
+        className={`fixed top-0 right-0 h-screen bottom-0 w-64 z-50 px-2 py-4 pr-4 transform transition-all duration-300 ${
           darkMode
             ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
             : 'bg-[var(--light-bg)] text-[var(--color-text)]'
