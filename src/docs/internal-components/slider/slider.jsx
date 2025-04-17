@@ -214,14 +214,14 @@ const VerticalSliderDemo = () => {
 
   return (
     <div
-      className={`w-full px-2 py-6 transition-colors duration-300 ${
+      className={`w-full  transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2'>Vertical Slider</h2>
+       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+       <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Vertical Slider</h2>
         <p className='mb-10 sm:mb-16'>
           This vertical slider demo showcases a smooth scroll experience with an
           infinite loop effect. Navigate through slides using the mouse wheel or
@@ -231,10 +231,10 @@ const VerticalSliderDemo = () => {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode ? (
-          <div className='flex justify-center items-center h-[600px] bg-gray-100 rounded-lg shadow-md'>
+          <div className='flex justify-center items-center h-[600px] bg-gray-200 rounded-lg shadow-md'>
             <div
               onWheel={handleWheel}
-              className='relative w-4/5 h-[85vh] max-h-[500px] overflow-hidden rounded-[20px] bg-gradient-to-br from-white to-gray-100 shadow-lg flex'
+              className='relative w-4/5 h-[85vh] max-h-[500px] overflow-hidden rounded-[20px] shadow-lg flex'
             >
               <div
                 ref={slidesRef}

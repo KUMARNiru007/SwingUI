@@ -44,6 +44,7 @@ const Components = () => {
         >
           <Routes>
             {/* <Route path='accordion' element={<Accordion />} /> */}
+            <Route path='bento-grid' element={<BentoGrid />} />
             <Route path='button' element={<Button />} />
             {/* <Route path='call-to-action' element={<CallToAction />} /> */}
             <Route path='card' element={<Card />} />
@@ -54,7 +55,7 @@ const Components = () => {
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
             <Route path='navbar' element={<Navbar />} />
-            <Route path='bento-grid' element={<BentoGrid />} />
+
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />

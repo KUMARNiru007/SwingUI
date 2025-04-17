@@ -75,16 +75,10 @@ const SpotLightText = () => {
   }, [showCode]);
 
   return (
-    <div
-      className={`[@media(min-width:300px)_and_(max-width:350px)]:w-[325px] w-full py-6 transition-colors duration-300 ${
-        darkMode
-          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } px-4`}
-    >
-      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
-          Interactive Shapes
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+        <h2 className='text-3xl sm:text-4xl font-bold pb-4'>
+          SpotLight Text
         </h2>
         <p className='mb-10 sm:mb-16'>
           This interactive demo showcases shapes that follow your cursor with a
@@ -145,7 +139,6 @@ const SpotLightText = () => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 

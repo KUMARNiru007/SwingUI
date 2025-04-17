@@ -256,8 +256,8 @@ function Feature() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4 py-12`}
     >
-      <div className='max-w-5xl mx-auto sm:py-6 md:py-8'>
-        <h2 className='text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold pb-4'>
+         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0.5">
+         <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
           Features
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
@@ -271,18 +271,10 @@ function Feature() {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode && (
-          <div
-            ref={previewRef}
-            key={`preview-${darkMode}-${showCode}`}
-            className={`flex justify-center items-center h-auto bg-gray-200 ${
-              darkMode ? 'bg-[var(--light-bg)]' : 'bg-[var(--light-bg)]'
-            } rounded-lg shadow-md w-full my-4 sm:my-6 md:my-8`}
-          >
+          <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
             <div
               className='w-full'
-              dangerouslySetInnerHTML={{
-                __html: customCSS + htmlCssCode,
-              }}
+              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
             />
           </div>
         )}
