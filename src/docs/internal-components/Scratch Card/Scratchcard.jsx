@@ -230,7 +230,7 @@ function Scratchcard() {
   };
 
   return (
-    <div className='w-full max-w-5xl sm:mx-auto mt-8 py-14 px-6 sm:px-4 sm:py-12'>
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h2 className='text-3xl sm:text-4xl font-bold pb-6'>Scratch Card </h2>
       <p className='mb-10 sm:mb-16'>
         The Scratch Card component simulates a real-world scratch-off card

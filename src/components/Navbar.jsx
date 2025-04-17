@@ -360,17 +360,6 @@ function Navbar() {
                   Pricing
                 </Link>
                 <Link
-                  to='/components/slider'
-                  onClick={() => setIsComponentmenuOpen(false)}
-                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                    darkMode
-                      ? 'hover:bg-[var(--dark-hover-bg)]'
-                      : 'hover:bg-[var(--light-hover-bg)]'
-                  }`}
-                >
-                  Slider
-                </Link>
-                <Link
                   to='/components/social-share'
                   onClick={() => setIsComponentmenuOpen(false)}
                   className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -638,7 +627,7 @@ function Navbar() {
                   Pricing
                 </Link>
                 <Link
-                  to='/components/rating'
+                  to='/components/ratings'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
