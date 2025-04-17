@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
@@ -10,6 +10,12 @@ function Navbar() {
   const [mobileSwingKitOpen, setmobileSwingKitOpen] = useState(false);
   const [mobileComponentsOpen, setmobileComponentsOpen] = useState(false);
 
+  const [isSwingKitOpen, setIsSwingKitOpen] = useState(false);
+  const [isComponentmenuOpen, setIsComponentmenuOpen] = useState(false);
+
+  const toggleSwingKit = () => setIsSwingKitOpen((prev) => !prev);
+  const toggleDropDown = () => setIsComponentmenuOpen((prev) => !prev);
+
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const toggleMobileSwingKit = () => setmobileSwingKitOpen(!mobileSwingKitOpen);
   const toggleMobileComponents = () =>
@@ -19,6 +25,34 @@ function Navbar() {
     setMobileMenuOpen(false);
     setmobileSwingKitOpen(false);
   };
+
+  const swingKitRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (swingKitRef.current && !swingKitRef.current.contains(event.target)) {
+        setIsSwingKitOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsComponentmenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav
@@ -38,7 +72,10 @@ function Navbar() {
             Docs
           </Link>
           <div className='group relative'>
-            <span className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span
+              className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
+              onClick={toggleSwingKit}
+            >
               SwingKit
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -55,45 +92,55 @@ function Navbar() {
                 />
               </svg>
             </span>
-            <div
-              className={`absolute left-0 py-2 w-50 rounded-md hidden group-hover:!block z-50 shadow-md ${
-                darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
-              }`}
-            >
-              <Link
-                to='/swingkit/gradients'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
+
+            <div ref={swingKitRef} className='relative group'>
+              <div
+                className={`absolute left-0 py-2 w-50 rounded-md z-50 shadow-md 
+                ${darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'} 
+                ${isSwingKitOpen ? 'block' : 'hidden'} group-hover:block`}
               >
-                Gradients
-              </Link>
-              <Link
-                to='/swingkit/animated-gradients'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Animated Gradients
-              </Link>
-              <Link
-                to='/swingkit/text-gradients'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Text Gradient
-              </Link>
+                <Link
+                  to='/swingkit/gradients'
+                  onClick={() => setIsSwingKitOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Gradients
+                </Link>
+                <Link
+                  to='/swingkit/animated-gradients'
+                  onClick={() => setIsSwingKitOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Animated Gradients
+                </Link>
+                <Link
+                  to='/swingkit/text-gradients'
+                  onClick={() => setIsSwingKitOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Text Gradient
+                </Link>
+              </div>
             </div>
           </div>
+
           <div className='group relative'>
-            <span className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'>
+            <span
+              className='flex  items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
+              onClick={toggleDropDown}
+            >
               Components
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -110,13 +157,16 @@ function Navbar() {
                 />
               </svg>
             </span>
-            <div
-              className={`absolute left-0 py-2 w-56 rounded-md hidden group-hover:!block z-50 shadow-md ${
-                darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'
-              }`}
-            >
-              {/* <Link
+
+            <div ref={dropdownRef} className='relative group'>
+              <div
+                className={`absolute left-0 py-2 w-50 rounded-md z-50 shadow-md 
+                ${darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'} 
+                ${isComponentmenuOpen ? 'block' : 'hidden'} group-hover:block`}
+              >
+                {/* <Link
                 to='/components/accordion'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -125,28 +175,31 @@ function Navbar() {
               >
                 Accordions
               </Link> */}
-              <Link
-                to='/components/button'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Buttons
-              </Link>
-              <Link
-                to='/components/card'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Cards
-              </Link>
-              {/* <Link
+                <Link
+                  to='/components/button'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Buttons
+                </Link>
+                <Link
+                  to='/components/card'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Cards
+                </Link>
+                {/* <Link
                 to='/components/carousel'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -155,8 +208,9 @@ function Navbar() {
               >
                 Carousel
               </Link> */}
-              {/* <Link
+                {/* <Link
                 to='/components/call-to-action'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -165,18 +219,20 @@ function Navbar() {
               >
                 CTA (Call to Action)
               </Link> */}
-              <Link
-                to='/components/feature'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Feature
-              </Link>
-              {/* <Link
+                <Link
+                  to='/components/feature'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Feature
+                </Link>
+                {/* <Link
                 to='/components/footer'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -185,8 +241,9 @@ function Navbar() {
               >
                 Footer
               </Link> */}
-              {/* <Link
+                {/* <Link
                 to='/components/hero'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -195,38 +252,42 @@ function Navbar() {
               >
                 Hero section
               </Link> */}
-              <Link
-                to='/components/image-gallery'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Image Gallery
-              </Link>
-              <Link
-                to='/components/navbar'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Navbar
-              </Link>
-              <Link
-                to='/components/bento-grid'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Bento-Grid
-              </Link>
-              {/* <Link
+                <Link
+                  to='/components/image-gallery'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Image Gallery
+                </Link>
+                <Link
+                  to='/components/navbar'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Navbar
+                </Link>
+                <Link
+                  to='/components/bento-grid'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Bento-Grid
+                </Link>
+                {/* <Link
                 to='/components/popups'
+                onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
                   darkMode
                     ? 'hover:bg-[var(--dark-hover-bg)]'
@@ -235,57 +296,63 @@ function Navbar() {
               >
                 Pop Ups
               </Link> */}
-              <Link
-                to='/components/pricing'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Pricing
-              </Link>
-              <Link
-                to='/components/slider'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Slider
-              </Link>
-              <Link
-                to='/components/social-share'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
+                <Link
+                  to='/components/pricing'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
                 >
-                Social Share
+                  Pricing
+                </Link>
+                <Link
+                  to='/components/slider'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Slider
+                </Link>
+                <Link
+                  to='/components/social-share'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Social Share
                 </Link>
 
-              <Link
-                to='/components/tabs'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Tabs
-              </Link>
-              <Link
-                to='/components/testimonials'
-                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
-                  darkMode
-                    ? 'hover:bg-[var(--dark-hover-bg)]'
-                    : 'hover:bg-[var(--light-hover-bg)]'
-                }`}
-              >
-                Testimonials
-              </Link>
+                <Link
+                  to='/components/tabs'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Tabs
+                </Link>
+                <Link
+                  to='/components/testimonials'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Testimonials
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -330,7 +397,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-svh w-64 z-50 px-2 py-4 pr-4 transform transition-all duration-300 ${
+        className={`fixed top-0 right-0 h-screen bottom-0 w-64 z-50 px-2 py-4 pr-4 transform transition-all duration-300 ${
           darkMode
             ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
             : 'bg-[var(--light-bg)] text-[var(--color-text)]'
