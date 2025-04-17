@@ -24,7 +24,6 @@ function Pricing() {
     </div>
   </div>
 
-  <!-- Pricing Cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
 
     <div class="border border-gray-200 rounded-lg p-6 sm:p-8 flex flex-col">

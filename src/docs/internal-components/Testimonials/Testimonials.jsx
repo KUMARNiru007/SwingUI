@@ -23,12 +23,12 @@ function Testimonial() {
 
   const htmlCssCode = `<div class=" bg-black text-white p-1 flex flex-col items-center justify-center">
     <div class="space-y-8 w-full pt-8 pb-8">
-      <!-- First Slider -->
+
       <div class="swing-slider-wrapper">
         <div class="swing-scrolling-image"
           style="--direction: 1; --speed: 10; --pause-on-hover: false;">
           <div class="slider-container">
-            <!-- Testimonial Item 1 -->
+ 
             <div class="swing-slider-item">
               <div class="flex bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg overflow-hidden shadow-lg h-full">
                 <div class="w-1/2">
@@ -125,7 +125,6 @@ function Testimonial() {
         </div>
       </div>
 
-      <!-- Second Slider -->
       <div class="swing-slider-wrapper">
         <div class="swing-scrolling-image"
           style="--direction: -1; --speed: 15; --pause-on-hover: true;">
@@ -226,7 +225,6 @@ function Testimonial() {
         </div>
       </div>
 
-      <!-- Third Slider -->
       <div class="swing-slider-wrapper">
         <div class="swing-scrolling-image"
           style="--direction: 1; --speed: 20;">
@@ -323,7 +321,6 @@ function Testimonial() {
                   </div>
                 </div>
               </div>
-
           </div>
         </div>
       </div>

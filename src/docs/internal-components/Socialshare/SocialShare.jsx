@@ -10,11 +10,8 @@ function SocialShare() {
   const { darkMode } = useTheme();
 
   const htmlCssCode = ` <div class="flex flex-col items-center">
-    
-    
-    <!-- SVG Container with Tailwind classes -->
     <div class="scale-150">
-      <!-- From Uiverse.io by Juanes200122 --> 
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -24,7 +21,7 @@ function SocialShare() {
         id="svg-id"
         class="mx-auto"
       >
-      <!-- Path 1 -->
+
        <a href="#!">
         <g clip-path="url(#clip0_67_353)">
           <g id="path-container-g-v3">
@@ -79,8 +76,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-    
-
         <a href="#!"">
         <g clip-path="url(#clip2_67_353)">
           <g id="path-container-g-v2">
@@ -135,7 +130,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-
         <a href="#!"">
         <g clip-path="url(#clip4_67_353)">
           <g id="path-container-g-v1">
@@ -190,7 +184,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-
         <a href="#!">
         <g clip-path="url(#clip6_67_353)">
           <g id="path-container-g-v6">
@@ -245,7 +238,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-
         <a href="#!">
         <g clip-path="url(#clip8_67_353)">
           <g id="path-container-g-v5">
@@ -300,7 +292,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-
         <a href="#!">
         <g clip-path="url(#clip10_67_353)">
           <g id="path-container-g-v4">
@@ -355,7 +346,6 @@ function SocialShare() {
           </g>
         </g>
     </a>
-
         <defs>
           <linearGradient
             gradientUnits="objectBoundingBox"
@@ -550,8 +540,6 @@ function SocialShare() {
         </defs>
       </svg>
     </div>
-    
-    
   </div>
   `;
   const hexTheme = {

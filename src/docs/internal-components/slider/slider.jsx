@@ -231,7 +231,7 @@ const VerticalSliderDemo = () => {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode ? (
-          <div className='flex justify-center items-center h-[600px] bg-gradient-to-b from-gray-100 to-blue-100 rounded-lg shadow-md'>
+          <div className='flex justify-center items-center h-[600px] bg-gray-100 rounded-lg shadow-md'>
             <div
               onWheel={handleWheel}
               className='relative w-4/5 h-[85vh] max-h-[500px] overflow-hidden rounded-[20px] bg-gradient-to-br from-white to-gray-100 shadow-lg flex'

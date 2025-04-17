@@ -19,7 +19,6 @@ function ImageGallery() {
 
   const htmlCssCode = `<div class=" bg-black">
       <div class="space-y-8 w-full pt-8 pb-8">
-        <!-- First Slider -->
           <div class="swing-scrolling-image"
             style="
             --direction: 1;
@@ -59,8 +58,7 @@ function ImageGallery() {
 
             </div>
           </div>
-  
-        <!-- Second Slider -->
+
           <div class="swing-scrolling-image"
             style="
             --direction: -1; 
