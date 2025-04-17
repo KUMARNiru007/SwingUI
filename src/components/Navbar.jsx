@@ -296,6 +296,17 @@ function Navbar() {
               >
                 Pop Ups
               </Link> */}
+              <Link
+                to='/components/preloader'
+                className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                  darkMode
+                    ? 'hover:bg-[var(--dark-hover-bg)]'
+                    : 'hover:bg-[var(--light-hover-bg)]'
+                }`}
+              >
+                Preloader
+              </Link>
+
                 <Link
                   to='/components/pricing'
                   onClick={() => setIsComponentmenuOpen(false)}
@@ -564,6 +575,13 @@ function Navbar() {
                 >
                   Pop ups
                 </Link> */}
+                <Link
+                  to='/components/preloader'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Preloader
+                </Link>
                 <Link
                   to='/components/pricing'
                   onClick={handleMobileLinkClick}
