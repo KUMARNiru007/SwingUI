@@ -28,6 +28,8 @@ const sections = [
       { to: '/components/feature', label: 'Feature' },
       { to: '/components/image-gallery', label: 'Image Gallery' },
       { to: '/components/LevitatingAvatars', label: 'Levitating Avatars' },
+      { to: '/components/image-accordion', label: 'Image Accordion' },
+      { to: '/components/word-rotating', label: 'Word Rotating' },
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/preloader', label: 'Preloader' },
       { to: '/components/pricing', label: 'Pricing' },
