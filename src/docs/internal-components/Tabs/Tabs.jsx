@@ -134,7 +134,7 @@ const Tabs = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } `}
     >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Tabs</h1>
           <p className='mb-4 sm:mb-6'>
             This dynamic Tabs component provides seamless navigation between
