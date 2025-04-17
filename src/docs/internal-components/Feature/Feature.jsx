@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
-import './responsive.css';
+import './Feature.css';
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
 import img3 from '../../../assets/Images-For-Gallery/img3.webp';
@@ -79,24 +79,19 @@ function Feature() {
   <div class="flex items-center justify-center p-2 sm:p-4">
     <div id="mainContainer" class="relative flex flex-col w-full max-w-7xl mx-auto border border-gray-300 rounded-lg overflow-hidden bg-white">
 
-      <!-- Fade overlays with responsive heights -->
       <div class="fade-top absolute top-0 left-0 right-0 w-full h-12 sm:h-16 md:h-20 lg:h-24 z-10 pointer-events-none 
         bg-gradient-to-b from-white/90 to-transparent"></div>
       <div class="fade-bottom absolute bottom-0 left-0 right-0 w-full h-12 sm:h-16 md:h-20 lg:h-24 z-10 pointer-events-none 
         bg-gradient-to-t from-white/90 to-transparent"></div>
 
-      <!-- Main content with specific iPad/tablet breakpoints -->
       <div class="flex flex-col md:flex-row w-full p-3 sm:p-4 md:p-6 lg:p-8">
-        
-        <!-- Text area with improved iPad/tablet sizing -->
+
         <div id="textArea" class="flex flex-col justify-center p-3 sm:p-4 md:p-6 lg:p-8 w-full md:w-1/2 order-2 md:order-1">
           <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">Random Heading</h1>
           <p class="text-sm sm:text-base md:text-lg text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, consectetur dolores fugiat magnam voluptates qui debitis saepe quas exercitationem dicta! Nihil, commodi culpa temporibus quibusdam vitae tenetur quae reprehenderit ducimus!
           </p>
         </div>
-        
-        <!-- Image slider with specific iPad/tablet height -->
         <div class="w-full md:w-1/2 order-1 md:order-2 p-2 sm:p-3 md:p-4">
           <div id="scrollContainer" class="relative w-full h-60 sm:h-72 md:h-96 lg:h-96 overflow-y-auto overscroll-contain scrollbar-hide rounded-lg">
             <div id="sliderContainer" class="w-full transition-transform duration-300 ease-out space-y-4 sm:space-y-5 md:space-y-6">

@@ -25,8 +25,6 @@ const BentoGrid = () => {
     <a href="#!" class="text-white font-medium mt-3 sm:mt-4 hover:underline">Explore Components →</a>
   </div>
 
-
-  
   <div class="rounded-xl tilt-zoom">
     <img
       src="${img1}"
@@ -78,7 +76,6 @@ const BentoGrid = () => {
     </form>
   </div>
 </div>
-
 `;
 
   return (

@@ -4,7 +4,6 @@ import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import '../../SwingKit/Gradients/style.css';
 import './style.css';
-import { div } from 'framer-motion/client';
 
 const CardsDemo = () => {
   const [showCode, setShowCode] = useState(false);
@@ -17,7 +16,6 @@ const CardsDemo = () => {
     
     <!-- Card 1 -->
     <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
-      <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-ocean-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-ocean-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
@@ -40,7 +38,6 @@ const CardsDemo = () => {
 
     <!-- Card 2 -->
     <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:ml-[2%] transition-all duration-300 hover:-translate-x-2 hover:-translate-y-2" style="max-width: 350px;">
-      <!-- Background Layers -->
       <div class="absolute top-1 left-1 h-full w-full swing-peach-gradient border-2 border-black -z-10 transition-all duration-300 group-hover:top-2 group-hover:left-2"></div>
       <div class="absolute top-2 left-2 h-full w-full swing-peach-gradient border-2 border-black -z-20 transition-all duration-300 group-hover:top-4 group-hover:left-4"></div>
 
@@ -103,7 +100,6 @@ const CardsDemo = () => {
         </a>
       </div>
     </div>
-    
   </div>
 </div>
 `;

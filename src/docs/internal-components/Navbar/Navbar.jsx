@@ -19,7 +19,6 @@ const Navbar = () => {
       </div>
 
       <div class="flex">
-        <!-- Desktop Navigation -->
         <div class="hidden xl:flex items-center space-x-8 mx-8">
           <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 font-medium">Home</a>
           <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 font-medium">About</a>
@@ -41,7 +40,7 @@ const Navbar = () => {
           <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 font-medium">Contact</a>
         </div>
 
-        <!-- Social Icons (Desktop) -->
+
         <div class="hidden xl:flex items-center space-x-4">
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <i class="ri-facebook-fill text-xl"></i>
@@ -54,7 +53,6 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      
       <div class="xl:hidden flex items-center">
         <button
           id="swing-mobile-menu-button"
@@ -66,7 +64,6 @@ const Navbar = () => {
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="swing-mobile-menu" class="hidden xl:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
