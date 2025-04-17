@@ -33,6 +33,7 @@ const sections = [
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/bento-grid', label: 'Bento-Grid' },
       // { to: '/components/popups', label: 'Pop Ups' },
+      { to: '/components/preloader', label: 'Preloader' },
       { to: '/components/pricing', label: 'Pricing' },
       { to: './components/slider', label: 'Slider' },
       { to: '/components/social-share', label: 'Social Share' },

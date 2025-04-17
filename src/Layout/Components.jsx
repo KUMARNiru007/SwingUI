@@ -20,6 +20,7 @@ import Testimonials from '../docs/internal-components/Testimonials/Testimonials.
 import Pricing from '../docs/internal-components/Prcing/Pricing.jsx';
 import VerticalSlider from '../docs/internal-components/slider/slider.jsx';
 import SocialShare from '../docs/internal-components/Socialshare/SocialShare.jsx';
+import Preloader from '../docs/internal-components/Preloader/Preloader.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -57,6 +58,7 @@ const Components = () => {
             <Route path='pricing' element={<Pricing />} />
             <Route path='slider' element={<VerticalSlider />} />
             <Route path='social-share' element={<SocialShare />} />
+            <Route path='preloader' element={<Preloader />} />
  
           </Routes>
         </div>
