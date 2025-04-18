@@ -304,7 +304,7 @@ const CardsDemo = () => {
           </div>
         )}
       </div>
-      <div className='max-w-5xl mx-auto py-8 sm:py-12'>
+      <div className='max-w-5xl px-8 mx-auto py-8 sm:py-12'>
         <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
           Hover Cards
         </h2>
