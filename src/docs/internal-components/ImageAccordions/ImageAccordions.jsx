@@ -56,14 +56,14 @@ const ImageAccordions = () => {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode ? (
-          <div className="flex justify-center items-center h-[600px] bg-gradient-to-b from-gray-100 to-blue-100 rounded-lg shadow-md">
+          <div className="flex justify-center items-center h-[300px] sm:h-[450px] md:h-[400px] lg:h-[600px] bg-gradient-to-b from-gray-100 to-blue-100 rounded-lg shadow-md">
             <div className="relative overflow-hidden rounded-[20px] shadow-lg flex">
               <div className="flex gap-1 w-fit mx-auto">
                 {items.map((item, i) => (
                   <div
                     key={i}
-                    className={`relative h-[400px] rounded-xl overflow-hidden transition-all duration-500 ease-in-out ${
-                      activeIndex === i ? 'w-[450px]' : 'w-[50px]'
+                    className={`relative h-[200px] sm:h-[300px] md:h-[250px] lg:h-[400px] rounded-xl overflow-hidden transition-all duration-500 ease-in-out ${
+                      activeIndex === i ? 'w-[150px] sm:w-[350px] md:w-[300px]  lg:w-[400px]' : 'w-[30px] sm:w-[40px] md:w-[36px] lg:w-[50px]'
                     }`}
                     onMouseEnter={() => setActiveIndex(i)}
                     onClick={() => setActiveIndex(i)}
