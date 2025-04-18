@@ -2,81 +2,61 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+/* 300px - 343px */
+@media (min-width: 300px) and (max-width: 343px) {
+  .responsive-width { width: 320px; }
+}
+
+/* 344px - 359px */
+@media (min-width: 344px) and (max-width: 359px) {
+  .responsive-width { width: 350px; }
+}
+
+/* 360px - 389px */
+@media (min-width: 360px) and (max-width: 389px) {
+  .responsive-width { width: 360px; }
+}
+
+/* 390px - 399px */
+@media (min-width: 390px) and (max-width: 399px) {
+  .responsive-width { width: 400px; }
+}
+
+/* 400px - 429px */
+@media (min-width: 400px) and (max-width: 429px) {
+  .responsive-width { width: 415px; }
+}
+
+/* 430px - 499px */
+@media (min-width: 430px) and (max-width: 499px) {
+  .responsive-width { width: 430px; }
+}
+
+/* 500px - 819px */
+@media (min-width: 500px) and (max-width: 819px) {
+  .responsive-width { width: 100%; }
+}
+
+/* 820px+ */
+@media (min-width: 820px) {
+  .responsive-width { width: 500px; }
+}
+@media (min-width: 762px) and (max-width: 940px) {
+  .responsive-width {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .swing-slider-item {
-    width: 45vw !important;
-    min-width: 150px;
-    height: 100px;
-    margin: 0 4px;
+    width: 40vw;
+    min-width: 180px;
+    height: 120px;
+    margin: 0 6px;
   }
 
   .slider-container {
-    gap: 0.25rem !important;
-    animation-duration: calc(var(--est-speed, 10) * 1s * 30 / var(--speed)) !important;
-  }
-
-  .responsive-width {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width: 300px) {
-  .responsive-width {
-    width: 320px;
-  }
-}
-
-@media (width: 344px) {
-  .responsive-width {
-    width: 350px;
-  }
-}
-
-@media (min-width: 360px) {
-  .responsive-width {
-    width: 375px;
-  }
-}
-
-@media (width: 360px) {
-  .responsive-width {
-    width: 360px;
-  }
-}
-
-@media (min-width: 390px) {
-  .responsive-width {
-    width: 400px;
-  }
-}
-
-@media (min-width: 400px) {
-  .responsive-width {
-    width: 415px;
-  }
-}
-
-@media (min-width: 430px) {
-  .responsive-width {
-    width: 430px;
-  }
-}
-
-@media (min-width: 500px) {
-  .responsive-width {
-    width: 100%;
-  }
-}
-
-@media (width: 768px) {
-  .responsive-width {
-    width: 100%;
-  }
-}
-
-@media (width: 820px) {
-  .responsive-width {
-    width: 500px;
+    gap: 0.5rem;
+    animation-duration: calc(var(--est-speed, 10) * 1s * 30 / var(--speed));
   }
 }
