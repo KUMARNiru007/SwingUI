@@ -21,7 +21,7 @@ const AccordionDemo = () => {
         <!-- Accordion 1 -->
         <div class="overflow-hidden rounded-lg">
           <!-- Accordion Header -->
-          <div class="bg-blue-900 text-white p-4 cursor-pointer flex justify-between items-center">
+          <div class="bg-[#1c79af] text-white p-4 cursor-pointer flex justify-between items-center">
             <h3 class="text-xl font-bold">How do UI components improve UX?</h3>
             <span class="transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
@@ -38,7 +38,7 @@ const AccordionDemo = () => {
 
         <div class="overflow-hidden rounded-lg">
           <!-- Accordion Header -->
-          <div class="bg-blue-900 text-white p-4 cursor-pointer flex justify-between items-center">
+          <div class="bg-[#1c79af] text-white p-4 cursor-pointer flex justify-between items-center">
             <h3 class="text-xl font-bold">Important of UI component.</h3>
             <span class="transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
@@ -52,7 +52,7 @@ const AccordionDemo = () => {
     
         <div class="overflow-hidden rounded-lg">
           
-          <div class="bg-blue-900 text-white p-4 cursor-pointer flex justify-between items-center">
+          <div class="bg-[#1c79af] text-white p-4 cursor-pointer flex justify-between items-center">
             <h3 class="text-xl font-bold">Is UI and UX Same?</h3>
             <span class="transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
@@ -69,7 +69,7 @@ const AccordionDemo = () => {
       </div>
 
 
-      <div class="md:w-1/2 bg-blue-500 rounded-lg overflow-hidden">
+      <div class="md:w-1/2 bg-[#1c79af] rounded-lg overflow-hidden">
         <img
           src="/api/placeholder/800/600"
           alt="Illustration for how UI components improve UX"
@@ -141,7 +141,7 @@ const AccordionDemo = () => {
                         <div key={index} className='overflow-hidden rounded-lg'>
                           {/* Accordion Header */}
                           <div
-                            className='bg-blue-900 text-white p-4 cursor-pointer flex justify-between items-center'
+                            className='bg-[#1c79af] text-white p-4 cursor-pointer flex justify-between items-center'
                             onClick={() => toggleAccordion(index)}
                           >
                             <h3 className='text-xl font-bold'>{item.title}</h3>
@@ -163,7 +163,7 @@ const AccordionDemo = () => {
                       ))}
                     </div>
 
-                    <div className='w-1/2 bg-blue-500 rounded-lg overflow-hidden'>
+                    <div className='w-1/2 bg-[#1c79af] rounded-lg overflow-hidden'>
                       {openAccordion !== null && (
                         <img
                           src={accordionData[openAccordion].image}
@@ -184,7 +184,7 @@ const AccordionDemo = () => {
                       <div key={index} className='overflow-hidden rounded-lg'>
                         {/* Accordion Header */}
                         <div
-                          className='bg-blue-900 text-white p-4 cursor-pointer flex justify-between items-center'
+                          className='bg-[#1c79af] text-white p-4 cursor-pointer flex justify-between items-center'
                           onClick={() => toggleAccordion(index)}
                         >
                           <h3 className='text-base font-bold'>{item.title}</h3>
@@ -204,7 +204,7 @@ const AccordionDemo = () => {
                               <p className='text-gray-800'>{item.content}</p>
                             </div>
 
-                            <div className='bg-blue-500'>
+                            <div className='bg-[#1c79af]'>
                               <img
                                 src={item.image}
                                 alt={`Illustration for ${item.title}`}
