@@ -25,6 +25,8 @@ import Preloader from '../docs/internal-components/Preloader/Preloader.jsx';
 import SpotLightText from '../docs/internal-components/SpotLightText/SpotLightText.jsx';
 import Ratings from '../docs/internal-components/Ratings/Ratings.jsx';
 import Scaratchcard from '../docs/internal-components/Scratch Card/Scratchcard.jsx';
+import ImageAccordions from '../docs/internal-components/ImageAccordions/ImageAccordions.jsx';
+import WordRotating from '../docs/internal-components/WordRotating/WordRotating.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -55,7 +57,16 @@ const Components = () => {
             <Route path='header' element={<Header />} />
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
+<<<<<<< HEAD
             <Route path='LevitatingAvatars' element={<LevitatingAvatars />} />
+=======
+<<<<<<< HEAD
+            <Route path='LevitatingAvatars ' element={<LevitatingAvatars />} />
+=======
+            <Route path='image-accordion' element={<ImageAccordions />} />
+            <Route path='word-rotating' element={<WordRotating />} />
+>>>>>>> ed0f8e3 (2 comp added)
+>>>>>>> 756a41e (2 comp added)
             <Route path='navbar' element={<Navbar />} />
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
