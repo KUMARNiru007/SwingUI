@@ -75,7 +75,7 @@ function Scratchcard() {
         const pos = getPosition(e);
         ctx.globalCompositeOperation = 'destination-out';
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 20, 0, 2 * Math.PI);
+        ctx.arc(pos.x, pos.y, 30, 0, 2 * Math.PI);
         ctx.fill();
 
         checkScratchPercentage();
