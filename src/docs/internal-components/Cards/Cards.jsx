@@ -114,7 +114,7 @@ const CardsDemo = () => {
                 class="course-bg h-32 w-32 bg-yellow-500 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
                 UI/Web &amp; Graph design
               </div>
@@ -131,26 +131,26 @@ const CardsDemo = () => {
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+             <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
               href="#!"
               class="course-bg-hover block p-6 bg-zinc-900 overflow-hidden relative"
             >
               <div
-                class="course-bg h-32 w-32 bg-green-500 absolute -top-20 -right-20 rounded-full transition-all duration-500"
+                class="course-bg h-32 w-32 bg-green-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
-                UX/UI Web-Design&#160;+ Mobile Design
+                UI/UX Web Design + Mobile Design
               </div>
               <div class="card-text text-zinc-400 text-base mb-4 relative z-10">
-                Lorem ipsum dolor sit amet, consectetur elit, sed do
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </div>
               <div class="relative z-10">
-                <span class="know-more text-green-500 inline-block"
+                <span class="know-more text-green-600 inline-block"
                   >Know more</span
                 >
               </div>
@@ -168,7 +168,7 @@ const CardsDemo = () => {
                 class="course-bg h-32 w-32 bg-red-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
                 Annual package "Product+UX/UI"
               </div>
@@ -195,7 +195,7 @@ const CardsDemo = () => {
                 class="course-bg h-32 w-32 bg-purple-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
                 Graphic Design
               </div>
@@ -222,7 +222,7 @@ const CardsDemo = () => {
                 class="course-bg h-32 w-32 bg-pink-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
                 Motion Design
               </div>
@@ -249,7 +249,7 @@ const CardsDemo = () => {
                 class="course-bg h-32 w-32 bg-indigo-600 absolute -top-20 -right-20 rounded-full transition-all duration-500"
               ></div>
               <div
-                class="min-h-[87px] mb-3 font-bold text-3xl text-white relative z-10"
+                class="min-h-[87px] mb-3 font-bold text-2xl text-white relative z-10"
               >
                 Front-end development
               </div>

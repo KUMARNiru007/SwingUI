@@ -197,7 +197,9 @@ function Scratchcard() {
         className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform swing-ocean-gradient'
       >
         <div className='absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient'>
-          <div className='text-8xl'>🏆</div>
+          <div className='text-8xl'>
+          <img src="/logo.webp" class="  h-10 " alt="SwingUI Logo" />
+          </div>
         </div>
 
         <canvas
