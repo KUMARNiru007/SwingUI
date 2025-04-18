@@ -103,7 +103,7 @@ const CardsDemo = () => {
 
   const htmlCssCode2 = `
 <div class="max-w-6xl mx-auto">
-      <div class="flex flex-wrap items-start py-12">
+      <div class="flex flex-wrap items-start mt-6 py-4">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div class="overflow-hidden rounded-3xl">
             <a
@@ -116,7 +116,7 @@ const CardsDemo = () => {
               <div
                 class="min-h-[87px] font-bold text-2xl text-white relative mb-0 z-10"
               >
-                UI/Web &amp; Graph Design
+                Web & Graph Design
               </div>
               <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -197,7 +197,7 @@ const CardsDemo = () => {
               <div
                 class="min-h-[87px] font-bold text-2xl text-white relative z-10"
               >
-                Graphic Design & Development
+                Modern JavaScript Frameworks
               </div>
               <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -224,7 +224,7 @@ const CardsDemo = () => {
               <div
                 class="min-h-[87px] font-bold text-2xl text-white relative z-10"
               >
-                Motion Design & Development
+               User Interface Development
               </div>
               <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
