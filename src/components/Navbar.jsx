@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
 import logo from '../../public/logo.webp';
 import { useLocation } from 'react-router-dom';
@@ -631,14 +631,17 @@ function Navbar() {
           )}
 
           {!isLandingPage && (
-            <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
+            <Link
+              to='/components/About'
+              className='hover:text-[var(--dark-nav-hover)]'
+            >
               About
             </Link>
           )}
 
           {!isLandingPage && (
             <Link
-              to='/pre-built-template'
+              to='/components/PreBuiltTemplate'
               className='hover:text-[var(--dark-nav-hover)]'
             >
               Pre-built Templates
