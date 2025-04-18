@@ -74,7 +74,7 @@ const ImageAccordions = () => {
                       className="w-full h-full object-cover cursor-pointer"
                     />
                     {activeIndex === i && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pl-8 pb-10 flex flex-col justify-end text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pl-3 pb-3 sm:pl-5 sm:pb-6 md:pl-6 md:pb-8 lg:pl-8 lg:pb-10 flex flex-col justify-end text-white">
                         <h2 className="text-2xl font-semibold">{item.title}</h2>
                         <p className="mt-2 text-sm">{item.description}</p>
                       </div>
