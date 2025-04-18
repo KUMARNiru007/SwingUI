@@ -125,12 +125,12 @@ function Pricing() {
         monthlyBtn.addEventListener('click', handleMonthlyClick);
         annualBtn.addEventListener('click', handleAnnualClick);
 
-   
+        // Cleanup
         return () => {
           monthlyBtn.removeEventListener('click', handleMonthlyClick);
           annualBtn.removeEventListener('click', handleAnnualClick);
         };
-      }, 100); 
+      }, 100); // Delay to allow DOM + Tailwind to finish rendering
 
       return () => clearTimeout(timeoutId);
     }
@@ -138,7 +138,7 @@ function Pricing() {
 
   return (
     <div
-      className={`w-full py-6 responsive-width  transition-colors duration-300 ${
+      className={`w-full py-6 transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -164,7 +164,7 @@ function Pricing() {
                 : 'bg-[var(--light-bg)] text-[var(--color-text)]'
             }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md`}
           >
-
+            {/* Render live preview */}
             <div
               className='w-full'
               dangerouslySetInnerHTML={{ __html: htmlCssCode }}

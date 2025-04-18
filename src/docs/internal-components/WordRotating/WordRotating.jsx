@@ -3,7 +3,7 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 
-const RotatingWordsComponent = ({ rotatingWords = ['You Like !', 'You Love !', "You're Proud Of !"] }) => {
+const RotatingWordsComponent = ({ rotatingWords = ['Like !', 'Love !', 'are Proud Of !'] }) => {
   const { darkMode } = useTheme();
   const [showCode, setShowCode] = useState(false);
   const wordsRef = useRef([]);
@@ -75,14 +75,14 @@ ${rotatingWords
 
         {!showCode ? (
           <div className="flex justify-center items-center h-[200px] bg-white text-black rounded-lg shadow-md px-2">
-            <div className="flex items-center gap-2 flex-wrap justify-center text-center ">
-              <span className="text-xl sm:text-3xl md:text-3xl font-bold">Made To Build Things</span>
+            <div className="flex items-center gap-2 flex-wrap justify-center text-center">
+              <span className="text-xl sm:text-3xl md:text-4xl font-bold">Made To Build Things You</span>
               <div className="relative h-14 sm:h-20 w-48 sm:w-64 overflow-hidden perspective-1000 flex items-center justify-start">
                 {rotatingWords.map((word, i) => (
                   <span
                     key={i}
                     ref={(el) => (wordsRef.current[i] = el)}
-                    className={`absolute text-xl sm:text-3xl md:text-3xl font-bold rotating-word swing-ocean-gradient-text ${
+                    className={`absolute text-xl sm:text-3xl md:text-4xl font-bold rotating-word swing-ocean-gradient-text ${
                       i !== 0 ? 'hidden' : ''
                     }`}
                   >
