@@ -286,6 +286,17 @@ function Navbar() {
                 >
                   Navbar
                 </Link>
+                <Link
+                  to='/components/LevitatingAvatars'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Levitating Avatars
+                </Link>
    
                 {/* <Link
                 to='/components/popups'

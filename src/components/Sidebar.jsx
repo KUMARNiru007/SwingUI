@@ -27,9 +27,9 @@ const sections = [
       { to: '/components/card', label: 'Cards' },
       { to: '/components/feature', label: 'Feature' },
       { to: '/components/image-gallery', label: 'Image Gallery' },
+      { to: '/components/LevitatingAvatars', label: 'Levitating Avatars' },
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/preloader', label: 'Preloader' },
-      
       { to: '/components/pricing', label: 'Pricing' },
       { to: '/components/ratings', label: 'Ratings' },
       { to: '/components/ScratchCard', label: 'Scratch Card' },
