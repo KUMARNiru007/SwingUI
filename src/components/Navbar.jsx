@@ -306,7 +306,7 @@ function Navbar() {
                       : 'hover:bg-[var(--light-hover-bg)]'
                   }`}
                 >
-                  Preloader Pricing
+                  Preloader 
                 </Link>
                 <Link
                   to='/components/pricing'
