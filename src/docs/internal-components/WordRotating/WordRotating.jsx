@@ -64,7 +64,7 @@ ${rotatingWords
       }`}
     >
       <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center sm:text-left">
+      <h2 className='text-3xl sm:text-4xl font-bold pb-4'>
           Word Rotating Animation
         </h2>
         <p className="mb-6 sm:mb-10 text-center sm:text-left">
