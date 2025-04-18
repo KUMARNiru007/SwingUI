@@ -1,6 +1,5 @@
 const htmlCssCode = `
-
-  <div class="relative">
+<div class="relative">
     <div class="w-fit mx-auto gap-1 flex pb-20 pt-10">
       <!-- Gallery Items -->
       <div class="gallery-item rounded-xl relative h-[400px] flex-shrink-0 transition-[width] ease-in-linear duration-500 origin-center w-[50px]">
