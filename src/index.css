@@ -46,12 +46,12 @@
 }
 
 .scrollbar-hidden {
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 pre[class*='language-'] {
@@ -103,5 +103,47 @@ code[class*='language-'] {
   * {
     scrollbar-color: var(--scrollbar-thumb) transparent;
     scrollbar-width: thin;
+  }
+}
+
+.pulse {
+  background-color: lightblue;
+  height: 7vmax;
+  width: 7vmax;
+  opacity: 0.5;
+  border-radius: 100%;
+  position: absolute;
+}
+.ring {
+  position: absolute;
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation: pulsing 2s ease-out infinite;
+
+  &:nth-of-type(1) {
+    animation-delay: -0.5s;
+  }
+  &:nth-of-type(2) {
+    animation-delay: -1s;
+  }
+  &:nth-of-type(3) {
+    animation-delay: -1.5s;
+  }
+}
+
+@keyframes pulsing {
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pulse {
+    height: 15vmax;
+    width: 15vmax;
   }
 }
