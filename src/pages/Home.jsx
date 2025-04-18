@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import StickyMessageBox from '../components/message';
 import FeaturesSection from '../components/feature';
 import Showcase from '../components/Showcase';
+import ComponentsFeaturesGallery from '../components/ComponentsFeaturesGallery';
 
 const Home = () => {
   const { darkMode } = useTheme();
@@ -18,9 +19,10 @@ const Home = () => {
           : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
       }`}
     >
+      
       <Hero />
       <StickyMessageBox />
-      <Showcase />
+      <ComponentsFeaturesGallery />
       <FeaturesSection />
       <Footer />
     </div>
