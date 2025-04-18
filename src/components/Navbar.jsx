@@ -245,7 +245,51 @@ function Navbar() {
                   >
                     Cards
                   </Link>
-
+                  >
+                  <Link
+                    to='/components/accordion'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Accordions
+                  </Link>
+                  <Link
+                    to='/components/bento-grid'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Bento Grid
+                  </Link>
+                  <Link
+                    to='/components/button'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Buttons
+                  </Link>
+                  <Link
+                    to='/components/card'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Cards
+                  </Link>
                   {/* <Link
                 to='/components/carousel'
                 onClick={() => setIsComponentmenuOpen(false)}
@@ -323,7 +367,6 @@ function Navbar() {
                   >
                     Image Gallery
                   </Link>
-
                   <Link
                     to='/components/navbar'
                     onClick={() => setIsComponentmenuOpen(false)}
@@ -346,8 +389,54 @@ function Navbar() {
                   >
                     Levitating Avatars
                   </Link>
-
                   {/* <Link
+                <Link
+                  to='/components/image-accordion'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Image Accordian
+                </Link>
+                <Link
+                  to='/components/image-gallery'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Image Gallery
+                </Link>
+
+                <Link
+                  to='/components/navbar'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Navbar
+                </Link>
+                <Link
+                  to='/components/LevitatingAvatars'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Levitating Avatars
+                </Link>
+
+                {/* <Link
                 to='/components/popups'
                 onClick={() => setIsComponentmenuOpen(false)}
                 className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
@@ -431,7 +520,79 @@ function Navbar() {
                   >
                     Social Share
                   </Link>
-
+                  <Link
+                    to='/components/preloader'
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Preloader
+                  </Link>
+                  <Link
+                    to='/components/pricing'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    to='/components/ratings'
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Ratings
+                  </Link>
+                  <Link
+                    to='/components/ScratchCard'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Scratch Card
+                  </Link>
+                  <Link
+                    to='/components/spotlight-text'
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Spotlight Text
+                  </Link>
+                  <Link
+                    to='/components/slider'
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Slider
+                  </Link>
+                  <Link
+                    to='/components/social-share'
+                    onClick={() => setIsComponentmenuOpen(false)}
+                    className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                      darkMode
+                        ? 'hover:bg-[var(--dark-hover-bg)]'
+                        : 'hover:bg-[var(--light-hover-bg)]'
+                    }`}
+                  >
+                    Social Share
+                  </Link>
                   <Link
                     to='/components/tabs'
                     onClick={() => setIsComponentmenuOpen(false)}
@@ -622,13 +783,13 @@ function Navbar() {
                   mobileComponentsOpen ? 'max-h-full' : 'max-h-0'
                 }`}
               >
-                {/* <Link
+                <Link
                   to='/components/accordion'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Accordians
-                </Link> */}
+                </Link>
                 <Link
                   to='/components/bento-grid'
                   onClick={handleMobileLinkClick}

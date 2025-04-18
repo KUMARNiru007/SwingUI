@@ -48,7 +48,7 @@ const Components = () => {
           }`}
         >
           <Routes>
-            {/* <Route path='accordion' element={<Accordion />} /> */}
+            <Route path='accordion' element={<Accordion />} />
             <Route path='bento-grid' element={<BentoGrid />} />
             <Route path='button' element={<Button />} />
             {/* <Route path='call-to-action' element={<CallToAction />} /> */}
