@@ -1,6 +1,5 @@
-// src/Layout/Layout.jsx
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router';
 import Home from '../pages/Home';
 import Docs from './Docs';
 import SwingKit from './SwingKit';
@@ -9,16 +8,12 @@ import Form from './Form';
 import Sidebar from '../components/Sidebar';
 import { Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import About from '../docs/About/About';
-import PreBuiltTemplate from '../docs/PrelBuiltTemplate/PreBuiltTemplate';
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
   const { darkMode } = useTheme();
-
-  const noSidebar = ['/', '/about', '/pre-built-template'];
-  const showSidebar = !noSidebar.includes(location.pathname);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -41,20 +36,33 @@ const Layout = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
+      {/* {!isHome && (
+        <div className='md:hidden flex items-center justify-between p-4 transition-all duration-300'>
+          <button
+            onClick={toggleSidebar}
+            className='p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors'
+            aria-label='Toggle sidebar'
+          >
+            {sidebarOpen ? <X size={28} /> : <Menu size={24} />}
+          </button>
+        </div>
+      )} */}
+
       <div className='flex w-full relative'>
-        {showSidebar && (
+        {!isHome && (
           <>
+            {/* Desktop Sidebar */}
             <div className='hidden md:block w-[280px] py-3 transition-all duration-300 flex-shrink-0'>
               <Sidebar />
             </div>
 
+            {/* Mobile Sidebar */}
             <div
-              className={`md:hidden fixed top-16 left-0 w-[280px] h-[calc(100vh-64px)] z-50  transition-transform duration-300 transform shadow-md overflow-y-auto
-                ${
-                  darkMode
-                    ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
-                    : 'bg-white text-black'
-                } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+              className={`md:hidden fixed top-18 left-0 w-[280px] h-[calc(100vh-64px)] z-50 transition-all duration-300 transform shadow-md overflow-y-auto ${
+                darkMode
+                  ? 'bg-[var(--dark-navbar-bg)] text-[var(--color-text-dark)]'
+                  : 'bg-white text-black'
+              } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
               <div className='flex justify-end items-center p-4'>
                 <button
@@ -69,7 +77,7 @@ const Layout = () => {
             </div>
 
             <div
-              className={`fixed inset-0 z-40 bg-black transition-opacity duration-300 ${
+              className={`fixed inset-0 z-40 bg-black transition-all duration-300 ${
                 sidebarOpen
                   ? 'opacity-70 pointer-events-auto'
                   : 'opacity-0 pointer-events-none'
@@ -81,19 +89,12 @@ const Layout = () => {
         )}
 
         <div className='flex-1 min-h-screen'>
-          <div className='w-full'>
+          <div className={`w-full ${isHome ? '' : ''}`}>
             <div
-              className={`${
-                showSidebar ? 'max-w-screen-xl mx-auto w-full' : ''
-              }`}
+              className={`${isHome ? '' : 'max-w-screen-xl mx-auto w-full'}`}
             >
               <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/about' element={<About />} />
-                <Route
-                  path='/pre-built-template'
-                  element={<PreBuiltTemplate />}
-                />
                 <Route path='/docs/*' element={<Docs />} />
                 <Route path='/components/*' element={<Components />} />
                 <Route path='/swingkit/*' element={<SwingKit />} />
