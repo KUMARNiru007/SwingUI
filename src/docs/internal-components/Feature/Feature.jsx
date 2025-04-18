@@ -139,7 +139,6 @@ function Feature() {
   </div>
 `;
 
-  // Updated CSS with iPad-specific media queries
   const customCSS = `
     <style>
       /* Improved scrollbar handling for all devices */
@@ -274,7 +273,7 @@ function Feature() {
           <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
             <div
               className='w-full'
-              dangerouslySetInnerHTML={{ __html: htmlCssCode }}
+              dangerouslySetInnerHTML={{ __html: customCSS+ htmlCssCode }}
             />
           </div>
         )}
