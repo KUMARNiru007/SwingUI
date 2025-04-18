@@ -41,7 +41,7 @@ const Components = () => {
     >
       <div className='flex-1 flex flex-col'>
         <div
-          className={` overflow-auto  rounded-lg transition-colors duration-300${
+          className={`overflow-auto rounded-lg transition-colors duration-300${
             darkMode ? 'bg-[var(--dark-bg)]' : 'bg-[var(--light-bg)]'
           }`}
         >
@@ -57,16 +57,9 @@ const Components = () => {
             <Route path='header' element={<Header />} />
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
-<<<<<<< HEAD
             <Route path='LevitatingAvatars' element={<LevitatingAvatars />} />
-=======
-<<<<<<< HEAD
-            <Route path='LevitatingAvatars ' element={<LevitatingAvatars />} />
-=======
             <Route path='image-accordion' element={<ImageAccordions />} />
             <Route path='word-rotating' element={<WordRotating />} />
->>>>>>> ed0f8e3 (2 comp added)
->>>>>>> 756a41e (2 comp added)
             <Route path='navbar' element={<Navbar />} />
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
