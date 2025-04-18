@@ -245,7 +245,6 @@ function Navbar() {
                   >
                     Cards
                   </Link>
-                  >
                   <Link
                     to='/components/accordion'
                     onClick={() => setIsComponentmenuOpen(false)}

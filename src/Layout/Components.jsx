@@ -27,8 +27,7 @@ import Ratings from '../docs/internal-components/Ratings/Ratings.jsx';
 import Scaratchcard from '../docs/internal-components/Scratch Card/Scratchcard.jsx';
 import ImageAccordions from '../docs/internal-components/ImageAccordions/ImageAccordions.jsx';
 import WordRotating from '../docs/internal-components/WordRotating/WordRotating.jsx';
-import PreBuiltTemplate from '../docs/PrelBuiltTemplate/PreBuiltTemplate.jsx';
-import About from '../docs/About/About.jsx';
+import Scratchcard from '../docs/internal-components/Scratch Card/Scratchcard.jsx';
 
 const Components = () => {
   const { darkMode } = useTheme();
@@ -65,6 +64,7 @@ const Components = () => {
             <Route path='navbar' element={<Navbar />} />
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
+            <Route path='ScratchCard' element={<Scratchcard />} />
             <Route path='testimonials' element={<Testimonials />} />
             <Route path='pricing' element={<Pricing />} />
             <Route path='slider' element={<VerticalSlider />} />
@@ -72,8 +72,6 @@ const Components = () => {
             <Route path='preloader' element={<Preloader />} />
             <Route path='spotlight-text' element={<SpotLightText />} />
             <Route path='ratings' element={<Ratings />} />
-            <Route path='PreBuiltTemplate' element={<PreBuiltTemplate />} />
-            <Route path='About' element={<About />} />
           </Routes>
         </div>
       </div>
