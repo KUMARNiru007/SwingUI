@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import '../docs/SwingKit/Gradients/style.css';
 import logo from '../../public/logo.webp';
 import { useLocation } from 'react-router-dom';
+import About from '../docs/About/About';
+import PreBuiltTemplate from '../docs/PrelBuiltTemplate/PreBuiltTemplate';
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
@@ -631,17 +633,14 @@ function Navbar() {
           )}
 
           {!isLandingPage && (
-            <Link
-              to='/components/About'
-              className='hover:text-[var(--dark-nav-hover)]'
-            >
+            <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
               About
             </Link>
           )}
 
           {!isLandingPage && (
             <Link
-              to='/components/PreBuiltTemplate'
+              to='/pre-built-template'
               className='hover:text-[var(--dark-nav-hover)]'
             >
               Pre-built Templates
