@@ -284,18 +284,21 @@ function ImageGallery() {
           }`}
         >
           <thead>
-            <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-              <th className='py-3 px-4 text-left font-semibold'>Property</th>
-              <th className='py-3 px-4 text-left font-semibold'>Description</th>
-
-              <th className='py-3 px-4 text-left font-semibold'>
-                Default Value
-              </th>
-              <th className='py-3 px-4 text-left font-semibold'>
-                Accepted Value
-              </th>
-            </tr>
-          </thead>
+              <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
+                  Property
+                </th>
+                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
+                  Description
+                </th>
+                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
+                  Default
+                </th>
+                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
+                  Accept Value
+                </th>
+              </tr>
+            </thead>
           <tbody>
             {propertiesData.map((item, index) => (
               <tr
