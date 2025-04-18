@@ -264,6 +264,17 @@ function Navbar() {
               >
                 Hero section
               </Link> */}
+               <Link
+                  to='/components/image-accordion'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Image Accordian
+                </Link>
                 <Link
                   to='/components/image-gallery'
                   onClick={() => setIsComponentmenuOpen(false)}
@@ -275,6 +286,7 @@ function Navbar() {
                 >
                   Image Gallery
                 </Link>
+               
                 <Link
                   to='/components/navbar'
                   onClick={() => setIsComponentmenuOpen(false)}
@@ -404,6 +416,17 @@ function Navbar() {
                   }`}
                 >
                   Testimonials
+                </Link>
+                <Link
+                  to='/components/word-rotating'
+                  onClick={() => setIsComponentmenuOpen(false)}
+                  className={`block px-4 py-2 hover:text-[var(--dark-nav-hover)] transition ${
+                    darkMode
+                      ? 'hover:bg-[var(--dark-hover-bg)]'
+                      : 'hover:bg-[var(--light-hover-bg)]'
+                  }`}
+                >
+                  Word Rotating
                 </Link>
               </div>
             </div>
@@ -598,12 +621,20 @@ function Navbar() {
                   Hero Section
                 </Link> */}
                 <Link
+                  to='/components/image-accordion'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Image Accordian
+                </Link>
+                <Link
                   to='/components/image-gallery'
                   onClick={handleMobileLinkClick}
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Image Gallery
                 </Link>
+                
                 <Link
                   to='/components/navbar'
                   onClick={handleMobileLinkClick}
@@ -682,6 +713,13 @@ function Navbar() {
                   className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
                 >
                   Testimonials
+                </Link>
+                <Link
+                  to='/components/word-rotating'
+                  onClick={handleMobileLinkClick}
+                  className='block px-2 py-3 hover:text-[var(--dark-nav-hover)] transition'
+                >
+                  Word Rotating
                 </Link>
               </div>
             </div>
