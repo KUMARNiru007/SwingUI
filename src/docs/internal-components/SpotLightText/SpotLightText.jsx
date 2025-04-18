@@ -41,10 +41,10 @@ const SpotLightText = () => {
 
   const htmlCode2 = `
     <div
-      class="main relative h-full w-full bg-white flex justify-center items-center"
+      class="main realtive h-full w-full bg-white flex justify-center items-center"
     >
       <div
-        class="cursor h-16 w-16 bg-white mix-blend-difference rounded-full absolute transition-all duration-200 ease-linear pointer-events-none transform translate-x-[-50%] translate-y-[-50%]"
+        class="cursor h-16 w-16 bg-white mix-blend-difference rounded-full absolute transition-all duration-200 ease-linear pointer-events-none"
       ></div>
       <h1 class="text-9xl font-bold">MOUSEMOVE</h1>
     </div>
@@ -111,11 +111,6 @@ const SpotLightText = () => {
       requestAnimationFrame(() => {
         crsr.style.left = `${x}px`;
         crsr.style.top = `${y}px`;
-        
-        // Ensure the transform maintains the centering with translate
-        const scale = crsr.style.transform.includes('scale') ? 
-          crsr.style.transform.match(/scale\(([^)]+)\)/)?.[1] || '1' : '1';
-        crsr.style.transform = `translate(-50%, -50%) scale(${scale})`;
 
         if (crsr.style.opacity !== '1') {
           crsr.style.opacity = '1';
@@ -124,13 +119,11 @@ const SpotLightText = () => {
     };
 
     const handleMouseEnter = () => {
-      // Preserve the translation while changing scale
-      crsr.style.transform = `translate(-50%, -50%) scale(2.5)`;
+      crsr.style.transform = 'scale(2.5)';
     };
 
     const handleMouseLeave = () => {
-      // Preserve the translation while resetting scale
-      crsr.style.transform = `translate(-50%, -50%) scale(1)`;
+      crsr.style.transform = 'scale(1)';
     };
 
     // Handle mouse leaving the container
@@ -215,7 +208,7 @@ const SpotLightText = () => {
         </div>
       )}
 
-      <div className='max-w-5xl mx-auto  py-8 sm:py-12'>
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
         <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Bubble Effect</h2>
         <p className='mb-10 sm:mb-16'>
           This interactive demo showcases a bubble cursor that follows your
@@ -235,7 +228,6 @@ const SpotLightText = () => {
                 ref={bubbleCursorRef}
                 style={{ willChange: 'transform, opacity' }}
                 className='cursor h-16 w-16 bg-white mix-blend-difference rounded-full absolute transition-all duration-200 ease-linear pointer-events-none opacity-0'
-                style={{ transform: 'translate(-50%, -50%) scale(1)' }}
               ></div>
               <h1
                 ref={bubbleHeadingRef}
