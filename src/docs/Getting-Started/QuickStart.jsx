@@ -45,15 +45,13 @@ const QuickStart = () => {
 
               <div className='w-full codeblock-wrapper mb-6'>
                 <CodeBlock
-                  code={`<!-- SwingUI CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css" />`}
+                  code={` <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>`}
                 />
               </div>
 
               <div className='w-full codeblock-wrapper mb-6'>
                 <CodeBlock
-                  code={`<!-- SwingUI JS -->
-<script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
+                  code={`<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>`}
                 />
               </div>
             </div>
@@ -76,7 +74,7 @@ const QuickStart = () => {
               </p>
               <div className='w-full codeblock-wrapper mb-6'>
                 <CodeBlock
-                  code={`<!-- Paste this code in Header -->
+                  code={`<!-- SwingUI CSS Paste this code in Header -->
 <link href="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.css" rel="stylesheet">`}
                 />
               </div>
@@ -84,7 +82,7 @@ const QuickStart = () => {
 
             <div className='w-full codeblock-wrapper mb-8'>
               <CodeBlock
-                code={`<!-- Paste this code above Body tag end -->
+                code={`<!-- SwingUI JS Paste this code above Body tag end -->
 <script src="https://cdn.jsdelivr.net/gh/imaaryan/cdn-swing@main/dist/assets/swingui.min.js"></script>`}
               />
             </div>
@@ -125,7 +123,7 @@ const QuickStart = () => {
               📌 Connect With Us:
             </h3>
             <ul className='list-disc mb-8 space-y-2 pl-5'>
-              <li> <Link to="#"  className='swing-ocean-gradient-text'> GitHub Repository </Link> – Star, fork, or raise issues</li>
+              <li> <Link to="https://github.com/imaaryan/SwingUI" target='_blank' className='swing-ocean-gradient-text'> GitHub Repository </Link> – Star, fork, or raise issues</li>
               <li>
                <Link to="https://discord.com/invite/gd9Vjb6VCm" target='_blank' className='swing-ocean-gradient-text'> Discord Community</Link> – Chat with other devs &amp; get support
               </li>
