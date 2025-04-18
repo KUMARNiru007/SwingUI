@@ -98,6 +98,10 @@ function LevitatingAvatars() {
       <img src="${pic8}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic9}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
     </div>
+    <!-- Centered Logo -->
+   <div class="absolute text-8x1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <img src="/logo.webp" class="h-20 object-contain" alt="SwingUI Logo" />
+    </div>
   </div>
 </div>`;
 
