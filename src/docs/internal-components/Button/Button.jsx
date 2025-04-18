@@ -33,7 +33,7 @@ const Button = () => {
     const showCode = codeViews[button.id] || false;
 
     return (
-      <div>
+      <div >
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
           {button.label}
         </h2>
@@ -100,7 +100,7 @@ const Button = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } px-4 py-6`}
     >
-      <div className='max-w-5xl mx-auto px-1 py-8 sm:py-12'>
+   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6">
         <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>Buttons</h2>
         <p className='mb-10 sm:mb-16'>
           The Button component offers a variety of dynamic, gradient-filled

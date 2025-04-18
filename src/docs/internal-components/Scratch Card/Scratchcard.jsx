@@ -9,16 +9,12 @@ function Scratchcard() {
   const { darkMode } = useTheme();
 
   const htmlcssCode = `
-     <div
-      id="card"
-      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform"
-    >
+     <div id="card"
+      class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform ">
       <div
-        class="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-orange-200"
-      >
-        <div class="text-8xl animate-pop">😍</div>
+        class="absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient">
+        <div class="text-8xl animate-pop">🏆</div>
       </div>
-
       <canvas id="scratchCanvas" class="absolute inset-0 z-10"></canvas>
     </div>`;
 
@@ -48,7 +44,7 @@ function Scratchcard() {
         ctx.globalCompositeOperation = 'source-over';
 
         // Create a gray background
-        ctx.fillStyle = '#e2e8f0';
+        ctx.fillStyle = '#dadada';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Add "Scratch" text
@@ -198,10 +194,10 @@ function Scratchcard() {
     return (
       <div
         ref={cardRef}
-        className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform'
+        className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform swing-ocean-gradient'
       >
-        <div className='absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-orange-200'>
-          <div className='text-8xl'>😍</div>
+        <div className='absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient'>
+          <div className='text-8xl'>🏆</div>
         </div>
 
         <canvas
