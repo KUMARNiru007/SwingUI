@@ -4,53 +4,55 @@ import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import './style.css';
 
-import img1 from '../../../assets/Images-For-Gallery/img1.webp';
-import img2 from '../../../assets/Images-For-Gallery/img2.webp';
-import img3 from '../../../assets/Images-For-Gallery/img3.webp';
-import img4 from '../../../assets/Images-For-Gallery/img4.webp';
+import logo from '../../../assets/UI.webp';
+
+import card1 from '../../../assets/images-for-Showcase/Gradinent_Light.webp'
+import card2 from '../../../assets/images-for-Showcase/Buttons_Light.webp'
+import card3 from '../../../assets/images-for-Showcase/Animated_Gradinent_Light.webp'
+import card4 from '../../../assets/images-for-Showcase/Gradinent_Text_Light.webp'
 
 const BentoGrid = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
 
   const htmlCssCode = `
-<div class="max-w-6xl mx-auto p-2 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[200px]">
+<div class="max-w-6xl mx-auto p-2 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[200px] border border-zinc-700">
 
-  <div class="swing-ocean-gradient p-4 sm:p-6 rounded-xl col-span-1 sm:col-span-2 row-span-2 flex flex-col justify-between">
-    <img src="/favicon.ico" class="w-10 sm:w-12 h-10 sm:h-12 rounded-full" alt="SwingUI Logo" />
+  <div class="swing-ocean-gradient border border-zinc-700 p-4 sm:p-6 rounded-xl col-span-1 sm:col-span-2 row-span-2 flex flex-col justify-between">
+    <img src="${logo}" class="w-10 sm:w-12 h-10 sm:h-12 rounded-full" alt="SwingUI Logo" />
     <div class="mt-3 sm:mt-4">
       <h1 class="text-xl sm:text-2xl text-white font-bold">About SwingUi</h1>
       <p class="text-white text-base sm:text-lg mt-1">SwingUi is a modern component library designed to build fast, beautiful UIs.</p>
     </div>
-    <a href="#!" class="text-white font-medium mt-3 sm:mt-4 hover:underline">Explore Components →</a>
+    <a href="#!" class="text-white font-medium mt-3 sm:mt-4 hover:underline ">Explore Components →</a>
   </div>
 
-  <div class="rounded-xl tilt-zoom">
+  <div class="rounded-xl tilt-zoom border border-zinc-700">
     <img
-      src="${img1}"
+      src="${card1}"
       alt="Image 1"
       class="w-full h-full object-cover rounded-sm"
     />
   </div>
-  <div class="rounded-xl tilt-zoom">
+  <div class="rounded-xl tilt-zoom border border-zinc-700">
     <img
-      src="${img2}"
+      src="${card2}"
       alt="Image 1"
       class="w-full h-full object-cover rounded-sm"
     />
   </div>
-  <div class="rounded-xl tilt-zoom">
+  <div class="rounded-xl tilt-zoom border border-zinc-700">
     <img
-      src="${img3}"
+      src="${card3}"
       alt="Image 1"
       class="w-full h-full object-cover rounded-sm"
     />
   </div>
-  <div class="rounded-xl tilt-zoom">
+  <div class="rounded-xl tilt-zoom border border-zinc-700">
     <img
-      src="${img4}"
+      src="${card4}"
       alt="Image 1"
-      class="w-full h-full object-cover rounded-sm"
+      class="w-full h-full object-contain rounded-sm"
     />
   </div>
 
@@ -98,8 +100,8 @@ const BentoGrid = () => {
   <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-3 sm:p-6 col-span-1 sm:col-span-2 lg:col-span-3 flex flex-col justify-center items-center text-center">
     <h2 class="text-base sm:text-lg font-semibold mb-2 text-white">Join the SwingUi Mailing List</h2>
     <form class="w-full max-w-xl flex flex-col sm:flex-row gap-2 sm:gap-3">
-      <input type="email" placeholder="Email" class="flex-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md bg-zinc-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-rose-400" />
-      <button type="submit" class="bg-rose-400 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-md hover:bg-rose-500 transition text-sm ">
+      <input type="email" placeholder="Email" class="flex-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md bg-zinc-700 text-white text-sm focus:outline-none focus:ring-2 focus:swing-ocean-gradient" />
+      <button type="submit" class="swing-ocean-gradient text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-md hover:swing-ocean-gradient transition text-sm ">
       Join
       </button>
     </form>
