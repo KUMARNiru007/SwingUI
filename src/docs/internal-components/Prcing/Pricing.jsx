@@ -12,7 +12,7 @@ function Pricing() {
   const htmlCssCode = `<div class="w-full max-w-7xl mx-auto text-center px-4 sm:px-6 mb-8 md:mb-12 lg:mb-16">
 
     <div class="flex flex-col items-center lg:flex-row justify-center mt-6 sm:mt-8 space-y-4 lg:space-y-0 lg:space-x-4 relative">
-      <div class="relative w-64 h-12 bg-gray-100 rounded-md flex items-center overflow-hidden">
+      <div class="relative w-58 h-12 bg-gray-100 rounded-md flex items-center overflow-hidden">
         <div id="toggleSlider" class="absolute top-1 left-1 w-[calc(50%-0.5rem)] h-10 bg-black rounded-md transition-all duration-300 ease-in-out z-0"></div>
         <button id="monthlyBtn" class="w-1/2 z-10 text-center text-sm font-medium text-gray-700 relative">
           Monthly
