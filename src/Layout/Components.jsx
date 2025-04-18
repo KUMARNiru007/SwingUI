@@ -12,6 +12,7 @@ import Footer from '../docs/internal-components/Footer/Footer.jsx';
 import Header from '../docs/internal-components/Header/Header.jsx';
 import Hero from '../docs/internal-components/Hero/Hero.jsx';
 import ImageGallery from '../docs/internal-components/ImageGallery/ImageGallery.jsx';
+import LevitatingAvatars from '../docs/internal-components/LevitatingAvatars/LevitatingAvatars.jsx';
 import Navbar from '../docs/internal-components/Navbar/Navbar.jsx';
 import BentoGrid from '../docs/internal-components/BentoGrid/BentoGrid.jsx';
 import PopUps from '../docs/internal-components/PopUps/PopUps.jsx';
@@ -54,8 +55,8 @@ const Components = () => {
             <Route path='header' element={<Header />} />
             {/* <Route path='hero' element={<Hero />} /> */}
             <Route path='image-gallery' element={<ImageGallery />} />
+            <Route path='LevitatingAvatars ' element={<LevitatingAvatars />} />
             <Route path='navbar' element={<Navbar />} />
-
             {/* <Route path='popups' element={<PopUps />} /> */}
             <Route path='tabs' element={<Tabs />} />
             <Route path='testimonials' element={<Testimonials />} />
@@ -63,7 +64,6 @@ const Components = () => {
             <Route path='slider' element={<VerticalSlider />} />
             <Route path='social-share' element={<SocialShare />} />
             <Route path='preloader' element={<Preloader />} />
-
             <Route path='spotlight-text' element={<SpotLightText />} />
             <Route path='ratings' element={<Ratings />} />
             <Route path='ScratchCard' element={<Scaratchcard />} />
