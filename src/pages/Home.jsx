@@ -7,6 +7,7 @@ import StickyMessageBox from '../components/message';
 import FeaturesSection from '../components/feature';
 import Showcase from '../components/Showcase';
 import ComponentsFeaturesGallery from '../components/ComponentsFeaturesGallery';
+import HomeTestimonials from '../components/HomeTestimonials';
 
 const Home = () => {
   const { darkMode } = useTheme();
@@ -20,10 +21,11 @@ const Home = () => {
       }`}
     >
       
-      <Hero />
-      <StickyMessageBox />
+      <Hero/>
+       <StickyMessageBox />
       <ComponentsFeaturesGallery />
-      <FeaturesSection />
+      <FeaturesSection /> 
+      <HomeTestimonials />
       <Footer />
     </div>
   );
