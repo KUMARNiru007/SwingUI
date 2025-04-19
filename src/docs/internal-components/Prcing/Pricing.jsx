@@ -146,13 +146,16 @@ function Pricing() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }  px-4`}
     >
-       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6">
-        <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Pricing</h2>
-        <p className='mb-10 sm:mb-16'>
-          The Pricing component provides a visually appealing and responsive
-          pricing section, with a dynamic layout that adjusts to both light and
-          dark modes. It integrates a live preview feature and supports user
-          interaction with the ability to toggle code display.
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Pricing
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingTier Pricing
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          SwingUI's tiered pricing component offers a clean, interactive layout
+          with smooth plan toggling between monthly/annual billing.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />

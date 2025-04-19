@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
+import Table from '../../components/TableComponent/Table.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import BottomFooter from '../../../components/BottomFooter.jsx';
@@ -214,6 +215,51 @@ const VerticalSliderDemo = () => {
     </div>
   );
 
+  const sliderPropertiesData = [
+    {
+      propertyName: 'bg-gradient-to-b',
+      defaultValue: 'from-gray-100 to-blue-100',
+      description: 'Light gradient background (top to bottom).',
+    },
+    {
+      propertyName: 'flex justify-center items-center',
+      defaultValue: 'Centered alignment',
+      description: 'Centers the slider both horizontally and vertically.',
+    },
+    {
+      propertyName: 'overflow-hidden',
+      defaultValue: 'Hidden overflow',
+      description: 'Prevents scrollbars and clipping outside content.',
+    },
+  ];
+
+  const sliderPropertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Default Value',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
+    },
+  ];
+
   return (
     <div
       className={`w-full  transition-colors duration-300 ${
@@ -222,12 +268,17 @@ const VerticalSliderDemo = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-       <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Vertical Slider</h2>
-        <p className='mb-10 sm:mb-16'>
-          This vertical slider demo showcases a smooth scroll experience with an
-          infinite loop effect. Navigate through slides using the mouse wheel or
-          the navigation dots.
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Slider
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingSlide Carousel
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          SwingUI's vertical slide carousel delivers seamless content
+          transitions with elegant gradient backgrounds and intuitive dot
+          navigation.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -274,6 +325,22 @@ const VerticalSliderDemo = () => {
             <CodeBlock language='html' code={htmlCssCode} />
           </div>
         )}
+
+        <hr
+          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
+
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table
+            data={sliderPropertiesData}
+            columns={sliderPropertiesColumns}
+          />
+        </div>
       </div>
  <BottomFooter/>
     </div>

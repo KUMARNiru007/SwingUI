@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
+import Table from '../../components/TableComponent/Table.jsx';
+
 import BottomFooter from '../../../components/BottomFooter.jsx';
+
 
 import './Testimonial.css';
 import pic1 from '../../../assets/Images-For-Testimonials/pic1.webp';
@@ -329,6 +333,54 @@ function Testimonial() {
     </div>
   </div> 
 `;
+
+  const testimonialPropertiesData = [
+    {
+      propertyName: 'line clamping',
+      defaultValue: 'line-clamp-3',
+      description:
+        'Limits text to 3 lines with ellipsis. Requires @tailwindcss/line-clamp.',
+    },
+    {
+      propertyName: 'direction (custom prop)',
+      defaultValue: '--direction: 1',
+      description:
+        'Controls scroll direction (1=left-to-right, -1=right-to-left).',
+    },
+    {
+      propertyName: 'speed (custom prop)',
+      defaultValue: '--speed: 18',
+      description: 'Controls scroll animation speed (lower values = faster).',
+    },
+  ];
+
+  const testimonialPropertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Default Value',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
+    },
+  ];
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       let prevWidth = window.innerWidth;
@@ -448,14 +500,19 @@ function Testimonial() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } overflow-x-hidden`}
     >
-               <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h1 className='text-3xl sm:text-4xl font-bold pb-4'>
-          Testimonial Component
-        </h1>
-        <p className='mb-15'>
-          This dynamic Tabs component provides seamless navigation between
-          categorized content blocks with responsive design, interactive hover
-          effects, and optional code previews — ideal for modern UI/UX needs.
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Features
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingGlide Gallery
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          The Feature component displays a dynamic image slider with smooth
+          scroll functionality, using React hooks to handle state and
+          animations. It also includes a toggle to preview the HTML/CSS code
+          behind the feature, providing a seamless experience for both users and
+          developers.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -478,6 +535,22 @@ function Testimonial() {
             <CodeBlock language='html' code={htmlCssCode} />
           </div>
         )}
+
+        <hr
+          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
+
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table
+            data={testimonialPropertiesData}
+            columns={testimonialPropertiesColumns}
+          />
+        </div>
       </div>
  <BottomFooter/>
     </div>
