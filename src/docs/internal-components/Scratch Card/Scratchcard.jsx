@@ -6,7 +6,7 @@ import BottomFooter from '../../../components/BottomFooter.jsx';
 import "./Scratchcard.js";
 
 import './responsive.css';
-import logo from '../../../assets/SwingUI.webp'
+import logo from '../../../assets/SwingUI.webp';
 
 function Scratchcard() {
   const [showCode, setShowCode] = useState(false);
@@ -112,18 +112,18 @@ function Scratchcard() {
       }
 
       // Canvas-specific event handlers
-      function handleCanvasMouseDown(e) {
+      function handleCanvasMouseDown() {
         isDrawingRef.current = true;
       }
 
-      function handleCanvasMouseEnter(e) {
+      function handleCanvasMouseEnter() {
         // If mouse is already down (tracked globally), enable drawing
         if (isMouseDownRef.current) {
           isDrawingRef.current = true;
         }
       }
 
-      function handleCanvasMouseLeave(e) {
+      function handleCanvasMouseLeave() {
         // Stop drawing when leaving canvas but keep track that mouse is still down
         isDrawingRef.current = false;
       }
@@ -204,8 +204,7 @@ function Scratchcard() {
       >
         <div className='absolute inset-0 z-0 flex items-center justify-center swing-ocean-gradient'>
           <div className='text-8xl'>
-          <img src={logo} className="h-20" alt="SwingUI Logo" />
-
+            <img src={logo} className='h-20' alt='SwingUI Logo' />
           </div>
         </div>
 
@@ -236,7 +235,7 @@ function Scratchcard() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className='max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
       <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Scratch Card </h1>
       <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Scratch Card</h3>
       <p className='mb-10 sm:mb-16'>

@@ -9,6 +9,7 @@ import TabsData from './TabsData.js';
 import Table from '../../components/TableComponent/Table.jsx';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
+import './script.js';
 
 const Tabs = () => {
   const [showCode, setShowCode] = useState(false);
@@ -39,7 +40,7 @@ const Tabs = () => {
 
       const tabContainer = document.getElementById('tabContainer');
       const tabTitle = document.getElementById('tab-title');
-      const tabbox = document.getElementById('tab-box');
+      // const tabbox = document.getElementById('tab-box');
 
       function renderTabs() {
         tabContainer.innerHTML = '';
