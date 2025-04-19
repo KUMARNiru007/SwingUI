@@ -5,6 +5,7 @@ import { gsap } from "gsap"
 import { Link } from "react-router-dom"
 import "../docs/SwingKit/AnimatedGradients/style.css"
 import "../docs/SwingKit/Gradients/style.css"
+import BottomFooter from '../components/BottomFooter.jsx';
 import { useTheme } from "../context/ThemeContext"
 import darkimg from "../assets/Hero-assets/darkherobg.webp"
 import lightimg from "../assets/Hero-assets/herobg.webp"
@@ -22,6 +23,7 @@ import hitesh from "./Assets/pics/hitesh.webp"
 import piyush from "./Assets/pics/piyush.webp"
 import tejas from "./Assets/pics/tejas.webp"
 import anirudh from "./Assets/pics/anirudh.webp"
+import aboutimg from "../assets/about/about-img.webp"
 
 
 // You would replace these with your actual team member images
@@ -301,7 +303,7 @@ const AboutUs = () => {
       {/* Header Section */}
       <div
         ref={headerRef}
-        className="relative w-full py-32 px-4 flex flex-col items-center justify-center text-center"
+        className="relative w-full py-18 px-4 flex flex-col items-center justify-center text-center"
         style={{
           backgroundImage: `url(${darkMode ? darkimg : lightimg})`,
           backgroundSize: "cover",
@@ -314,10 +316,9 @@ const AboutUs = () => {
             ABOUT US
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold  mb-6">A Product Built with Friendship, Pressure & Passion <span className="text-red-700">❤</span></h1>
-          <p className="text-xl  max-w-3xl mx-auto">
+          <p className="text-lg  max-w-4xl mx-auto">
           From chaotic beginnings to a smooth launch, SwingUI was built by a team that supported each 
-            other, learned together, and grew stronger every day. This library is a reflection of what’s 
-            possible when the right people, guidance, and motivation come together. 
+            other, learned together, and grew stronger every day.
           </p>
         </div>
       </div>
@@ -326,11 +327,13 @@ const AboutUs = () => {
       <section className="py-20 px-4 max-w-6xl mx-auto">
         <div
           ref={storyRef}
-          className={`mb-20 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
+          className={`${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8">Our Story</h2>
+          
           <div className="grid md:grid-cols-2 gap-10">
+
             <div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-8">Our Story</h2>
               <p className="text-lg mb-6">
               SwingUI is a modern, easy-to-use UI component library built with Tailwind CSS and React, 
                 designed to help developers build beautiful, responsive interfaces faster. It’s more than just a 
@@ -344,7 +347,7 @@ const AboutUs = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src={aboutimg}
                 alt="SwingKit journey"
                 className="w-full h-full object-cover"
               />
@@ -357,7 +360,7 @@ const AboutUs = () => {
         
       </section>
 
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+      <section className="py-15 px-4 max-w-6xl mx-auto">
         <div ref={valuesRef} className="text-center mb-16">
           <div className="inline-block px-4 py-2 swing-ocean-gradient-animate text-white rounded-full text-sm font-semibold tracking-wide shadow mb-6">
             HOW IT STARTED
@@ -367,7 +370,7 @@ const AboutUs = () => {
           >
             Birth of SwingUI
           </h2>
-          <p className={`text-xl max-w-5xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <p className={`text-lg max-w-5xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
           SwingUI was born during a hackathon hosted by ChaiCode, with a challenge: create something meaningful, something that solves a real developer problem. From chaotic beginnings on Day 0, we jumped into discussions, built roadmaps, and began turning ideas into reality.
           </p>
         </div>
@@ -420,18 +423,17 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      {/* Team Section */}
-<section ref={teamSectionRef} className={`py-20 px-4 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
-  <div className="max-w-6xl mx-auto text-center mb-16">
+<section ref={teamSectionRef} className={`py-15 px-4 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
+  <div className="max-w-6xl mx-auto text-center mb-10 ">
     <div className="inline-block px-4 py-2 swing-ocean-gradient-animate text-white rounded-full text-sm font-semibold tracking-wide shadow mb-6">
-    Who Built It? 
+    WHO BUILT IT? 
     </div>
     <h2
       className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
     >
       Meet Our Team
     </h2>
-    <p className={`text-xl max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+    <p className={`text-lg max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
     We’re a team of passionate learners who weren't at the top of the class, but always stayed 
     curious and committed. Our squad includes developers like:
     </p>
@@ -455,7 +457,7 @@ const AboutUs = () => {
           {/* Name and title overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-10">
             <h3 className="text-xl font-bold text-white">{member.name}</h3>
-            <p className="text-sm text-blue-300">{member.role}</p>
+            <p className="text-sm text-blue-100 opacity-70">{member.role}</p>
           </div>
 
           {/* Social icons that appear on hover */}
@@ -535,15 +537,16 @@ const AboutUs = () => {
     ))}
     
   </div>
-  <div className="max-w-6xl mx-auto text-center my-16">
+  <div className="max-w-6xl mx-auto text-center my-10">
     <p className={`text-xl max-w-3xl  mx-auto  ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
     We spent sleepless nights, had 1 AM team calls, pulled 14-hour workdays—all for a shared 
     vision.
     </p>
     </div>
 </section>
-<section ref={teamSectionRef} className={`py-20 px-4 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
-  <div className="max-w-6xl mx-auto text-center mb-16">
+<hr className="text-gray-500 opacity-50" ></hr>
+<section ref={teamSectionRef} className={`py-15 px-4 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
+  <div className="max-w-6xl mx-auto text-center mb-10">
     <div className="inline-block px-4 py-2 swing-ocean-gradient-animate text-white rounded-full text-sm font-semibold tracking-wide shadow mb-6">
    Mentors
     </div>
@@ -552,7 +555,7 @@ const AboutUs = () => {
     >
       Mentorship that Guided Us 
     </h2>
-    <p className={`text-xl max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+    <p className={`text-lg max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
     We’re deeply grateful to our mentors who not only guided us technically but also supported us 
     emotionally and mentally:
     </p>
@@ -613,8 +616,8 @@ const AboutUs = () => {
     ))}
     
   </div>
-  <div className="max-w-6xl mx-auto text-center my-16">
-    <p className={`text-xl max-w-3xl  mx-auto  ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+  <div className="max-w-6xl mx-auto text-center my-10">
+    <p className={`text-lg max-w-3xl  mx-auto  ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
     Their wisdom and encouragement helped us stay on track and push through doubts.
     </p>
     </div>
@@ -624,7 +627,7 @@ const AboutUs = () => {
 
       {/* Values Section */}
       {/* Why Swing & Our Vision Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+<section className="py-15 px-4 max-w-6xl mx-auto">
   <div className={`mb-2 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
     
     <div className="grid md:grid-cols-2 gap-20">
@@ -642,7 +645,7 @@ const AboutUs = () => {
             "That spark of joy when your UI looks right"
           ].map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="inline-block mr-3 mt-1 text-blue-500">•</span>
+              <span className="inline-block mr-3 text-blue-500">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -663,7 +666,7 @@ const AboutUs = () => {
             "Startups building MVPs quickly"
           ].map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="inline-block mr-3 mt-1 text-blue-500">•</span>
+              <span className="inline-block mr-3 text-blue-500">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -672,9 +675,9 @@ const AboutUs = () => {
     </div>
   </div>
 </section>
-<section className="py-20 px-4 max-w-6xl mx-auto">
+<section className="py-6 px-4 max-w-6xl mx-auto">
   <div className={`mb-2 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
-    <h2 className="text-3xl sm:text-4xl font-bold mb-8">Built in Public</h2>
+    <h2 className="text-3xl font-bold mb-8">Built in Public</h2>
     <div className="flex flex-col gap-10">
       <div>
         <p className="text-lg mb-6">
@@ -689,7 +692,7 @@ const AboutUs = () => {
             "Learned, pivoted, and improved in real-time"
           ].map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="inline-block mr-3 mt-1 text-blue-500">•</span>
+              <span className="inline-block mr-3 text-blue-500">•</span>
               <span className="text-lg">{item}</span>
             </li>
           ))}
@@ -703,9 +706,9 @@ const AboutUs = () => {
     </div>
   </div>
 </section>
-<section className="py-20 px-4 max-w-6xl mx-auto">
+<section className="py-13 px-4 max-w-6xl mx-auto">
   <div className={`${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
-    <h2 className="text-3xl sm:text-4xl font-bold mb-8">What's Next?</h2>
+    <h2 className="text-3xl font-bold mb-8">What's Next?</h2>
     <p className="text-lg mb-10"></p>
     
     <div className="grid md:grid-cols-2 gap-10">
@@ -739,7 +742,7 @@ const AboutUs = () => {
             "Community contributions"
           ].map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-blue-500 mr-3 mt-1">●</span>
+              <span className="text-blue-500 mr-3 ">●</span>
               <span className="text-lg">{item}</span>
             </li>
           ))}
@@ -750,33 +753,8 @@ const AboutUs = () => {
 </section>
      
 
-      {/* CTA Section */}
-      <section ref={ctaRef} className={`py-20 px-4 text-center ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
-        <div className="max-w-4xl mx-auto">
-          <h2
-            className={`text-3xl sm:text-4xl font-bold mb-6 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
-          >
-            Ready to Put Some Swing in Your Stack?
-          </h2>
-          <p className={`text-xl mb-10 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-          Whether you’re building a portfolio, startup, or just playing with UI—SwingUI is made for you.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link
-              to="/docs"
-              className="px-6 py-3 rounded-full w-[70%] sm:w-auto text-white swing-ocean-gradient font-semibold shadow hover:opacity-90 transition"
-            >
-              Get Started For Free
-            </Link>
-            <Link
-              to="/components/button"
-              className={`px-6 py-3 rounded-full w-[85%] sm:w-auto border ${darkMode ? "border-gray-600 hover:bg-gray-700" : "border-gray-300 hover:bg-gray-800"} font-semibold hover:text-white transition`}
-            >
-              Explore Components
-            </Link>
-          </div>
-        </div>
-      </section>
+      
+ <BottomFooter/>
     </div>
   )
 }
