@@ -408,7 +408,7 @@ export default function FeaturesSection() {
               className='w-[85vw] h-[50vw] md:w-[90vw] md:h-[50vw] max-w-[800px] max-h-[450px] rounded-lg shadow-lg'
               src='https://www.youtube.com/embed/xHxs1RIe7j4'
               title='YouTube video player'
-              allow='autoplay; encrypted-media'
+              allow='encrypted-media'
               allowFullScreen
             />
           </div>

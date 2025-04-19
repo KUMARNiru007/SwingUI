@@ -24,7 +24,7 @@ const Home = () => {
       {/* <StickyMessageBox /> */}
       {/* <ComponentsFeaturesGallery /> */}
       <FeaturesSection />
-      <HomeTestimonials />
+      {/* <HomeTestimonials /> */}
       <Footer />
     </div>
   );
