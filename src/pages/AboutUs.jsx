@@ -439,7 +439,7 @@ const AboutUs = () => {
     </p>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-8 max-w-6xl flex flex-wrap justify-center mx-auto">
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {teamMembers.map((member, index) => (
       <div
         key={member.name}
@@ -561,7 +561,7 @@ const AboutUs = () => {
     </p>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-8 max-w-6xl flex flex-wrap justify-center mx-auto">
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {mentors.map((member, index) => (
       <div
         key={member.name}
