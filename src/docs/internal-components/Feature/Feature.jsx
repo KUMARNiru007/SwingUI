@@ -198,63 +198,63 @@ function Feature() {
     </style>
   `;
 
-  const galleryPropertiesData = [
-    {
-      propertyName: 'gradient overlays',
-      defaultValue:
-        'fade-top fade-bottom + bg-gradient-to-b/t from-white/90 to-transparent',
-      description:
-        'Creates a fading white gradient at the top and bottom of the scrollable area.',
-    },
-    {
-      propertyName: 'overlay positioning',
-      defaultValue: 'absolute top-0/bottom-0 left-0 right-0',
-      description: 'Positions the fade overlays at the top and bottom edges.',
-    },
-    {
-      propertyName: 'scrollable container',
-      defaultValue: 'overflow-y-auto overscroll-contain scrollbar-hide',
-      description:
-        'Enables vertical scrolling, prevents bounce effects, and hides the scrollbar.',
-    },
-    {
-      propertyName: 'scroll container height',
-      defaultValue: 'h-60 sm:h-72 md:h-96 lg:h-96',
-      description: 'Makes the image area scrollable and responsive in height.',
-    },
-    {
-      propertyName: 'image transition',
-      defaultValue: 'transition-shadow duration-300',
-      description: 'Smoothly transitions the shadow on hover over 300ms.',
-    },
-  ];
+  // const galleryPropertiesData = [
+  //   {
+  //     propertyName: 'gradient overlays',
+  //     defaultValue:
+  //       'fade-top fade-bottom + bg-gradient-to-b/t from-white/90 to-transparent',
+  //     description:
+  //       'Creates a fading white gradient at the top and bottom of the scrollable area.',
+  //   },
+  //   {
+  //     propertyName: 'overlay positioning',
+  //     defaultValue: 'absolute top-0/bottom-0 left-0 right-0',
+  //     description: 'Positions the fade overlays at the top and bottom edges.',
+  //   },
+  //   {
+  //     propertyName: 'scrollable container',
+  //     defaultValue: 'overflow-y-auto overscroll-contain scrollbar-hide',
+  //     description:
+  //       'Enables vertical scrolling, prevents bounce effects, and hides the scrollbar.',
+  //   },
+  //   {
+  //     propertyName: 'scroll container height',
+  //     defaultValue: 'h-60 sm:h-72 md:h-96 lg:h-96',
+  //     description: 'Makes the image area scrollable and responsive in height.',
+  //   },
+  //   {
+  //     propertyName: 'image transition',
+  //     defaultValue: 'transition-shadow duration-300',
+  //     description: 'Smoothly transitions the shadow on hover over 300ms.',
+  //   },
+  // ];
 
-  const galleryPropertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Default Value',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // const galleryPropertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Default Value',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   return (
     <div
@@ -266,15 +266,13 @@ function Feature() {
     >
       <div className='max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-6'>
         <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
-          Testimonial
+        Features
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingTestimonial Carousel
+        Swing Glide Gallery
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
-          SwingUI's dynamic testimonial carousel presents client endorsements in
-          an engaging, multi-directional scroll format with rich media
-          integration.
+        SwingUI's dynamic duo panel blends immersive content with fluid image browsing, enhanced by signature gradient fades for effortless navigation.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -295,21 +293,21 @@ function Feature() {
           </div>
         )}
 
-        <hr
+        {/* <hr
           className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
             darkMode
               ? 'border-gray-700 opacity-30'
               : 'border-gray-300 opacity-50'
           }`}
-        />
+        /> */}
 
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        {/* <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
         <div className='mb-12'>
           <Table
             data={galleryPropertiesData}
             columns={galleryPropertiesColumns}
           />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>

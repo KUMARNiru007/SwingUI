@@ -151,7 +151,7 @@ function Pricing() {
           Pricing
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingTier Pricing
+          Swing Tier Pricing
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's tiered pricing component offers a clean, interactive layout

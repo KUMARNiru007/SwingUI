@@ -502,17 +502,12 @@ function Testimonial() {
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
         <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
-          Features
+        Testimonial
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingGlide Gallery
-        </h2>
+        Swing Testimonial Carousel        </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
-          The Feature component displays a dynamic image slider with smooth
-          scroll functionality, using React hooks to handle state and
-          animations. It also includes a toggle to preview the HTML/CSS code
-          behind the feature, providing a seamless experience for both users and
-          developers.
+        SwingUI's dynamic testimonial carousel presents client endorsements in an engaging, multi-directional scroll format with rich media integration.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />

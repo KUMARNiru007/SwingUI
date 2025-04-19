@@ -169,12 +169,13 @@ const Navbar = () => {
   }, [showCode]);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-4">
+    <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-4">
       <h2 className='text-3xl sm:text-4xl font-bold pb-6 mt-8'> Navbar</h2>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>
+      Swing Nav Pro
+        </h3>
       <p className='mb-10 sm:mb-16'>
-        The Responsive Navbar component offers a dynamic, user-friendly
-        navigation bar with light/dark mode support, mobile responsiveness, and
-        interactive dropdowns, enhancing user experience across devices.
+      SwingUI's responsive navigation bar delivers seamless desktop-to-mobile adaptability with intuitive dropdowns and clean social integrations.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -197,11 +198,11 @@ const Navbar = () => {
           <CodeBlock language='html' code={htmlCssCode} />
         </div>
       )}
-      <hr
+      {/* <hr
         className={`my-10 border-t ${
           darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
         }`}
-      />
+      /> */}
  <BottomFooter/>
     </div>
   );

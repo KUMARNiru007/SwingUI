@@ -20,76 +20,76 @@ function LevitatingAvatars() {
   const { darkMode } = useTheme();
   const containerRef = useRef(null);
 
-  const propertiesData = [
-    {
-      propertyName: 'Orbit wrapper',
-      defaultValue:
-        'center relative w-1/4 h-1/4 max-w-xs max-h-xs md:w-1/3 md:h-1/3 lg:w-1/2 lg:h-1/2',
-      description:
-        'Responsive container for the orbit rings; adapts size across screen breakpoints.',
-    },
-    {
-      propertyName: 'Orbit ring (outer)',
-      defaultValue:
-        'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
-      description: 'Centers and styles the outer ring with a gray border.',
-    },
-    {
-      propertyName: 'Orbit ring (outer) attributes',
-      defaultValue:
-        'data-scale="0.5" data-speed="0.6" data-direction="clockwise"',
-      description:
-        'Controls size, animation speed, and rotation direction for the outer orbit.',
-    },
-    {
-      propertyName: 'Orbit ring (inner)',
-      defaultValue:
-        'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
-      description:
-        'Similar layout to the outer ring but used for a second layer of icons.',
-    },
-    {
-      propertyName: 'Orbit ring (inner) attributes',
-      defaultValue:
-        'data-scale="0.83" data-speed="0.8" data-direction="anticlockwise"',
-      description:
-        'Custom attributes to define size, speed, and direction for the inner orbit.',
-    },
-    {
-      propertyName: 'Orbiting icons',
-      defaultValue: 'absolute -translate-x-1/2 -translate-y-1/2 orbit-icon',
-      description:
-        'Places each icon in the ring and centers them for orbiting motion.',
-    },
-  ];
+  // const propertiesData = [
+  //   {
+  //     propertyName: 'Orbit wrapper',
+  //     defaultValue:
+  //       'center relative w-1/4 h-1/4 max-w-xs max-h-xs md:w-1/3 md:h-1/3 lg:w-1/2 lg:h-1/2',
+  //     description:
+  //       'Responsive container for the orbit rings; adapts size across screen breakpoints.',
+  //   },
+  //   {
+  //     propertyName: 'Orbit ring (outer)',
+  //     defaultValue:
+  //       'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
+  //     description: 'Centers and styles the outer ring with a gray border.',
+  //   },
+  //   {
+  //     propertyName: 'Orbit ring (outer) attributes',
+  //     defaultValue:
+  //       'data-scale="0.5" data-speed="0.6" data-direction="clockwise"',
+  //     description:
+  //       'Controls size, animation speed, and rotation direction for the outer orbit.',
+  //   },
+  //   {
+  //     propertyName: 'Orbit ring (inner)',
+  //     defaultValue:
+  //       'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
+  //     description:
+  //       'Similar layout to the outer ring but used for a second layer of icons.',
+  //   },
+  //   {
+  //     propertyName: 'Orbit ring (inner) attributes',
+  //     defaultValue:
+  //       'data-scale="0.83" data-speed="0.8" data-direction="anticlockwise"',
+  //     description:
+  //       'Custom attributes to define size, speed, and direction for the inner orbit.',
+  //   },
+  //   {
+  //     propertyName: 'Orbiting icons',
+  //     defaultValue: 'absolute -translate-x-1/2 -translate-y-1/2 orbit-icon',
+  //     description:
+  //       'Places each icon in the ring and centers them for orbiting motion.',
+  //   },
+  // ];
 
-  // Define table columns configuration
-  const propertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Value / Class',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // // Define table columns configuration
+  // const propertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Value / Class',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   useEffect(() => {
     const center = containerRef.current?.querySelector('.center');
@@ -190,7 +190,7 @@ function LevitatingAvatars() {
           Levitating Avatars
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingOrbit Display
+          Swing Orbit Display
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's dynamic orbital display features dual rotating rings with
@@ -216,18 +216,18 @@ function LevitatingAvatars() {
           </div>
         )}
 
-        <hr
+        {/* <hr
           className={`my-10 border-t ${
             darkMode
               ? 'border-gray-700 opacity-30'
               : 'border-gray-300 opacity-50'
           }`}
-        />
+        /> */}
 
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        {/* <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
         <div className='mb-12'>
           <Table data={propertiesData} columns={propertiesColumns} />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>

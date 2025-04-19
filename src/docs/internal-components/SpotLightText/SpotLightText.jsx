@@ -150,12 +150,10 @@ const SpotLightText = () => {
 
   return (
     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold pb-4'>SpotLight Text</h2>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Spotlight Text</h2>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Particle Canvas</h3>
       <p className='mb-10 sm:mb-16'>
-        This interactive demo showcases shapes that follow your cursor with a
-        smooth, staggered animation effect. The component creates an engaging
-        visual experience through overlapping colored shapes and a custom
-        cursor. It works on both desktop and mobile devices.
+      SwingUI's dynamic motion component creates an immersive visual experience with interactive circular elements that respond to user movement. 
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -211,11 +209,9 @@ const SpotLightText = () => {
       )}
 
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-        <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Bubble Effect</h2>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Particle Canvas</h3>
         <p className='mb-10 sm:mb-16'>
-          This interactive demo showcases a bubble cursor that follows your
-          mouse with smooth animation. When hovering over text, the bubble
-          expands for an interactive effect.
+        SwingUI's interactive cursor component creates a striking visual contrast with its blend-mode inversion effect, transforming mouse movement into a dynamic design element.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />

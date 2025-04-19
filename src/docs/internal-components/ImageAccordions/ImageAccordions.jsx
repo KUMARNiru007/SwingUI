@@ -45,62 +45,62 @@ const ImageAccordions = () => {
   const [activeIndex, setActiveIndex] = useState(2);
 
   // Define properties data for the table
-  const propertiesData = [
-    {
-      propertyName: 'Gallery item',
-      defaultValue:
-        'gallery-item rounded-xl relative h-[400px] flex-shrink-0 transition-[width] ease-in-linear duration-500 origin-center w-[50px]',
-      description:
-        "Defines each item's layout and transition behavior, including rounded corners, fixed height, flexible width, and transition on width change.",
-    },
-    {
-      propertyName: 'Gallery image',
-      defaultValue: 'w-full h-full object-cover rounded-xl cursor-pointer',
-      description:
-        'Ensures the image covers the entire container, is rounded, and is clickable (cursor pointer).',
-    },
-    {
-      propertyName: 'Image overlay',
-      defaultValue:
-        'hidden absolute flex flex-col justify-end h-full top-0 p-3 space-y-2 overflow-hidden rounded-xl bg-gradient-to-t dark:from-gray-900/60 from-gray-100/60 from-20% to-transparent to-80%',
-      description:
-        'Positioned over the image but hidden by default; contains text elements with gradient background for a dark/light mode effect.',
-    },
-    {
-      propertyName: 'Description text',
-      defaultValue: 'leading-[120%]',
-      description:
-        'Adds line spacing to the description text for better readability.',
-    },
-  ];
+  // const propertiesData = [
+  //   {
+  //     propertyName: 'Gallery item',
+  //     defaultValue:
+  //       'gallery-item rounded-xl relative h-[400px] flex-shrink-0 transition-[width] ease-in-linear duration-500 origin-center w-[50px]',
+  //     description:
+  //       "Defines each item's layout and transition behavior, including rounded corners, fixed height, flexible width, and transition on width change.",
+  //   },
+  //   {
+  //     propertyName: 'Gallery image',
+  //     defaultValue: 'w-full h-full object-cover rounded-xl cursor-pointer',
+  //     description:
+  //       'Ensures the image covers the entire container, is rounded, and is clickable (cursor pointer).',
+  //   },
+  //   {
+  //     propertyName: 'Image overlay',
+  //     defaultValue:
+  //       'hidden absolute flex flex-col justify-end h-full top-0 p-3 space-y-2 overflow-hidden rounded-xl bg-gradient-to-t dark:from-gray-900/60 from-gray-100/60 from-20% to-transparent to-80%',
+  //     description:
+  //       'Positioned over the image but hidden by default; contains text elements with gradient background for a dark/light mode effect.',
+  //   },
+  //   {
+  //     propertyName: 'Description text',
+  //     defaultValue: 'leading-[120%]',
+  //     description:
+  //       'Adds line spacing to the description text for better readability.',
+  //   },
+  // ];
 
-  // Define table columns configuration
-  const propertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Value',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // // Define table columns configuration
+  // const propertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Value',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   return (
     <div
@@ -115,7 +115,7 @@ const ImageAccordions = () => {
           Image Accordions
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingHover Gallery
+          Swing Hover Gallery
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's interactive image gallery features smooth hover-triggered
@@ -162,12 +162,12 @@ const ImageAccordions = () => {
           </div>
         )}
 
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4 mt-12'>
+        {/* <h2 className='text-xl sm:text-2xl font-semibold mb-4 mt-12'>
           Properties
         </h2>
         <div className='mb-12'>
           <Table data={propertiesData} columns={propertiesColumns} />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>

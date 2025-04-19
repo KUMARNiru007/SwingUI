@@ -280,91 +280,91 @@ const Cards = () => {
   </div>
 </div>`;
 
-  const propertiesData = [
-    {
-      propertyName: 'background (custom class)',
-      defaultValue:
-        'swing-ocean-gradient, swing-peach-gradient, swing-fire-gradient, swing-love-gradient',
-      description:
-        'Applies a gradient background effect using the official swing gradient classes (each card has a different gradient).',
-    },
-    {
-      propertyName: 'hover background (custom)',
-      defaultValue:
-        'hover:swing-ocean-gradient, hover:swing-peach-gradient, hover:swing-fire-gradient, hover:swing-love-gradient',
-      description:
-        'Applies the respective gradient background on hover for visual interactivity.',
-    },
-    {
-      propertyName: 'card hover transform',
-      defaultValue: 'hover:-translate-x-2 hover:-translate-y-2',
-      description:
-        'Moves the card 2px to the left and top on hover for a subtle hover effect.',
-    },
-    {
-      propertyName: 'text transition',
-      defaultValue: 'transition duration-300',
-      description:
-        'Smoothly animates the text with a 300ms transition effect when hovered.',
-    },
-    {
-      propertyName: 'button visibility',
-      defaultValue: 'hidden (default), flex (hover)',
-      description:
-        'Hides the "LET\'S GO" button by default, revealing it on hover for interactivity.',
-    },
-    {
-      propertyName: 'responsive css (small screens)',
-      defaultValue: 'xl:hidden',
-      description:
-        'Hides the button on extra-large screens and shows it on smaller screens.',
-    },
-    {
-      propertyName: 'z-index (background layers)',
-      defaultValue: '-z-10 (first layer), -z-20 (second)',
-      description:
-        'Ensures background layers are placed behind the card content.',
-    },
-    {
-      propertyName: 'course background hover effect',
-      defaultValue: 'course-bg-hover',
-      description:
-        'Adds a hover effect for the background of the card (defined by a custom class).',
-    },
-    {
-      propertyName: 'course image (circle) position',
-      defaultValue: 'absolute -top-20 -right-20',
-      description:
-        'Positions the circular background image in the top-right corner outside the card.',
-    },
-  ];
+  // const propertiesData = [
+  //   {
+  //     propertyName: 'background (custom class)',
+  //     defaultValue:
+  //       'swing-ocean-gradient, swing-peach-gradient, swing-fire-gradient, swing-love-gradient',
+  //     description:
+  //       'Applies a gradient background effect using the official swing gradient classes (each card has a different gradient).',
+  //   },
+  //   {
+  //     propertyName: 'hover background (custom)',
+  //     defaultValue:
+  //       'hover:swing-ocean-gradient, hover:swing-peach-gradient, hover:swing-fire-gradient, hover:swing-love-gradient',
+  //     description:
+  //       'Applies the respective gradient background on hover for visual interactivity.',
+  //   },
+  //   {
+  //     propertyName: 'card hover transform',
+  //     defaultValue: 'hover:-translate-x-2 hover:-translate-y-2',
+  //     description:
+  //       'Moves the card 2px to the left and top on hover for a subtle hover effect.',
+  //   },
+  //   {
+  //     propertyName: 'text transition',
+  //     defaultValue: 'transition duration-300',
+  //     description:
+  //       'Smoothly animates the text with a 300ms transition effect when hovered.',
+  //   },
+  //   {
+  //     propertyName: 'button visibility',
+  //     defaultValue: 'hidden (default), flex (hover)',
+  //     description:
+  //       'Hides the "LET\'S GO" button by default, revealing it on hover for interactivity.',
+  //   },
+  //   {
+  //     propertyName: 'responsive css (small screens)',
+  //     defaultValue: 'xl:hidden',
+  //     description:
+  //       'Hides the button on extra-large screens and shows it on smaller screens.',
+  //   },
+  //   {
+  //     propertyName: 'z-index (background layers)',
+  //     defaultValue: '-z-10 (first layer), -z-20 (second)',
+  //     description:
+  //       'Ensures background layers are placed behind the card content.',
+  //   },
+  //   {
+  //     propertyName: 'course background hover effect',
+  //     defaultValue: 'course-bg-hover',
+  //     description:
+  //       'Adds a hover effect for the background of the card (defined by a custom class).',
+  //   },
+  //   {
+  //     propertyName: 'course image (circle) position',
+  //     defaultValue: 'absolute -top-20 -right-20',
+  //     description:
+  //       'Positions the circular background image in the top-right corner outside the card.',
+  //   },
+  // ];
 
-  const propertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Default Value',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // const propertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Default Value',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   const CardDemo = ({ title, description, code, id }) => {
     const showCode = !!codeViews[id];
@@ -398,13 +398,13 @@ const Cards = () => {
           </div>
         )}
 
-        <hr
+        {/* <hr
           className={`my-10 border-t ${
             darkMode
               ? 'border-gray-700 opacity-30'
               : 'border-gray-300 opacity-50'
           }`}
-        />
+        /> */}
       </div>
     );
   };
@@ -424,24 +424,31 @@ const Cards = () => {
 
         <div className='space-y-12'>
           <CardDemo
-            title='SwingDepth Cards'
+            title='Swing Depth Cards'
             description="Elevate interactions with SwingUI's gradient cards—dynamic hover effects, layered depth, and responsive hidden CTAs for seamless engagement."
             code={depthCardsCode}
             id='depthCards'
           />
 
+        <hr
+          className={`my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
           <CardDemo
-            title='SwingEdge Cards'
+            title='Swing Edge Cards'
             description="SwingUI's modern course cards combine sleek dark backgrounds with vibrant floating circles for visual impact. The clean typography and hover-triggered animations ensure an engaging, professional user experience."
             code={edgeCardsCode}
             id='edgeCards'
           />
         </div>
 
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        {/* <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
         <div className='mb-12'>
           <Table data={propertiesData} columns={propertiesColumns} />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>
