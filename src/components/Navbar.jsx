@@ -34,6 +34,7 @@ function Navbar() {
   const dropdownRef = useRef(null);
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
+  const isAboutPage = location.pathname === '/about';
 
   // All components in alphabetical order
   const allComponents = [
@@ -55,7 +56,7 @@ function Navbar() {
     { name: 'Spotlight Text', path: '/components/spotlight-text' },
     { name: 'Tabs', path: '/components/tabs' },
     { name: 'Testimonials', path: '/components/testimonials' },
-    { name: 'Word Rotating', path: '/components/word-rotating' }
+    { name: 'Word Rotating', path: '/components/word-rotating' },
   ];
 
   // Distribution for 3 columns (adjusted for alphabetical sorting)
@@ -64,8 +65,8 @@ function Navbar() {
   const column3 = allComponents.slice(14);
 
   // Components grouped by category for mobile view
-  const mobileComponents = [...allComponents].sort((a, b) => 
-    a.name.localeCompare(b.name)
+  const mobileComponents = [...allComponents].sort((a, b) =>
+    a.name.localeCompare(b.name),
   );
 
   useEffect(() => {
@@ -101,7 +102,7 @@ function Navbar() {
   return (
     <nav
       className={`navbar fixed z-50 mb-34 w-full px-6 py-4 flex items-center justify-between transition-all duration-300 ${
-        scrolled || !isLandingPage
+        scrolled || !isLandingPage || !isAboutPage
           ? darkMode
             ? 'bg-[var(--dark-navbar-bg)] shadow-[var(--shadow-default)]'
             : 'bg-[var(--light-navbar-bg)] shadow-[var(--shadow-default)]'
@@ -114,9 +115,9 @@ function Navbar() {
         <img src={logo} alt='Logo' className='w-[125px] h-auto' />
       </Link>
 
-      <div className='hidden md:flex custom-desktop items-center'>
+      <div className='hidden lg:flex custom-desktop items-center'>
         <div className='flex space-x-8'>
-          {isLandingPage ? (
+          {isLandingPage || isAboutPage ? (
             <Link to='/docs' className='hover:text-[var(--dark-nav-hover)]'>
               Docs
             </Link>
@@ -125,18 +126,19 @@ function Navbar() {
               Home
             </Link>
           )}
-        
-      
-      
 
-          {isLandingPage && (
+          {(isLandingPage || isAboutPage) && (
             <div className='group relative'>
               <button
                 className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
                 onClick={toggleSwingKit}
               >
                 SwingKit
-                <i className={`ri-arrow-down-s-line ml-1 text-xs ${isSwingKitOpen ? 'rotate-180' : ''} transition-transform duration-300`}></i>
+                <i
+                  className={`ri-arrow-down-s-line ml-1 text-xs ${
+                    isSwingKitOpen ? 'rotate-180' : ''
+                  } transition-transform duration-300`}
+                ></i>
               </button>
 
               <div ref={swingKitRef} className='relative group'>
@@ -146,11 +148,16 @@ function Navbar() {
                 ${isSwingKitOpen ? 'block' : 'hidden'} group-hover:block`}
                 >
                   {/* Arrow at the top of SwingKit dropdown */}
-                  <div className="dropdown-arrow absolute -top-[7px] left-5 w-4 h-4">
-  <div className={`arrow-up ${darkMode ? 'border-t-[var(--dark-border)] ' : 'border-t-gray-200 '}`}></div>
-</div>
+                  <div className='dropdown-arrow absolute -top-[7px] left-5 w-4 h-4'>
+                    <div
+                      className={`arrow-up ${
+                        darkMode
+                          ? 'border-t-[var(--dark-border)] '
+                          : 'border-t-gray-200 '
+                      }`}
+                    ></div>
+                  </div>
 
-                  
                   <Link
                     to='/swingkit/gradients'
                     onClick={() => setIsSwingKitOpen(false)}
@@ -189,31 +196,43 @@ function Navbar() {
             </div>
           )}
 
-          {isLandingPage && (
+          {(isLandingPage || isAboutPage) && (
             <div className='group relative'>
               <button
                 className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
                 onClick={toggleDropDown}
               >
                 Components
-                <i className={`ri-arrow-down-s-line ml-1 text-xs ${isComponentmenuOpen ? 'rotate-180' : ''} transition-transform duration-300`}></i>
+                <i
+                  className={`ri-arrow-down-s-line ml-1 text-xs ${
+                    isComponentmenuOpen ? 'rotate-180' : ''
+                  } transition-transform duration-300`}
+                ></i>
               </button>
 
               <div ref={dropdownRef} className='relative group'>
                 <div
                   className={`absolute left-1/2 transform -translate-x-1/2 py-4 px-4 w-[500px] rounded-md z-50 shadow-md 
                   ${darkMode ? 'bg-[var(--dark-bg)]' : 'bg-white'} 
-                  ${isComponentmenuOpen ? 'block' : 'hidden'} group-hover:block`}
+                  ${
+                    isComponentmenuOpen ? 'block' : 'hidden'
+                  } group-hover:block`}
                 >
                   {/* Arrow at the top of Components dropdown */}
-                  <div className="dropdown-arrow absolute -top-[7px] left-1/2 transform -translate-x-1/2 w-4 h-4">
-  <div className={`arrow-up ${darkMode ? 'border-t-[var(--dark-border)] ' : 'border-t-gray-200 '}`}></div>
-</div>
-                  
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className='dropdown-arrow absolute -top-[7px] left-1/2 transform -translate-x-1/2 w-4 h-4'>
+                    <div
+                      className={`arrow-up ${
+                        darkMode
+                          ? 'border-t-[var(--dark-border)] '
+                          : 'border-t-gray-200 '
+                      }`}
+                    ></div>
+                  </div>
+
+                  <div className='grid grid-cols-3 gap-4'>
                     {/* Column 1 */}
-                    <div className="flex flex-col space-y-2">
-                      {column1.map(item => (
+                    <div className='flex flex-col space-y-2'>
+                      {column1.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
@@ -228,10 +247,10 @@ function Navbar() {
                         </Link>
                       ))}
                     </div>
-                    
+
                     {/* Column 2 */}
-                    <div className="flex flex-col space-y-2">
-                      {column2.map(item => (
+                    <div className='flex flex-col space-y-2'>
+                      {column2.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
@@ -246,10 +265,10 @@ function Navbar() {
                         </Link>
                       ))}
                     </div>
-                    
+
                     {/* Column 3 */}
-                    <div className="flex flex-col space-y-2">
-                      {column3.map(item => (
+                    <div className='flex flex-col space-y-2'>
+                      {column3.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
@@ -269,10 +288,16 @@ function Navbar() {
               </div>
             </div>
           )}
-              
-            <Link to='/prebuilt-template' className='hover:text-[var(--dark-nav-hover)]'>Prebuilt Template</Link>
-            <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>About</Link>
-          
+
+          <Link
+            to='/prebuilt-template'
+            className='hover:text-[var(--dark-nav-hover)]'
+          >
+            Prebuilt Template
+          </Link>
+          <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
+            About
+          </Link>
 
           {/* {!isLandingPage && (
             <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
@@ -323,7 +348,7 @@ function Navbar() {
       </div>
 
       {/* Mobile NavBar */}
-      <div className='flex custom-mobile items-center space-x-4 md:hidden'>
+      <div className='flex custom-mobile items-center space-x-4 lg:hidden'>
         <button
           onClick={toggleTheme}
           className='theme-toggle px-3 py-2 rounded-md'
@@ -422,7 +447,7 @@ function Navbar() {
                   mobileComponentsOpen ? 'max-h-full' : 'max-h-0'
                 }`}
               >
-                {mobileComponents.map(item => (
+                {mobileComponents.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
@@ -434,7 +459,13 @@ function Navbar() {
                 ))}
               </div>
             </div>
-            
+            <Link
+              to='/about'
+              onClick={handleMobileLinkClick}
+              className='block px-6 py-3 hover:text-[var(--dark-nav-hover)] transition'
+            >
+              About
+            </Link>
           </div>
         </div>
       </div>
@@ -446,24 +477,24 @@ function Navbar() {
         />
       )}
 
-<style jsx>{`
-  .dropdown-arrow {
-    position: absolute;
-    display: inline-block;
-    z-index: 60;
-  }
+      <style jsx='true'>{`
+        .dropdown-arrow {
+          position: absolute;
+          display: inline-block;
+          z-index: 60;
+        }
 
-  .arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid ${darkMode ? 'var(--dark-bg)' : 'white'};
-    border-top: 1px solid transparent;
-    position: relative;
-    top: -1px;
-  }
-`}</style>
+        .arrow-up {
+          width: 0;
+          height: 0;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid ${darkMode ? 'var(--dark-bg)' : 'white'};
+          border-top: 1px solid transparent;
+          position: relative;
+          top: -1px;
+        }
+      `}</style>
     </nav>
   );
 }
