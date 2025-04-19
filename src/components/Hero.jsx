@@ -9,6 +9,7 @@ import '../docs/SwingKit/AnimatedGradients/style.css';
 import '../docs/SwingKit/Gradients/style.css';
 import darkherobg from '../assets/Hero-assets/darkherobg.webp';
 import { useTheme } from '../context/ThemeContext';
+import ComponentsFeaturesGallery from './ComponentsFeaturesGallery';
 
 const Hero = () => {
   const headingRef = useRef(null);
@@ -127,7 +128,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Image Section */}
-      <div
+      {/* <div
         ref={bottomImageSection}
         className='relative mt-10 sm:mt-20 w-full max-w-6xl px-4 flex items-center justify-center'
       >
@@ -149,7 +150,8 @@ const Hero = () => {
           alt='Small Right Floating'
           className='hidden sm:block absolute right-0 sm:-right-20 top-1/2 -translate-y-1/2 w-32 sm:w-70 z-30'
         />
-      </div>
+      </div> */}
+      <ComponentsFeaturesGallery />
     </section>
   );
 };
