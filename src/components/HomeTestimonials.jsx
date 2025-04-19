@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import '../../src/index.css';
+import '../docs/internal-components/ImageGallery/responsive.css';
 import pic1 from '../assets/Images-For-Testimonials/pic1.webp';
 import pic2 from '../assets/Images-For-Testimonials/pic2.webp';
 import pic3 from '../assets/Images-For-Testimonials/pic3.webp';
@@ -15,20 +16,75 @@ import pic11 from '../assets/Images-For-Testimonials/pic11.webp';
 import pic12 from '../assets/Images-For-Testimonials/pic12.webp';
 
 const testimonialsTop = [
-  { img: pic1, text: 'So impressed with the quality!', name: 'Emily R.', title: 'Marketing Lead' },
-  { img: pic2, text: 'Couldn’t be happier!', name: 'Jordan M.', title: 'UI/UX Designer' },
-  { img: pic3, text: 'Really smooth experience.', name: 'Liam B.', title: 'CTO' },
-  { img: pic4, text: 'Fantastic support!', name: 'Sophie T.', title: 'Product Manager' },
-  { img: pic5, text: 'Loved working with the team.', name: 'Chris D.', title: 'Developer Advocate' },
-  { img: pic6, text: 'Five stars all the way!', name: 'Mia W.', title: 'Entrepreneur' },
+  {
+    img: pic1,
+    text: 'So impressed with the quality!',
+    name: 'Emily R.',
+    title: 'Marketing Lead',
+  },
+  {
+    img: pic2,
+    text: 'Couldn’t be happier!',
+    name: 'Jordan M.',
+    title: 'UI/UX Designer',
+  },
+  {
+    img: pic3,
+    text: 'Really smooth experience.',
+    name: 'Liam B.',
+    title: 'CTO',
+  },
+  {
+    img: pic4,
+    text: 'Fantastic support!',
+    name: 'Sophie T.',
+    title: 'Product Manager',
+  },
+  {
+    img: pic5,
+    text: 'Loved working with the team.',
+    name: 'Chris D.',
+    title: 'Developer Advocate',
+  },
+  {
+    img: pic6,
+    text: 'Five stars all the way!',
+    name: 'Mia W.',
+    title: 'Entrepreneur',
+  },
 ];
 
 const testimonialsBottom = [
-  { img: pic7, text: 'Highly recommend!', name: 'Jake L.', title: 'Software Engineer' },
-  { img: pic8, text: 'Beautiful design & UX.', name: 'Ava K.', title: 'Creative Director' },
-  { img: pic9, text: 'Easy and intuitive!', name: 'Ethan G.', title: 'Data Analyst' },
-  { img: pic10, text: 'Top-notch service.', name: 'Grace S.', title: 'HR Manager' },
-  { img: pic11, text: 'Exceeded expectations!', name: 'Noah F.', title: 'Operations Lead' },
+  {
+    img: pic7,
+    text: 'Highly recommend!',
+    name: 'Jake L.',
+    title: 'Software Engineer',
+  },
+  {
+    img: pic8,
+    text: 'Beautiful design & UX.',
+    name: 'Ava K.',
+    title: 'Creative Director',
+  },
+  {
+    img: pic9,
+    text: 'Easy and intuitive!',
+    name: 'Ethan G.',
+    title: 'Data Analyst',
+  },
+  {
+    img: pic10,
+    text: 'Top-notch service.',
+    name: 'Grace S.',
+    title: 'HR Manager',
+  },
+  {
+    img: pic11,
+    text: 'Exceeded expectations!',
+    name: 'Noah F.',
+    title: 'Operations Lead',
+  },
   { img: pic12, text: 'Will use again!', name: 'Zoe H.', title: 'Founder' },
 ];
 
@@ -75,16 +131,25 @@ const HomeTestimonials = () => {
       };
 
       const setDirection = (container, width) => {
-        if (getComputedStyle(container).getPropertyValue('--direction') === '-1') {
+        if (
+          getComputedStyle(container).getPropertyValue('--direction') === '-1'
+        ) {
           container.style.marginLeft = `-${width}px`;
         }
       };
 
       const setPause = (container) => {
-        const pauseVar = window.innerWidth > 767 ? '--pause-on-hover' : '--pause-on-hover-mobile';
+        const pauseVar =
+          window.innerWidth > 767
+            ? '--pause-on-hover'
+            : '--pause-on-hover-mobile';
         const shouldPause =
-          getComputedStyle(container).getPropertyValue(pauseVar).trim() === 'true';
-        container.style.setProperty('--poh', shouldPause ? 'paused' : 'running');
+          getComputedStyle(container).getPropertyValue(pauseVar).trim() ===
+          'true';
+        container.style.setProperty(
+          '--poh',
+          shouldPause ? 'paused' : 'running',
+        );
       };
 
       const update = () => {
@@ -110,9 +175,13 @@ const HomeTestimonials = () => {
   }, []);
 
   const renderSlider = (testimonials, direction, ref) => (
-    <div className="swing-slider-wrapper relative overflow-hidden">
+    <div
+      className={`relative overflow-hidden ${
+        darkMode ? 'swing-slider-wrapper-dark' : 'swing-slider-wrapper-light'
+      }`}
+    >
       <div
-        className="swing-scrolling-image"
+        className='swing-scrolling-image'
         ref={ref}
         style={{
           '--direction': direction,
@@ -120,36 +189,35 @@ const HomeTestimonials = () => {
           '--pause-on-hover': 'false',
         }}
       >
-        <div className="slider-container gap-4 p-5 sm:gap-6 md:gap-8">
+        <div className='slider-container gap-4 p-3 sm:gap-6 md:gap-4'>
           {testimonials.map((item, index) => (
-            <div
-              className="swing-slider-item w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px]"
-              key={index}
-            >
-              <div className="flex flex-col sm:flex-row bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl overflow-hidden shadow-lg h-full">
-                <div className="w-full sm:w-1/2 h-40 sm:h-auto">
+            <div className='swing-slider-item' key={index}>
+              <div className='flex flex-row bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl overflow-hidden w-[310px] sm:w-[460px] md:w-[490px] lg:w-[400px] shadow-lg h-full'>
+                <div className='w-1/2 h-full'>
                   <img
                     src={item.img}
                     alt={item.name}
-                    className="h-full w-full object-cover"
+                    className='h-full w-full object-cover'
                   />
                 </div>
-                <div className="w-full sm:w-2/3 md:w-3/4 p-3 md:p-4 text-white flex flex-col justify-center">
-                  <div className="flex gap-1 star-rating">
+                <div className='w-2/3 md:w-3/4 p-3 md:p-4 text-white flex flex-col justify-center'>
+                  <div className='flex gap-1 star-rating'>
                     {Array.from({ length: 5 }).map((_, i) => (
                       <i
                         key={i}
-                        className="ri-star-fill text-yellow-400 text-sm md:text-base lg:text-xl"
+                        className='ri-star-fill text-yellow-400 text-sm md:text-base lg:text-xl'
                       />
                     ))}
                   </div>
-                  <p className="text-gray-200 text-xs sm:text-sm md:text-base line-clamp-3 mt-1 md:mt-2">
+                  <p className='text-gray-200 text-xs sm:text-sm md:text-base line-clamp-3 mt-1 md:mt-2'>
                     {item.text}
                   </p>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold mt-1 md:mt-2">
+                  <h3 className='text-sm sm:text-base md:text-lg font-bold mt-1 md:mt-2'>
                     {item.name}
                   </h3>
-                  <p className="text-gray-400 text-xs sm:text-sm">{item.title}</p>
+                  <p className='text-gray-400 text-xs sm:text-sm'>
+                    {item.title}
+                  </p>
                 </div>
               </div>
             </div>
@@ -165,7 +233,7 @@ const HomeTestimonials = () => {
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-white text-black'
-      } overflow-x-hidden space-y-10`}
+      } overflow-x-hidden`}
     >
       <div className='text-center mb-12'>
         <span className='swing-ocean-gradient-animate hover:swing-ocean-gradient-animate text-white text-[14px] font-medium px-6 py-2 rounded-full inline-block mb-4'>
@@ -175,8 +243,8 @@ const HomeTestimonials = () => {
           Built on Top of Tailwind CSS
         </h2>
         <p className='text-lg max-w-3xl mx-auto'>
-          We provide our own pre-built component classes—just layer them on
-          top of your Tailwind setup. Here's an example:
+          We provide our own pre-built component classes—just layer them on top
+          of your Tailwind setup. Here's an example:
         </p>
       </div>
       {renderSlider(testimonialsTop, 1, topRef)}
@@ -186,4 +254,3 @@ const HomeTestimonials = () => {
 };
 
 export default HomeTestimonials;
-
