@@ -4,6 +4,7 @@ import HoverAndCopyBlock from '../../components/HoverAndCopyBlock/hoverAndCopyBl
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import './style.css';
 import '../TextGradients/style.css';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 
 const gradients = [
@@ -225,6 +226,7 @@ const GradientGrid = () => {
           </div>
         </div>
       </div>
+      <BottomFooter/>
     </main>
   );
 };

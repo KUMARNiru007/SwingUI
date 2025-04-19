@@ -125,6 +125,9 @@ function Navbar() {
               Home
             </Link>
           )}
+        
+      
+      
 
           {isLandingPage && (
             <div className='group relative'>
@@ -266,8 +269,12 @@ function Navbar() {
               </div>
             </div>
           )}
+              
+            <Link to='/prebuilt-template' className='hover:text-[var(--dark-nav-hover)]'>Prebuilt Template</Link>
+            <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>About</Link>
+          
 
-          {!isLandingPage && (
+          {/* {!isLandingPage && (
             <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
               About
             </Link>
@@ -275,12 +282,12 @@ function Navbar() {
 
           {!isLandingPage && (
             <Link
-              to='/pre-built-template'
+              to='/prebuilt-template'
               className='hover:text-[var(--dark-nav-hover)]'
             >
               Pre-built Templates
             </Link>
-          )}
+          )} */}
         </div>
 
         <div className='px-4 h-[20px] border-e-[1px] border-[var(--light-bg)] content-[""] opacity-10'></div>
@@ -427,6 +434,7 @@ function Navbar() {
                 ))}
               </div>
             </div>
+            
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import Form from './Form';
 import Sidebar from '../components/Sidebar';
 import { Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import About from '../docs/About/About';
+import AboutUs from '../pages/AboutUs';
 import PreBuiltTemplate from '../docs/PrelBuiltTemplate/PreBuiltTemplate';
 
 const Layout = () => {
@@ -16,7 +16,7 @@ const Layout = () => {
   const location = useLocation();
   const { darkMode } = useTheme();
 
-  const noSidebar = ['/', '/about', '/pre-built-template'];
+  const noSidebar = ['/', '/about', '/prebuilt-template'];
   const showSidebar = !noSidebar.includes(location.pathname);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -89,9 +89,9 @@ const Layout = () => {
             >
               <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/about' element={<About />} />
+                <Route path='/about' element={<AboutUs />} />
                 <Route
-                  path='/pre-built-template'
+                  path='/prebuilt-template'
                   element={<PreBuiltTemplate />}
                 />
                 <Route path='/docs/*' element={<Docs />} />

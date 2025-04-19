@@ -4,6 +4,7 @@ import Animatedgradients from './AnimatedgradientData.js';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import './style.css';
 import '../TextGradients/style.css';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 const AnimatedGradientGrid = () => {
   const { darkMode } = useTheme();
@@ -51,13 +52,14 @@ const AnimatedGradientGrid = () => {
   ];
 
   return (
+    <>
     <main
       className={`w-full transition-colors duration-300 ${
         darkMode
-          ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-          : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
-    >
+        ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
+        : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+        }`}
+        >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
         <div className='flex flex-col items-start'>
          
@@ -90,7 +92,7 @@ const AnimatedGradientGrid = () => {
               <table
                 className={`w-full border-collapse rounded-lg overflow-hidden ${
                   darkMode ? 'bg-gray-800' : 'bg-gray-50'
-                }`}
+                  }`}
               >
                 <thead>
                   <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
@@ -105,11 +107,11 @@ const AnimatedGradientGrid = () => {
                 <tbody>
                   {propertiesData.map((item, index) => (
                     <tr
-                      key={index}
+                    key={index}
                       className={`border-t ${
                         darkMode ? 'border-gray-700' : 'border-gray-200'
                       }`}
-                    >
+                      >
                       <td className='py-3 px-4'>
                         <code
                           className={`px-2 py-1 rounded text-sm ${
@@ -131,7 +133,7 @@ const AnimatedGradientGrid = () => {
                 darkMode
                   ? 'border-gray-700 opacity-30'
                   : 'border-gray-300 opacity-50'
-              }`}
+                  }`}
             />
 
        
@@ -157,11 +159,11 @@ const AnimatedGradientGrid = () => {
                 <tbody>
                   {implementationData.map((item, index) => (
                     <tr
-                      key={index}
-                      className={`border-t ${
+                    key={index}
+                    className={`border-t ${
                         darkMode ? 'border-gray-700' : 'border-gray-200'
-                      }`}
-                    >
+                        }`}
+                        >
                       <td className='py-3 px-4'>
                         <code
                           className={`px-2 py-1 rounded text-sm ${
@@ -189,14 +191,17 @@ const AnimatedGradientGrid = () => {
             <hr
               className={`my-10 border-t ${
                 darkMode
-                  ? 'border-gray-700 opacity-30'
-                  : 'border-gray-300 opacity-50'
+                ? 'border-gray-700 opacity-30'
+                : 'border-gray-300 opacity-50'
               }`}
             />
           </div>
         </div>
       </div>
+      
     </main>
+    <BottomFooter/>
+                </>
   );
 };
 
