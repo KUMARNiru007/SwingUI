@@ -269,10 +269,10 @@ function Navbar() {
               </div>
             </div>
           )}
-              <>
+              
             <Link to='/prebuilt-template' className='hover:text-[var(--dark-nav-hover)]'>Prebuilt Template</Link>
             <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>About</Link>
-          </>
+          
 
           {/* {!isLandingPage && (
             <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
@@ -434,6 +434,7 @@ function Navbar() {
                 ))}
               </div>
             </div>
+            
           </div>
         </div>
       </div>

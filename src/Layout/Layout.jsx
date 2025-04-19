@@ -16,7 +16,7 @@ const Layout = () => {
   const location = useLocation();
   const { darkMode } = useTheme();
 
-  const noSidebar = ['/', '/about', '/pre-built-template'];
+  const noSidebar = ['/', '/about', '/prebuilt-template'];
   const showSidebar = !noSidebar.includes(location.pathname);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
