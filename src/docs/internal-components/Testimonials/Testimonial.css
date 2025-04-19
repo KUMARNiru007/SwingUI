@@ -16,7 +16,7 @@
   animation: sliding calc(var(--est-speed, 10) * 1s * 50 / var(--speed)) linear
     infinite;
   display: flex;
-  /* gap: 0.5rem; */
+  gap: 0.5rem;
 }
 
 .swing-slider-wrapper-dark {
@@ -91,7 +91,7 @@
   transform: translateZ(0);
   transition: transform 0.3s ease-in-out;
   flex-shrink: 0;
-  /* width: 350px; */
+  width: 350px;
   height: 180px;
   margin: 0 2px;
   object-fit: contain;
