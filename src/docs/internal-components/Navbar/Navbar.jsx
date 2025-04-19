@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 
 const Navbar = () => {
   const [showCode, setShowCode] = useState(false);
@@ -200,6 +202,7 @@ const Navbar = () => {
           darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
         }`}
       />
+ <BottomFooter/>
     </div>
   );
 };

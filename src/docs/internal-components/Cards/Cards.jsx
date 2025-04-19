@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 import '../../SwingKit/Gradients/style.css';
 import './style.css';
 
@@ -332,6 +333,7 @@ const CardsDemo = () => {
           </div>
         )}
       </div>
+ <BottomFooter/>
     </div>
   );
 };

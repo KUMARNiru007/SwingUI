@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import './Pricing.css';
 
 function Pricing() {
@@ -178,6 +180,7 @@ function Pricing() {
           </div>
         )}
       </div>
+ <BottomFooter/>
     </div>
   );
 }

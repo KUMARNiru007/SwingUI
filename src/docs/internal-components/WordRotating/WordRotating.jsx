@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 
 const RotatingWordsComponent = ({ rotatingWords = ['Like !', 'Love !', 'are Proud Of !'] }) => {
   const { darkMode } = useTheme();
@@ -150,6 +152,7 @@ ${rotatingWords
     }
   }
       `}</style>
+ <BottomFooter/>
     </div>
   );
 };

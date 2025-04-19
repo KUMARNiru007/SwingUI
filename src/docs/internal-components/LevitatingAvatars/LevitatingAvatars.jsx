@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 import pic1 from '../../../assets/Images-for-avatar/pic1.webp';
 import pic2 from '../../../assets/Images-for-avatar/pic2.webp';
@@ -143,6 +144,7 @@ function LevitatingAvatars() {
         }`}
       />
       </div>
+ <BottomFooter/>
     </div>
   );
 }

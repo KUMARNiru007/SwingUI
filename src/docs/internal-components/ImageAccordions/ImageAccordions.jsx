@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import htmlCssCode from './ImageAccordions';
 
 const items = [
@@ -90,6 +92,7 @@ const ImageAccordions = () => {
           </div>
         )}
       </div>
+ <BottomFooter/>
     </div>
   );
 };

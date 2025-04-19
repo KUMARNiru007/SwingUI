@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import './Feature.css';
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
@@ -416,6 +418,7 @@ function Feature() {
           </table>
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 }
