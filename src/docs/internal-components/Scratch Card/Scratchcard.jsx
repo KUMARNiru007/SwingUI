@@ -3,6 +3,7 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import './responsive.css';
+import logo from '../../../assets/SwingUI.webp'
 
 function Scratchcard() {
   const [showCode, setShowCode] = useState(false);
@@ -13,8 +14,10 @@ function Scratchcard() {
       class="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform ">
       <div
         class="absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient">
-        <div class="text-8xl animate-pop">🏆</div>
-      </div>
+          <div className='text-8xl'>
+          <img src={logo} className="h-20" alt="SwingUI Logo" />
+          </div>
+        </div>
       <canvas id="scratchCanvas" class="absolute inset-0 z-10"></canvas>
     </div>`;
 
@@ -72,7 +75,7 @@ function Scratchcard() {
         const pos = getPosition(e);
         ctx.globalCompositeOperation = 'destination-out';
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 20, 0, 2 * Math.PI);
+        ctx.arc(pos.x, pos.y, 30, 0, 2 * Math.PI);
         ctx.fill();
 
         checkScratchPercentage();
@@ -196,9 +199,10 @@ function Scratchcard() {
         ref={cardRef}
         className='relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl transition-transform swing-ocean-gradient'
       >
-        <div className='absolute inset-0 z-0 flex items-center justify-center swing-peach-gradient'>
+        <div className='absolute inset-0 z-0 flex items-center justify-center swing-ocean-gradient'>
           <div className='text-8xl'>
-          <img src="/logo.webp" class="  h-10 " alt="SwingUI Logo" />
+          <img src={logo} className="h-20" alt="SwingUI Logo" />
+
           </div>
         </div>
 
@@ -229,8 +233,8 @@ function Scratchcard() {
   };
 
   return (
-    <div className='scratch-card-width w-full max-w-5xl sm:mx-auto mt-8 py-14 px-6 sm:px-4 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold pb-6'>Scratch Card </h2>
+    <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Scratch Card </h1>
       <p className='mb-10 sm:mb-16'>
         The Scratch Card component simulates a real-world scratch-off card
         experience using web technologies. It allows users to "scratch" a

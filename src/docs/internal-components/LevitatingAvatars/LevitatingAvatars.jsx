@@ -3,10 +3,20 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 
+import pic1 from '../../../assets/Images-for-avatar/pic1.webp';
+import pic2 from '../../../assets/Images-for-avatar/pic2.webp';
+import pic3 from '../../../assets/Images-for-avatar/pic3.webp';
+import pic4 from '../../../assets/Images-for-avatar/pic4.webp';
+import pic5 from '../../../assets/Images-for-avatar/pic5.webp';
+import pic6 from '../../../assets/Images-for-avatar/pic6.webp';
+import pic7 from '../../../assets/Images-for-avatar/pic7.webp';
+import pic8 from '../../../assets/Images-for-avatar/pic8.webp';
+import pic9 from '../../../assets/Images-for-avatar/pic9.webp';
+
 function LevitatingAvatars() {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
-  const containerRef = useRef(null); // ref for mounting check
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const center = containerRef.current?.querySelector('.center');
@@ -69,24 +79,28 @@ function LevitatingAvatars() {
       window.removeEventListener('resize', updateSizes);
       animationRefs.forEach(cancelAnimationFrame);
     };
-  }, [showCode, darkMode]);
+  });
 
-  const htmlCssCode = `<div class="bg-white flex justify-center items-center h-screen overflow-hidden">
+  // ✅ Create dynamic HTML string with actual image paths
+  const htmlCssCode = `
+<div class="bg-white flex justify-center items-center h-screen overflow-hidden">
   <div class="center relative w-1/4 h-1/4 max-w-xs max-h-xs md:w-1/3 md:h-1/3 lg:w-1/2 lg:h-1/2">
-    <!-- Outer Orbit Ring -->
-    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.5" data-speed="0.6" data-direction="clockwise">
-      <img src="https://img.icons8.com/ios-filled/50/google-drive--v1.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/whatsapp.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/notion.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/twitter.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
+    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.5" data-speed="0.3" data-direction="clockwise">
+      <img src="${pic1}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic2}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic3}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic4}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
     </div>
-    <!-- Inner Orbit Ring -->
-    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.83" data-speed="0.8" data-direction="anticlockwise">
-      <img src="https://img.icons8.com/ios-filled/50/chatgpt.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/twitter.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/whatsapp.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/notion.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
-      <img src="https://img.icons8.com/ios-filled/50/google-drive--v1.png" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon" />
+    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.83" data-speed="0.3" data-direction="anticlockwise">
+      <img src="${pic5}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic6}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic7}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic8}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+      <img src="${pic9}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
+    </div>
+    <!-- Centered Logo -->
+   <div class="absolute text-8x1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <img src="/logo.webp" class="h-20 object-contain" alt="SwingUI Logo" />
     </div>
   </div>
 </div>`;
@@ -99,8 +113,8 @@ function LevitatingAvatars() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2 pb-4">Features</h2>
+      <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2 pb-4">Levitating Avatars</h2>
         <p className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           The LevitatingAvatars component displays orbiting avatars using pure HTML/CSS and JavaScript-style animation via React hooks. The animation is smooth and fully responsive.
         </p>
@@ -124,12 +138,10 @@ function LevitatingAvatars() {
         )}
 
         <hr
-          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
-            darkMode
-              ? 'border-gray-700 opacity-30'
-              : 'border-gray-300 opacity-50'
-          }`}
-        />
+        className={`my-10 border-t ${
+          darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
+        }`}
+      />
       </div>
     </div>
   );

@@ -40,13 +40,13 @@ const ImageAccordions = () => {
 
   return (
     <div
-      className={`w-full px-2 py-6 transition-colors duration-300 ${
+      className={`w-full  transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+ <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <h2 className="text-3xl sm:text-4xl font-bold mb-2">Image Accordions</h2>
         <p className="mb-10 sm:mb-16">
           This image accordion showcases a smooth hover effect where images expand upon hover,
@@ -56,14 +56,14 @@ const ImageAccordions = () => {
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode ? (
-          <div className="flex justify-center items-center h-[600px] bg-gradient-to-b from-gray-100 to-blue-100 rounded-lg shadow-md">
+          <div className="flex justify-center items-center h-[300px] sm:h-[450px] md:h-[400px] lg:h-[600px] bg-gradient-to-b from-gray-100 to-blue-100 rounded-lg shadow-md">
             <div className="relative overflow-hidden rounded-[20px] shadow-lg flex">
               <div className="flex gap-1 w-fit mx-auto">
                 {items.map((item, i) => (
                   <div
                     key={i}
-                    className={`relative h-[400px] rounded-xl overflow-hidden transition-all duration-500 ease-in-out ${
-                      activeIndex === i ? 'w-[450px]' : 'w-[50px]'
+                    className={`relative h-[200px] sm:h-[300px] md:h-[250px] lg:h-[400px] rounded-xl overflow-hidden transition-all duration-500 ease-in-out ${
+                      activeIndex === i ? 'w-[150px] sm:w-[350px] md:w-[300px]  lg:w-[400px]' : 'w-[30px] sm:w-[40px] md:w-[36px] lg:w-[50px]'
                     }`}
                     onMouseEnter={() => setActiveIndex(i)}
                     onClick={() => setActiveIndex(i)}
@@ -74,7 +74,7 @@ const ImageAccordions = () => {
                       className="w-full h-full object-cover cursor-pointer"
                     />
                     {activeIndex === i && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent p-4 flex flex-col justify-end text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pl-3 pb-3 sm:pl-5 sm:pb-6 md:pl-6 md:pb-8 lg:pl-8 lg:pb-10 flex flex-col justify-end text-white">
                         <h2 className="text-2xl font-semibold">{item.title}</h2>
                         <p className="mt-2 text-sm">{item.description}</p>
                       </div>

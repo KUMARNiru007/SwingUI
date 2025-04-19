@@ -21,15 +21,16 @@ const sections = [
   {
     title: 'Components',
     items: [
-      // { to: '/components/accordion', label: 'Accordions' },
+      { to: '/components/accordion', label: 'Accordions' },
       { to: '/components/bento-grid', label: 'Bento Grid' },
       { to: '/components/button', label: 'Buttons' },
       { to: '/components/card', label: 'Cards' },
       { to: '/components/feature', label: 'Feature' },
-      { to: '/components/image-gallery', label: 'Image Gallery' },
-      { to: '/components/LevitatingAvatars', label: 'Levitating Avatars' },
       { to: '/components/image-accordion', label: 'Image Accordion' },
-      { to: '/components/word-rotating', label: 'Word Rotating' },
+      { to: '/components/image-gallery', label: 'Image Gallery' },
+
+      { to: '/components/LevitatingAvatars', label: 'Levitating Avatars' },
+
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/preloader', label: 'Preloader' },
       { to: '/components/pricing', label: 'Pricing' },
@@ -45,6 +46,8 @@ const sections = [
       { to: '/components/spotlight-text', label: 'Spotlight Text' },
       { to: '/components/tabs', label: 'Tabs' },
       { to: '/components/testimonials', label: 'Testimonials' },
+
+      { to: '/components/word-rotating', label: 'Word Rotating' },
     ],
   },
   // {
