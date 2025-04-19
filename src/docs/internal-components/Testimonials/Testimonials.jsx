@@ -6,6 +6,7 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import Table from '../../components/TableComponent/Table.jsx';
 
 import BottomFooter from '../../../components/BottomFooter.jsx';
+import "./Testimonial.js"
 
 
 import './Testimonial.css';
