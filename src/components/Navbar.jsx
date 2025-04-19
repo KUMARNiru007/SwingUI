@@ -35,6 +35,7 @@ function Navbar() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
   const isAboutPage = location.pathname === '/about';
+  const isTemplartePage = location.pathname === '/prebuilt-template';
 
   // All components in alphabetical order
   const allComponents = [
@@ -102,14 +103,14 @@ function Navbar() {
   return (
     <nav
       className={`navbar fixed z-50 mb-34 w-full px-6 py-4 flex items-center justify-between transition-all duration-300 ${
-        scrolled || !isLandingPage || !isAboutPage
+        scrolled || !isLandingPage
           ? darkMode
             ? 'bg-[var(--dark-navbar-bg)] shadow-[var(--shadow-default)]'
             : 'bg-[var(--light-navbar-bg)] shadow-[var(--shadow-default)]'
           : 'bg-transparent backdrop-filter-none'
-      } ${
+      }  ${
         darkMode ? 'text-[var(--color-text-dark)]' : 'text-[var(--color-text)]'
-      }`}
+      } `}
     >
       <Link to='/'>
         <img src={logo} alt='Logo' className='w-[125px] h-auto' />
@@ -127,7 +128,7 @@ function Navbar() {
             </Link>
           )}
 
-          {(isLandingPage || isAboutPage) && (
+          {(isLandingPage || isAboutPage || isTemplartePage) && (
             <div className='group relative'>
               <button
                 className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
@@ -196,7 +197,7 @@ function Navbar() {
             </div>
           )}
 
-          {(isLandingPage || isAboutPage) && (
+          {(isLandingPage || isAboutPage || isTemplartePage) && (
             <div className='group relative'>
               <button
                 className='flex items-center cursor-pointer hover:text-[var(--dark-nav-hover)]'
