@@ -229,6 +229,7 @@ const AccordionDemo = () => {
         )}
       </div>
     </div>
+    
   );
 };
 
