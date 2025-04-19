@@ -4,6 +4,8 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import Table from '../../components/TableComponent/Table.jsx'; // Import the new Table component
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import buttonData from './ButtonData.js';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
@@ -203,6 +205,7 @@ const Button = () => {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 };

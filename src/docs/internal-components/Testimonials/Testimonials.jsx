@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
 import Table from '../../components/TableComponent/Table.jsx';
+
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
+
 import './Testimonial.css';
 import pic1 from '../../../assets/Images-For-Testimonials/pic1.webp';
 import pic2 from '../../../assets/Images-For-Testimonials/pic2.webp';
@@ -547,6 +552,7 @@ function Testimonial() {
           />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 }

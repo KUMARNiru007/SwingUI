@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
 import Table from '../../components/TableComponent/Table.jsx';
+
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import '../../SwingKit/Gradients/style.css';
 import './style.css';
 
@@ -439,6 +443,7 @@ const Cards = () => {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 };

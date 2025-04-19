@@ -3,6 +3,8 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import Table from '../../components/TableComponent/Table.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import './style.css';
 
 function SocialShare() {
@@ -745,6 +747,7 @@ function SocialShare() {
           />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 }

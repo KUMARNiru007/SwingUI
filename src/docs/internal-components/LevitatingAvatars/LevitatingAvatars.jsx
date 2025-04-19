@@ -3,6 +3,7 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import Table from '../../components/TableComponent/Table.jsx'; // Import the Table component
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 import pic1 from '../../../assets/Images-for-avatar/pic1.webp';
 import pic2 from '../../../assets/Images-for-avatar/pic2.webp';
@@ -228,6 +229,7 @@ function LevitatingAvatars() {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 }

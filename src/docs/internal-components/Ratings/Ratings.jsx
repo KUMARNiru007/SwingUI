@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
 import Table from '../../components/TableComponent/Table.jsx'; // Import the Table component
 import './Ratings.css';
+
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
+import './Ratings.css'
+
 
 const Rating = () => {
   const [showCode, setShowCode] = useState(false);
@@ -214,6 +220,7 @@ const Rating = () => {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 };

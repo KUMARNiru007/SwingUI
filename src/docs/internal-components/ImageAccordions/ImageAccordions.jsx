@@ -3,7 +3,12 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
 import Table from '../../components/TableComponent/Table.jsx'; // Import the Table component
+
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
+
 import htmlCssCode from './ImageAccordions';
 
 const items = [
@@ -164,6 +169,7 @@ const ImageAccordions = () => {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 };

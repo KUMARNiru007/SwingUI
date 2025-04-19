@@ -3,6 +3,8 @@ import { Clipboard, ClipboardCheck } from 'lucide-react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import TabsData from './TabsData.js';
 import Table from '../../components/TableComponent/Table.jsx';
 import '../../SwingKit/AnimatedGradients/style.css';
@@ -227,6 +229,7 @@ const Tabs = () => {
         <div className='mb-12'>
           <Table data={tabPropertiesData} columns={tabPropertiesColumns} />
         </div>
+ <BottomFooter/>
       </div>
     </div>
   );

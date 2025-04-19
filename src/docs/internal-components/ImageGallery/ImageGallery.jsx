@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+
 import Table from '../../components/TableComponent/Table.jsx'; // Import Table component
+
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 import './responsive.css';
 
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
@@ -338,6 +342,7 @@ function ImageGallery() {
           <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 }

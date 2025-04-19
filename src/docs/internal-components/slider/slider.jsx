@@ -3,6 +3,8 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import Table from '../../components/TableComponent/Table.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import BottomFooter from '../../../components/BottomFooter.jsx';
+
 
 const VerticalSliderDemo = () => {
   const [showCode, setShowCode] = useState(false);
@@ -340,6 +342,7 @@ const VerticalSliderDemo = () => {
           />
         </div>
       </div>
+ <BottomFooter/>
     </div>
   );
 };
