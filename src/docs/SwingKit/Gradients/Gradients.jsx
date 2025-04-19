@@ -113,6 +113,15 @@ const GradientGrid = () => {
             </div>
 
           
+            <hr
+              className={`my-10 border-t ${
+                darkMode
+                  ? 'border-gray-700 opacity-30'
+                  : 'border-gray-300 opacity-50'
+                  }`}
+            />
+            
+            
             <h2 className='text-xl sm:text-2xl font-semibold mb-4'>
               Properties
             </h2>

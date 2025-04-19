@@ -59,8 +59,7 @@ const BentoGrid = () => {
 
   <div class="bg-zinc-800 border border-zinc-700 p-3 sm:p-6 rounded-xl col-span-1 sm:col-span-2 lg:col-span-4 flex items-center justify-center">
     <p class="text-zinc-300 text-sm sm:text-base lg:text-lg text-center">
-      <span class="font-bold text-white">SwingUi is crafted with performance and creativity in mind.</span>
-      It offers flexible components using Tailwind CSS and animations that feel native.
+      <span class="font-bold text-white">Meet SwingUI—the UI library that ditches the bloat and complexity, delivering buttery-smooth, pure-native components that feel like cheating.
     </p>
   </div>
 
@@ -122,11 +121,9 @@ const BentoGrid = () => {
         <h2 className='text-3xl sm:text-3xl md:text-4xl font-bold pb-4'>
           Bento Grid
         </h2>
+        <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Grid Portal</h3>
         <p className='mb-6 sm:mb-10 lg:mb-16'>
-          This Bento grid layout demo showcases SwingUI's flexible grid system
-          with interactive elements. It features gradient backgrounds, tilt-zoom
-          effects on social icons, and responsive design that adapts beautifully
-          across all device sizes.
+        SwingUI's responsive component showcase presents your library's capabilities through an interactive grid layout with visual examples and key information sections.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />

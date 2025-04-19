@@ -295,7 +295,7 @@ function ImageGallery() {
           Image Gallery
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingFlow InfiniteScroller
+          Swing Flow Infinite Scroller
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's auto-scrolling gallery delivers dynamic visual storytelling

@@ -568,95 +568,95 @@ function SocialShare() {
     discord: '#5865f2',
   };
 
-  const socialSharePropertiesData = [
-    {
-      propertyName: 'Scaled Container',
-      defaultValue: '<div class="scale-150">',
-      description: 'Enlarges the SVG graphic by 1.5x scale.',
-    },
-    {
-      propertyName: 'SVG Element',
-      defaultValue: 'id="svg-id" class="mx-auto"',
-      description: 'Centers the SVG icon horizontally with auto margins.',
-    },
-    {
-      propertyName: 'Path Container Groups',
-      defaultValue: 'id="path-container-g-v1/v2/v3/v6"',
-      description:
-        'Unique group identifiers for each hexagonal structure path section.',
-    },
-    {
-      propertyName: 'Base Hexagon Sides',
-      defaultValue: '<rect fill="#3F454E" transform="matrix(...)">',
-      description:
-        'Dark grey parallelogram rectangles forming left and right slanting sides of each 3D hexagon.',
-    },
-    {
-      propertyName: 'Hexagon Depth Faces',
-      defaultValue: '<path fill="#414750" d="...">',
-      description:
-        'Creates the shaded back panel or depth layer of each hexagon.',
-    },
-    {
-      propertyName: 'Top Gradient Face',
-      defaultValue:
-        '<rect fill="url(#paintX_linear_67_353)" transform="matrix(...)">',
-      description:
-        'Top-facing face of the hexagon filled with a gradient for depth and lighting effect.',
-    },
-    {
-      propertyName: 'Stroke Overlay for Top Face',
-      defaultValue: '<rect stroke="#3C4149" …>',
-      description:
-        'Outline for the top face to emphasize the structure of the hexagon.',
-    },
-    {
-      propertyName: 'Inner Frame Border',
-      defaultValue:
-        '<rect stroke="#6B727C" stroke-width="0.5" rx="1.75" … id="line-container">',
-      description:
-        'Thin, rounded border on top face for visual enhancement or interactive element highlighting.',
-    },
-    {
-      propertyName: 'Clip Paths',
-      defaultValue: 'clip-path="url(#clipX_67_353)"',
-      description:
-        'Clipping definitions used to constrain the rendering of the SVG shapes within defined boundaries.',
-    },
-    {
-      propertyName: 'Hyperlink Wrapper',
-      defaultValue: '<a href="#"></a>',
-      description:
-        'Each SVG section is wrapped in an anchor tag for navigation or interaction, though it uses #, implying no action.',
-    },
-  ];
+  // const socialSharePropertiesData = [
+  //   {
+  //     propertyName: 'Scaled Container',
+  //     defaultValue: '<div class="scale-150">',
+  //     description: 'Enlarges the SVG graphic by 1.5x scale.',
+  //   },
+  //   {
+  //     propertyName: 'SVG Element',
+  //     defaultValue: 'id="svg-id" class="mx-auto"',
+  //     description: 'Centers the SVG icon horizontally with auto margins.',
+  //   },
+  //   {
+  //     propertyName: 'Path Container Groups',
+  //     defaultValue: 'id="path-container-g-v1/v2/v3/v6"',
+  //     description:
+  //       'Unique group identifiers for each hexagonal structure path section.',
+  //   },
+  //   {
+  //     propertyName: 'Base Hexagon Sides',
+  //     defaultValue: '<rect fill="#3F454E" transform="matrix(...)">',
+  //     description:
+  //       'Dark grey parallelogram rectangles forming left and right slanting sides of each 3D hexagon.',
+  //   },
+  //   {
+  //     propertyName: 'Hexagon Depth Faces',
+  //     defaultValue: '<path fill="#414750" d="...">',
+  //     description:
+  //       'Creates the shaded back panel or depth layer of each hexagon.',
+  //   },
+  //   {
+  //     propertyName: 'Top Gradient Face',
+  //     defaultValue:
+  //       '<rect fill="url(#paintX_linear_67_353)" transform="matrix(...)">',
+  //     description:
+  //       'Top-facing face of the hexagon filled with a gradient for depth and lighting effect.',
+  //   },
+  //   {
+  //     propertyName: 'Stroke Overlay for Top Face',
+  //     defaultValue: '<rect stroke="#3C4149" …>',
+  //     description:
+  //       'Outline for the top face to emphasize the structure of the hexagon.',
+  //   },
+  //   {
+  //     propertyName: 'Inner Frame Border',
+  //     defaultValue:
+  //       '<rect stroke="#6B727C" stroke-width="0.5" rx="1.75" … id="line-container">',
+  //     description:
+  //       'Thin, rounded border on top face for visual enhancement or interactive element highlighting.',
+  //   },
+  //   {
+  //     propertyName: 'Clip Paths',
+  //     defaultValue: 'clip-path="url(#clipX_67_353)"',
+  //     description:
+  //       'Clipping definitions used to constrain the rendering of the SVG shapes within defined boundaries.',
+  //   },
+  //   {
+  //     propertyName: 'Hyperlink Wrapper',
+  //     defaultValue: '<a href="#"></a>',
+  //     description:
+  //       'Each SVG section is wrapped in an anchor tag for navigation or interaction, though it uses #, implying no action.',
+  //   },
+  // ];
 
-  const socialSharePropertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Value / Class / Attribute',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // const socialSharePropertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Value / Class / Attribute',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   useEffect(() => {
     const root = document.documentElement;
@@ -698,7 +698,7 @@ function SocialShare() {
           Social Share
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingHive Interface
+          Swing Hive Interface
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's sophisticated hexagonal network component presents a
@@ -731,7 +731,7 @@ function SocialShare() {
           </div>
         )}
 
-        <hr
+        {/* <hr
           className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
             darkMode
               ? 'border-gray-700 opacity-30'
@@ -745,7 +745,7 @@ function SocialShare() {
             data={socialSharePropertiesData}
             columns={socialSharePropertiesColumns}
           />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>

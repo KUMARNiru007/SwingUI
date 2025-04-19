@@ -89,94 +89,94 @@ const Rating = () => {
 `;
 
   // Define properties data for the table
-  const propertiesData = [
-    {
-      propertyName: 'Wrapper',
-      defaultValue: 'swing-ratings',
-      description: 'Container for all emoji-based rating labels.',
-    },
-    {
-      propertyName: 'Rating label (emoji)',
-      defaultValue: 'angry, sad, ok, good, happy',
-      description:
-        'Each label corresponds to an emoji-based rating from 1 to 5.',
-    },
-    {
-      propertyName: 'Radio input',
-      defaultValue: 'type="radio" name="swing-ratings" value="1-5"',
-      description:
-        'Radio input elements for selecting a rating. The value indicates the score.',
-    },
-    {
-      propertyName: 'Default checked input',
-      defaultValue: 'checked (on value="4")',
-      description:
-        'Marks the "Good" rating as the default selected when the page loads.',
-    },
-    {
-      propertyName: 'Face wrapper',
-      defaultValue: '<div> inside each label',
-      description:
-        'Contains the SVG facial parts like eyes and mouth for each expression.',
-    },
-    {
-      propertyName: 'Eye (left & right)',
-      defaultValue: 'eye left, eye right',
-      description:
-        'Reusable SVG symbol for eye graphic, included twice in most expressions.',
-    },
-    {
-      propertyName: 'Mouth',
-      defaultValue: 'mouth',
-      description:
-        'Reusable SVG symbol for mouth graphic, omitted in "ok" and "happy" labels.',
-    },
-    {
-      propertyName: 'SVG <symbol>: Eye',
-      defaultValue: 'id="eye"',
-      description:
-        'Defines the eye shape used in each face, reused via <use xlink:href="#eye">.',
-    },
-    {
-      propertyName: 'SVG <symbol>: Mouth',
-      defaultValue: 'id="mouth"',
-      description:
-        'Defines the mouth shape used in expressions, reused similarly.',
-    },
-    {
-      propertyName: 'Hidden SVG symbols',
-      defaultValue: 'style="display: none;"',
-      description: 'SVG definitions are hidden but reusable in the DOM.',
-    },
-  ];
+  // const propertiesData = [
+  //   {
+  //     propertyName: 'Wrapper',
+  //     defaultValue: 'swing-ratings',
+  //     description: 'Container for all emoji-based rating labels.',
+  //   },
+  //   {
+  //     propertyName: 'Rating label (emoji)',
+  //     defaultValue: 'angry, sad, ok, good, happy',
+  //     description:
+  //       'Each label corresponds to an emoji-based rating from 1 to 5.',
+  //   },
+  //   {
+  //     propertyName: 'Radio input',
+  //     defaultValue: 'type="radio" name="swing-ratings" value="1-5"',
+  //     description:
+  //       'Radio input elements for selecting a rating. The value indicates the score.',
+  //   },
+  //   {
+  //     propertyName: 'Default checked input',
+  //     defaultValue: 'checked (on value="4")',
+  //     description:
+  //       'Marks the "Good" rating as the default selected when the page loads.',
+  //   },
+  //   {
+  //     propertyName: 'Face wrapper',
+  //     defaultValue: '<div> inside each label',
+  //     description:
+  //       'Contains the SVG facial parts like eyes and mouth for each expression.',
+  //   },
+  //   {
+  //     propertyName: 'Eye (left & right)',
+  //     defaultValue: 'eye left, eye right',
+  //     description:
+  //       'Reusable SVG symbol for eye graphic, included twice in most expressions.',
+  //   },
+  //   {
+  //     propertyName: 'Mouth',
+  //     defaultValue: 'mouth',
+  //     description:
+  //       'Reusable SVG symbol for mouth graphic, omitted in "ok" and "happy" labels.',
+  //   },
+  //   {
+  //     propertyName: 'SVG <symbol>: Eye',
+  //     defaultValue: 'id="eye"',
+  //     description:
+  //       'Defines the eye shape used in each face, reused via <use xlink:href="#eye">.',
+  //   },
+  //   {
+  //     propertyName: 'SVG <symbol>: Mouth',
+  //     defaultValue: 'id="mouth"',
+  //     description:
+  //       'Defines the mouth shape used in expressions, reused similarly.',
+  //   },
+  //   {
+  //     propertyName: 'Hidden SVG symbols',
+  //     defaultValue: 'style="display: none;"',
+  //     description: 'SVG definitions are hidden but reusable in the DOM.',
+  //   },
+  // ];
 
-  // Define table columns configuration
-  const propertiesColumns = [
-    {
-      key: 'propertyName',
-      title: 'Property Name',
-      width: 'w-1/5',
-    },
-    {
-      key: 'defaultValue',
-      title: 'Value / Class / Attribute',
-      width: 'w-1/3',
-      render: (value) => (
-        <code
-          className={`px-2 py-1 rounded text-sm ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-          } inline-block min-w-full break-words`}
-        >
-          {value}
-        </code>
-      ),
-    },
-    {
-      key: 'description',
-      title: 'Description',
-      width: 'w-1/2',
-    },
-  ];
+  // // Define table columns configuration
+  // const propertiesColumns = [
+  //   {
+  //     key: 'propertyName',
+  //     title: 'Property Name',
+  //     width: 'w-1/5',
+  //   },
+  //   {
+  //     key: 'defaultValue',
+  //     title: 'Value / Class / Attribute',
+  //     width: 'w-1/3',
+  //     render: (value) => (
+  //       <code
+  //         className={`px-2 py-1 rounded text-sm ${
+  //           darkMode ? 'bg-gray-700' : 'bg-gray-200'
+  //         } inline-block min-w-full break-words`}
+  //       >
+  //         {value}
+  //       </code>
+  //     ),
+  //   },
+  //   {
+  //     key: 'description',
+  //     title: 'Description',
+  //     width: 'w-1/2',
+  //   },
+  // ];
 
   return (
     <div
@@ -191,7 +191,7 @@ const Rating = () => {
           Rating
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
-          SwingFeedback Faces
+          Swing Feedback Faces
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
           SwingUI's visual feedback system captures user sentiment through
@@ -213,12 +213,12 @@ const Rating = () => {
           </div>
         )}
 
-        <h2 className='text-xl sm:text-2xl font-semibold mb-4 mt-12'>
+        {/* <h2 className='text-xl sm:text-2xl font-semibold mb-4 mt-12'>
           Properties
         </h2>
         <div className='mb-12'>
           <Table data={propertiesData} columns={propertiesColumns} />
-        </div>
+        </div> */}
       </div>
  <BottomFooter/>
     </div>
