@@ -293,7 +293,7 @@ function Navbar() {
             to='/prebuilt-template'
             className='hover:text-[var(--dark-nav-hover)]'
           >
-            Prebuilt Template
+            Pre-built Template
           </Link>
           <Link to='/about' className='hover:text-[var(--dark-nav-hover)]'>
             About
