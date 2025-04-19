@@ -20,11 +20,10 @@ const Home = () => {
           : 'bg-[var(--light-navbar-bg)] text-[var(--color-text)]'
       }`}
     >
-      
-      <Hero/>
-       <StickyMessageBox />
+      <Hero />
+      {/* <StickyMessageBox /> */}
       <ComponentsFeaturesGallery />
-      <FeaturesSection /> 
+      <FeaturesSection />
       <HomeTestimonials />
       <Footer />
     </div>
