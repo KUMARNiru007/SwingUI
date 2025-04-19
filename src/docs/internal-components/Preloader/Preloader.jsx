@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
-
-import './style.css';
-
 import BottomFooter from '../../../components/BottomFooter.jsx';
 
-import "./style.css"
+import './style.css';
 
 function Preloader() {
   const [showCode, setShowCode] = useState(false);
@@ -54,38 +51,11 @@ function Preloader() {
           >
             {/* Render live preview */}
             <div
-
               className='w-full flex justify-center items-center '
               dangerouslySetInnerHTML={{ __html: htmlCssCode }}
             />
           </div>
         )}
-
-              key={`${darkMode}-${showCode}`}
-              className={`flex justify-center items-center ${
-                darkMode
-                  ? 'bg-[var(--light-bg)] text-[var(--color-text)]'
-                  : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-              }  bg-gray-200 dark:from-gray-800 dark:to-gray-700 py-5 sm:py-10 rounded-lg shadow-md`}
-            >
-              {/* Render live preview */}
-              <div
-                className='w-full flex justify-center items-center '
-                dangerouslySetInnerHTML={{ __html: htmlCssCode }}
-              />
-            </div>
-          )}
-  
-          {showCode && (
-            <div className='w-full overflow-x-auto my-4 rounded-xl'>
-              <CodeBlock language='html' code={htmlCssCode} />
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
 
         {showCode && (
           <div className='w-full overflow-x-auto my-4 rounded-xl'>
@@ -93,7 +63,7 @@ function Preloader() {
           </div>
         )}
       </div>
-       <BottomFooter/>
+ <BottomFooter/>
     </div>
   );
 }
