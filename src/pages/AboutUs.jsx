@@ -8,42 +8,183 @@ import "../docs/SwingKit/Gradients/style.css"
 import { useTheme } from "../context/ThemeContext"
 import darkimg from "../assets/Hero-assets/darkherobg.webp"
 import lightimg from "../assets/Hero-assets/herobg.webp"
+import kumar from "./Assets/pics/kumar.webp"
+import sanket from "./Assets/pics/sanket.webp"
+import ajay from "./Assets/pics/ajay.webp"
+import nilesh from "./Assets/pics/nilesh.webp"
+import yash from "./Assets/pics/yash.webp"
+import sahil from "./Assets/pics/sahil.webp"
+import rohit from "./Assets/pics/rohit.webp"    
+import aaryan from "./Assets/pics/aaryan.webp"
+import akash from "./Assets/pics/akash.webp"
+import mukul from "./Assets/pics/mukul.webp"
+import hitesh from "./Assets/pics/hitesh.webp"
+import piyush from "./Assets/pics/piyush.webp"
+import tejas from "./Assets/pics/tejas.webp"
+import anirudh from "./Assets/pics/anirudh.webp"
+
 
 // You would replace these with your actual team member images
 const teamMembers = [
     {
-      name: "Alex Morgan",
-      role: "Founder & Lead Designer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Passionate about creating beautiful, functional interfaces that developers love to use.",
+      name: "Kumar Nirupam",
+      role: "Bug Slayer & Idea Crafter",
+      image: kumar,
+      
+      social: {
+        github: "https://github.com/KUMARNiru007",
+        twitter: "https://x.com/KumarNirupam1",
+        linkedin: "https://www.linkedin.com/in/kumarnirupam",
+      },
+    },
+    {
+      name: "Sanket Singh",
+      role: "Execution Engine",
+      image: sanket,
+      
+      social: {
+        github: "https://github.com/sanketsingh01",
+        twitter: "https://x.com/SanketS89137690?t=1uWKcNI-qpt4IYrtZWLAdw&s=09",
+        linkedin: "https://www.linkedin.com/in/sanket-singh-5359732b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      },
+    },
+    {
+      name: "Ajay Rathi ",
+      role: " All-Time Executor",
+      image: ajay,
+      
+      social: {
+        github: "https://github.com/rathiajay2803",
+        twitter: "https://x.com/ajayRathi28",
+        linkedin: "https://www.linkedin.com/in/ajayrathi2803/",
+      },
+    },
+    {
+        name: "Nilesh Haldar",
+        role: "Reliable Right Hand",
+        image: nilesh,
+        
+        social: {
+          github: "https://github.com/nileshhaldar98",
+          twitter: "https://twitter.com/nileshhaldar98",
+          linkedin: "https://www.linkedin.com/in/nileshhaldar98",
+        },
+      },
+      {
+        name: "Yashovardhan Singh ",
+        role: "Code Monk",
+        image: yash,
+        
+        social: {
+          github: "https://github.com/Yasho321",
+          twitter: "https://x.com/Yasho_27_",
+          linkedin: "https://www.linkedin.com/in/yashovardhan-singh-9bb28030b/",
+        },
+      },
+      {
+        name: "Sahil Raturi",
+        role: "Testing Commander",
+        image: sahil,
+        
+        social: {
+          github: "https://github.com/SahilRaturi49",
+          twitter: "https://x.com/SahilRaturi49",
+          linkedin: "https://www.linkedin.com/in/sahil-raturi",
+        },
+      },
+      {
+        name: "Rohit",
+        role: "Tech Stack Navigator",
+        image:rohit,
+        
+        social: {
+          github: "https://gitHub.com/rohitisog",
+          twitter: "https://X.com/kr_rohitsah",
+          linkedin: "http://LinkedIn.com/in/rohitisog",
+        },
+      },
+      {
+        name: "Aaryan Pandey",
+        role: "Founding Mind",
+        image: aaryan,
+        
+        social: {
+          github: "https://github.com/imaaryan ",
+          twitter: "https://x.com/imaaryanpandey",
+          linkedin: "https://www.linkedin.com/in/itsmeeaaryan/",
+        },
+      },
+  ]
+  const mentors = [
+    {
+      name: "Hitesh Chaudhary",
+     
+      image: hitesh,
+      
       social: {
         github: "https://github.com",
-        twitter: "https://twitter.com",
+        twitter: "https://x.com/Hiteshdotcom",
         linkedin: "https://linkedin.com",
       },
     },
     {
-      name: "Jamie Chen",
-      role: "Lead Developer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Turns complex problems into elegant solutions with a focus on performance and accessibility.",
+      name: "Piyush Garg",
+      
+      image: piyush,
+      
       social: {
         github: "https://github.com",
-        twitter: "https://twitter.com",
+        twitter: "https://x.com/piyushgarg_dev",
         linkedin: "https://linkedin.com",
       },
     },
     {
-      name: "Taylor Reed",
-      role: "UX Researcher",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Dedicated to understanding how developers interact with components to create better experiences.",
+      name: "Akash Kadlag",
+    
+      image: akash,
+      
       social: {
         github: "https://github.com",
-        twitter: "https://twitter.com",
+        twitter: "https://x.com/yntpdotme",
         linkedin: "https://linkedin.com",
       },
     },
+    {
+        name: "Anirudh Jwala",
+        
+        image: anirudh,
+        
+        social: {
+          github: "https://github.com",
+          twitter: "https://x.com/nirudhuuu",
+          linkedin: "https://linkedin.com",
+        },
+      },
+      {
+        name: "Mukul Padwal",
+        
+        image: mukul,
+        
+        social: {
+          github: "https://github.com",
+          twitter: "https://x.com/mukulpadwal",
+          linkedin: "https://linkedin.com",
+        },
+      },
+      {
+        name: "Tejas",
+        
+        image: tejas,
+        
+        social: {
+          github: "https://github.com",
+          twitter: "https://x.com/taashuu_",
+          linkedin: "https://linkedin.com",
+        },
+      },
+      
+        
+     
   ]
 
 const AboutUs = () => {
@@ -168,11 +309,11 @@ const AboutUs = () => {
         }}
       >
         <div className="absolute inset-0  bg-opacity-50"></div>
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="relative z-10 max-w-5xl mx-auto">
           <div className="inline-block px-4 py-2 swing-ocean-gradient-animate text-white  rounded-full text-sm font-semibold tracking-wide shadow mb-6">
-            OUR STORY
+            ABOUT US
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold  mb-6">A Product Built with Friendship, Pressure & Passion <span className="text-red-700">❤</span></h1>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold  mb-6">A Product Built with Friendship, Pressure & Passion <span className="text-red-700">❤</span></h1>
           <p className="text-xl  max-w-3xl mx-auto">
           From chaotic beginnings to a smooth launch, SwingUI was built by a team that supported each 
             other, learned together, and grew stronger every day. This library is a reflection of what’s 
@@ -224,9 +365,9 @@ const AboutUs = () => {
           <h2
             className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
           >
-            Birth Of SwingUI
+            Birth of SwingUI
           </h2>
-          <p className={`text-xl max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <p className={`text-xl max-w-5xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
           SwingUI was born during a hackathon hosted by ChaiCode, with a challenge: create something meaningful, something that solves a real developer problem. From chaotic beginnings on Day 0, we jumped into discussions, built roadmaps, and began turning ideas into reality.
           </p>
         </div>
@@ -296,14 +437,14 @@ const AboutUs = () => {
     </p>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl flex flex-wrap justify-center mx-auto">
     {teamMembers.map((member, index) => (
       <div
         key={member.name}
         ref={(el) => (teamMemberRefs.current[index] = el)}
-        className={`rounded-xl overflow-hidden shadow-lg relative group ${darkMode ? "bg-gray-900 border border-gray-800" : "bg-white"}`}
+        className={`rounded-xl overflow-hidden shadow-lg relative group  ${darkMode ? "bg-gray-900 border border-gray-800" : "bg-white"}`}
       >
-        <div className="h-64 overflow-hidden relative">
+        <div className="h-100 overflow-hidden relative">
           {/* Image with zoom effect */}
           <img
             src={member.image || "/placeholder.svg"}
@@ -335,7 +476,7 @@ const AboutUs = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-white"
+                className="text-black"
               >
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                 <path d="M9 18c-4.51 2-5-2-7-2"></path>
@@ -357,7 +498,7 @@ const AboutUs = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-white"
+                className="text-black"
               >
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
               </svg>
@@ -378,7 +519,7 @@ const AboutUs = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-white"
+                className="text-black"
               >
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect width="4" height="12" x="2" y="9"></rect>
@@ -404,27 +545,27 @@ const AboutUs = () => {
 <section ref={teamSectionRef} className={`py-20 px-4 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
   <div className="max-w-6xl mx-auto text-center mb-16">
     <div className="inline-block px-4 py-2 swing-ocean-gradient-animate text-white rounded-full text-sm font-semibold tracking-wide shadow mb-6">
-    Mentors 
+   Mentors
     </div>
     <h2
       className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}
     >
-      Mentorship that Guided Us
+      Mentorship that Guided Us 
     </h2>
     <p className={`text-xl max-w-3xl mx-auto ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
     We’re deeply grateful to our mentors who not only guided us technically but also supported us 
-    emotionally and mentally: 
+    emotionally and mentally:
     </p>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    {teamMembers.map((member, index) => (
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl flex flex-wrap justify-center mx-auto">
+    {mentors.map((member, index) => (
       <div
         key={member.name}
         ref={(el) => (teamMemberRefs.current[index] = el)}
-        className={`rounded-xl overflow-hidden shadow-lg relative group ${darkMode ? "bg-gray-900 border border-gray-800" : "bg-white"}`}
+        className={`rounded-xl overflow-hidden shadow-lg relative group  ${darkMode ? "bg-gray-900 border border-gray-800" : "bg-white"}`}
       >
-        <div className="h-64 overflow-hidden relative">
+        <div className="h-100 overflow-hidden relative">
           {/* Image with zoom effect */}
           <img
             src={member.image || "/placeholder.svg"}
@@ -440,28 +581,7 @@ const AboutUs = () => {
 
           {/* Social icons that appear on hover */}
           <div className="absolute top-4 right-4 z-20 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <a
-              href={member.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white bg-opacity-20 backdrop-blur-sm p-2 rounded-full hover:bg-opacity-40 transition-all"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white"
-              >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-              </svg>
-            </a>
+            
             <a
               href={member.social.twitter}
               target="_blank"
@@ -478,34 +598,12 @@ const AboutUs = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-white"
+                className="text-black"
               >
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
               </svg>
             </a>
-            <a
-              href={member.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white bg-opacity-20 backdrop-blur-sm p-2 rounded-full hover:bg-opacity-40 transition-all"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
+            
           </div>
         </div>
 
@@ -517,7 +615,7 @@ const AboutUs = () => {
   </div>
   <div className="max-w-6xl mx-auto text-center my-16">
     <p className={`text-xl max-w-3xl  mx-auto  ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-    Their wisdom and encouragement helped us stay on track and push through doubts. 
+    Their wisdom and encouragement helped us stay on track and push through doubts.
     </p>
     </div>
 </section>
@@ -527,12 +625,12 @@ const AboutUs = () => {
       {/* Values Section */}
       {/* Why Swing & Our Vision Section */}
       <section className="py-20 px-4 max-w-6xl mx-auto">
-  <div className={`mb-20 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
-    <h2 className="text-3xl sm:text-4xl font-bold mb-8">Our Philosophy</h2>
-    <div className="grid md:grid-cols-2 gap-10">
+  <div className={`mb-2 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
+    
+    <div className="grid md:grid-cols-2 gap-20">
       {/* Why Swing? */}
       <div>
-        <h3 className="text-2xl font-semibold mb-6">Why "Swing"?</h3>
+        <h3 className="text-3xl font-semibold mb-6">Why "Swing"?</h3>
         <p className="text-lg mb-6">
           We wanted a name that reflects style, motion, and energy. "Swing" stands for:
         </p>
@@ -552,9 +650,9 @@ const AboutUs = () => {
       </div>
 
       {/* Our Vision */}
-      <div>
-        <h3 className="text-2xl font-semibold mb-6">Our Vision</h3>
-        <p className="text-lg mb-6">
+      <div className="lg:ml-10">
+        <h3 className="text-3xl font-semibold mb-6">Our Vision</h3>
+        <p className="text-lg mb-6 ">
           We're building SwingUI for:
         </p>
         <ul className="space-y-3">
@@ -575,7 +673,7 @@ const AboutUs = () => {
   </div>
 </section>
 <section className="py-20 px-4 max-w-6xl mx-auto">
-  <div className={`mb-20 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
+  <div className={`mb-2 ${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
     <h2 className="text-3xl sm:text-4xl font-bold mb-8">Built in Public</h2>
     <div className="flex flex-col gap-10">
       <div>
@@ -608,12 +706,12 @@ const AboutUs = () => {
 <section className="py-20 px-4 max-w-6xl mx-auto">
   <div className={`${darkMode ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"}`}>
     <h2 className="text-3xl sm:text-4xl font-bold mb-8">What's Next?</h2>
-    <p className="text-lg mb-10">We're just getting started.</p>
+    <p className="text-lg mb-10"></p>
     
     <div className="grid md:grid-cols-2 gap-10">
       {/* Completed */}
       <div>
-        <h3 className="text-xl font-semibold mb-6">Already Shipped</h3>
+        <h3 className="text-xl font-semibold mb-6">We're just getting started</h3>
         <ul className="space-y-3">
           {[
             "Bug fixes",
@@ -631,7 +729,7 @@ const AboutUs = () => {
       </div>
 
       {/* Coming Soon */}
-      <div>
+      <div className="lg:ml-10">
         <h3 className="text-xl font-semibold mb-6">Coming Soon</h3>
         <ul className="space-y-3">
           {[
