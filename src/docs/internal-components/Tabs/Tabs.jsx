@@ -4,6 +4,7 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import TabsData from './TabsData.js';
+import Table from '../../components/TableComponent/Table.jsx';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
 
@@ -77,6 +78,63 @@ const Tabs = () => {
     return acc;
   }, {});
 
+  const tabPropertiesData = [
+    {
+      propertyName: 'Main Wrapper',
+      defaultValue:
+        'flex flex-col items-center bg-gray-100 max-w-6xl w-[78vw] md:w-full rounded-lg p-2 md:p-6',
+      description:
+        'Centers content vertically and horizontally, applies background color, rounded corners, and responsive padding.',
+    },
+    {
+      propertyName: 'Tab Container',
+      defaultValue:
+        'flex flex-col flex-wrap gap-4 md:gap-10 items-center justify-center md:flex-row bg-gray-100 max-w-6xl px-10 py-6 rounded-lg w-full',
+      description:
+        'Contains tab elements with responsive gap spacing, background color, padding, and layout adjustments (column on mobile → row on desktop).',
+    },
+    {
+      propertyName: 'Tab Box',
+      defaultValue:
+        'w-full max-w-[1050px] flex flex-col justify-center items-center bg-white rounded-lg p-6 shadow-md mt-4 h-64 text-gray-500',
+      description:
+        'Content display area with white background, shadow elevation, rounded corners, fixed height, and centered alignment.',
+    },
+    {
+      propertyName: 'Tab Title',
+      defaultValue: 'font-semibold mb-4 md:mb-6',
+      description:
+        'Semantic heading with bold weight and responsive bottom margin spacing.',
+    },
+  ];
+
+  const tabPropertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Value',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
+    },
+  ];
+
   const TabDemo = ({ tab }) => {
     const [copied, setCopied] = useState(false);
 
@@ -134,26 +192,43 @@ const Tabs = () => {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } `}
     >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Tabs</h1>
-          <p className='mb-4 sm:mb-6'>
-            This dynamic Tabs component provides seamless navigation between
-            categorized content blocks with responsive design, interactive hover
-            effects, and optional code previews — ideal for modern UI/UX needs.
-          </p>
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Tabs
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingTab System
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          SwingUI's responsive tab system delivers intuitive content
+          organization with smooth transitions between views, featuring adaptive
+          layouts for all screen sizes.
+        </p>
 
-          {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
-            <div key={sectionName} className='mb-6 sm:mb-8 w-full'>
-              <div className='space-y-8 sm:space-y-12'>
-                {Tabs.map((tab) => (
-                  <TabDemo key={tab.id} tab={tab} />
-                ))}
-              </div>
+        {Object.entries(groupedTabs).map(([sectionName, Tabs]) => (
+          <div key={sectionName} className='mb-6 sm:mb-8 w-full'>
+            <div className='space-y-8 sm:space-y-12'>
+              {Tabs.map((tab) => (
+                <TabDemo key={tab.id} tab={tab} />
+              ))}
             </div>
-          ))}
+          </div>
+        ))}
+
+        <hr
+          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
+
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table data={tabPropertiesData} columns={tabPropertiesColumns} />
         </div>
       </div>
-
+    </div>
   );
 };
 

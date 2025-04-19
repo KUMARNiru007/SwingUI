@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import Table from '../../components/TableComponent/Table.jsx'; // Import the Table component
 
 import pic1 from '../../../assets/Images-for-avatar/pic1.webp';
 import pic2 from '../../../assets/Images-for-avatar/pic2.webp';
@@ -17,6 +18,77 @@ function LevitatingAvatars() {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
   const containerRef = useRef(null);
+
+  const propertiesData = [
+    {
+      propertyName: 'Orbit wrapper',
+      defaultValue:
+        'center relative w-1/4 h-1/4 max-w-xs max-h-xs md:w-1/3 md:h-1/3 lg:w-1/2 lg:h-1/2',
+      description:
+        'Responsive container for the orbit rings; adapts size across screen breakpoints.',
+    },
+    {
+      propertyName: 'Orbit ring (outer)',
+      defaultValue:
+        'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
+      description: 'Centers and styles the outer ring with a gray border.',
+    },
+    {
+      propertyName: 'Orbit ring (outer) attributes',
+      defaultValue:
+        'data-scale="0.5" data-speed="0.6" data-direction="clockwise"',
+      description:
+        'Controls size, animation speed, and rotation direction for the outer orbit.',
+    },
+    {
+      propertyName: 'Orbit ring (inner)',
+      defaultValue:
+        'absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300',
+      description:
+        'Similar layout to the outer ring but used for a second layer of icons.',
+    },
+    {
+      propertyName: 'Orbit ring (inner) attributes',
+      defaultValue:
+        'data-scale="0.83" data-speed="0.8" data-direction="anticlockwise"',
+      description:
+        'Custom attributes to define size, speed, and direction for the inner orbit.',
+    },
+    {
+      propertyName: 'Orbiting icons',
+      defaultValue: 'absolute -translate-x-1/2 -translate-y-1/2 orbit-icon',
+      description:
+        'Places each icon in the ring and centers them for orbiting motion.',
+    },
+  ];
+
+  // Define table columns configuration
+  const propertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Value / Class',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
+    },
+  ];
 
   useEffect(() => {
     const center = containerRef.current?.querySelector('.center');
@@ -81,17 +153,16 @@ function LevitatingAvatars() {
     };
   });
 
-  // ✅ Create dynamic HTML string with actual image paths
   const htmlCssCode = `
 <div class="bg-white flex justify-center items-center h-screen overflow-hidden">
   <div class="center relative w-1/4 h-1/4 max-w-xs max-h-xs md:w-1/3 md:h-1/3 lg:w-1/2 lg:h-1/2">
-    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.5" data-speed="0.3" data-direction="clockwise">
+    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.5" data-speed="0.6" data-direction="clockwise">
       <img src="${pic1}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic2}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic3}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic4}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
     </div>
-    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.83" data-speed="0.3" data-direction="anticlockwise">
+    <div class="absolute rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300" data-scale="0.83" data-speed="0.8" data-direction="anticlockwise">
       <img src="${pic5}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic6}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
       <img src="${pic7}" class="absolute -translate-x-1/2 -translate-y-1/2 orbit-icon rounded-full border border-black" />
@@ -107,41 +178,55 @@ function LevitatingAvatars() {
 
   return (
     <div
-      className={`Feature-custom-width transition-colors duration-300 ${
+      className={`w-full transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      }`}
+      } px-0 py-6`}
     >
-      <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2 pb-4">Levitating Avatars</h2>
-        <p className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          The LevitatingAvatars component displays orbiting avatars using pure HTML/CSS and JavaScript-style animation via React hooks. The animation is smooth and fully responsive.
+      <div className='max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-6'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Levitating Avatars
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingOrbit Display
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          SwingUI's dynamic orbital display features dual rotating rings with
+          configurable speed and direction, creating an engaging visual
+          interface for showcasing key elements.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
 
         {!showCode && (
-          <div className="flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md">
+          <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
             <div
               ref={containerRef}
-              className="w-full"
+              className='w-full'
               dangerouslySetInnerHTML={{ __html: htmlCssCode }}
             />
           </div>
         )}
 
         {showCode && (
-          <div className="w-full overflow-x-auto my-4 rounded-lg sm:rounded-xl">
-            <CodeBlock language="html" code={htmlCssCode} />
+          <div className='w-full my-4 rounded-xl relative whitespace-pre overflow-x-auto md:whitespace-pre-wrap md:break-words md:overflow-x-visible'>
+            <CodeBlock language='html' code={htmlCssCode} />
           </div>
         )}
 
         <hr
-        className={`my-10 border-t ${
-          darkMode ? 'border-gray-700 opacity-30' : 'border-gray-300 opacity-50'
-        }`}
-      />
+          className={`my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
+
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table data={propertiesData} columns={propertiesColumns} />
+        </div>
       </div>
     </div>
   );

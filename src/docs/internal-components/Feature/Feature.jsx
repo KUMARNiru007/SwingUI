@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import Table from '../../components/TableComponent/Table.jsx';
 import './Feature.css';
 import img1 from '../../../assets/Images-For-Gallery/img1.webp';
 import img2 from '../../../assets/Images-For-Gallery/img2.webp';
@@ -15,7 +16,6 @@ function Feature() {
 
   // Set up the scroll synchronization with more robust event handling
   useEffect(() => {
-  
     function initScrollSync() {
       if (!showCode && previewRef.current) {
         // Small delay to ensure DOM is fully rendered
@@ -193,78 +193,83 @@ function Feature() {
     </style>
   `;
 
-  const propertiesData = [
+  const galleryPropertiesData = [
     {
-      variable: 'State.currentScrollY',
-      type: 'number',
+      propertyName: 'gradient overlays',
+      defaultValue:
+        'fade-top fade-bottom + bg-gradient-to-b/t from-white/90 to-transparent',
       description:
-        'Tracks the current vertical scroll position of the carousel',
+        'Creates a fading white gradient at the top and bottom of the scrollable area.',
     },
     {
-      variable: 'State.targetScrollY',
-      type: 'number',
-      description: 'Target scroll position, adjusted based on user input',
+      propertyName: 'overlay positioning',
+      defaultValue: 'absolute top-0/bottom-0 left-0 right-0',
+      description: 'Positions the fade overlays at the top and bottom edges.',
     },
     {
-      variable: 'State.isAnimating',
-      type: 'boolean',
-      description: 'Indicates whether the scroll animation is in progress',
-    },
-    {
-      variable: 'State.maxScroll ',
-      type: 'number',
+      propertyName: 'scrollable container',
+      defaultValue: 'overflow-y-auto overscroll-contain scrollbar-hide',
       description:
-        'The maximum scroll limit to prevent scrolling beyond the images',
+        'Enables vertical scrolling, prevents bounce effects, and hides the scrollbar.',
     },
     {
-      variable: 'State.itemHeight ',
-      type: 'number',
-      description: 'Height of the slider items, dynamically calculated',
+      propertyName: 'scroll container height',
+      defaultValue: 'h-60 sm:h-72 md:h-96 lg:h-96',
+      description: 'Makes the image area scrollable and responsive in height.',
     },
     {
-      variable: 'State.rafId ',
-      type: 'number',
-      description:
-        'Holds the requestAnimationFrame ID for cancelling the animation',
+      propertyName: 'image transition',
+      defaultValue: 'transition-shadow duration-300',
+      description: 'Smoothly transitions the shadow on hover over 300ms.',
     },
   ];
 
-  const animationSettings = [
+  const galleryPropertiesColumns = [
     {
-      variable: 'SCROLL_STEP',
-      value: 100,
-      description: 'Defines the scroll step increment for wheel movements',
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
     },
     {
-      variable: 'MOBILE_BREAKPOINT',
-      value: 640,
-      description: 'Breakpoint width for detecting mobile devices',
+      key: 'defaultValue',
+      title: 'Default Value',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
     },
     {
-      variable: 'EASING',
-      value: 0.1,
-      description: 'Defines the easing factor for smooth animations',
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
     },
   ];
 
   return (
     <div
-      className={`Feature-custom-width transition-colors duration-300 ${
+      className={`w-full transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
-      } `}
+      } px-0 py-6`}
     >
-     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12"> 
-         <h2 className='text-3xl sm:text-4xl font-bold mb-2 pb-4'>
-          Features
+      <div className='max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-6'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Testimonial
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingTestimonial Carousel
         </h2>
         <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
-          The Feature component displays a dynamic image slider with smooth
-          scroll functionality, using React hooks to handle state and
-          animations. It also includes a toggle to preview the HTML/CSS code
-          behind the feature, providing a seamless experience for both users and
-          developers.
+          SwingUI's dynamic testimonial carousel presents client endorsements in
+          an engaging, multi-directional scroll format with rich media
+          integration.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -272,8 +277,9 @@ function Feature() {
         {!showCode && (
           <div className='flex justify-center items-center min-h-[12rem] bg-gray-200 rounded-lg shadow-md'>
             <div
+              ref={previewRef}
               className='w-full'
-              dangerouslySetInnerHTML={{ __html: customCSS+ htmlCssCode }}
+              dangerouslySetInnerHTML={{ __html: customCSS + htmlCssCode }}
             />
           </div>
         )}
@@ -292,128 +298,12 @@ function Feature() {
           }`}
         />
 
-        <h2 className='text-xl sm:text-2xl md:text-2xl font-bold mb-6 sm:mb-8 md:mb-8 mt-6 sm:mt-8 md:mt-10 lg:mt-10'>
-          State Management Variable
-        </h2>
-
-        <div className='w-full mb-8 sm:mb-10 md:mb-10 overflow-x-auto rounded-lg'>
-          <table
-            className={`w-full border-collapse rounded-lg overflow-hidden ${
-              darkMode ? 'bg-gray-800' : 'bg-gray-50'
-            }`}
-          >
-            <thead>
-              <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Variable
-                </th>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Type
-                </th>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {propertiesData.map((item, index) => (
-                <tr
-                  key={index}
-                  className={`border-t ${
-                    darkMode ? 'border-gray-700' : 'border-gray-200'
-                  }`}
-                >
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    <code
-                      className={`px-1 sm:px-2 py-1 rounded text-xs sm:text-sm ${
-                        darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                      }`}
-                    >
-                      {item.variable}
-                    </code>
-                  </td>
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    <code
-                      className={`px-1 sm:px-2 py-1 rounded text-xs sm:text-sm ${
-                        darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                      }`}
-                    >
-                      {item.type}
-                    </code>
-                  </td>
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    {item.description}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <hr
-          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
-            darkMode
-              ? 'border-gray-700 opacity-30'
-              : 'border-gray-300 opacity-50'
-          }`}
-        />
-
-        <h2 className='text-xl sm:text-2xl md:text-2xl font-bold mb-6 sm:mb-8 md:mb-8 mt-6 sm:mt-8 md:mt-10 lg:mt-10'>
-          Transition and Animation Settings
-        </h2>
-
-        <div className='w-full mb-8 sm:mb-10 md:mb-10 overflow-x-auto rounded-lg'>
-          <table
-            className={`w-full border-collapse rounded-lg overflow-hidden ${
-              darkMode ? 'bg-gray-800' : 'bg-gray-50'
-            }`}
-          >
-            <thead>
-              <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Property
-                </th>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Value
-                </th>
-                <th className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-left font-semibold text-sm sm:text-base'>
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {animationSettings.map((item, index) => (
-                <tr
-                  key={index}
-                  className={`border-t ${
-                    darkMode ? 'border-gray-700' : 'border-gray-200'
-                  }`}
-                >
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    <code
-                      className={`px-1 sm:px-2 py-1 rounded text-xs sm:text-sm ${
-                        darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                      }`}
-                    >
-                      {item.variable}
-                    </code>
-                  </td>
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    <code
-                      className={`px-1 sm:px-2 py-1 rounded text-xs sm:text-sm ${
-                        darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                      }`}
-                    >
-                      {item.value}
-                    </code>
-                  </td>
-                  <td className='py-2 sm:py-3 md:py-3 px-2 sm:px-4 md:px-4 text-sm'>
-                    {item.description}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table
+            data={galleryPropertiesData}
+            columns={galleryPropertiesColumns}
+          />
         </div>
       </div>
     </div>

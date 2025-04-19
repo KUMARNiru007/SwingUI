@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
+import Table from '../../components/TableComponent/Table.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import './style.css';
@@ -565,6 +566,96 @@ function SocialShare() {
     discord: '#5865f2',
   };
 
+  const socialSharePropertiesData = [
+    {
+      propertyName: 'Scaled Container',
+      defaultValue: '<div class="scale-150">',
+      description: 'Enlarges the SVG graphic by 1.5x scale.',
+    },
+    {
+      propertyName: 'SVG Element',
+      defaultValue: 'id="svg-id" class="mx-auto"',
+      description: 'Centers the SVG icon horizontally with auto margins.',
+    },
+    {
+      propertyName: 'Path Container Groups',
+      defaultValue: 'id="path-container-g-v1/v2/v3/v6"',
+      description:
+        'Unique group identifiers for each hexagonal structure path section.',
+    },
+    {
+      propertyName: 'Base Hexagon Sides',
+      defaultValue: '<rect fill="#3F454E" transform="matrix(...)">',
+      description:
+        'Dark grey parallelogram rectangles forming left and right slanting sides of each 3D hexagon.',
+    },
+    {
+      propertyName: 'Hexagon Depth Faces',
+      defaultValue: '<path fill="#414750" d="...">',
+      description:
+        'Creates the shaded back panel or depth layer of each hexagon.',
+    },
+    {
+      propertyName: 'Top Gradient Face',
+      defaultValue:
+        '<rect fill="url(#paintX_linear_67_353)" transform="matrix(...)">',
+      description:
+        'Top-facing face of the hexagon filled with a gradient for depth and lighting effect.',
+    },
+    {
+      propertyName: 'Stroke Overlay for Top Face',
+      defaultValue: '<rect stroke="#3C4149" …>',
+      description:
+        'Outline for the top face to emphasize the structure of the hexagon.',
+    },
+    {
+      propertyName: 'Inner Frame Border',
+      defaultValue:
+        '<rect stroke="#6B727C" stroke-width="0.5" rx="1.75" … id="line-container">',
+      description:
+        'Thin, rounded border on top face for visual enhancement or interactive element highlighting.',
+    },
+    {
+      propertyName: 'Clip Paths',
+      defaultValue: 'clip-path="url(#clipX_67_353)"',
+      description:
+        'Clipping definitions used to constrain the rendering of the SVG shapes within defined boundaries.',
+    },
+    {
+      propertyName: 'Hyperlink Wrapper',
+      defaultValue: '<a href="#"></a>',
+      description:
+        'Each SVG section is wrapped in an anchor tag for navigation or interaction, though it uses #, implying no action.',
+    },
+  ];
+
+  const socialSharePropertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Value / Class / Attribute',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
+    },
+  ];
+
   useEffect(() => {
     const root = document.documentElement;
 
@@ -600,14 +691,17 @@ function SocialShare() {
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
       } `}
     >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Social Share</h2>
-        <p className='mb-10 sm:mb-16'>
-          This component displays a grid of six social media icons arranged in a
-          3D, isometric style. Each tile appears elevated and slightly tilted,
-          creating a layered effect. On hover, the icons rise smoothly and
-          change to their respective brand colors, adding a dynamic and
-          interactive visual touch.
+      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
+          Social Share
+        </h2>
+        <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
+          SwingHive Interface
+        </h2>
+        <p className='mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+          SwingUI's sophisticated hexagonal network component presents a
+          visually striking interface with interconnected modules, combining
+          precise SVG rendering with interactive potential.
         </p>
 
         <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -634,6 +728,22 @@ function SocialShare() {
             <CodeBlock language='html' code={htmlCssCode} />
           </div>
         )}
+
+        <hr
+          className={`my-6 sm:my-8 md:my-10 lg:my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
+
+        <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
+        <div className='mb-12'>
+          <Table
+            data={socialSharePropertiesData}
+            columns={socialSharePropertiesColumns}
+          />
+        </div>
       </div>
     </div>
   );

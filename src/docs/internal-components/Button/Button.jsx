@@ -3,6 +3,7 @@ import { Clipboard, ClipboardCheck } from 'lucide-react';
 import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
+import Table from '../../components/TableComponent/Table.jsx'; // Import the new Table component
 import buttonData from './ButtonData.js';
 import '../../SwingKit/AnimatedGradients/style.css';
 import '../../SwingKit/Gradients/style.css';
@@ -69,6 +70,7 @@ const Button = () => {
     );
   };
 
+  // Define properties data for the table
   const propertiesData = [
     {
       propertyName: 'background (custom class)',
@@ -109,6 +111,34 @@ const Button = () => {
       defaultValue: 'transition-all duration-200',
       description:
         'Applies smooth transition to all icon properties over 200ms.',
+    },
+  ];
+
+  // Define table columns configuration
+  const propertiesColumns = [
+    {
+      key: 'propertyName',
+      title: 'Property Name',
+      width: 'w-1/5',
+    },
+    {
+      key: 'defaultValue',
+      title: 'Default Value',
+      width: 'w-1/3',
+      render: (value) => (
+        <code
+          className={`px-2 py-1 rounded text-sm ${
+            darkMode ? 'bg-gray-700' : 'bg-gray-200'
+          } inline-block min-w-full break-words`}
+        >
+          {value}
+        </code>
+      ),
+    },
+    {
+      key: 'description',
+      title: 'Description',
+      width: 'w-1/2',
     },
   ];
 
@@ -169,52 +199,8 @@ const Button = () => {
         </p>
 
         <h2 className='text-xl sm:text-2xl font-semibold mb-4'>Properties</h2>
-        <div className='w-full mb-12 overflow-x-auto max-w-full'>
-          <table
-            className={`w-full table-auto border-collapse rounded-lg ${
-              darkMode ? 'bg-gray-800' : 'bg-gray-50'
-            }`}
-          >
-            <thead>
-              <tr className={darkMode ? 'bg-gray-700' : 'bg-gray-200'}>
-                <th className='py-3 px-2 sm:px-4 text-left font-semibold w-1/5'>
-                  Property Name
-                </th>
-                <th className='py-3 px-2 sm:px-4 text-left font-semibold w-1/3'>
-                  Default Value
-                </th>
-                <th className='py-3 px-2 sm:px-4 text-left font-semibold w-1/2'>
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {propertiesData.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={`border-t ${
-                    darkMode ? 'border-gray-700' : 'border-gray-200'
-                  }`}
-                >
-                  <td className='py-3 px-2 sm:px-4 break-words'>
-                    {item.propertyName}
-                  </td>
-                  <td className='py-3 px-2 sm:px-4'>
-                    <code
-                      className={`px-2 py-1 rounded text-sm ${
-                        darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                      } inline-block min-w-full break-words`}
-                    >
-                      {item.defaultValue}
-                    </code>
-                  </td>
-                  <td className='py-3 px-2 sm:px-4 break-words'>
-                    {item.description}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className='mb-12'>
+          <Table data={propertiesData} columns={propertiesColumns} />
         </div>
       </div>
     </div>
