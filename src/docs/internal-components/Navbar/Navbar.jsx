@@ -3,7 +3,6 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import BottomFooter from '../../../components/BottomFooter.jsx';
-import "./Navbar.js"
 
 
 const Navbar = () => {
