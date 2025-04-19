@@ -32,7 +32,7 @@ function Testimonial() {
 
       <div class="swing-slider-wrapper">
         <div class="swing-scrolling-image"
-          style="--direction: 1; --speed: 10; --pause-on-hover: false;">
+          style="--direction: 1; --speed: 20; --pause-on-hover: false;">
           <div class="slider-container">
  
             <div class="swing-slider-item">
@@ -42,7 +42,7 @@ function Testimonial() {
                        class="h-full w-full object-cover"
                        alt="Testimonial author">
                 </div>
-                <div class="w-2/3 md:w-3/4 p-3 md:p-4 text-white">
+                <div class="w-1/1 md:w-3/4 p-3 md:p-4 text-white">
                   <div class="flex gap-1 star-rating">
                     <i class="ri-star-fill text-yellow-400 text-sm md:text-xl"></i>
                     <i class="ri-star-fill text-yellow-400 text-sm md:text-xl"></i>
