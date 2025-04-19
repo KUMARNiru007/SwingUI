@@ -2,6 +2,7 @@ import React from "react";
 import { useTheme } from "../../context/ThemeContext";
 import "../SwingKit/Gradients/style.css"
 import templateBg from "./Assets/Screenshot 2025-04-18 192654.png"; 
+import BottomFooter from "../../components/BottomFooter";
 
 
 const TemplateDashboard = () => {
@@ -85,6 +86,7 @@ const TemplateDashboard = () => {
           </div>
         </div>
       </main>
+      <BottomFooter/>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import './style.css';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 const AccordionDemo = () => {
   const [showCode, setShowCode] = useState(false);
@@ -228,8 +229,9 @@ const AccordionDemo = () => {
           </div>
         )}
       </div>
+      <BottomFooter/>
     </div>
-    
+
   );
 };
 

@@ -3,6 +3,7 @@ import CopyButton from '../../components/copyButton/copyButton.jsx';
 import transitions from './TextGradientData.js';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import './style.css';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 const TransitionItem = ({ transition }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -164,6 +165,7 @@ const TextGradient = () => {
           </div>
         </div>
       </div>
+      <BottomFooter/>
     </main>
   );
 };
