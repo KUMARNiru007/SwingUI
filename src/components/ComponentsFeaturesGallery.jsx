@@ -90,7 +90,7 @@ const GalleryCard = ({ icon, title, desc, to }) => {
         darkMode ? 'border-gray-700' : 'border-gray-300'
       } rounded-xl flex-shrink-0 flex flex-col items-center justify-center text-center p-4 shadow-lg transition-all duration-300 hover:shadow-2xl swing-ocean-gradient-text hover:text-white mx-2 sm:mx-0`}
     >
-      <div className='text-5xl mb-4 swing-ocean-gradient-text bg-[#1c1c1c] p-4 rounded-full border border-[#2ca7cf] transform transition-transform duration-300 group-hover:scale-125'>
+      <div className=' text-5xl mb-4 swing-ocean-gradient-text bg-[#1c1c1c] p-4 rounded-full border border-[#2ca7cf] transform transition-transform duration-300 group-hover:scale-125'>
         {icon}
       </div>
       <h3 className='text-lg font-bold underline'>{title}</h3>
@@ -102,7 +102,7 @@ const GalleryCard = ({ icon, title, desc, to }) => {
 };
 
 // Row that scrolls items infinitely
-const InfiniteRow = ({ direction = 'left', duration = 20 }) => {
+const InfiniteRow = ({ direction = 'left', duration = 10 }) => {
   const { darkMode } = useTheme();
   const animationClass =
     direction === 'left' ? 'animate-scroll-left' : 'animate-scroll-right';
@@ -152,14 +152,14 @@ const ComponentsFeaturesGallery = () => {
   const { darkMode } = useTheme();
   return (
     <div
-      className={`w-screen px-4 py-16 overflow-x-hidden mx-auto  ${
+      className={`w-screen ml-[-15px] pt-15 overflow-x-hidden mx-auto  ${
         darkMode ? 'text-[var(--color-text-dark)]' : 'text-[var(--color-text)]'
       }`}
     >
       <div className='max-w-screen'>
         <div className='max-w-full '>
-          <InfiniteRow direction='left' duration={25} />
-          <InfiniteRow direction='right' duration={30} />
+          <InfiniteRow direction='left' duration={40} />
+          <InfiniteRow direction='right' duration={50} />
         </div>
       </div>
     </div>

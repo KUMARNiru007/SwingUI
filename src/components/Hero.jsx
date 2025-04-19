@@ -70,7 +70,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`w-screen min-h-screen flex flex-col items-center justify-center px-4 pt-16 pb-32 bg-no-repeat bg-cover bg-center ${
+      className={`w-screen min-h-screen flex flex-col items-center justify-center px-4 pt-18 pb-14 bg-no-repeat bg-cover bg-center ${
         darkMode
           ? ' text-[var(--color-text-dark)]'
           : ' text-[var(--color-text)]'
@@ -79,7 +79,7 @@ const Hero = () => {
     >
       {/* Text Content */}
       <div
-        className={`w-full text-center space-y-6 ${
+        className={`w-full text-center space-y-8 ${
           darkMode
             ? ' text-[var(--color-text-dark)]'
             : ' text-[var(--color-text)]'
