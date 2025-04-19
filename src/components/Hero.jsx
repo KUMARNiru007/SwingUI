@@ -70,7 +70,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`w-screen min-h-screen flex flex-col items-center justify-center px-4 pt-18 pb-14 bg-no-repeat bg-cover bg-center ${
+      className={`w-screen min-h-screen flex flex-col items-center justify-center mt-[-70px] px-4 pt-38 pb-14 bg-no-repeat bg-cover bg-center ${
         darkMode
           ? ' text-[var(--color-text-dark)]'
           : ' text-[var(--color-text)]'
@@ -119,7 +119,7 @@ const Hero = () => {
             Get Started For Free
           </Link>
           <Link
-            to='/components/button'
+            to='/components/accordion'
             className={`px-6 py-3  rounded-full w-[85%] sm:w-auto border border-gray-300 font-semibold hover:text-white hover:bg-gray-800 transition`}
           >
             Explore All Components

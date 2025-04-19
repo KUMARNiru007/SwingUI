@@ -338,7 +338,8 @@ function Navbar() {
             </Link>
           ) : (
             <Link
-              to='/'
+              to='https://github.com/imaaryan/SwingUI'
+              target='_blank'
               className='swing-ocean-gradient hover:swing-ocean-gradient flex w-31 gap-x-2 items-center text-white px-6 py-2 rounded-4xl'
             >
               <i className='ri-star-fill'></i>

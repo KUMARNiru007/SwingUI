@@ -18,8 +18,10 @@ function BottomFooter() {
       <div className='w-full lg:w-auto flex justify-center lg:justify-end'>
         <div className='flex flex-wrap justify-center lg:justify-end gap-4 lg:gap-6 font-normal text-center break-words'>
           <a
-            href='#'
-            className='hover:text-[var(--dark-nav-hover)] transition-colors'
+            href='https://github.com/imaaryan/SwingUI'
+                className='hover:text-[var(--dark-nav-hover)] transition-colors'
+                rel='noopener noreferrer'
+                target='_blank'
           >
             Github
           </a>

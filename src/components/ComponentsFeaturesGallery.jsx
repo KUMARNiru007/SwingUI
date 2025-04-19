@@ -62,7 +62,7 @@ const items = [
   {
     icon: <i className='ri-gallery-fill'></i>,
     title: 'Image Gallery',
-    desc: 'Image gallery with hover effects',
+    desc: 'Moving Image Gallery',
     to: '/components/image-gallery',
   },
 
@@ -88,7 +88,7 @@ const GalleryCard = ({ icon, title, desc, to }) => {
     <div
       className={`group w-full sm:w-60 h-60 bg-[#1c1c1c] border ${
         darkMode ? 'border-gray-700' : 'border-gray-300'
-      } rounded-xl flex-shrink-0 flex flex-col items-center justify-center text-center p-4 shadow-lg transition-all duration-300 hover:shadow-2xl swing-ocean-gradient-text hover:text-white mx-2 sm:mx-0`}
+      } rounded-3xl flex-shrink-0 flex flex-col items-center justify-center text-center p-4 shadow-lg transition-all duration-300 hover:shadow-3xl swing-ocean-gradient-text hover:text-white mx-2 sm:mx-0`}
     >
       <div className=' text-5xl mb-4 swing-ocean-gradient-text bg-[#1c1c1c] p-4 rounded-full border border-[#2ca7cf] transform transition-transform duration-300 group-hover:scale-125'>
         {icon}
@@ -127,10 +127,10 @@ const InfiniteRow = ({ direction = 'left', duration = 10 }) => {
         {duplicatedItems.map((item, i) => (
           <div
             key={`${direction}-${i}`}
-            className={`w-[calc(50%-0.5rem)] sm:w-auto rounded-lg ${
+            className={`w-[calc(50%-0.5rem)] sm:w-auto rounded-3xl ${
               darkMode
-                ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
-                : 'bg-[var(--light-bg)] text-[var(--color-text)]'
+                ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] opacity-90'
+                : 'bg-[var(--light-bg)] text-[var(--color-text)] opacity-90'
             }`}
           >
             <Link to={item.to} target='_blank' rel='noopener noreferrer'>
