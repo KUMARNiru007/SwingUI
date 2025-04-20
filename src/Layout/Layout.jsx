@@ -10,15 +10,19 @@ import { Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import AboutUs from '../pages/AboutUs';
 import PreBuiltTemplate from '../docs/PrelBuiltTemplate/PreBuiltTemplate';
+import NotFound from '../pages/NotFound';
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
   const { darkMode } = useTheme();
 
-  const noSidebar = ['/', '/about', '/prebuilt-template'];
-  const showSidebar = !noSidebar.includes(location.pathname);
-
+  const sidebarRoutes = ['/docs', '/components', '/swingkit', '/forms'];
+  const showSidebar = sidebarRoutes.some(
+    (prefix) =>
+      location.pathname === prefix ||
+      location.pathname.startsWith(prefix + '/')
+  );
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   useEffect(() => {
@@ -98,6 +102,7 @@ const Layout = () => {
                 <Route path='/components/*' element={<Components />} />
                 <Route path='/swingkit/*' element={<SwingKit />} />
                 <Route path='/forms/*' element={<Form />} />
+                <Route path='/*' element={<NotFound />} />
               </Routes>
             </div>
           </div>
