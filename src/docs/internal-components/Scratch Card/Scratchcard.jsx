@@ -260,14 +260,15 @@ function Scratchcard() {
       )}
 
       {showCode && (
-        <div className='flex justify-center w-full overflow-x-auto rounded-xl'>
+        <div className='flex justify-center w-full  overflow-x-auto rounded-xl'>
           <CodeBlock language='html' code={htmlcssCode} />
         </div>
       )}
 
- 
+<BottomFooter/>
     </div>
+    
   );
+  
 }
-
 export default Scratchcard;
