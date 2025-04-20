@@ -66,10 +66,10 @@ ${rotatingWords
       }`}
     >
       <div className="max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <h2 className='text-3xl sm:text-4xl font-bold pb-4'>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-4 mb-3 sm:mb-8'>
           Word Rotating
         </h2>
-        <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Dynamic Headline</h3>
+        <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Dynamic Headline</h3>
         <p className="mb-6 sm:mb-10 text-center sm:text-left">
         SwingUI's animated text component dynamically rotates through impactful phrases with smooth transitions, creating engaging headlines that capture attention. 
         </p>
