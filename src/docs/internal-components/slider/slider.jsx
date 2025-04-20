@@ -261,8 +261,9 @@ const VerticalSliderDemo = () => {
   ];
 
   return (
+    <div>
     <div
-      className={`w-full  transition-colors duration-300 ${
+      className={`w-full min-h-[100dvh]   transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -342,7 +343,8 @@ const VerticalSliderDemo = () => {
           />
         </div>
       </div>
- <BottomFooter/>
+    </div>
+    <BottomFooter/>
     </div>
   );
 };

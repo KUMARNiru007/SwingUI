@@ -188,8 +188,9 @@ const Tabs = () => {
   };
 
   return (
+    <div>
     <div
-      className={`w-full px-2 max-w-[90rem] transition-colors duration-300 ${
+      className={`w-full px-2 min-h-[100dvh]  max-w-[90rem] transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -230,8 +231,9 @@ const Tabs = () => {
         <div className='mb-12'>
           <Table data={tabPropertiesData} columns={tabPropertiesColumns} />
         </div> */}
- <BottomFooter/>
-      </div>
+  </div>
+    </div>
+    <BottomFooter/>
     </div>
   );
 };
