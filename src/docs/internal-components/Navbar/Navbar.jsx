@@ -3,6 +3,7 @@ import PreviewCodeBtn from '../../../components/PreviewCodeBtn.jsx';
 import { useTheme } from '../../../context/ThemeContext.jsx';
 import CodeBlock from '../../components/CodeBlock/CodeBlock.jsx';
 import BottomFooter from '../../../components/BottomFooter.jsx';
+import logo from '../../../../public/logo.webp'
 
 import "./Navbar.js"
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
     <div class="flex justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <a href="#" class=""><img class="h-10" src="../../../../public/logo.webp" alt="logo"/></a>
+          <a href="#" class=""><img class="h-10" src="${logo}" alt="logo"/></a>
         </div>
       </div>
 
