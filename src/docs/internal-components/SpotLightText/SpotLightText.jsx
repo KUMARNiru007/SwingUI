@@ -150,7 +150,8 @@ const SpotLightText = () => {
   }, [showText]); // Add showCode as dependency
 
   return (
-    <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+    <div>
+    <div className='max-w-5xl min-h-[100dvh]  mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
       <h2 className='text-3xl sm:text-4xl font-bold pb-4 mb-3 sm:mb-8'>Spotlight Text</h2>
       <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Particle Canvas</h3>
       <p className='mb-10 sm:mb-16'>
@@ -251,7 +252,8 @@ const SpotLightText = () => {
           </div>
         )}
       </div>
- <BottomFooter/>
+    </div>
+    <BottomFooter/>
     </div>
   );
 };

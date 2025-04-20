@@ -15,6 +15,7 @@ import pic9 from '../../../assets/Images-For-Testimonials/pic9.webp';
 import pic10 from '../../../assets/Images-For-Testimonials/pic10.webp';
 import pic11 from '../../../assets/Images-For-Testimonials/pic11.webp';
 import pic12 from '../../../assets/Images-For-Testimonials/pic12.webp';
+import BottomFooter from '../../../components/BottomFooter.jsx';
 
 function Testimonial() {
   const [showCode, setShowCode] = useState(false);
@@ -524,8 +525,9 @@ function Testimonial() {
   },);
 
   return (
+    <div>
     <div
-      className={`w-full max-w-screen-xl mx-auto px-4 py-0  transition-colors duration-300 ${
+      className={`w-full min-h-[100dvh] max-w-screen-xl mx-auto px-4 py-0  transition-colors duration-300 ${
         darkMode
           ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)]'
           : 'bg-[var(--light-bg)] text-[var(--color-text)]'
@@ -535,7 +537,7 @@ function Testimonial() {
         <h1 className='text-3xl sm:text-4xl font-bold mb-4 sm:mb-12'>
           Testimonial
         </h1>
-        <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Dynamic Headline</h3>
+        <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Dynamic Testimonials</h3>
         <p className='mb-15'>
           This dynamic Tabs component provides seamless navigation between
           categorized content blocks with responsive design, interactive hover
@@ -563,6 +565,8 @@ function Testimonial() {
           </div>
         )}
       </div>
+      </div>
+      <BottomFooter/>
     </div>
   );
 }
