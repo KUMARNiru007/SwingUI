@@ -8,6 +8,7 @@ import BottomFooter from '../../../components/BottomFooter.jsx';
 const SpotLightText = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
+  const [showText, setShowText] = useState(false);
 
   // First spotlight effect refs
   const previewRef = useRef(null);
@@ -146,7 +147,7 @@ const SpotLightText = () => {
       heading.removeEventListener('mouseenter', handleMouseEnter);
       heading.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [showCode]); // Add showCode as dependency
+  }, [showText]); // Add showCode as dependency
 
   return (
     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
@@ -221,9 +222,9 @@ const SpotLightText = () => {
         SwingUI's interactive cursor component creates a striking visual contrast with its blend-mode inversion effect, transforming mouse movement into a dynamic design element.
         </p>
 
-        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn showCode={showText} setShowCode={setShowText} />
 
-        {!showCode && (
+        {!showText && (
           <div className='relative flex justify-center items-center h-[30rem] w-full bg-gray-200 rounded-lg shadow-md overflow-hidden'>
             <div
               ref={bubbleContainerRef}
@@ -236,7 +237,7 @@ const SpotLightText = () => {
               ></div>
               <h1
                 ref={bubbleHeadingRef}
-                className='text-5xl sm:text-6xl md:text-8xl font-bold text-black'
+                className='text-4xl sm:text-6xl lg:text-8xl md:text-8xl font-bold text-black'
               >
                 MOUSEMOVE
               </h1>
@@ -244,7 +245,7 @@ const SpotLightText = () => {
           </div>
         )}
 
-        {showCode && (
+        {showText && (
           <div className='w-full overflow-x-auto my-4 rounded-xl'>
             <CodeBlock language='html' code={htmlCode2} />
           </div>
