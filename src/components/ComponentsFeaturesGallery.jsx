@@ -129,8 +129,8 @@ const InfiniteRow = ({ direction = 'left', duration = 10 }) => {
             key={`${direction}-${i}`}
             className={`w-[calc(50%-0.5rem)] sm:w-auto rounded-3xl ${
               darkMode
-                ? 'bg-[var(--dark-bg)] text-[var(--color-text-dark)] opacity-90'
-                : 'bg-[var(--light-bg)] text-[var(--color-text)] opacity-90'
+                ? 'bg-[#03111a] text-[var(--color-text-dark)] opacity-90'
+                : 'bg-[#f4faff] text-[var(--color-text)] opacity-90'
             }`}
           >
             <Link to={item.to} target='_blank' rel='noopener noreferrer'>
