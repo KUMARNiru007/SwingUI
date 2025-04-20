@@ -50,7 +50,7 @@ function Navbar() {
     { name: 'Navbar', path: '/components/navbar' },
     { name: 'Preloader', path: '/components/preloader' },
     { name: 'Pricing', path: '/components/pricing' },
-    { name: 'Ratings', path: '/components/ratings' },
+    { name: 'Rating', path: '/components/rating' },
     { name: 'Scratch Card', path: '/components/ScratchCard' },
     { name: 'Slider', path: '/components/slider' },
     { name: 'Social Share', path: '/components/social-share' },

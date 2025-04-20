@@ -34,7 +34,7 @@ const sections = [
       { to: '/components/navbar', label: 'Navbar' },
       { to: '/components/preloader', label: 'Preloader' },
       { to: '/components/pricing', label: 'Pricing' },
-      { to: '/components/ratings', label: 'Ratings' },
+      { to: '/components/rating', label: 'Rating' },
       { to: '/components/ScratchCard', label: 'Scratch Card' },
       { to: '/components/slider', label: 'Slider' },
       { to: '/components/social-share', label: 'Social Share' },

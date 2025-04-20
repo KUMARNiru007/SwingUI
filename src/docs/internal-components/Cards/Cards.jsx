@@ -114,9 +114,11 @@ const Cards = () => {
 `;
 
   const edgeCardsCode = `
-<div class="max-w-6xl mx-auto">
-  <div class="flex flex-wrap items-start mt-6 py-4">
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+<div class="max-w-6xl flex justify-center">
+  <div class="flex flex-wrap  justify-center w-full max-w-4xl bg-gray-200 rounded-lg p-6 mx-auto">
+
+  
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"
@@ -128,7 +130,7 @@ const Cards = () => {
           <div
             class="min-h-[87px] font-bold text-2xl text-white relative mb-0 z-10"
           >
-            Web & Graph Design
+            Responsive Web Design
           </div>
           <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -143,7 +145,7 @@ const Cards = () => {
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"
@@ -155,7 +157,7 @@ const Cards = () => {
           <div
             class="min-h-[87px]  font-bold text-2xl text-white relative z-10"
           >
-            UI/UX Web Design + Mobile Design
+            User Interface Development
           </div>
           <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -170,7 +172,7 @@ const Cards = () => {
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"
@@ -182,7 +184,7 @@ const Cards = () => {
           <div
             class="min-h-[87px]  font-bold text-2xl text-white relative z-10"
           >
-            Annual package "Product+UX/UI"
+            Frontend Coding Fundamentals
           </div>
           <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -197,7 +199,7 @@ const Cards = () => {
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"
@@ -209,7 +211,7 @@ const Cards = () => {
           <div
             class="min-h-[87px] font-bold text-2xl text-white relative z-10"
           >
-            Modern JavaScript Frameworks
+           Interactive Web Applications
           </div>
           <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -224,7 +226,7 @@ const Cards = () => {
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"
@@ -236,7 +238,7 @@ const Cards = () => {
           <div
             class="min-h-[87px] font-bold text-2xl text-white relative z-10"
           >
-            User Interface Development
+            Modern JavaScript Frameworks
           </div>
           <div class="card-text text-zinc-400 text-base mb-7 relative z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -251,7 +253,7 @@ const Cards = () => {
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+    <div class="group relative h-auto min-h-72 w-full lg:w-[48%] mb-6 lg:mr-[2%] transition-all duration-300 " style="max-width: 300px;">
       <div class="overflow-hidden rounded-3xl">
         <a
           href="#!"

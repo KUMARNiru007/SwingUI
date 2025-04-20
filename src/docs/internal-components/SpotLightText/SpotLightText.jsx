@@ -8,6 +8,7 @@ import BottomFooter from '../../../components/BottomFooter.jsx';
 const SpotLightText = () => {
   const [showCode, setShowCode] = useState(false);
   const { darkMode } = useTheme();
+  const [showText, setShowText] = useState(false);
 
   // First spotlight effect refs
   const previewRef = useRef(null);
@@ -146,14 +147,14 @@ const SpotLightText = () => {
       heading.removeEventListener('mouseenter', handleMouseEnter);
       heading.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [showCode]); // Add showCode as dependency
+  }, [showText]); // Add showCode as dependency
 
   return (
     <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h2 className='text-3xl sm:text-4xl font-bold pb-4'>Spotlight Text</h2>
-      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Particle Canvas</h3>
+      <h2 className='text-3xl sm:text-4xl font-bold pb-4 mb-3 sm:mb-8'>Spotlight Text</h2>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Particle Canvas</h3>
       <p className='mb-10 sm:mb-16'>
-      SwingUI's dynamic motion component creates an immersive visual experience with interactive circular elements that respond to user movement. 
+      SwingUI's dynamic motion component creates an immersive visual experience with interactive circular elements that respond to user movement.
       </p>
 
       <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
@@ -207,16 +208,23 @@ const SpotLightText = () => {
           <CodeBlock language='html' code={htmlCode} />
         </div>
       )}
+<hr
+          className={`my-10 border-t ${
+            darkMode
+              ? 'border-gray-700 opacity-30'
+              : 'border-gray-300 opacity-50'
+          }`}
+        />
 
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Particle Canvas</h3>
+      <div className='max-w-5xl mx-auto  py-2 sm:p-1'>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Particle Canvas</h3>
         <p className='mb-10 sm:mb-16'>
         SwingUI's interactive cursor component creates a striking visual contrast with its blend-mode inversion effect, transforming mouse movement into a dynamic design element.
         </p>
 
-        <PreviewCodeBtn showCode={showCode} setShowCode={setShowCode} />
+        <PreviewCodeBtn showCode={showText} setShowCode={setShowText} />
 
-        {!showCode && (
+        {!showText && (
           <div className='relative flex justify-center items-center h-[30rem] w-full bg-gray-200 rounded-lg shadow-md overflow-hidden'>
             <div
               ref={bubbleContainerRef}
@@ -229,7 +237,7 @@ const SpotLightText = () => {
               ></div>
               <h1
                 ref={bubbleHeadingRef}
-                className='text-5xl sm:text-6xl md:text-8xl font-bold text-black'
+                className='text-4xl sm:text-6xl lg:text-8xl md:text-8xl font-bold text-black'
               >
                 MOUSEMOVE
               </h1>
@@ -237,7 +245,7 @@ const SpotLightText = () => {
           </div>
         )}
 
-        {showCode && (
+        {showText && (
           <div className='w-full overflow-x-auto my-4 rounded-xl'>
             <CodeBlock language='html' code={htmlCode2} />
           </div>

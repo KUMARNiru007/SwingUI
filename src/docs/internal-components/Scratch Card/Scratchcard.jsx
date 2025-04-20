@@ -235,8 +235,8 @@ function Scratchcard() {
 
   return (
     <div className='max-w-5xl mx-auto responsive-width px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-      <h1 className='text-3xl sm:text-4xl font-bold pb-4'>Scratch Card </h1>
-      <h3 className='text-xl sm:text-2xl font-semibold mb-4'>Swing Scratch Card</h3>
+      <h1 className='text-3xl sm:text-4xl font-bold pb-4 mb-3 sm:mb-8'>Scratch Card </h1>
+      <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Scratch Card</h3>
       <p className='mb-10 sm:mb-16'>
       SwingUI's interactive scratch card combines playful discovery with elegant visuals, using canvas technology to create a tactile reveal experience.
       </p>
@@ -260,14 +260,15 @@ function Scratchcard() {
       )}
 
       {showCode && (
-        <div className='flex justify-center w-full overflow-x-auto rounded-xl'>
+        <div className='flex justify-center w-full  overflow-x-auto rounded-xl'>
           <CodeBlock language='html' code={htmlcssCode} />
         </div>
       )}
 
- 
+<BottomFooter/>
     </div>
+    
   );
+  
 }
-
 export default Scratchcard;

@@ -521,7 +521,7 @@ function Testimonial() {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, []);
+  },);
 
   return (
     <div
@@ -532,9 +532,10 @@ function Testimonial() {
       } overflow-x-hidden`}
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
-        <h1 className='text-3xl sm:text-4xl font-bold mb-2'>
-          Testimonial Component
+        <h1 className='text-3xl sm:text-4xl font-bold mb-4 sm:mb-12'>
+          Testimonial
         </h1>
+        <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Dynamic Headline</h3>
         <p className='mb-15'>
           This dynamic Tabs component provides seamless navigation between
           categorized content blocks with responsive design, interactive hover

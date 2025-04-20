@@ -29,7 +29,7 @@ function Preloader() {
     >
       <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-6'>
         <h2 className='text-3xl mb-3 sm:mb-8 sm:text-4xl font-bold pb-4'>
-          Pre-Loader
+          Preloader
         </h2>
         <h2 className='text-xl sm:text-2xl font-semibold mb-2'>
           Swing Pulse Rings

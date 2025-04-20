@@ -72,7 +72,7 @@ const Components = () => {
             <Route path='social-share' element={<SocialShare />} />
             <Route path='preloader' element={<Preloader />} />
             <Route path='spotlight-text' element={<SpotLightText />} />
-            <Route path='ratings' element={<Ratings />} />
+            <Route path='rating' element={<Ratings />} />
           </Routes>
         </div>
       </div>
