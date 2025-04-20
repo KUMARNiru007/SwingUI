@@ -70,7 +70,7 @@ ${rotatingWords
           Word Rotating
         </h2>
         <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Swing Dynamic Headline</h3>
-        <p className="mb-6 sm:mb-10 text-center sm:text-left">
+        <p className="mb-6 sm:mb-10 text-left sm:text-left">
         SwingUI's animated text component dynamically rotates through impactful phrases with smooth transitions, creating engaging headlines that capture attention. 
         </p>
 
