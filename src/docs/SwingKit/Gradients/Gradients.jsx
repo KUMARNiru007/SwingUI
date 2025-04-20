@@ -132,7 +132,7 @@ const GradientGrid = () => {
                 }`}
               >
                 <thead>
-                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
                     <th className='py-3 px-4 text-left font-semibold'>
                       Class Name
                     </th>
@@ -184,7 +184,7 @@ const GradientGrid = () => {
                 }`}
               >
                 <thead>
-                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                  <tr className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
                     <th className='py-3 px-4 text-left font-semibold'>
                       Class Name
                     </th>
@@ -225,13 +225,6 @@ const GradientGrid = () => {
               </table>
             </div>
 
-            <hr
-              className={`my-10 border-t ${
-                darkMode
-                  ? 'border-gray-700 opacity-30'
-                  : 'border-gray-300 opacity-50'
-              }`}
-            />
           </div>
         </div>
       </div>
